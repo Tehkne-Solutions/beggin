@@ -5,12 +5,12 @@ import { motion } from 'framer-motion';
 
 export function HeroTextBlock() {
   return (
-    <div className="absolute left-[6%] top-[22%] z-[9] max-w-[470px] md:left-[7vw] md:top-[24%]">
+    <div className="absolute left-[5.2%] top-[21%] z-[9] max-w-[620px] md:left-[6.5vw] md:top-[23%]">
       <motion.h1
         initial={{ opacity: 0, y: 42, clipPath: 'inset(0 0 100% 0)' }}
         animate={{ opacity: 1, y: 0, clipPath: 'inset(0 0 0% 0)' }}
         transition={{ duration: 1.05, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
-        className="font-serifDisplay text-[clamp(5.4rem,9vw,10.6rem)] font-semibold uppercase leading-[0.78] tracking-[-0.055em] text-beggin-ink"
+        className="font-serifDisplay text-[clamp(7.02rem,11.7vw,13.78rem)] font-semibold uppercase leading-[0.78] tracking-[-0.055em] text-beggin-ink"
       >
         BEG
         <br />
