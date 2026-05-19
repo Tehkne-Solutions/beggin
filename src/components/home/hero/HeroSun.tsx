@@ -24,7 +24,7 @@ export function HeroSun() {
       className="pointer-events-none absolute right-[11%] top-[16%] z-[2] hidden h-[170px] w-[170px] lg:block"
       aria-hidden="true"
     >
-      <motion.div className="relative h-full w-full">
+      <div className="relative h-full w-full">
         <Image
           src={heroAssets.sun}
           alt=""
