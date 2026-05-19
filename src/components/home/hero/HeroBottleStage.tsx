@@ -26,9 +26,9 @@ export function HeroBottleStage() {
     mass: 0.9,
   });
 
-  const bottleX = useTransform(springX, [-1, 1], [-4, 4]);
-  const bottleY = useTransform(springY, [-1, 1], [-2, 3]);
-  const bottleRotate = useTransform(springX, [-1, 1], [-0.22, 0.22]);
+  const bottleX = useTransform<number, number>(springX, [-1, 1], [-4, 4]);
+  const bottleY = useTransform<number, number>(springY, [-1, 1], [-2, 3]);
+  const bottleRotate = useTransform<number, number>(springX, [-1, 1], [-0.22, 0.22]);
 
   const onMouseMove = useCallback(
     (event: React.MouseEvent<HTMLDivElement>) => {
