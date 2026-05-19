@@ -15,7 +15,7 @@ export function HeroSeal() {
         rotate: { duration: 11.5, repeat: Infinity, ease: "easeInOut", delay: 0.86 },
         rotateY: { duration: 14, repeat: Infinity, ease: "easeInOut", delay: 1.1 },
       }}
-      className="pointer-events-none absolute bottom-[21.5%] right-[23.5%] z-[7] hidden h-[118px] w-[118px] [transform-style:preserve-3d] drop-shadow-[0_12px_20px_rgba(38,28,14,0.16)] lg:block"
+      className="pointer-events-none absolute bottom-[22%] right-[24.5%] z-[7] hidden h-[118px] w-[118px] [transform-style:preserve-3d] drop-shadow-[0_12px_20px_rgba(38,28,14,0.16)] lg:block"
       aria-hidden="true"
     >
       <Image
