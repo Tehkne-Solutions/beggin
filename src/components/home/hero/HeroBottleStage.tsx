@@ -13,15 +13,13 @@ export function HeroBottleStage() {
   const springX = useSpring(mouseX, { stiffness: 44, damping: 26, mass: 0.92 });
   const springY = useSpring(mouseY, { stiffness: 44, damping: 26, mass: 0.92 });
 
-  const bottleX = useTransform(springX, [-1, 1], [-4, 4]);
-  const bottleYMouse = useTransform(springY, [-1, 1], [-2, 3]);
-  const bottleRotateMouse = useTransform(springX, [-1, 1], [-0.25, 0.25]);
-  const scrollLift = useTransform(scrollYProgress, [0, 0.25, 0.55], [0, -9, -3]);
-  const scrollTurn = useTransform(scrollYProgress, [0, 0.4, 0.8], [-1.4, 1.2, -0.7]);
-  const stageY = useTransform(scrollYProgress, [0, 0.5, 1], [0, -6, 3]);
-  const stageRotate = useTransform(scrollYProgress, [0, 0.5, 1], [-0.45, 0.4, -0.35]);
-  const bottleY = useTransform([bottleYMouse, scrollLift], ([mouse, scroll]) => mouse + scroll);
-  const bottleRotate = useTransform([bottleRotateMouse, scrollTurn], ([mouse, scroll]) => mouse + scroll);
+  const bottleX = useTransform<number, number>(springX, [-1, 1], [-4, 4]);
+  const bottleYMouse = useTransform<number, number>(springY, [-1, 1], [-2, 3]);
+  const bottleRotateMouse = useTransform<number, number>(springX, [-1, 1], [-0.25, 0.25]);
+  const scrollLift = useTransform<number, number>(scrollYProgress, [0, 0.25, 0.55], [0, -9, -3]);
+  const scrollTurn = useTransform<number, number>(scrollYProgress, [0, 0.4, 0.8], [-1.4, 1.2, -0.7]);
+  const stageY = useTransform<number, number>(scrollYProgress, [0, 0.5, 1], [0, -6, 3]);
+  const stageRotate = useTransform<number, number>(scrollYProgress, [0, 0.5, 1], [-0.45, 0.4, -0.35]);
 
   const onMouseMove = useCallback((event: React.MouseEvent<HTMLDivElement>) => {
     const rect = event.currentTarget.getBoundingClientRect();
@@ -54,13 +52,16 @@ export function HeroBottleStage() {
         initial={{ opacity: 0, y: 32, scale: 0.965 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 1.05, delay: 0.52, ease: [0.22, 1, 0.36, 1] }}
-        style={{ x: bottleX, y: bottleY, rotate: bottleRotate }}
+        style={{ y: scrollLift, rotate: scrollTurn }}
         className="absolute bottom-[8%] left-[54%] z-[6] h-[82%] w-[46%] -translate-x-1/2 max-lg:w-[48%] max-md:left-1/2 max-md:w-[55%]"
       >
         <div className="absolute bottom-[2%] left-1/2 z-[5] h-[38px] w-[42%] -translate-x-1/2 rounded-full bg-black/20 blur-xl" />
-        <div className="relative z-[6] h-full w-full drop-shadow-[0_30px_38px_rgba(38,28,14,0.18)] motion-safe-transform">
+        <motion.div
+          style={{ x: bottleX, y: bottleYMouse, rotate: bottleRotateMouse }}
+          className="relative z-[6] h-full w-full drop-shadow-[0_30px_38px_rgba(38,28,14,0.18)] motion-safe-transform"
+        >
           <Image src={heroAssets.bottle} alt="Garrafa Beggin Gin" fill priority sizes="(max-width: 768px) 220px, 340px" className="object-contain" />
-        </div>
+        </motion.div>
       </motion.div>
     </div>
   );
