@@ -6,29 +6,22 @@ import { heroAssets } from '@/data/hero-assets';
 
 function TopClouds() {
   return (
-    <motion.div
-      className="absolute left-[29%] top-[8.5%] h-[105px] w-[520px] opacity-70 max-lg:left-[28%] max-lg:w-[430px] max-md:left-[8%] max-md:top-[19%] max-md:w-[340px]"
-      initial={{ opacity: 0, y: 10 }}
-      animate={{
-        opacity: 0.62,
-        y: [0, -3, 0],
-        x: [-5, 7, -5],
-      }}
-      transition={{
-        opacity: { duration: 1, delay: 0.52 },
-        y: { duration: 38, repeat: Infinity, ease: 'easeInOut' },
-        x: { duration: 48, repeat: Infinity, ease: 'easeInOut' },
-      }}
-    >
-      <Image
-        src={heroAssets.cloudsTop}
-        alt=""
-        fill
-        priority
-        sizes="520px"
-        className="object-contain"
-      />
-    </motion.div>
+    <div className="absolute left-0 top-[7%] h-[140px] w-[200%] animate-cloudTrack opacity-60 max-lg:h-[120px] max-md:top-[17%] max-md:h-[105px]">
+      <div className="flex h-full w-full">
+        {[0, 1].map((item) => (
+          <div key={item} className="relative h-full w-1/2 shrink-0">
+            <Image
+              src={heroAssets.cloudsTop}
+              alt=""
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
 

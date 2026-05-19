@@ -8,9 +8,14 @@ export function HeroSeal() {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.86, rotate: -5 }}
-      animate={{ opacity: 1, scale: 1, rotate: 0 }}
-      transition={{ duration: 0.85, delay: 0.86, ease: [0.22, 1, 0.36, 1] }}
-      className="pointer-events-none absolute bottom-[22%] right-[20.5%] z-[8] hidden h-[118px] w-[118px] origin-[50%_8%] animate-sealSwingSoft drop-shadow-[0_14px_26px_rgba(38,28,14,0.13)] lg:block"
+      animate={{ opacity: 1, scale: 1, rotate: [0, 1.8, 0, -1.8, 0], rotateY: [0, 6, 0, -6, 0] }}
+      transition={{
+        opacity: { duration: 0.85, delay: 0.86, ease: [0.22, 1, 0.36, 1] },
+        scale: { duration: 0.85, delay: 0.86, ease: [0.22, 1, 0.36, 1] },
+        rotate: { duration: 11.5, repeat: Infinity, ease: "easeInOut", delay: 0.86 },
+        rotateY: { duration: 14, repeat: Infinity, ease: "easeInOut", delay: 1.1 },
+      }}
+      className="pointer-events-none absolute bottom-[21.5%] right-[23.5%] z-[7] hidden h-[118px] w-[118px] [transform-style:preserve-3d] drop-shadow-[0_12px_20px_rgba(38,28,14,0.16)] lg:block"
       aria-hidden="true"
     >
       <Image
