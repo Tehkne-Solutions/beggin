@@ -16,10 +16,10 @@ function BotanicalSide({ side }: { side: 'left' | 'right' }) {
         rotate: isLeft ? -2 : 2,
       }}
       animate={{
-        opacity: 0.92,
-        y: isLeft ? [0, -5, 0] : [0, -4, 0],
-        x: isLeft ? [-3, 5, -3] : [4, -5, 4],
-        rotate: isLeft ? [-0.8, 0.6, -0.8] : [0.7, -0.6, 0.7],
+        opacity: 0.9,
+        y: isLeft ? [0, 10, 0] : [0, 12, 0],
+        x: isLeft ? [0, -3, 0] : [0, 3, 0],
+        rotate: isLeft ? [-11, -13, -11] : [9, 11, 9],
       }}
       transition={{
         opacity: { duration: 0.9, delay: 0.58 },
