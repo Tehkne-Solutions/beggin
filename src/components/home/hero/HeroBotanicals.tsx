@@ -41,8 +41,8 @@ function BotanicalSide({ side }: { side: 'left' | 'right' }) {
       }}
       className={
         isLeft
-          ? 'pointer-events-none absolute left-[37.5%] top-[42.5%] z-[3] h-[500px] w-[425px] origin-bottom max-lg:left-[34%] max-lg:h-[410px] max-lg:w-[350px] max-md:left-[1%] max-md:top-[48%] max-md:h-[315px] max-md:w-[265px] max-md:opacity-45'
-          : 'pointer-events-none absolute right-[15%] top-[40.5%] z-[3] h-[500px] w-[445px] origin-bottom max-lg:right-[8%] max-lg:h-[410px] max-lg:w-[365px] max-md:right-[-18%] max-md:top-[48%] max-md:h-[325px] max-md:w-[285px] max-md:opacity-50'
+          ? 'pointer-events-none absolute left-[40%] top-[43%] z-[3] h-[430px] w-[365px] origin-bottom max-lg:left-[36%] max-lg:h-[360px] max-lg:w-[305px] max-md:left-[1%] max-md:top-[48%] max-md:h-[315px] max-md:w-[265px] max-md:opacity-45'
+          : 'pointer-events-none absolute right-[13%] top-[38.5%] z-[3] h-[470px] w-[420px] origin-bottom max-lg:right-[7%] max-lg:h-[390px] max-lg:w-[345px] max-md:right-[-18%] max-md:top-[48%] max-md:h-[325px] max-md:w-[285px] max-md:opacity-50'
       }
     >
       <Image
@@ -50,7 +50,7 @@ function BotanicalSide({ side }: { side: 'left' | 'right' }) {
         alt=""
         fill
         priority
-        sizes="(max-width: 768px) 285px, 500px"
+        sizes="(max-width: 768px) 285px, 470px"
         className="object-contain"
       />
     </motion.div>
