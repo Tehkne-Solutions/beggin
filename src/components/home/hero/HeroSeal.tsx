@@ -12,12 +12,16 @@ export function HeroSeal() {
       initial={{ opacity: 0, scale: 0.86, rotate: -5 }}
       animate={{ opacity: 1, scale: 1, rotate: 0 }}
       transition={{ duration: 0.85, delay: 0.86, ease: [0.22, 1, 0.36, 1] }}
-      className="pointer-events-none absolute bottom-[21.5%] right-[23.5%] z-[7] hidden h-[118px] w-[118px] [transform-style:preserve-3d] drop-shadow-[0_12px_20px_rgba(38,28,14,0.16)] lg:block"
+      className="pointer-events-none absolute bottom-[23.5%] right-[25.8%] z-[7] hidden h-[118px] w-[118px] [transform-style:preserve-3d] drop-shadow-[0_12px_20px_rgba(38,28,14,0.16)] lg:block"
       aria-hidden="true"
     >
       <motion.div
         initial={{ rotate: 0, rotateY: 0 }}
-        animate={{ rotate: [0, 1.2, -1.2, 0], rotateY: [0, 2.4, -2.4, 0] }}
+        animate={
+          shouldReduceMotion
+            ? { rotate: 0, rotateY: 0 }
+            : { rotate: [0, 1.2, -1.2, 0], rotateY: [0, 2.4, -2.4, 0] }
+        }
         transition={{
           duration: 7.2,
           ease: 'easeInOut',
