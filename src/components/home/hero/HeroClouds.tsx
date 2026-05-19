@@ -6,7 +6,7 @@ import { heroAssets } from '@/data/hero-assets';
 
 function TopClouds() {
   return (
-    <div className="absolute left-0 top-[7%] h-[140px] w-[200%] animate-cloudTrack opacity-60 max-lg:h-[120px] max-md:top-[17%] max-md:h-[105px]">
+    <div className="absolute left-0 top-[8.5%] h-[92px] w-[200%] animate-cloudTrack opacity-62 max-lg:h-[86px] max-md:top-[17%] max-md:h-[76px]">
       <div className="flex h-full w-full">
         {[0, 1].map((item) => (
           <div key={item} className="relative h-full w-1/2 shrink-0">
@@ -16,7 +16,7 @@ function TopClouds() {
               fill
               priority
               sizes="100vw"
-              className="object-cover"
+              className="object-contain object-top"
             />
           </div>
         ))}

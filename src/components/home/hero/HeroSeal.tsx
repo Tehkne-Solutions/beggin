@@ -1,14 +1,25 @@
 'use client';
 
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { heroAssets } from '@/data/hero-assets';
 
 export function HeroSeal() {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.86, rotate: -5 }}
-      animate={{ opacity: 1, scale: 1, rotate: [0, 1.8, 0, -1.8, 0], rotateY: [0, 6, 0, -6, 0] }}
+      animate={
+        shouldReduceMotion
+          ? { opacity: 1, scale: 1, rotate: 0, rotateY: 0 }
+          : {
+              opacity: 1,
+              scale: 1,
+              rotate: [0, 1.8, 0, -1.8, 0],
+              rotateY: [0, 6, 0, -6, 0],
+            }
+      }
       transition={{
         opacity: { duration: 0.85, delay: 0.86, ease: [0.22, 1, 0.36, 1] },
         scale: { duration: 0.85, delay: 0.86, ease: [0.22, 1, 0.36, 1] },
