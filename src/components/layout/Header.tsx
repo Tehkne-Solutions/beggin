@@ -47,13 +47,7 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center justify-end gap-4">
-          <Link
-            href="#produtos"
-            className="hidden rounded-full border border-beggin-red px-6 py-3 font-sansUi text-[11px] font-extrabold uppercase tracking-[0.18em] text-beggin-red transition-all hover:-translate-y-0.5 hover:bg-beggin-red hover:text-white xl:inline-flex"
-          >
-            Comprar agora <span className="ml-2 text-beggin-gold">✦</span>
-          </Link>
+        <div className="flex items-center justify-end gap-3 sm:gap-4">
           <button aria-label="Minha conta" className="hidden text-beggin-ink transition-colors hover:text-beggin-red sm:block">
             <UserRound size={22} strokeWidth={1.7} />
           </button>
