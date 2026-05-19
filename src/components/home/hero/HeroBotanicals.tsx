@@ -10,13 +10,39 @@ function BotanicalSide({ side }: { side: 'left' | 'right' }) {
   return (
     <motion.div
       aria-hidden="true"
-      initial={{ opacity: 0, y: 26, rotate: isLeft ? -3 : 3 }}
-      animate={{ opacity: 0.9, y: [0, -10, 0], x: isLeft ? [-8, 12, -8] : [10, -12, 10], rotate: isLeft ? [-1.5, 1.2, -1.5] : [1.5, -1.2, 1.5] }}
-      transition={{ opacity: { duration: 0.9, delay: 0.65 }, x: { duration: isLeft ? 7 : 8.5, repeat: Infinity, ease: 'easeInOut' }, y: { duration: isLeft ? 6 : 7, repeat: Infinity, ease: 'easeInOut' }, rotate: { duration: isLeft ? 6 : 7.4, repeat: Infinity, ease: 'easeInOut' } }}
+      initial={{
+        opacity: 0,
+        y: 22,
+        rotate: isLeft ? -2 : 2,
+      }}
+      animate={{
+        opacity: 0.92,
+        y: isLeft ? [0, -5, 0] : [0, -4, 0],
+        x: isLeft ? [-3, 5, -3] : [4, -5, 4],
+        rotate: isLeft ? [-0.8, 0.6, -0.8] : [0.7, -0.6, 0.7],
+      }}
+      transition={{
+        opacity: { duration: 0.9, delay: 0.58 },
+        x: {
+          duration: isLeft ? 9.5 : 10.8,
+          repeat: Infinity,
+          ease: 'easeInOut',
+        },
+        y: {
+          duration: isLeft ? 8.8 : 10.2,
+          repeat: Infinity,
+          ease: 'easeInOut',
+        },
+        rotate: {
+          duration: isLeft ? 9.5 : 11,
+          repeat: Infinity,
+          ease: 'easeInOut',
+        },
+      }}
       className={
         isLeft
-          ? 'pointer-events-none absolute left-[29%] top-[37%] z-[4] h-[360px] w-[310px] max-lg:left-[31%] max-lg:w-[250px] max-md:left-[-6%] max-md:top-[44%] max-md:opacity-45'
-          : 'pointer-events-none absolute right-[5%] top-[34%] z-[7] h-[410px] w-[365px] max-lg:right-[-2%] max-lg:w-[290px] max-md:right-[-24%] max-md:top-[44%] max-md:opacity-45'
+          ? 'pointer-events-none absolute left-[35%] top-[38%] z-[4] h-[390px] w-[330px] max-lg:left-[34%] max-lg:w-[280px] max-md:left-[2%] max-md:top-[46%] max-md:h-[290px] max-md:w-[230px] max-md:opacity-45'
+          : 'pointer-events-none absolute right-[6%] top-[34%] z-[7] h-[455px] w-[405px] max-lg:right-[-1%] max-lg:w-[330px] max-md:right-[-22%] max-md:top-[46%] max-md:h-[320px] max-md:w-[280px] max-md:opacity-50'
       }
     >
       <Image
@@ -24,7 +50,7 @@ function BotanicalSide({ side }: { side: 'left' | 'right' }) {
         alt=""
         fill
         priority
-        sizes="(max-width: 768px) 220px, 380px"
+        sizes="(max-width: 768px) 260px, 430px"
         className="object-contain"
       />
     </motion.div>

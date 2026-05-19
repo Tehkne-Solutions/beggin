@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --wind-speed: 70s;
+  --wind-speed: 95s;
   --header-height: 76px;
   color-scheme: light;
 }
@@ -58,5 +58,35 @@ a {
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+
+@keyframes sealSwingSoft {
+  0%,
+  100% {
+    transform: translate3d(-2px, 0, 0) rotate(-1.8deg);
+  }
+
+  24% {
+    transform: translate3d(2px, -1.5px, 0) rotate(1.2deg);
+  }
+
+  52% {
+    transform: translate3d(-1px, 1px, 0) rotate(-0.8deg);
+  }
+
+  78% {
+    transform: translate3d(1.5px, -0.5px, 0) rotate(1.6deg);
+  }
+}
+
+.animate-sealSwingSoft {
+  animation: sealSwingSoft 7.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-sealSwingSoft {
+    animation: none !important;
   }
 }
