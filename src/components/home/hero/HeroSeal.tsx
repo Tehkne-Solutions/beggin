@@ -10,33 +10,32 @@ export function HeroSeal() {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.86, rotate: -5 }}
-      animate={
-        shouldReduceMotion
-          ? { opacity: 1, scale: 1, rotate: 0, rotateY: 0 }
-          : {
-              opacity: 1,
-              scale: 1,
-              rotate: [0, 1.8, 0, -1.8, 0],
-              rotateY: [0, 6, 0, -6, 0],
-            }
-      }
-      transition={{
-        opacity: { duration: 0.85, delay: 0.86, ease: [0.22, 1, 0.36, 1] },
-        scale: { duration: 0.85, delay: 0.86, ease: [0.22, 1, 0.36, 1] },
-        rotate: { duration: 11.5, repeat: Infinity, ease: "easeInOut", delay: 0.86 },
-        rotateY: { duration: 14, repeat: Infinity, ease: "easeInOut", delay: 1.1 },
-      }}
-      className="pointer-events-none absolute bottom-[22%] right-[24.5%] z-[7] hidden h-[118px] w-[118px] [transform-style:preserve-3d] drop-shadow-[0_12px_20px_rgba(38,28,14,0.16)] lg:block"
+      animate={{ opacity: 1, scale: 1, rotate: 0 }}
+      transition={{ duration: 0.85, delay: 0.86, ease: [0.22, 1, 0.36, 1] }}
+      className="pointer-events-none absolute bottom-[21.5%] right-[23.5%] z-[7] hidden h-[118px] w-[118px] [transform-style:preserve-3d] drop-shadow-[0_12px_20px_rgba(38,28,14,0.16)] lg:block"
       aria-hidden="true"
     >
-      <Image
-        src={heroAssets.seal}
-        alt=""
-        fill
-        priority
-        sizes="118px"
-        className="object-contain"
-      />
+      <motion.div
+        initial={{ rotate: 0, rotateY: 0 }}
+        animate={{ rotate: [0, 1.2, -1.2, 0], rotateY: [0, 2.4, -2.4, 0] }}
+        transition={{
+          duration: 7.2,
+          ease: 'easeInOut',
+          delay: 1.71,
+          repeat: Infinity,
+          repeatDelay: 0.2,
+        }}
+        className="h-full w-full [transform-style:preserve-3d]"
+      >
+        <Image
+          src={heroAssets.seal}
+          alt=""
+          fill
+          priority
+          sizes="118px"
+          className="object-contain"
+        />
+      </motion.div>
     </motion.div>
   );
 }

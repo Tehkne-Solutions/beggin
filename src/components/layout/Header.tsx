@@ -47,7 +47,7 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center justify-end gap-4">
+        <div className="flex items-center justify-end gap-3 sm:gap-4">
           <button aria-label="Minha conta" className="hidden text-beggin-ink transition-colors hover:text-beggin-red sm:block">
             <UserRound size={22} strokeWidth={1.7} />
           </button>

@@ -41,8 +41,8 @@ function BotanicalSide({ side }: { side: 'left' | 'right' }) {
       }}
       className={
         isLeft
-          ? 'pointer-events-none absolute left-[39.5%] top-[43.5%] z-[3] h-[430px] w-[365px] origin-bottom -rotate-[11deg] max-lg:left-[36%] max-lg:w-[300px] max-md:left-[4%] max-md:top-[48%] max-md:h-[295px] max-md:w-[235px] max-md:opacity-45'
-          : 'pointer-events-none absolute right-[12.5%] top-[40.5%] z-[3] h-[470px] w-[420px] origin-bottom rotate-[9deg] max-lg:right-[4%] max-lg:w-[320px] max-md:right-[-18%] max-md:top-[48%] max-md:h-[315px] max-md:w-[275px] max-md:opacity-50'
+          ? 'pointer-events-none absolute left-[24%] top-[40%] z-[3] h-[390px] w-[330px] max-lg:left-[21%] max-lg:w-[280px] max-md:left-[-6%] max-md:top-[47%] max-md:h-[290px] max-md:w-[230px] max-md:opacity-45'
+          : 'pointer-events-none absolute right-[24%] top-[40%] z-[3] h-[455px] w-[405px] max-lg:right-[21%] max-lg:w-[330px] max-md:right-[-6%] max-md:top-[47%] max-md:h-[320px] max-md:w-[280px] max-md:opacity-50'
       }
     >
       <Image
