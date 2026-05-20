@@ -16,7 +16,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Beggin Gin',
+  title: 'Beg Gin',
   description: 'O clássico brasileiro. Feito para ser lembrado.',
 };
 

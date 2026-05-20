@@ -25,7 +25,7 @@ export function Header() {
       className="fixed inset-x-0 top-0 z-50 border-b border-beggin-line/70 backdrop-blur-md"
     >
       <div className="mx-auto grid h-full max-w-[1500px] grid-cols-[120px_1fr_120px] items-center px-5 sm:px-8 lg:grid-cols-[170px_1fr_210px] lg:px-12">
-        <Link href="#inicio" aria-label="Beggin Gin" className="flex items-center">
+        <Link href="#inicio" aria-label="Beg Gin" className="flex items-center">
           <motion.div style={{ scale: logoScale }} className="origin-left leading-none">
             <div className="font-sansUi text-[26px] font-black tracking-[0.33em] text-beggin-ink">BEG</div>
             <div className="mt-1 flex items-center gap-2">

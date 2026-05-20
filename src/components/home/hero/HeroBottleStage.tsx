@@ -1,11 +1,12 @@
 'use client';
 
 import Image from 'next/image';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { motion, useMotionValue, useReducedMotion, useSpring } from 'framer-motion';
 import { useEffect } from 'react';
 import { heroAssets } from '@/data/hero-assets';
 
 export function HeroBottleStage() {
+  const shouldReduceMotion = useReducedMotion();
   const pointerX = useMotionValue(0);
   const pointerY = useMotionValue(0);
   const pointerRotate = useMotionValue(0);
@@ -34,16 +35,20 @@ export function HeroBottleStage() {
       pointerRotate.set(normalizedX * 0.2);
     };
 
-    window.addEventListener('pointermove', handlePointerMove);
-    window.addEventListener('blur', reset);
-    document.documentElement.addEventListener('mouseleave', reset);
+    if (!shouldReduceMotion) {
+      window.addEventListener('pointermove', handlePointerMove);
+      window.addEventListener('blur', reset);
+      document.documentElement.addEventListener('mouseleave', reset);
+    }
 
     return () => {
-      window.removeEventListener('pointermove', handlePointerMove);
-      window.removeEventListener('blur', reset);
-      document.documentElement.removeEventListener('mouseleave', reset);
+      if (!shouldReduceMotion) {
+        window.removeEventListener('pointermove', handlePointerMove);
+        window.removeEventListener('blur', reset);
+        document.documentElement.removeEventListener('mouseleave', reset);
+      }
     };
-  }, [pointerRotate, pointerX, pointerY]);
+  }, [pointerRotate, pointerX, pointerY, shouldReduceMotion]);
 
   return (
     <div
@@ -69,7 +74,7 @@ export function HeroBottleStage() {
             >
               <Image
                 src={heroAssets.mainProduct}
-                alt="Beggin Gin"
+                alt="Beg Gin"
                 fill
                 priority
                 sizes="(max-width: 768px) 360px, 912px"
