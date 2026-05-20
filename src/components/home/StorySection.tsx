@@ -27,27 +27,6 @@ const sealMotion = {
   visible: { opacity: 1, scale: 1 },
 };
 
-type StoryPhotoProps = {
-  src: string;
-  alt: string;
-  className: string;
-  sizes: string;
-};
-
-function StoryPhoto({ src, alt, className, sizes }: StoryPhotoProps) {
-  return (
-    <div className={`relative overflow-hidden border border-white/70 bg-white p-2 shadow-[0_22px_46px_rgba(47,42,28,0.16)] ${className}`}>
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        className="object-cover"
-        sizes={sizes}
-      />
-    </div>
-  );
-}
-
 export function StorySection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-120px' });
@@ -68,7 +47,7 @@ export function StorySection() {
       className="paper-texture relative overflow-hidden bg-[#f7f0df] px-5 py-20 lg:px-8 lg:py-24"
     >
       <motion.div
-        className="relative mx-auto min-h-[560px] w-full max-w-[calc(100vw-64px)] overflow-hidden border border-[#c8b98e]/45 bg-[#dfe5cc] px-10 py-12 shadow-[0_22px_60px_rgba(47,42,28,0.08)] lg:min-h-[585px] lg:px-16 xl:px-20"
+        className="relative mx-auto w-full max-w-[calc(100vw-64px)] overflow-hidden border border-[#c8b98e]/45 bg-[#dfe5cc] px-10 py-12 shadow-[0_22px_60px_rgba(47,42,28,0.08)] lg:px-16 xl:px-20"
         initial="hidden"
         animate={controls}
         variants={panelMotion}
@@ -77,7 +56,7 @@ export function StorySection() {
         <div className="pointer-events-none absolute inset-[22px] z-[1] border border-[#b9a875]/35" />
 
         <motion.div
-          className="pointer-events-none absolute bottom-[-10px] left-[-8px] z-[1] h-[285px] w-[285px] opacity-75 lg:h-[360px] lg:w-[360px]"
+          className="pointer-events-none absolute bottom-[-28px] left-[-26px] z-[1] h-[300px] w-[300px] opacity-70 lg:h-[360px] lg:w-[360px]"
           initial="hidden"
           animate={controls}
           variants={fadeInUp}
@@ -93,9 +72,26 @@ export function StorySection() {
           />
         </motion.div>
 
-        <div className="relative z-[3] grid gap-10 lg:grid-cols-[0.95fr_1.15fr_0.72fr_1.65fr] lg:items-center lg:gap-8">
+        <motion.div
+          className="pointer-events-none absolute right-[44px] top-1/2 z-[3] hidden h-[26px] w-[48px] -translate-y-1/2 lg:block"
+          initial="hidden"
+          animate={controls}
+          variants={fadeInUp}
+          transition={{ ...transition, delay: 0.5 }}
+          aria-hidden="true"
+        >
+          <Image
+            src={storyAssets.waves}
+            alt=""
+            fill
+            className="object-contain"
+            sizes="48px"
+          />
+        </motion.div>
+
+        <div className="relative z-[3] grid gap-8 lg:grid-cols-[0.95fr_1.05fr_0.42fr_1.55fr] lg:items-center lg:gap-6">
           <motion.div
-            className="relative z-[4] flex min-h-[430px] flex-col justify-center"
+            className="relative z-[4] flex min-h-[390px] flex-col justify-center"
             initial="hidden"
             animate={controls}
             variants={fadeInUp}
@@ -105,7 +101,7 @@ export function StorySection() {
               {storyContent.eyebrow}
               <span className="ml-3 text-beggin-gold">✧</span>
             </p>
-            <h2 className="mt-7 max-w-[440px] font-serifDisplay text-[clamp(2.7rem,3.55vw,4.25rem)] font-semibold uppercase leading-[0.95] tracking-normal text-beggin-ink">
+            <h2 className="mt-7 max-w-[450px] font-serifDisplay text-[clamp(2.45rem,3.1vw,4.1rem)] font-semibold uppercase leading-[0.95] text-beggin-ink">
               {storyContent.title}
             </h2>
             <div className="mt-7 flex h-4 w-10 flex-col justify-between" aria-hidden="true">
@@ -114,12 +110,12 @@ export function StorySection() {
               <span className="h-[2px] w-full rounded-full bg-beggin-red" />
             </div>
 
-            <div className="relative mt-7 h-[58px] w-[58px]">
+            <div className="relative mt-8 h-[58px] w-[58px] opacity-75">
               <Image
                 src={storyAssets.smallSun}
                 alt=""
                 fill
-                className="object-contain opacity-75"
+                className="object-contain"
                 sizes="58px"
               />
             </div>
@@ -136,7 +132,7 @@ export function StorySection() {
           </motion.div>
 
           <motion.div
-            className="relative z-[3] h-[330px] w-full overflow-hidden bg-transparent lg:h-[360px]"
+            className="relative z-[3] h-[315px] w-full max-w-[360px] lg:justify-self-end overflow-hidden bg-transparent lg:h-[340px]"
             initial="hidden"
             animate={controls}
             variants={photoMotion}
@@ -147,12 +143,12 @@ export function StorySection() {
               alt="Foto Beggin com garrafa, caixa e taça"
               fill
               className="object-contain"
-              sizes="(max-width: 768px) 86vw, 320px"
+              sizes="(max-width: 768px) 86vw, 360px"
             />
           </motion.div>
 
           <motion.div
-            className="pointer-events-none relative z-[8] mx-[-34px] flex h-[220px] w-[220px] justify-self-center"
+            className="pointer-events-none relative z-[8] mx-[-26px] h-[210px] w-[210px] justify-self-center"
             initial="hidden"
             animate={controls}
             variants={sealMotion}
@@ -163,12 +159,12 @@ export function StorySection() {
               alt="Selo central Beggin"
               fill
               className="object-contain"
-              sizes="220px"
+              sizes="210px"
             />
           </motion.div>
 
           <motion.div
-            className="relative z-[3] h-[330px] w-full overflow-hidden bg-transparent lg:h-[360px]"
+            className="relative z-[3] h-[315px] w-full max-w-[560px] lg:justify-self-start overflow-hidden bg-transparent lg:h-[340px]"
             initial="hidden"
             animate={controls}
             variants={photoMotion}
@@ -179,7 +175,7 @@ export function StorySection() {
               alt="Foto Beggin com garrafa e taça"
               fill
               className="object-contain"
-              sizes="(max-width: 768px) 90vw, 520px"
+              sizes="(max-width: 768px) 90vw, 560px"
             />
           </motion.div>
         </div>

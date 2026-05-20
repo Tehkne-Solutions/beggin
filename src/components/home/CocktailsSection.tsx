@@ -1,27 +1,13 @@
-'use client';
+﻿'use client';
 
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { motion, useInView, useAnimation } from 'framer-motion';
+import Link from 'next/link';
+import { motion, useAnimation, useInView, useReducedMotion } from 'framer-motion';
 import { cocktails, cocktailsContent, cocktailAssets } from '@/data/cocktails';
+import { CocktailCard } from './cocktails/CocktailCard';
 
-const cardVariants = (index: number) => ({
-  hidden: {
-    opacity: 0,
-    y: 60 + index * 15,
-    rotate: index % 2 === 0 ? -1 : 1,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    rotate: 0,
-    transition: {
-      duration: 0.75,
-      delay: index * 0.15,
-      ease: [0.25, 0.1, 0.25, 1],
-    },
-  },
-});
+const easeOut = [0.25, 0.1, 0.25, 1] as const;
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -29,152 +15,86 @@ const fadeInUp = {
 };
 
 export function CocktailsSection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-80px' });
+  const ref = useRef<HTMLElement | null>(null);
+  const isInView = useInView(ref, { once: true, margin: '-120px' });
   const controls = useAnimation();
+  const shouldReduceMotion = useReducedMotion();
 
-  if (isInView) {
-    controls.start('visible');
-  }
+  useEffect(() => {
+    if (isInView) {
+      controls.start('visible');
+    }
+  }, [controls, isInView]);
 
   return (
     <section
       ref={ref}
-      id="coquetéis"
-      className="relative overflow-hidden bg-beggin-paper py-24 md:py-32"
+      id="coqueteis"
+      className="paper-texture relative overflow-hidden bg-[#f7f0df] px-5 py-24 md:px-8 lg:py-28"
     >
-      {/* Background texture */}
-      <div
-        className="absolute inset-0 z-0 paper-texture"
-        aria-hidden="true"
-      />
-
-      {/* Decorative botanical elements - subtle and positioned away from content */}
-      <motion.div
-        className="pointer-events-none absolute -left-4 top-16 z-[1] hidden h-40 w-40 md:block"
-        initial="hidden"
-        animate={controls}
-        transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-        variants={fadeInUp}
-        aria-hidden="true"
-      >
+      <div className="pointer-events-none absolute right-[-56px] top-10 z-[1] hidden h-[420px] w-[260px] opacity-80 lg:block">
         <Image
-          src={cocktailAssets.decorativeBotanical || '/images/home/beggin-home-hero-elemento-erva-esquerda.png'}
+          src={cocktailAssets.flowersRight}
           alt=""
           fill
-          className="object-contain opacity-25"
-          sizes="160px"
+          className="object-contain object-right-top"
+          sizes="320px"
         />
-      </motion.div>
+      </div>
 
       <motion.div
-        className="pointer-events-none absolute -right-4 bottom-16 z-[1] hidden h-36 w-36 md:block"
+        className="relative z-[2] mx-auto grid max-w-[1500px] gap-10 lg:grid-cols-[0.27fr_0.73fr] lg:items-start"
         initial="hidden"
         animate={controls}
-        transition={{ duration: 1, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
         variants={fadeInUp}
-        aria-hidden="true"
+        transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.8, ease: easeOut }}
       >
-        <Image
-          src={cocktailAssets.decorativeBotanical || '/images/home/beggin-home-hero-elemento-erva-direita.png'}
-          alt=""
-          fill
-          className="object-contain opacity-25"
-          sizes="144px"
-        />
-      </motion.div>
-
-      {/* Content container */}
-      <div className="relative z-[2] mx-auto max-w-[1200px] px-6 md:px-10">
-        {/* Header */}
-        <motion.div
-          className="mb-16 text-center md:mb-20"
-          initial="hidden"
-          animate={controls}
-          transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-          variants={fadeInUp}
-        >
-          <p className="font-serifDisplay text-xs font-bold uppercase tracking-[0.22em] text-beggin-muted">
-            {cocktailsContent.label} ✦
+        <div className="max-w-[320px]">
+          <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.26em] text-beggin-ink">
+            {cocktailsContent.label}
           </p>
-          <h2 className="mt-4 font-serifDisplay text-4xl font-semibold uppercase leading-[0.95] tracking-[-0.02em] text-beggin-ink md:text-5xl">
+
+          <div className="mt-3 h-px w-10 bg-beggin-gold/60" />
+
+          <h2 className="mt-8 font-serifDisplay text-[clamp(2.8rem,4.2vw,4.8rem)] font-semibold uppercase leading-[0.9] tracking-[-0.04em] text-beggin-ink">
             {cocktailsContent.title}
           </h2>
-          <p className="mt-6 max-w-[520px] mx-auto text-sm leading-7 text-beggin-muted md:text-base">
-            {cocktailsContent.subtitle}
-          </p>
-        </motion.div>
 
-        {/* Cocktail cards grid */}
-        <div className="flex flex-col items-center justify-center gap-8 md:flex-row md:gap-6 lg:gap-8">
+          <div className="relative mt-7 h-[22px] w-[44px]">
+            <Image
+              src={cocktailAssets.waves}
+              alt=""
+              fill
+              className="object-contain"
+              sizes="44px"
+            />
+          </div>
+
+          <Link
+            href="#coqueteis"
+            className="group mt-16 inline-flex items-center gap-3 font-serifDisplay text-[11px] font-bold uppercase tracking-[0.2em] text-beggin-ink"
+          >
+            <span className="relative pb-2 after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-beggin-gold after:transition-transform after:duration-300 group-hover:after:scale-x-125">
+              {cocktailsContent.cta}
+            </span>
+            <span className="text-beggin-gold transition-transform duration-300 group-hover:translate-x-1">
+              ✦
+            </span>
+          </Link>
+        </div>
+
+        <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
           {cocktails.map((cocktail, index) => (
-            <motion.div
+            <CocktailCard
               key={cocktail.id}
-              className="group relative w-full max-w-[300px]"
-              custom={index}
-              initial="hidden"
-              animate={controls}
-              variants={cardVariants(index)}
-              whileHover={{
-                y: -8,
-                scale: 1.01,
-                transition: { duration: 0.3, ease: [0.25, 0.1, 0.25, 1] },
-              }}
-            >
-              {/* Card container */}
-              <div className="relative overflow-hidden rounded-sm bg-white p-3 shadow-soft transition-all duration-500 group-hover:shadow-xl">
-                {/* Ornamental border */}
-                <div className="absolute inset-0 rounded-sm ring-1 ring-beggin-gold/20 transition-all duration-500 group-hover:ring-beggin-gold/50" />
-
-                {/* Image container */}
-                <div className="relative aspect-[3/4] overflow-hidden rounded-sm bg-beggin-sage/30">
-                  <Image
-                    src={cocktail.image}
-                    alt={cocktail.name}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    sizes="(max-width: 768px) 100vw, 300px"
-                  />
-
-                  {/* Overlay gradient on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-beggin-ink/15 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                </div>
-
-                {/* Card content */}
-                <div className="mt-4 px-1 pb-2">
-                  {/* Decorative line */}
-                  <div className="mx-auto mb-3 h-px w-10 bg-beggin-gold/40 transition-all duration-500 group-hover:w-16 group-hover:bg-beggin-gold/70" />
-
-                  <h3 className="font-serifDisplay text-lg font-semibold text-beggin-ink transition-colors duration-300 group-hover:text-beggin-red md:text-xl">
-                    {cocktail.name}
-                  </h3>
-                  <p className="mt-2 text-xs leading-relaxed text-beggin-muted md:text-sm">
-                    {cocktail.description}
-                  </p>
-
-                  {/* Ingredients tags */}
-                  <div className="mt-3 flex flex-wrap gap-1.5">
-                    {cocktail.ingredients.map((ingredient) => (
-                      <span
-                        key={ingredient}
-                        className="rounded-full bg-beggin-sage/40 px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-[0.08em] text-beggin-muted transition-all duration-300 group-hover:bg-beggin-sage group-hover:text-beggin-ink"
-                      >
-                        {ingredient}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Corner ornaments */}
-                <div className="pointer-events-none absolute -left-0.5 -top-0.5 h-3 w-3 border-l border-t border-beggin-gold/30 opacity-0 transition-all duration-500 group-hover:opacity-100" />
-                <div className="pointer-events-none absolute -right-0.5 -top-0.5 h-3 w-3 border-r border-t border-beggin-gold/30 opacity-0 transition-all duration-500 group-hover:opacity-100" />
-                <div className="pointer-events-none absolute -bottom-0.5 -left-0.5 h-3 w-3 border-b border-l border-beggin-gold/30 opacity-0 transition-all duration-500 group-hover:opacity-100" />
-                <div className="pointer-events-none absolute -bottom-0.5 -right-0.5 h-3 w-3 border-b border-r border-beggin-gold/30 opacity-0 transition-all duration-500 group-hover:opacity-100" />
-              </div>
-            </motion.div>
+              index={index}
+              title={cocktail.title}
+              description={cocktail.description}
+              image={cocktail.image}
+            />
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

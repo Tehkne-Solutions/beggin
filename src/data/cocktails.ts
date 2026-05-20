@@ -1,36 +1,31 @@
-export const cocktailAssets = {
-  begTonica: '/images/home/cocktail-beg-tonica.webp',
-  citricoBrasileiro: '/images/home/cocktail-citrico-brasileiro.webp',
-  negroniBeg: '/images/home/cocktail-negroni-beg.webp',
-  decorativeBotanical: '/images/home/cocktails-botanical-decorative.png',
+﻿export const cocktailAssets = {
+  flowersRight: '/images/home/beggin-home-coqueteis-autorais-flores-canto-direito.png',
+  waves: '/images/home/beggin-home-hero-elemento-bandeiras.png',
 } as const;
 
 export const cocktails = [
   {
     id: 'beg-tonica',
-    name: 'Beg & Tônica',
-    description: 'O clássico refrescante. Beggin, água tônica premium, uma fatia de limão siciliano e gelo.',
-    image: cocktailAssets.begTonica,
-    ingredients: ['Beggin', 'Água tônica', 'Limão siciliano', 'Gelo'],
+    title: 'Beg & Tônica',
+    description: 'Clássico • Refrescante',
+    image: '/images/home/beggin-home-coqueteis-autorais-card1-beg-and-tonica.png',
   },
   {
     id: 'citrico-brasileiro',
-    name: 'Cítrico Brasileiro',
-    description: 'Uma explosão de sabores tropicais. Beggin, suco de maracujá, xarope de limão e folhas de hortelã.',
-    image: cocktailAssets.citricoBrasileiro,
-    ingredients: ['Beggin', 'Maracujá', 'Limão', 'Hortelã'],
+    title: 'Cítrico Brasileiro',
+    description: 'Vibrante • Aromático',
+    image: '/images/home/beggin-home-coqueteis-autorais-card2-citrico-brasileiro.png',
   },
   {
     id: 'negroni-beg',
-    name: 'Negroni Beg',
-    description: 'Nossa releitura do italiano. Beggin, Campari, vermute tinto e uma casca de laranja.',
-    image: cocktailAssets.negroniBeg,
-    ingredients: ['Beggin', 'Campari', 'Vermute tinto', 'Laranja'],
+    title: 'Negroni Beg',
+    description: 'Intenso • Equilibrado',
+    image: '/images/home/beggin-home-coqueteis-autorais-card3-negroni-beg.png',
   },
 ] as const;
 
 export const cocktailsContent = {
   label: 'Beg Experience',
   title: 'Coquetéis Autorais',
-  subtitle: 'Descubra combinações únicas criadas especialmente para realçar o sabor do Beggin.',
+  cta: 'Descubra mais',
 } as const;
