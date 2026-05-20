@@ -50,6 +50,83 @@ a {
   transform: translateZ(0);
 }
 
+@keyframes cloudTrack {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-cloudTrack {
+  animation: cloudTrack var(--wind-speed) linear infinite;
+  will-change: transform;
+}
+
+@keyframes wavePulse {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-1.8px);
+  }
+}
+
+.wave-pulse {
+  animation: wavePulse 4.8s ease-in-out infinite;
+}
+
+@keyframes goldShimmer {
+  0% {
+    background-position: -120% 0;
+  }
+  100% {
+    background-position: 220% 0;
+  }
+}
+
+.gold-shimmer {
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.28) 45%, rgba(255, 255, 255, 0.08) 100%);
+  background-size: 200% 100%;
+  animation: goldShimmer 2.8s linear infinite;
+}
+
+@keyframes subtleFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.subtle-float {
+  animation: subtleFloat 9.5s ease-in-out infinite;
+}
+
+@keyframes lineReveal {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+.line-reveal {
+  transform-origin: top;
+  animation: lineReveal 0.8s ease-out forwards;
+}
+
+.hero-motion:hover .animate-cloudTrack {
+  animation-duration: 65s;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
