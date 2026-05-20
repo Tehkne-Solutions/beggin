@@ -1,219 +1,195 @@
 'use client';
 
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import Image from 'next/image';
-import { motion, useInView, useAnimation } from 'framer-motion';
+import { motion, useAnimation, useInView, useReducedMotion } from 'framer-motion';
 import { storyAssets, storyContent } from '@/data/story';
 
-const fadeInUp = {
-  hidden: { opacity: 0, y: 40 },
+const easeOut = [0.25, 0.1, 0.25, 1] as [number, number, number, number];
+
+const panelMotion = {
+  hidden: { opacity: 0, y: 36 },
   visible: { opacity: 1, y: 0 },
 };
 
-const slideFromRight = {
-  hidden: { opacity: 0, x: 60 },
-  visible: { opacity: 1, x: 0 },
+const fadeInUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0 },
 };
 
-const slideFromLeft = {
-  hidden: { opacity: 0, x: -60 },
-  visible: { opacity: 1, x: 0 },
+const photoMotion = {
+  hidden: { opacity: 0, y: 28, scale: 0.985 },
+  visible: { opacity: 1, y: 0, scale: 1 },
 };
 
-const scaleIn = {
-  hidden: { opacity: 0, scale: 0.8 },
+const sealMotion = {
+  hidden: { opacity: 0, scale: 0.96 },
   visible: { opacity: 1, scale: 1 },
 };
 
-const floatIn = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0 },
+type StoryPhotoProps = {
+  src: string;
+  alt: string;
+  className: string;
+  sizes: string;
 };
+
+function StoryPhoto({ src, alt, className, sizes }: StoryPhotoProps) {
+  return (
+    <div className={`relative overflow-hidden border border-white/70 bg-white p-2 shadow-[0_22px_46px_rgba(47,42,28,0.16)] ${className}`}>
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        className="object-cover"
+        sizes={sizes}
+      />
+    </div>
+  );
+}
 
 export function StorySection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const isInView = useInView(ref, { once: true, margin: '-120px' });
   const controls = useAnimation();
+  const shouldReduceMotion = useReducedMotion();
+  const transition = shouldReduceMotion ? { duration: 0 } : { duration: 0.8, ease: easeOut };
 
-  if (isInView) {
-    controls.start('visible');
-  }
+  useEffect(() => {
+    if (isInView) {
+      controls.start('visible');
+    }
+  }, [controls, isInView]);
 
   return (
     <section
       ref={ref}
       id="historia"
-      className="relative min-h-[600px] overflow-hidden bg-beggin-paper py-16 md:py-24"
+      className="paper-texture relative overflow-hidden bg-[#f7f0df] px-6 py-20 lg:px-8 lg:py-24"
     >
-      {/* Background texture layer */}
-      <div
-        className="absolute inset-0 z-0 paper-texture"
-        aria-hidden="true"
-      />
-
-      {/* Main panel - sage green background */}
       <motion.div
-        className="absolute inset-x-4 top-4 bottom-4 z-[1] mx-auto max-w-[1400px] rounded-sm bg-beggin-sage/80 md:inset-x-8 md:top-8 md:bottom-8"
+        className="relative mx-auto w-full max-w-[1540px] overflow-hidden border border-[#c8b98e]/45 bg-[#dfe5cc] px-8 py-10 shadow-[0_22px_60px_rgba(47,42,28,0.08)] sm:px-12 lg:px-16 xl:px-20"
         initial="hidden"
         animate={controls}
-        transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
-        variants={{
-          hidden: { opacity: 0, y: 60 },
-          visible: { opacity: 1, y: 0 },
-        }}
-      />
+        variants={panelMotion}
+        transition={transition}
+      >
+        <div className="pointer-events-none absolute inset-[22px] z-[1] border border-[#b9a875]/35" />
 
-      {/* Ornamental frame */}
-      <motion.div
-        className="absolute inset-x-6 top-6 bottom-6 z-[2] mx-auto max-w-[1380px] rounded-sm border border-beggin-gold/30 md:inset-x-10 md:top-10 md:bottom-10"
-        initial="hidden"
-        animate={controls}
-        transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-        variants={{
-          hidden: { opacity: 0, scale: 0.97 },
-          visible: { opacity: 1, scale: 1 },
-        }}
-        aria-hidden="true"
-      />
-
-      {/* Content container */}
-      <div className="relative z-[4] mx-auto flex h-full max-w-[1360px] flex-col items-center justify-center px-6 md:flex-row md:px-10">
-        {/* Text content - left side */}
         <motion.div
-          className="mb-10 md:mb-0 md:w-[28%] md:pr-8"
+          className="pointer-events-none absolute bottom-0 left-0 z-[1] hidden h-[260px] w-[260px] opacity-75 sm:block sm:h-[300px] sm:w-[300px] lg:h-[340px] lg:w-[340px]"
           initial="hidden"
           animate={controls}
-          transition={{ duration: 0.7, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
           variants={fadeInUp}
+          transition={{ ...transition, delay: 0.45 }}
+          aria-hidden="true"
         >
-          <p className="font-serifDisplay text-xs font-bold uppercase tracking-[0.22em] text-beggin-muted">
-            {storyContent.label} ✦
-          </p>
-          <h2 className="mt-4 font-serifDisplay text-4xl font-semibold uppercase leading-[0.95] tracking-[-0.02em] text-beggin-ink md:text-5xl">
-            {storyContent.title}
-          </h2>
-          <p className="mt-5 text-sm font-medium uppercase tracking-[0.12em] text-beggin-muted">
-            {storyContent.subtitle}
-          </p>
-          <p className="mt-6 text-sm leading-7 text-beggin-muted md:text-base">
-            {storyContent.description}
-          </p>
+          <Image
+            src={storyAssets.botanicalLeft}
+            alt=""
+            fill
+            className="object-contain object-left-bottom"
+            sizes="340px"
+          />
         </motion.div>
 
-        {/* Gallery - photos and seal */}
-        <div className="flex w-full items-center justify-center gap-4 md:w-[72%]">
-          {/* Left photo */}
+        <div className="pointer-events-none absolute right-8 top-[32%] hidden h-[148px] w-[78px] rounded-full border border-beggin-red/15 bg-beggin-red/5 opacity-70 md:block" aria-hidden="true" />
+
+        <div className="relative z-[3] grid gap-10 lg:grid-cols-[0.35fr_0.65fr] lg:items-end lg:gap-14">
           <motion.div
-            className="relative hidden w-[22%] md:block"
+            className="relative z-[3] max-w-[460px] pt-6 lg:pt-0"
             initial="hidden"
             animate={controls}
-            transition={{ duration: 0.8, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-            variants={slideFromRight}
+            variants={fadeInUp}
+            transition={{ ...transition, delay: 0.18 }}
           >
-            <div className="group relative aspect-[3/4] overflow-hidden rounded-sm bg-white p-2 shadow-soft cursor-pointer">
-              <Image
-                src={storyAssets.photoLeft || '/images/home/beggin-home-hero-elemento-garrafa-principal.webp'}
-                alt="Beggin garrafa - lado esquerdo"
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                sizes="(max-width: 768px) 100vw, 220px"
-              />
-              <div className="absolute inset-0 rounded-sm ring-1 ring-beggin-gold/20 transition-all duration-500 group-hover:ring-beggin-gold/50" />
+            <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.28em] text-beggin-ink">
+              {storyContent.eyebrow}
+              <span className="ml-3 text-beggin-gold">✧</span>
+            </p>
+            <h2 className="mt-7 max-w-[440px] font-serifDisplay text-[clamp(2.7rem,3.55vw,4.25rem)] font-semibold uppercase leading-[0.95] tracking-normal text-beggin-ink">
+              {storyContent.title}
+            </h2>
+            <div className="mt-7 flex h-4 w-10 flex-col justify-between" aria-hidden="true">
+              <span className="h-[2px] w-full rounded-full bg-beggin-red" />
+              <span className="h-[2px] w-full rounded-full bg-beggin-red" />
+              <span className="h-[2px] w-full rounded-full bg-beggin-red" />
             </div>
+
+            <div className="relative mt-8 h-[64px] w-[64px]">
+              <Image
+                src={storyAssets.smallSun}
+                alt=""
+                fill
+                className="object-contain opacity-75"
+                sizes="64px"
+              />
+            </div>
+
+            <a
+              href="#coqueteis"
+              className="group mt-14 inline-flex items-center gap-4 font-serifDisplay text-[11px] font-bold uppercase tracking-[0.18em] text-beggin-ink"
+            >
+              <span className="border-b border-beggin-gold/70 pb-3 transition-colors duration-300 group-hover:border-beggin-red">
+                {storyContent.cta}
+              </span>
+              <span className="text-beggin-gold transition-transform duration-300 group-hover:translate-x-1">✧</span>
+            </a>
           </motion.div>
 
-          {/* Center seal */}
-          <motion.div
-            className="relative flex-shrink-0"
-            initial="hidden"
-            animate={controls}
-            transition={{ duration: 0.7, delay: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
-            variants={scaleIn}
-          >
-            <div className="relative h-28 w-28 md:h-36 md:w-36">
+          <div className="relative">
+            <motion.div
+              className="pointer-events-none absolute left-1/2 top-1/2 z-[5] flex h-[150px] w-[150px] -translate-x-1/2 -translate-y-1/2 sm:h-[220px] sm:w-[220px]"
+              initial="hidden"
+              animate={controls}
+              variants={sealMotion}
+              transition={{ ...transition, delay: 0.52 }}
+              aria-hidden="true"
+            >
               <Image
-                src={storyAssets.centerSeal || '/images/home/beggin-home-hero-elemento-selo.png'}
-                alt="Selo Beggin"
+                src={storyAssets.centerSeal}
+                alt=""
                 fill
                 className="animate-sealSwingSoft object-contain"
-                sizes="150px"
+                sizes="220px"
               />
-            </div>
-          </motion.div>
+            </motion.div>
 
-          {/* Right photo */}
-          <motion.div
-            className="relative hidden w-[28%] md:block"
-            initial="hidden"
-            animate={controls}
-            transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-            variants={slideFromLeft}
-          >
-            <div className="group relative aspect-[3/4] overflow-hidden rounded-sm bg-white p-2 shadow-soft cursor-pointer">
-              <Image
-                src={storyAssets.photoRight || '/images/home/beggin-home-hero-elemento-garrafa-principal.webp'}
-                alt="Beggin garrafa - lado direito"
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                sizes="(max-width: 768px) 100vw, 280px"
-              />
-              <div className="absolute inset-0 rounded-sm ring-1 ring-beggin-gold/20 transition-all duration-500 group-hover:ring-beggin-gold/50" />
+            <div className="relative z-[2] flex flex-col items-center gap-6 sm:flex-row sm:items-end sm:justify-end">
+              <motion.div
+                className="relative h-[280px] w-[260px] overflow-hidden rounded-[24px] border border-white/70 bg-white p-2 shadow-[0_22px_46px_rgba(47,42,28,0.16)] sm:h-[320px] sm:w-[300px] sm:translate-x-6"
+                initial="hidden"
+                animate={controls}
+                variants={photoMotion}
+                transition={{ ...transition, delay: 0.34 }}
+              >
+                <Image
+                  src={storyAssets.photoLeft}
+                  alt="Foto Beggin com garrafa, caixa e taça"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 78vw, (max-width: 1024px) 32vw, 300px"
+                />
+              </motion.div>
+
+              <motion.div
+                className="relative h-[280px] w-[480px] overflow-hidden rounded-[24px] border border-white/70 bg-white p-2 shadow-[0_22px_46px_rgba(47,42,28,0.16)] sm:h-[320px] sm:w-[520px] sm:-translate-x-6"
+                initial="hidden"
+                animate={controls}
+                variants={photoMotion}
+                transition={{ ...transition, delay: 0.42 }}
+              >
+                <Image
+                  src={storyAssets.photoRight}
+                  alt="Foto Beggin com kit, garrafa e taça"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 90vw, (max-width: 1024px) 54vw, 520px"
+                />
+              </motion.div>
             </div>
-          </motion.div>
+          </div>
         </div>
-      </div>
-
-      {/* Botanical decorations */}
-      <motion.div
-        className="pointer-events-none absolute -left-4 top-1/4 z-[3] hidden h-40 w-40 md:block"
-        initial="hidden"
-        animate={controls}
-        transition={{ duration: 1, delay: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-        variants={floatIn}
-        aria-hidden="true"
-      >
-        <Image
-          src={storyAssets.botanicalLeft || '/images/home/beggin-home-hero-elemento-erva-esquerda.png'}
-          alt=""
-          fill
-          className="object-contain opacity-60"
-          sizes="160px"
-        />
-      </motion.div>
-
-      <motion.div
-        className="pointer-events-none absolute -right-4 bottom-1/4 z-[3] hidden h-40 w-40 md:block"
-        initial="hidden"
-        animate={controls}
-        transition={{ duration: 1, delay: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
-        variants={floatIn}
-        aria-hidden="true"
-      >
-        <Image
-          src={storyAssets.botanicalRight || '/images/home/beggin-home-hero-elemento-erva-direita.png'}
-          alt=""
-          fill
-          className="object-contain opacity-60"
-          sizes="160px"
-        />
-      </motion.div>
-
-      {/* Red wave accents */}
-      <motion.div
-        className="pointer-events-none absolute -bottom-2 left-1/2 z-[3] hidden h-12 w-32 -translate-x-1/2 md:block"
-        initial="hidden"
-        animate={controls}
-        transition={{ duration: 0.8, delay: 1, ease: [0.25, 0.1, 0.25, 1] }}
-        variants={floatIn}
-        aria-hidden="true"
-      >
-        <Image
-          src={storyAssets.redWaves || '/images/home/beggin-home-hero-elemento-bandeiras.png'}
-          alt=""
-          fill
-          className="object-contain opacity-70"
-          sizes="128px"
-        />
       </motion.div>
     </section>
   );
