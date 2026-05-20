@@ -37,12 +37,11 @@ export function CocktailCard({ title, description, image, index }: CocktailCardP
           ? undefined
           : {
               y: -8,
-              scale: 1.02,
             }
       }
-      className="group relative overflow-hidden rounded-[6px] border border-[#b9a875]/40 bg-[#f5ede2] shadow-[0_18px_38px_rgba(47,42,28,0.12)] transition duration-300 hover:border-[#b99f60] hover:shadow-[0_28px_60px_rgba(47,42,28,0.16)] max-md:h-[390px]"
+      className="group relative flex h-[430px] w-full flex-col overflow-hidden border border-[#b99f60]/45 bg-[#f8f0df] shadow-[0_14px_30px_rgba(66,50,28,0.07)] transition duration-300 hover:-translate-y-1 hover:border-[#a9843e]/70 hover:bg-[#fbf3e4] hover:shadow-[0_22px_46px_rgba(66,50,28,0.11)] max-md:h-[390px]"
     >
-      <div className="pointer-events-none absolute inset-0 before:absolute before:inset-0 before:pointer-events-none before:bg-[radial-gradient(circle_at_16%_12%,rgba(185,159,96,0.12),transparent_24%),linear-gradient(180deg,rgba(255,255,255,0.58),rgba(245,237,224,0.16))]" />
+      <div className="pointer-events-none absolute inset-3 border border-[#b99f60]/30" />
 
       <div className="pointer-events-none absolute left-4 top-4 h-3 w-3 border-l border-t border-[#b9a875]/30" />
       <div className="pointer-events-none absolute right-4 top-4 h-3 w-3 border-r border-t border-[#b9a875]/30" />
@@ -50,15 +49,15 @@ export function CocktailCard({ title, description, image, index }: CocktailCardP
       <div className="pointer-events-none absolute right-4 bottom-4 h-3 w-3 border-r border-b border-[#b9a875]/30" />
 
       <div className="relative z-[2] mt-6 px-6 text-center">
-        <h3 className="font-serifDisplay text-lg font-semibold uppercase tracking-[0.1em] text-beggin-ink md:text-xl">
+        <h3 className="font-serifDisplay text-[1rem] font-semibold uppercase tracking-[0.12em] text-beggin-ink md:text-[1.08rem]">
           {title}
         </h3>
         <div className="mx-auto mt-3 h-px w-12 bg-beggin-gold/50" />
       </div>
 
-      <div className="relative z-[2] mx-auto mt-6 h-[240px] w-full max-w-[280px] overflow-hidden md:max-w-[300px]">
+      <div className="relative z-[2] mx-auto mt-7 h-[190px] w-full max-w-[205px] overflow-visible md:h-[205px] md:max-w-[220px]">
         <motion.div
-          whileHover={shouldReduceMotion ? undefined : { scale: 1.04 }}
+          whileHover={shouldReduceMotion ? undefined : { scale: 1.025 }}
           transition={{ duration: 0.5, ease: easeOut }}
           className="relative h-full w-full"
         >
@@ -66,14 +65,14 @@ export function CocktailCard({ title, description, image, index }: CocktailCardP
             src={image}
             alt={title}
             fill
-            className="object-cover"
-            sizes="(max-width: 768px) 70vw, 280px"
+            className="object-contain"
+            sizes="(max-width: 768px) 58vw, 220px"
           />
         </motion.div>
       </div>
 
-      <div className="relative z-[2] mt-6 px-6 pb-6 text-center">
-        <p className="font-serifDisplay text-[12px] font-bold uppercase tracking-[0.14em] text-beggin-ink/80">
+      <div className="relative z-[2] mt-auto px-6 pb-8 text-center">
+        <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.14em] text-beggin-ink/75">
           {description}
         </p>
       </div>
