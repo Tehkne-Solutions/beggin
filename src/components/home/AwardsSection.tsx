@@ -57,13 +57,13 @@ export function AwardsSection() {
       className="paper-texture relative overflow-hidden bg-[#f7f0df] px-0 py-20 lg:py-24"
     >
       <div className="relative mx-auto grid w-[calc(100%-48px)] max-w-[1540px] items-center gap-12 border-y border-[#c8b98e]/30 py-14 lg:w-[calc(100%-64px)] lg:grid-cols-[0.28fr_0.72fr] lg:py-16">
-        {/* Flor ornamental direita */}
-        <div className="pointer-events-none absolute right-[-20px] top-1/2 z-[1] hidden h-[300px] w-[220px] -translate-y-1/2 opacity-65 lg:block">
+        {/* Flor ornamental direita (reposicionada no canto inferior direito como ornamento de borda) */}
+        <div className="pointer-events-none absolute bottom-[-18px] right-[-72px] z-[1] hidden h-[320px] w-[240px] opacity-55 lg:block">
           <Image
             src={awardAssets.flowerRight}
             alt=""
             fill
-            className="object-contain object-right"
+            className="object-contain object-right-bottom"
             sizes="260px"
           />
         </div>
