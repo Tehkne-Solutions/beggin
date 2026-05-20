@@ -85,14 +85,13 @@ export function HeroSun() {
       aria-hidden="true"
     >
       <motion.div style={{ x: mouseX, y: mouseY }} className="relative h-full w-full">
-        <Image
-          src={heroAssets.sun}
-          alt=""
-          fill
-          priority
-          sizes="170px"
-          className="object-contain"
-        />
+          <Image
+            src={heroAssets.sun}
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-contain"
+          />
       </motion.div>
     </motion.div>
   );
