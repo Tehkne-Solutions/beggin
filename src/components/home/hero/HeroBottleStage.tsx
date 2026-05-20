@@ -2,11 +2,12 @@
 
 import Image from 'next/image';
 import { motion, useMotionValue, useReducedMotion, useSpring } from 'framer-motion';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { heroAssets } from '@/data/hero-assets';
 
 export function HeroBottleStage() {
   const shouldReduceMotion = useReducedMotion();
+  const [isMobile, setIsMobile] = useState(false);
   const pointerX = useMotionValue(0);
   const pointerY = useMotionValue(0);
   const pointerRotate = useMotionValue(0);
@@ -16,6 +17,21 @@ export function HeroBottleStage() {
   const rotate = useSpring(pointerRotate, { stiffness: 70, damping: 28, mass: 0.4 });
 
   useEffect(() => {
+    // Detect mobile based on screen size
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  useEffect(() => {
+    // Skip mouse tracking on mobile or if reduced motion is preferred
+    if (isMobile || shouldReduceMotion) return;
+
     const reset = () => {
       pointerX.set(0);
       pointerY.set(0);
@@ -35,20 +51,16 @@ export function HeroBottleStage() {
       pointerRotate.set(normalizedX * 0.2);
     };
 
-    if (!shouldReduceMotion) {
-      window.addEventListener('pointermove', handlePointerMove);
-      window.addEventListener('blur', reset);
-      document.documentElement.addEventListener('mouseleave', reset);
-    }
+    window.addEventListener('pointermove', handlePointerMove);
+    window.addEventListener('blur', reset);
+    document.documentElement.addEventListener('mouseleave', reset);
 
     return () => {
-      if (!shouldReduceMotion) {
-        window.removeEventListener('pointermove', handlePointerMove);
-        window.removeEventListener('blur', reset);
-        document.documentElement.removeEventListener('mouseleave', reset);
-      }
+      window.removeEventListener('pointermove', handlePointerMove);
+      window.removeEventListener('blur', reset);
+      document.documentElement.removeEventListener('mouseleave', reset);
     };
-  }, [pointerRotate, pointerX, pointerY, shouldReduceMotion]);
+  }, [pointerRotate, pointerX, pointerY, shouldReduceMotion, isMobile]);
 
   return (
     <div
@@ -62,9 +74,12 @@ export function HeroBottleStage() {
           transition={{ duration: 1.1, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
           className="h-full w-full"
         >
+          {/* Disable hover effects on mobile */}
           <motion.div
-            whileHover={{ scale: 1.02, y: -6 }}
-            transition={{ type: 'spring', stiffness: 200, damping: 22, mass: 0.45 }}
+            {...(!isMobile ? {
+              whileHover: { scale: 1.02, y: -6 },
+              transition: { type: 'spring', stiffness: 200, damping: 22, mass: 0.45 }
+            } : {})}
             className="pointer-events-auto h-full w-full"
           >
             <motion.div
@@ -77,7 +92,7 @@ export function HeroBottleStage() {
                 alt="Beg Gin"
                 fill
                 priority
-                sizes="(max-width: 768px) 360px, 912px"
+                sizes="(max-width: 768px) 360px, (max-width: 1280px) 620px, 912px"
                 className="object-contain"
               />
             </motion.div>
