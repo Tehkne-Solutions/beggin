@@ -69,9 +69,9 @@ export function Footer() {
             <Image
               src="/images/footer/beggin-footer-logo.png"
               alt="Beg Gin"
-              width={160}
-              height={160}
-              className="object-contain"
+              width={220}
+              height={220}
+              className="h-auto w-[150px] object-contain lg:w-[180px]"
             />
           </div>
 
