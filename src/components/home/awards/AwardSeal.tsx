@@ -7,16 +7,10 @@ interface AwardSealProps {
   index: number;
 }
 
-const sealSizes = {
-  0: { h: 170, w: 170 },
-  1: { h: 170, w: 170 },
-  2: { h: 165, w: 165 },
-  3: { h: 165, w: 165 },
-};
+const sealSize = 160;
+const sizeStr = `${sealSize}px`;
 
-export function AwardSeal({ title, image, index }: AwardSealProps) {
-  const size = sealSizes[index as keyof typeof sealSizes] || { h: 170, w: 170 };
-  const sizeStr = `${size.h}px`;
+export function AwardSeal({ title, image }: AwardSealProps) {
 
   const sealVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -31,10 +25,10 @@ export function AwardSeal({ title, image, index }: AwardSealProps) {
   };
 
   return (
-    <article className="group relative flex min-h-[190px] items-center justify-center">
+    <article className="group relative flex h-[160px] w-[160px] items-center justify-center">
       <motion.div
-        className="relative"
-        style={{ height: size.h, width: size.w }}
+        className="relative h-full w-full"
+        style={{ height: sealSize, width: sealSize }}
         variants={sealVariants}
         whileHover={{
           y: -6,

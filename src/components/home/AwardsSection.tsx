@@ -54,11 +54,11 @@ export function AwardsSection() {
     <section
       ref={sectionRef}
       id="premios"
-      className="paper-texture relative overflow-hidden bg-[#f7f0df] px-0 py-20 lg:py-24"
+      className="paper-texture relative overflow-hidden bg-[#f7f0df] px-0 py-10 lg:py-12"
     >
-      <div className="relative mx-auto grid w-[calc(100%-48px)] max-w-[1540px] items-center gap-12 border-y border-[#c8b98e]/30 py-14 lg:w-[calc(100%-64px)] lg:grid-cols-[0.28fr_0.72fr] lg:py-16">
+      <div className="relative mx-auto grid w-[calc(100%-48px)] max-w-[1540px] items-start gap-8 border-y border-[#c8b98e]/30 py-8 lg:w-[calc(100%-64px)] lg:grid-cols-[0.27fr_0.73fr] lg:py-9">
         {/* Flor ornamental direita (reposicionada no canto inferior direito como ornamento de borda) */}
-        <div className="pointer-events-none absolute bottom-[-18px] right-[-72px] z-[1] hidden h-[320px] w-[240px] opacity-55 lg:block">
+        <div className="pointer-events-none absolute bottom-[-36px] right-[-120px] z-[1] hidden h-[340px] w-[260px] opacity-40 lg:block">
           <Image
             src={awardAssets.flowerRight}
             alt=""
@@ -75,18 +75,18 @@ export function AwardsSection() {
           variants={fadeInUp}
           transition={{ duration: 0.7, ease: 'easeOut' }}
         >
-          <p className="font-serifDisplay text-[13px] font-bold uppercase tracking-[0.22em] text-beggin-ink xl:text-[14px]">
+          <p className="font-serifDisplay text-[12px] font-bold uppercase tracking-[0.24em] text-beggin-ink xl:text-[13px]">
             {awardsContent.eyebrow}
             <span className="ml-3 text-beggin-gold">✧</span>
           </p>
 
-          <h2 className="mt-7 max-w-[360px] font-serifDisplay text-[clamp(2.7rem,3.4vw,4.5rem)] font-semibold uppercase leading-[0.9] text-beggin-ink">
+          <h2 className="mt-5 max-w-[300px] font-serifDisplay text-[clamp(2.1rem,2.8vw,3.5rem)] font-semibold uppercase leading-[0.92] text-beggin-ink">
             Reconhecido.
             <br />
             Premiado.
           </h2>
 
-          <div className="relative mt-7 h-[22px] w-[48px]">
+          <div className="relative mt-6 h-[22px] w-[48px]">
             <Image
               src={awardAssets.waves}
               alt=""
@@ -98,7 +98,7 @@ export function AwardsSection() {
 
           <a
             href="#"
-            className="group relative z-[6] mt-9 inline-flex w-fit items-center gap-4 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-beggin-ink xl:text-[13px]"
+            className="group relative z-[6] mt-6 inline-flex w-fit items-center gap-4 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-beggin-ink xl:text-[13px]"
           >
             <span className="border-b border-beggin-gold/80 pb-2 pr-8 transition-colors duration-300 group-hover:border-beggin-red">
               {awardsContent.cta}
@@ -111,7 +111,7 @@ export function AwardsSection() {
 
         {/* Coluna Direita - Selos */}
         <motion.div
-          className="relative z-[3] grid items-center gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12"
+          className="relative z-[3] grid items-center gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8"
           animate={controls}
           initial="hidden"
           variants={containerVariants}
