@@ -32,7 +32,7 @@ export function Header() {
             className="relative flex w-[82px] items-center overflow-visible lg:w-[96px]"
           >
             <Image
-              src="/images/footer/beggin-footer-logo.png"
+              src="/images/home/beggin-header-logo.avif"
               alt="Beg Gin"
               fill
               priority
