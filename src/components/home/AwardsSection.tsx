@@ -54,7 +54,7 @@ export function AwardsSection() {
     <section
       ref={sectionRef}
       id="premios"
-      className="paper-texture relative overflow-hidden bg-[#f7f0df] px-0 py-10 lg:py-12"
+      className="paper-texture relative overflow-hidden bg-[#fefaf3] px-0 py-10 lg:py-12"
     >
       <div className="relative mx-auto grid w-[calc(100%-48px)] max-w-[1540px] items-start gap-8 border-y border-[#c8b98e]/30 py-8 lg:w-[calc(100%-64px)] lg:grid-cols-[0.27fr_0.73fr] lg:py-9">
         {/* Flor ornamental direita (reposicionada no canto inferior direito como ornamento de borda) */}

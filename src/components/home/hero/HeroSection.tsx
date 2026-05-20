@@ -7,10 +7,10 @@ export function HeroSection() {
   return (
     <section
       id="inicio"
-      className="paper-texture relative min-h-[820px] overflow-hidden pt-[76px] max-lg:min-h-[760px] max-md:min-h-[820px]"
+      className="paper-texture relative min-h-[820px] overflow-hidden pt-[76px] max-lg:min-h-[760px] max-md:min-h-[820px] bg-[#fcf7f1]"
     >
       <div
-        className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_62%_39%,rgba(255,255,255,.86),transparent_31%),radial-gradient(circle_at_78%_30%,rgba(185,154,93,.13),transparent_24%),linear-gradient(180deg,rgba(251,247,238,.98),rgba(246,237,219,.95))]"
+        className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_62%_39%,rgba(255,255,255,.86),transparent_31%),radial-gradient(circle_at_78%_30%,rgba(185,154,93,.13),transparent_24%),linear-gradient(180deg,rgba(252,247,241,.98),rgba(252,247,241,.95))]"
         aria-hidden="true"
       />
 

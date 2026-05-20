@@ -39,7 +39,7 @@ export function CocktailCard({ title, description, image, index }: CocktailCardP
               y: -8,
             }
       }
-      className="group relative flex h-[430px] w-full flex-col overflow-hidden border border-[#b99f60]/45 bg-[#f8f0df] shadow-[0_14px_30px_rgba(66,50,28,0.07)] transition duration-300 hover:-translate-y-1 hover:border-[#a9843e]/70 hover:bg-[#fbf3e4] hover:shadow-[0_22px_46px_rgba(66,50,28,0.11)] max-md:h-[390px]"
+      className="group relative flex h-[430px] w-full flex-col overflow-hidden border border-[#b99f60]/45 bg-[#fffcf6] shadow-[0_14px_30px_rgba(66,50,28,0.07)] transition duration-300 hover:-translate-y-1 hover:border-[#a9843e]/70 hover:bg-[#fbf3e4] hover:shadow-[0_22px_46px_rgba(66,50,28,0.11)] max-md:h-[390px]"
     >
       <div className="pointer-events-none absolute inset-3 border border-[#b99f60]/30" />
 

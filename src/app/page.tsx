@@ -4,6 +4,7 @@ import { StorySection } from '@/components/home/StorySection';
 import { CocktailsSection } from '@/components/home/CocktailsSection';
 import { AwardsSection } from '@/components/home/AwardsSection';
 import { SustainabilitySection } from '@/components/home/SustainabilitySection';
+import { Footer } from '@/components/layout/Footer';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <CocktailsSection />
       <AwardsSection />
       <SustainabilitySection />
+      <Footer />
     </main>
   );
 }

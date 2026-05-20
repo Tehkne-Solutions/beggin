@@ -30,7 +30,7 @@ export function CocktailsSection() {
     <section
       ref={ref}
       id="coqueteis"
-      className="paper-texture relative overflow-hidden bg-[#f7f0df] px-5 py-24 md:px-8 lg:py-28"
+      className="paper-texture relative overflow-hidden bg-[#fdf9f1] px-5 py-24 md:px-8 lg:py-28"
     >
       <div className="pointer-events-none absolute right-[-56px] top-10 z-[1] hidden h-[420px] w-[260px] opacity-80 lg:block">
         <Image

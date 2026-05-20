@@ -16,7 +16,7 @@ export function SustainabilitySection() {
   return (
     <section
       id="sustentabilidade"
-      className="paper-texture relative overflow-hidden bg-[#dfe5cc] px-5 py-12 md:px-8 lg:py-14"
+      className="paper-texture relative overflow-hidden bg-[#dfdec9] px-5 py-12 md:px-8 lg:py-14"
     >
       <div className="relative mx-auto min-h-[340px] max-w-[1500px]">
         <div className="pointer-events-none absolute left-[-44px] top-[26px] z-[1] hidden h-[310px] w-[190px] opacity-70 lg:block">
