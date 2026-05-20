@@ -10,18 +10,16 @@ import { Reveal } from '@/components/motion/Reveal';
 export function HeroTextBlock() {
   return (
     <div className="absolute left-[5.2%] top-[18.5%] z-[9] max-w-[620px] md:left-[6.4vw] md:top-[19.5%] max-md:left-6 max-md:right-6 max-md:top-[12%]">
-      <Reveal variant="revealClip" className="overflow-hidden">
-        <motion.h1
-          initial={false}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.05, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
-          className="font-serifDisplay text-[clamp(7.02rem,11.7vw,13.78rem)] font-semibold uppercase leading-[0.78] tracking-[0em] text-beggin-ink max-md:text-[clamp(5.6rem,24vw,8.4rem)]"
-        >
-          BEG
-          <br />
-          GIN
-        </motion.h1>
-      </Reveal>
+      <motion.h1
+        initial={{ opacity: 0, y: 42, clipPath: 'inset(0 0 100% 0)' }}
+        animate={{ opacity: 1, y: 0, clipPath: 'inset(0 0 0% 0)' }}
+        transition={{ duration: 1.05, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
+        className="font-serifDisplay text-[clamp(7.02rem,11.7vw,13.78rem)] font-semibold uppercase leading-[0.78] tracking-[0em] text-beggin-ink max-md:text-[clamp(5.6rem,24vw,8.4rem)]"
+      >
+        BEG
+        <br />
+        GIN
+      </motion.h1>
 
       <Reveal delay={0.18} className="mt-8 max-w-[320px] text-center md:ml-5 max-md:mt-6">
         <div className="relative mx-auto mb-5 h-[20px] w-[42px]">
