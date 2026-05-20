@@ -18,22 +18,26 @@ export function Header() {
   const { scrollY } = useScroll();
   const height = useTransform(scrollY, [0, 80], [76, 56]);
   const background = useTransform(scrollY, [0, 80], ['rgba(251, 247, 238, 0.72)', 'rgba(251, 247, 238, 0.92)']);
-  const logoScale = useTransform(scrollY, [0, 80], [1, 0.82]);
+  const logoHeight = useTransform(scrollY, [0, 80], [68, 42]);
 
   return (
     <motion.header
       style={{ height, background }}
       className="fixed inset-x-0 top-0 z-50 border-b border-beggin-line/70 backdrop-blur-md"
     >
-      <div className="mx-auto grid h-full max-w-[1500px] grid-cols-[120px_1fr_120px] items-center px-5 sm:px-8 lg:grid-cols-[170px_1fr_210px] lg:px-12">
+      <div className="mx-auto grid h-full max-w-[1500px] grid-cols-[110px_1fr_110px] items-center px-5 sm:px-8 lg:grid-cols-[150px_1fr_190px] lg:px-12">
         <Link href="#inicio" aria-label="Beg Gin" className="flex items-center">
-          <motion.div style={{ scale: logoScale }} className="origin-left">
+          <motion.div
+            style={{ height: logoHeight }}
+            className="relative flex w-[82px] items-center overflow-visible lg:w-[96px]"
+          >
             <Image
               src="/images/footer/beggin-footer-logo.png"
               alt="Beg Gin"
-              width={160}
-              height={160}
-              className="h-auto w-[120px] object-contain"
+              fill
+              priority
+              sizes="96px"
+              className="object-contain object-left"
             />
           </motion.div>
         </Link>
