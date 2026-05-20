@@ -7,7 +7,7 @@ import { heroAssets } from '@/data/hero-assets';
 
 export function HeroTextBlock() {
   return (
-    <div className="absolute left-[5.2%] top-[21%] z-[9] max-w-[620px] md:left-[6.4vw] md:top-[22.5%] max-md:left-6 max-md:right-6 max-md:top-[12%]">
+    <div className="absolute left-[5.2%] top-[18.5%] z-[9] max-w-[620px] md:left-[6.4vw] md:top-[19.5%] max-md:left-6 max-md:right-6 max-md:top-[12%]">
       <motion.h1
         initial={false}
         animate={{ opacity: 1, y: 0 }}

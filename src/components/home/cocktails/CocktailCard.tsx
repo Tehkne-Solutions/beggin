@@ -40,9 +40,9 @@ export function CocktailCard({ title, description, image, index }: CocktailCardP
               scale: 1.02,
             }
       }
-      className="group relative flex h-[430px] w-full flex-col overflow-hidden rounded-[14px] border border-[#c8b98e]/25 bg-[#fbf6ea] shadow-[0_14px_30px_rgba(47,42,28,0.08)] transition duration-300 hover:border-[#b99f60] hover:shadow-[0_24px_50px_rgba(47,42,28,0.12)] max-md:h-[390px]"
+      className="group relative overflow-hidden rounded-[6px] border border-[#b9a875]/40 bg-[#f5ede2] shadow-[0_18px_38px_rgba(47,42,28,0.12)] transition duration-300 hover:border-[#b99f60] hover:shadow-[0_28px_60px_rgba(47,42,28,0.16)] max-md:h-[390px]"
     >
-      <div className="pointer-events-none absolute inset-0 border border-[#b9a875]/15" />
+      <div className="pointer-events-none absolute inset-0 before:absolute before:inset-0 before:pointer-events-none before:bg-[radial-gradient(circle_at_16%_12%,rgba(185,159,96,0.12),transparent_24%),linear-gradient(180deg,rgba(255,255,255,0.58),rgba(245,237,224,0.16))]" />
 
       <div className="pointer-events-none absolute left-4 top-4 h-3 w-3 border-l border-t border-[#b9a875]/30" />
       <div className="pointer-events-none absolute right-4 top-4 h-3 w-3 border-r border-t border-[#b9a875]/30" />
@@ -56,7 +56,7 @@ export function CocktailCard({ title, description, image, index }: CocktailCardP
         <div className="mx-auto mt-3 h-px w-12 bg-beggin-gold/50" />
       </div>
 
-      <div className="relative z-[2] mx-auto mt-6 h-[240px] w-full max-w-[260px] overflow-hidden md:max-w-[280px]">
+      <div className="relative z-[2] mx-auto mt-6 h-[240px] w-full max-w-[280px] overflow-hidden md:max-w-[300px]">
         <motion.div
           whileHover={shouldReduceMotion ? undefined : { scale: 1.04 }}
           transition={{ duration: 0.5, ease: easeOut }}
@@ -66,8 +66,8 @@ export function CocktailCard({ title, description, image, index }: CocktailCardP
             src={image}
             alt={title}
             fill
-            className="object-contain"
-            sizes="(max-width: 768px) 70vw, 260px"
+            className="object-cover"
+            sizes="(max-width: 768px) 70vw, 280px"
           />
         </motion.div>
       </div>

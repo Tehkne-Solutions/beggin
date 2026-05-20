@@ -47,7 +47,7 @@ export function HeroBottleStage() {
 
   return (
     <div
-      className="pointer-events-none absolute left-[65%] top-[55%] z-[5] h-[clamp(624px,86vh,912px)] w-[clamp(624px,50vw,912px)] -translate-x-1/2 -translate-y-1/2 max-lg:left-[64%] max-lg:w-[744px] max-md:left-1/2 max-md:top-[78%] max-md:h-[408px] max-md:w-[360px]"
+      className="pointer-events-none absolute left-[65%] top-[51.5%] z-[5] h-[clamp(624px,86vh,912px)] w-[clamp(624px,50vw,912px)] -translate-x-1/2 -translate-y-1/2 max-lg:left-[64%] max-lg:w-[744px] max-md:left-1/2 max-md:top-[78%] max-md:h-[408px] max-md:w-[360px]"
       aria-hidden="true"
     >
       <motion.div style={{ x, y, rotate }} className="h-full w-full">

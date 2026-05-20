@@ -47,16 +47,16 @@ export function StorySection() {
       className="paper-texture relative overflow-hidden bg-[#f7f0df] px-5 py-20 lg:px-8 lg:py-24"
     >
       <motion.div
-        className="relative mx-auto w-full max-w-[calc(100vw-64px)] overflow-hidden border border-[#c8b98e]/45 bg-[#dfe5cc] px-10 py-12 shadow-[0_22px_60px_rgba(47,42,28,0.08)] lg:px-16 xl:px-20"
+        className="relative mx-auto w-full max-w-[calc(100vw-64px)] overflow-hidden border border-[#b9a875]/38 bg-[#dfdecb] px-10 py-12 shadow-[0_22px_60px_rgba(47,42,28,0.08)] lg:px-16 xl:px-20"
         initial="hidden"
         animate={controls}
         variants={panelMotion}
         transition={transition}
       >
-        <div className="pointer-events-none absolute inset-[22px] z-[1] border border-[#b9a875]/35" />
+        <div className="pointer-events-none absolute inset-[22px] z-[1] border border-[#b9a875]/32" />
 
         <motion.div
-          className="pointer-events-none absolute bottom-[-28px] left-[-26px] z-[1] h-[300px] w-[300px] opacity-70 lg:h-[360px] lg:w-[360px]"
+          className="pointer-events-none absolute bottom-[-42px] left-[-38px] z-[1] h-[260px] w-[260px] opacity-62 lg:h-[320px] lg:w-[320px]"
           initial="hidden"
           animate={controls}
           variants={fadeInUp}
@@ -73,7 +73,7 @@ export function StorySection() {
         </motion.div>
 
         <motion.div
-          className="pointer-events-none absolute right-[44px] top-1/2 z-[3] hidden h-[26px] w-[48px] -translate-y-1/2 lg:block"
+          className="pointer-events-none absolute right-[38px] top-1/2 z-[3] hidden h-[28px] w-[54px] -translate-y-1/2 lg:block"
           initial="hidden"
           animate={controls}
           variants={fadeInUp}
@@ -89,7 +89,7 @@ export function StorySection() {
           />
         </motion.div>
 
-        <div className="relative z-[3] grid gap-8 lg:grid-cols-[0.95fr_1.05fr_0.42fr_1.55fr] lg:items-center lg:gap-6">
+        <div className="relative z-[3] grid gap-8 lg:grid-cols-[1.18fr_1.12fr_0.36fr_1.55fr] lg:items-center lg:gap-3">
           <motion.div
             className="relative z-[4] flex min-h-[390px] flex-col justify-center"
             initial="hidden"
@@ -97,20 +97,26 @@ export function StorySection() {
             variants={fadeInUp}
             transition={{ ...transition, delay: 0.18 }}
           >
-            <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.28em] text-beggin-ink">
+            <p className="font-serifDisplay text-[12px] xl:text-[13px] font-bold uppercase tracking-[0.24em] text-beggin-ink">
               {storyContent.eyebrow}
               <span className="ml-3 text-beggin-gold">✧</span>
             </p>
-            <h2 className="mt-7 max-w-[450px] font-serifDisplay text-[clamp(2.45rem,3.1vw,4.1rem)] font-semibold uppercase leading-[0.95] text-beggin-ink">
-              {storyContent.title}
+            <h2 className="mt-7 max-w-[500px] font-serifDisplay text-[clamp(3rem,3.35vw,4.55rem)] font-semibold uppercase leading-[0.95] text-beggin-ink">
+              De quatro amigos
+              <br />
+              para o mundo.
             </h2>
-            <div className="mt-7 flex h-4 w-10 flex-col justify-between" aria-hidden="true">
-              <span className="h-[2px] w-full rounded-full bg-beggin-red" />
-              <span className="h-[2px] w-full rounded-full bg-beggin-red" />
-              <span className="h-[2px] w-full rounded-full bg-beggin-red" />
+            <div className="relative mt-7 h-[22px] w-[48px]" aria-hidden="true">
+              <Image
+                src={storyAssets.waves}
+                alt=""
+                fill
+                className="object-contain"
+                sizes="48px"
+              />
             </div>
 
-            <div className="relative mt-8 h-[58px] w-[58px] opacity-75">
+            <div className="relative mt-8 h-[64px] w-[64px] self-center opacity-75">
               <Image
                 src={storyAssets.smallSun}
                 alt=""
@@ -122,9 +128,9 @@ export function StorySection() {
 
             <a
               href="#coqueteis"
-              className="group mt-10 inline-flex items-center gap-4 font-serifDisplay text-[11px] font-bold uppercase tracking-[0.18em] text-beggin-ink"
+              className="group mt-9 inline-flex items-center gap-4 font-serifDisplay text-[12px] xl:text-[13px] font-bold uppercase tracking-[0.17em] text-beggin-ink"
             >
-              <span className="border-b border-beggin-gold/70 pb-3 transition-colors duration-300 group-hover:border-beggin-red">
+              <span className="border-b border-beggin-gold/75 pb-3 transition-colors duration-300 group-hover:border-beggin-red">
                 {storyContent.cta}
               </span>
               <span className="text-beggin-gold transition-transform duration-300 group-hover:translate-x-1">✧</span>
@@ -132,7 +138,7 @@ export function StorySection() {
           </motion.div>
 
           <motion.div
-            className="relative z-[3] h-[315px] w-full max-w-[360px] lg:justify-self-end overflow-hidden bg-transparent lg:h-[340px]"
+            className="relative z-[3] h-[320px] w-full max-w-[395px] lg:justify-self-end overflow-hidden bg-transparent lg:h-[330px]"
             initial="hidden"
             animate={controls}
             variants={photoMotion}
@@ -142,13 +148,13 @@ export function StorySection() {
               src={storyAssets.photoLeft}
               alt="Foto Beggin com garrafa, caixa e taça"
               fill
-              className="object-contain"
-              sizes="(max-width: 768px) 86vw, 360px"
+              className="object-cover"
+              sizes="(max-width: 768px) 86vw, 395px"
             />
           </motion.div>
 
           <motion.div
-            className="pointer-events-none relative z-[8] mx-[-26px] h-[210px] w-[210px] justify-self-center"
+            className="pointer-events-none relative z-[9] mx-[-78px] h-[235px] w-[235px] justify-self-center"
             initial="hidden"
             animate={controls}
             variants={sealMotion}
@@ -164,7 +170,7 @@ export function StorySection() {
           </motion.div>
 
           <motion.div
-            className="relative z-[3] h-[315px] w-full max-w-[560px] lg:justify-self-start overflow-hidden bg-transparent lg:h-[340px]"
+            className="relative z-[3] h-[320px] w-full max-w-[610px] lg:justify-self-start overflow-hidden bg-transparent lg:h-[330px]"
             initial="hidden"
             animate={controls}
             variants={photoMotion}
@@ -174,8 +180,8 @@ export function StorySection() {
               src={storyAssets.photoRight}
               alt="Foto Beggin com garrafa e taça"
               fill
-              className="object-contain"
-              sizes="(max-width: 768px) 90vw, 560px"
+              className="object-cover"
+              sizes="(max-width: 768px) 90vw, 610px"
             />
           </motion.div>
         </div>
