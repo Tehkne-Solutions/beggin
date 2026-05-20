@@ -27,7 +27,7 @@ function TopClouds() {
               fill
               priority
               sizes="100vw"
-              className="object-contain object-top"
+              className="object-contain object-top grayscale saturate-0"
             />
           </div>
         ))}
@@ -54,7 +54,7 @@ export function HeroClouds() {
                 fill
                 priority
                 sizes="100vw"
-                className="object-contain object-bottom"
+                className="object-contain object-bottom grayscale saturate-0"
               />
             </div>
           ))}

@@ -36,7 +36,7 @@ export function Footer() {
             alt=""
             fill
             sizes="420px"
-            className="object-contain opacity-80 invert"
+            className="object-contain opacity-35 grayscale saturate-0 mix-blend-normal"
           />
         </motion.div>
       </div>
@@ -52,7 +52,7 @@ export function Footer() {
             alt=""
             fill
             sizes="460px"
-            className="object-contain opacity-80 invert"
+            className="object-contain opacity-35 grayscale saturate-0 mix-blend-normal"
           />
         </motion.div>
       </div>
@@ -68,7 +68,7 @@ export function Footer() {
           <div className="max-w-[220px] lg:max-w-none">
             <Image
               src="/images/footer/beggin-footer-logo.png"
-              alt="Beggin Gin"
+              alt="Beg Gin"
               width={160}
               height={160}
               className="object-contain"
