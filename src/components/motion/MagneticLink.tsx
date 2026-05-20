@@ -1,10 +1,13 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { ComponentPropsWithoutRef, useEffect, useRef } from 'react';
 import { motion, useReducedMotion, useMotionValue } from 'framer-motion';
-import type { AnchorHTMLAttributes, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
-type MagneticLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
+type MagneticLinkProps = Omit<
+  ComponentPropsWithoutRef<typeof motion.a>,
+  'ref' | 'onDrag' | 'onDragStart' | 'onDragEnd' | 'onDragEnter' | 'onDragLeave' | 'onDragOver' | 'onDrop'
+> & {
   children: ReactNode;
   className?: string;
 };

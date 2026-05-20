@@ -8,7 +8,7 @@ export function useScrollProgressValue(
   outputRange: [number, number] = [0, 1],
 ) {
   const { scrollYProgress } = useScroll({
-    target: target?.current ?? undefined,
+    target,
     offset: ['start start', 'end start'],
   });
 

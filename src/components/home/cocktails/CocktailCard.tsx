@@ -77,5 +77,6 @@ export function CocktailCard({ title, description, image, index }: CocktailCardP
         </p>
       </div>
     </motion.article>
+    </TiltCard>
   );
 }
