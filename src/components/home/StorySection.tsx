@@ -65,10 +65,10 @@ export function StorySection() {
     <section
       ref={ref}
       id="historia"
-      className="paper-texture relative overflow-hidden bg-[#f7f0df] px-6 py-20 lg:px-8 lg:py-24"
+      className="paper-texture relative overflow-hidden bg-[#f7f0df] px-5 py-20 lg:px-8 lg:py-24"
     >
       <motion.div
-        className="relative mx-auto w-full max-w-[1540px] overflow-hidden border border-[#c8b98e]/45 bg-[#dfe5cc] px-8 py-10 shadow-[0_22px_60px_rgba(47,42,28,0.08)] sm:px-12 lg:px-16 xl:px-20"
+        className="relative mx-auto min-h-[560px] w-full max-w-[calc(100vw-64px)] overflow-hidden border border-[#c8b98e]/45 bg-[#dfe5cc] px-10 py-12 shadow-[0_22px_60px_rgba(47,42,28,0.08)] lg:min-h-[585px] lg:px-16 xl:px-20"
         initial="hidden"
         animate={controls}
         variants={panelMotion}
@@ -77,7 +77,7 @@ export function StorySection() {
         <div className="pointer-events-none absolute inset-[22px] z-[1] border border-[#b9a875]/35" />
 
         <motion.div
-          className="pointer-events-none absolute bottom-0 left-0 z-[1] hidden h-[260px] w-[260px] opacity-75 sm:block sm:h-[300px] sm:w-[300px] lg:h-[340px] lg:w-[340px]"
+          className="pointer-events-none absolute bottom-[-10px] left-[-8px] z-[1] h-[285px] w-[285px] opacity-75 lg:h-[360px] lg:w-[360px]"
           initial="hidden"
           animate={controls}
           variants={fadeInUp}
@@ -89,15 +89,13 @@ export function StorySection() {
             alt=""
             fill
             className="object-contain object-left-bottom"
-            sizes="340px"
+            sizes="360px"
           />
         </motion.div>
 
-        <div className="pointer-events-none absolute right-8 top-[32%] hidden h-[148px] w-[78px] rounded-full border border-beggin-red/15 bg-beggin-red/5 opacity-70 md:block" aria-hidden="true" />
-
-        <div className="relative z-[3] grid gap-10 lg:grid-cols-[0.35fr_0.65fr] lg:items-end lg:gap-14">
+        <div className="relative z-[3] grid gap-10 lg:grid-cols-[0.95fr_1.15fr_0.72fr_1.65fr] lg:items-center lg:gap-8">
           <motion.div
-            className="relative z-[3] max-w-[460px] pt-6 lg:pt-0"
+            className="relative z-[4] flex min-h-[430px] flex-col justify-center"
             initial="hidden"
             animate={controls}
             variants={fadeInUp}
@@ -116,19 +114,19 @@ export function StorySection() {
               <span className="h-[2px] w-full rounded-full bg-beggin-red" />
             </div>
 
-            <div className="relative mt-8 h-[64px] w-[64px]">
+            <div className="relative mt-7 h-[58px] w-[58px]">
               <Image
                 src={storyAssets.smallSun}
                 alt=""
                 fill
                 className="object-contain opacity-75"
-                sizes="64px"
+                sizes="58px"
               />
             </div>
 
             <a
               href="#coqueteis"
-              className="group mt-14 inline-flex items-center gap-4 font-serifDisplay text-[11px] font-bold uppercase tracking-[0.18em] text-beggin-ink"
+              className="group mt-10 inline-flex items-center gap-4 font-serifDisplay text-[11px] font-bold uppercase tracking-[0.18em] text-beggin-ink"
             >
               <span className="border-b border-beggin-gold/70 pb-3 transition-colors duration-300 group-hover:border-beggin-red">
                 {storyContent.cta}
@@ -137,58 +135,53 @@ export function StorySection() {
             </a>
           </motion.div>
 
-          <div className="relative">
-            <motion.div
-              className="pointer-events-none absolute left-1/2 top-1/2 z-[5] flex h-[150px] w-[150px] -translate-x-1/2 -translate-y-1/2 sm:h-[220px] sm:w-[220px]"
-              initial="hidden"
-              animate={controls}
-              variants={sealMotion}
-              transition={{ ...transition, delay: 0.52 }}
-              aria-hidden="true"
-            >
-              <Image
-                src={storyAssets.centerSeal}
-                alt=""
-                fill
-                className="animate-sealSwingSoft object-contain"
-                sizes="220px"
-              />
-            </motion.div>
+          <motion.div
+            className="relative z-[3] h-[330px] w-full overflow-hidden bg-transparent lg:h-[360px]"
+            initial="hidden"
+            animate={controls}
+            variants={photoMotion}
+            transition={{ ...transition, delay: 0.28 }}
+          >
+            <Image
+              src={storyAssets.photoLeft}
+              alt="Foto Beggin com garrafa, caixa e taça"
+              fill
+              className="object-contain"
+              sizes="(max-width: 768px) 86vw, 320px"
+            />
+          </motion.div>
 
-            <div className="relative z-[2] flex flex-col items-center gap-6 sm:flex-row sm:items-end sm:justify-end">
-              <motion.div
-                className="relative h-[280px] w-[260px] overflow-hidden rounded-[24px] border border-white/70 bg-white p-2 shadow-[0_22px_46px_rgba(47,42,28,0.16)] sm:h-[320px] sm:w-[300px] sm:translate-x-6"
-                initial="hidden"
-                animate={controls}
-                variants={photoMotion}
-                transition={{ ...transition, delay: 0.34 }}
-              >
-                <Image
-                  src={storyAssets.photoLeft}
-                  alt="Foto Beggin com garrafa, caixa e taça"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 640px) 78vw, (max-width: 1024px) 32vw, 300px"
-                />
-              </motion.div>
+          <motion.div
+            className="pointer-events-none relative z-[8] mx-[-34px] flex h-[220px] w-[220px] justify-self-center"
+            initial="hidden"
+            animate={controls}
+            variants={sealMotion}
+            transition={{ ...transition, delay: 0.36 }}
+          >
+            <Image
+              src={storyAssets.centerSeal}
+              alt="Selo central Beggin"
+              fill
+              className="object-contain"
+              sizes="220px"
+            />
+          </motion.div>
 
-              <motion.div
-                className="relative h-[280px] w-[480px] overflow-hidden rounded-[24px] border border-white/70 bg-white p-2 shadow-[0_22px_46px_rgba(47,42,28,0.16)] sm:h-[320px] sm:w-[520px] sm:-translate-x-6"
-                initial="hidden"
-                animate={controls}
-                variants={photoMotion}
-                transition={{ ...transition, delay: 0.42 }}
-              >
-                <Image
-                  src={storyAssets.photoRight}
-                  alt="Foto Beggin com kit, garrafa e taça"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 640px) 90vw, (max-width: 1024px) 54vw, 520px"
-                />
-              </motion.div>
-            </div>
-          </div>
+          <motion.div
+            className="relative z-[3] h-[330px] w-full overflow-hidden bg-transparent lg:h-[360px]"
+            initial="hidden"
+            animate={controls}
+            variants={photoMotion}
+            transition={{ ...transition, delay: 0.32 }}
+          >
+            <Image
+              src={storyAssets.photoRight}
+              alt="Foto Beggin com garrafa e taça"
+              fill
+              className="object-contain"
+              sizes="(max-width: 768px) 90vw, 520px"
+            />
+          </motion.div>
         </div>
       </motion.div>
     </section>
