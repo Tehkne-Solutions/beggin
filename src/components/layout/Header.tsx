@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { Menu, ShoppingBag, UserRound } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
@@ -26,12 +27,14 @@ export function Header() {
     >
       <div className="mx-auto grid h-full max-w-[1500px] grid-cols-[120px_1fr_120px] items-center px-5 sm:px-8 lg:grid-cols-[170px_1fr_210px] lg:px-12">
         <Link href="#inicio" aria-label="Beg Gin" className="flex items-center">
-          <motion.div style={{ scale: logoScale }} className="origin-left leading-none">
-            <div className="font-sansUi text-[26px] font-black tracking-[0.33em] text-beggin-ink">BEG</div>
-            <div className="mt-1 flex items-center gap-2">
-              <span className="text-[18px] font-bold leading-none text-beggin-red">≋</span>
-              <span className="font-serifDisplay text-[13px] font-bold tracking-[0.38em] text-beggin-red">GIN</span>
-            </div>
+          <motion.div style={{ scale: logoScale }} className="origin-left">
+            <Image
+              src="/images/footer/beggin-footer-logo.png"
+              alt="Beg Gin"
+              width={160}
+              height={160}
+              className="h-auto w-[120px] object-contain"
+            />
           </motion.div>
         </Link>
 
