@@ -47,7 +47,7 @@ export function StorySection() {
       className="paper-texture relative overflow-hidden bg-[#f7f0df] px-0 py-20 lg:py-24"
     >
       <motion.div
-        className="relative mx-auto w-[calc(100%-48px)] max-w-[1540px] overflow-hidden border border-[#b9a875]/38 bg-[#dfdecb] px-10 py-12 shadow-[0_22px_60px_rgba(47,42,28,0.08)] lg:w-[calc(100%-64px)] lg:px-16 xl:px-20"
+        className="relative mx-auto w-[calc(100%-48px)] max-w-[1540px] overflow-hidden border border-[#b9a875]/38 bg-[#e3dfc9] px-10 py-12 shadow-[0_22px_60px_rgba(47,42,28,0.08)] lg:w-[calc(100%-64px)] lg:px-16 xl:px-20"
         initial="hidden"
         animate={controls}
         variants={panelMotion}
@@ -56,7 +56,7 @@ export function StorySection() {
         <div className="pointer-events-none absolute inset-[22px] z-[1] border border-[#b9a875]/32" />
 
         <motion.div
-          className="pointer-events-none absolute bottom-[-54px] left-[-46px] z-[1] h-[230px] w-[230px] opacity-50 lg:h-[285px] lg:w-[285px]"
+          className="pointer-events-none absolute bottom-[-72px] left-[-54px] z-[1] h-[220px] w-[220px] opacity-45 lg:h-[270px] lg:w-[270px]"
           initial="hidden"
           animate={controls}
           variants={fadeInUp}
@@ -89,7 +89,7 @@ export function StorySection() {
           />
         </motion.div>
 
-        <div className="relative z-[3] grid gap-8 lg:grid-cols-[1.1fr_1.18fr_0.22fr_1.58fr] lg:items-center lg:gap-0">
+        <div className="relative z-[3] grid gap-8 lg:grid-cols-[1.1fr_1.16fr_0.32fr_1.56fr] lg:items-center lg:gap-1">
           <motion.div
             className="relative z-[5] flex min-h-[390px] flex-col justify-center"
             initial="hidden"
@@ -97,7 +97,7 @@ export function StorySection() {
             variants={fadeInUp}
             transition={{ ...transition, delay: 0.18 }}
           >
-            <p className="font-serifDisplay text-[12px] xl:text-[13px] font-bold uppercase tracking-[0.24em] text-beggin-ink">
+            <p className="font-serifDisplay text-[13px] xl:text-[14px] font-bold uppercase tracking-[0.22em] text-beggin-ink">
               {storyContent.eyebrow}
               <span className="ml-3 text-beggin-gold">✧</span>
             </p>
@@ -116,24 +116,24 @@ export function StorySection() {
               />
             </div>
 
-            <div className="relative mt-7 h-[58px] w-[58px] self-center opacity-72">
+            <div className="relative mt-7 h-[82px] w-[82px] self-center opacity-78 max-md:h-[58px] max-md:w-[58px]">
               <Image
                 src={storyAssets.smallSun}
                 alt=""
                 fill
                 className="object-contain"
-                sizes="58px"
+                sizes="82px"
               />
             </div>
 
             <a
               href="#coqueteis"
-              className="group relative z-[6] mt-8 inline-flex w-fit items-center gap-5 font-serifDisplay text-[18px] font-bold uppercase tracking-[0.13em] text-beggin-ink xl:text-[20px]"
+              className="group relative z-[8] mt-8 inline-flex w-fit items-center gap-4 font-serifDisplay text-[14px] font-bold uppercase tracking-[0.18em] text-beggin-ink xl:text-[15px]"
             >
-              <span className="border-b border-beggin-gold/80 pb-3 pr-10 transition-colors duration-300 group-hover:border-beggin-red">
+              <span className="border-b border-beggin-gold/80 pb-2 pr-8 transition-colors duration-300 group-hover:border-beggin-red">
                 {storyContent.cta}
               </span>
-              <span className="text-[16px] text-beggin-gold transition-transform duration-300 group-hover:translate-x-1 xl:text-[18px]">✧</span>
+              <span className="text-[13px] text-beggin-gold transition-transform duration-300 group-hover:translate-x-1 xl:text-[14px]">✧</span>
             </a>
           </motion.div>
 
@@ -154,7 +154,7 @@ export function StorySection() {
           </motion.div>
 
           <motion.div
-            className="pointer-events-none relative z-[10] mx-[-116px] h-[270px] w-[270px] justify-self-center"
+            className="pointer-events-none relative z-[10] mx-[-126px] h-[315px] w-[315px] justify-self-center"
             initial="hidden"
             animate={controls}
             variants={sealMotion}
@@ -165,7 +165,7 @@ export function StorySection() {
               alt="Selo central Beggin"
               fill
               className="object-contain"
-              sizes="270px"
+              sizes="315px"
             />
           </motion.div>
 
