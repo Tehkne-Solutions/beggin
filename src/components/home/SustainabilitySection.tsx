@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
-import { motion, useReducedMotion } from 'framer-motion';
+import { MagneticLink } from '@/components/motion/MagneticLink';
+import { Reveal } from '@/components/motion/Reveal';
 import {
   sustainabilityAssets,
   sustainabilityContent,
@@ -11,8 +11,6 @@ import {
 import { SustainabilityItem } from './sustainability/SustainabilityItem';
 
 export function SustainabilitySection() {
-  const shouldReduceMotion = useReducedMotion();
-
   return (
     <section
       id="sustentabilidade"
@@ -40,13 +38,7 @@ export function SustainabilitySection() {
         </div>
 
         <div className="relative z-[2] grid min-h-[340px] items-center gap-10 lg:grid-cols-[0.30fr_0.70fr] xl:gap-14">
-          <motion.div
-            initial={shouldReduceMotion ? false : { opacity: 0, y: 28 }}
-            whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.45 }}
-            transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-            className="relative max-w-[360px] max-lg:mx-auto max-lg:text-center lg:pl-20 xl:pl-24"
-          >
+          <Reveal className="relative max-w-[360px] max-lg:mx-auto max-lg:text-center lg:pl-20 xl:pl-24" delay={0.05}>
             <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.28em] text-beggin-ink">
               {sustainabilityContent.eyebrow}
             </p>
@@ -67,7 +59,7 @@ export function SustainabilitySection() {
               />
             </div>
 
-            <Link
+            <MagneticLink
               href="#sustentabilidade"
               className="group mt-12 inline-flex items-center gap-3 font-serifDisplay text-[11px] font-bold uppercase tracking-[0.2em] text-beggin-ink"
             >
@@ -77,16 +69,10 @@ export function SustainabilitySection() {
               <span className="text-beggin-gold transition-transform duration-300 group-hover:translate-x-1">
                 ✦
               </span>
-            </Link>
-          </motion.div>
+            </MagneticLink>
+          </Reveal>
 
-          <motion.div
-            initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
-            whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.35 }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="grid grid-cols-1 gap-y-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-y-0"
-          >
+          <Reveal className="grid grid-cols-1 gap-y-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-y-0" delay={0.14}>
             {sustainabilityItems.map((item, index) => (
               <SustainabilityItem
                 key={item.title}
@@ -96,7 +82,7 @@ export function SustainabilitySection() {
                 hasDivider={index !== sustainabilityItems.length - 1}
               />
             ))}
-          </motion.div>
+          </Reveal>
         </div>
       </div>
     </section>

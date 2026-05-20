@@ -3,6 +3,8 @@
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { motion, useAnimation, useInView, useReducedMotion } from 'framer-motion';
+import { MagneticLink } from '@/components/motion/MagneticLink';
+import { Reveal } from '@/components/motion/Reveal';
 import { storyAssets, storyContent } from '@/data/story';
 
 const easeOut = [0.25, 0.1, 0.25, 1] as [number, number, number, number];
@@ -116,7 +118,11 @@ export function StorySection() {
               />
             </div>
 
-            <div className="relative mt-7 h-[82px] w-[82px] self-center opacity-78 max-md:h-[58px] max-md:w-[58px]">
+            <motion.div
+              className="relative mt-7 h-[82px] w-[82px] self-center opacity-78 max-md:h-[58px] max-md:w-[58px]"
+              whileHover={{ y: -2, scale: 1.02 }}
+              transition={{ duration: 0.35, ease: 'easeOut' }}
+            >
               <Image
                 src={storyAssets.smallSun}
                 alt=""
@@ -124,9 +130,9 @@ export function StorySection() {
                 className="object-contain"
                 sizes="82px"
               />
-            </div>
+            </motion.div>
 
-            <a
+            <MagneticLink
               href="#coqueteis"
               className="group relative z-[8] mt-8 inline-flex w-fit items-center gap-4 font-serifDisplay text-[14px] font-bold uppercase tracking-[0.18em] text-beggin-ink xl:text-[15px]"
             >
@@ -134,24 +140,24 @@ export function StorySection() {
                 {storyContent.cta}
               </span>
               <span className="text-[13px] text-beggin-gold transition-transform duration-300 group-hover:translate-x-1 xl:text-[14px]">✧</span>
-            </a>
+            </MagneticLink>
           </motion.div>
 
-          <motion.div
-            className="relative z-[3] h-[320px] w-full max-w-[430px] justify-self-end overflow-hidden bg-transparent lg:h-[330px]"
-            initial="hidden"
-            animate={controls}
-            variants={photoMotion}
-            transition={{ ...transition, delay: 0.28 }}
-          >
-            <Image
-              src={storyAssets.photoLeft}
-              alt="Foto Beggin com garrafa, caixa e taça"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 86vw, 395px"
-            />
-          </motion.div>
+            <motion.div
+              className="relative z-[3] h-[320px] w-full max-w-[430px] justify-self-end overflow-hidden bg-transparent lg:h-[330px]"
+              initial="hidden"
+              animate={controls}
+              variants={photoMotion}
+              transition={{ ...transition, delay: 0.28 }}
+            >
+              <Image
+                src={storyAssets.photoLeft}
+                alt="Foto Beg com garrafa, caixa e taça"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 86vw, 395px"
+              />
+            </motion.div>
 
           <motion.div
             className="pointer-events-none relative z-[10] mx-[-126px] h-[315px] w-[315px] justify-self-center"
@@ -162,7 +168,7 @@ export function StorySection() {
           >
             <Image
               src={storyAssets.centerSeal}
-              alt="Selo central Beggin"
+              alt="Selo central Beg"
               fill
               className="object-contain"
               sizes="315px"
@@ -178,7 +184,7 @@ export function StorySection() {
           >
             <Image
               src={storyAssets.photoRight}
-              alt="Foto Beggin com garrafa e taça"
+              alt="Foto Beg com garrafa e taça"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 90vw, 610px"

@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { motion, useAnimation, useInView, useReducedMotion } from 'framer-motion';
 import { cocktails, cocktailsContent, cocktailAssets } from '@/data/cocktails';
 import { CocktailCard } from './cocktails/CocktailCard';
+import { MagneticLink } from '@/components/motion/MagneticLink';
+import { Reveal } from '@/components/motion/Reveal';
 
 const easeOut = [0.25, 0.1, 0.25, 1] as const;
 
@@ -70,17 +72,19 @@ export function CocktailsSection() {
             />
           </div>
 
-          <Link
-            href="#coqueteis"
-            className="group mt-16 inline-flex items-center gap-3 font-serifDisplay text-[11px] font-bold uppercase tracking-[0.2em] text-beggin-ink"
-          >
-            <span className="relative pb-2 after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-beggin-gold after:transition-transform after:duration-300 group-hover:after:scale-x-125">
-              {cocktailsContent.cta}
-            </span>
-            <span className="text-beggin-gold transition-transform duration-300 group-hover:translate-x-1">
-              ✦
-            </span>
-          </Link>
+          <Reveal delay={0.1} className="mt-16">
+            <MagneticLink
+              href="#coqueteis"
+              className="group inline-flex items-center gap-3 font-serifDisplay text-[11px] font-bold uppercase tracking-[0.2em] text-beggin-ink"
+            >
+              <span className="relative pb-2 after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-beggin-gold after:transition-transform after:duration-300 group-hover:after:scale-x-125">
+                {cocktailsContent.cta}
+              </span>
+              <span className="text-beggin-gold transition-transform duration-300 group-hover:translate-x-1">
+                ✦
+              </span>
+            </MagneticLink>
+          </Reveal>
         </div>
 
         <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3">

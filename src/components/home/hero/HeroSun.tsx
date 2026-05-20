@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { motion, useMotionValue, useScroll, useSpring, useTransform } from 'framer-motion';
+import { motion, useMotionValue, useScroll, useSpring, useTransform, useReducedMotion } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import { heroAssets } from '@/data/hero-assets';
 
@@ -13,6 +13,7 @@ export function HeroSun() {
   const mouseX = useSpring(avoidX, { stiffness: 90, damping: 24, mass: 0.35 });
   const mouseY = useSpring(avoidY, { stiffness: 90, damping: 24, mass: 0.35 });
 
+  const shouldReduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start start', 'end start'],
@@ -27,6 +28,11 @@ export function HeroSun() {
       avoidX.set(0);
       avoidY.set(0);
     };
+
+    if (shouldReduceMotion) {
+      reset();
+      return;
+    }
 
     const handlePointerMove = (event: PointerEvent) => {
       if (event.pointerType && event.pointerType !== 'mouse') {
@@ -69,7 +75,7 @@ export function HeroSun() {
       window.removeEventListener('blur', reset);
       document.documentElement.removeEventListener('mouseleave', reset);
     };
-  }, [avoidX, avoidY]);
+  }, [avoidX, avoidY, shouldReduceMotion]);
 
   return (
     <motion.div

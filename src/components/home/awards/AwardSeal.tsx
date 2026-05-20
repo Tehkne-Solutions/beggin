@@ -24,17 +24,16 @@ export function AwardSeal({ title, image }: AwardSealProps) {
   };
 
   return (
-    <article className="group relative flex shrink-0 items-center justify-center">
+    <motion.article
+      className="group relative flex shrink-0 items-center justify-center"
+      whileHover={{ y: -8, scale: 1.035, rotate: 0.8 }}
+      transition={{ duration: 0.28, ease: 'easeOut' }}
+      style={{ transformStyle: 'preserve-3d' }}
+    >
       <motion.div
-        className="relative h-full w-full"
+        className="relative h-full w-full overflow-hidden rounded-full"
         style={{ height: sealSize, width: sealSize }}
         variants={sealVariants}
-        whileHover={{
-          y: -6,
-          scale: 1.025,
-          rotate: 1,
-          transition: { duration: 0.3 },
-        }}
       >
         <Image
           src={image}
@@ -43,7 +42,8 @@ export function AwardSeal({ title, image }: AwardSealProps) {
           className="object-contain"
           sizes={sizeStr}
         />
+        <span className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,255,255,0.08),transparent_38%)] opacity-0 transition duration-300 group-hover:opacity-100" />
       </motion.div>
-    </article>
+    </motion.article>
   );
 }

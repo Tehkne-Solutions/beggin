@@ -6,6 +6,7 @@ import { useAnimation, useInView } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 import { awardsContent, awardAssets, awards } from '@/data/awards';
 import { AwardSeal } from './awards/AwardSeal';
+import { Reveal } from '@/components/motion/Reveal';
 
 export function AwardsSection() {
   const sectionRef = useRef(null);
@@ -69,12 +70,7 @@ export function AwardsSection() {
         </div>
 
         {/* Coluna Esquerda - Texto e CTA */}
-        <motion.div
-          animate={controls}
-          initial="hidden"
-          variants={fadeInUp}
-          transition={{ duration: 0.7, ease: 'easeOut' }}
-        >
+        <Reveal className="space-y-6">
           <p className="font-serifDisplay text-[12px] font-bold uppercase tracking-[0.24em] text-beggin-ink xl:text-[13px]">
             {awardsContent.eyebrow}
             <span className="ml-3 text-beggin-gold">✧</span>
@@ -107,7 +103,7 @@ export function AwardsSection() {
               ✧
             </span>
           </a>
-        </motion.div>
+        </Reveal>
 
         {/* Coluna Direita - Selos */}
         <motion.div
