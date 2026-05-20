@@ -1,7 +1,5 @@
 import { HeroBottleStage } from './HeroBottleStage';
-import { HeroBotanicals } from './HeroBotanicals';
 import { HeroClouds } from './HeroClouds';
-import { HeroSeal } from './HeroSeal';
 import { HeroSun } from './HeroSun';
 import { HeroTextBlock } from './HeroTextBlock';
 
@@ -18,9 +16,7 @@ export function HeroSection() {
       <div className="relative mx-auto h-[calc(100svh-0px)] min-h-[744px] max-h-[940px] max-w-[1500px] max-md:h-[820px] max-md:min-h-[820px]">
         <HeroTextBlock />
         <HeroSun />
-        <HeroBotanicals />
         <HeroBottleStage />
-        <HeroSeal />
       </div>
     </section>
   );
