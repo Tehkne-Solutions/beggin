@@ -3,6 +3,7 @@ import { HeroSection } from '@/components/home/hero/HeroSection';
 import { StorySection } from '@/components/home/StorySection';
 import { CocktailsSection } from '@/components/home/CocktailsSection';
 import { AwardsSection } from '@/components/home/AwardsSection';
+import { SustainabilitySection } from '@/components/home/SustainabilitySection';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <StorySection />
       <CocktailsSection />
       <AwardsSection />
+      <SustainabilitySection />
     </main>
   );
 }

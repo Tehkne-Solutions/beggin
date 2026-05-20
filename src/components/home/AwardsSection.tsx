@@ -111,7 +111,7 @@ export function AwardsSection() {
 
         {/* Coluna Direita - Selos */}
         <motion.div
-          className="relative z-[3] grid items-center gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8"
+          className="relative z-[3] mx-auto grid w-full max-w-[820px] items-center justify-items-center gap-7 sm:grid-cols-2 lg:flex lg:justify-between lg:gap-0"
           animate={controls}
           initial="hidden"
           variants={containerVariants}

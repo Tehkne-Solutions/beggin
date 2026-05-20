@@ -11,7 +11,6 @@ const sealSize = 160;
 const sizeStr = `${sealSize}px`;
 
 export function AwardSeal({ title, image }: AwardSealProps) {
-
   const sealVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
@@ -25,7 +24,7 @@ export function AwardSeal({ title, image }: AwardSealProps) {
   };
 
   return (
-    <article className="group relative flex h-[160px] w-[160px] items-center justify-center">
+    <article className="group relative flex shrink-0 items-center justify-center">
       <motion.div
         className="relative h-full w-full"
         style={{ height: sealSize, width: sealSize }}
