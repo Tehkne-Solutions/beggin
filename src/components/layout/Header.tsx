@@ -5,7 +5,7 @@ import { Menu, ShoppingBag, UserRound } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const navItems = [
-  { label: 'Nossa história', href: '#historia' },
+  { label: 'Nossa História', href: '#historia' },
   { label: 'Produtos', href: '#produtos' },
   { label: 'Beg Experience', href: '#experience' },
   { label: 'Prêmios', href: '#premios' },
@@ -51,7 +51,7 @@ export function Header() {
           <button aria-label="Minha conta" className="hidden text-beggin-ink transition-colors hover:text-beggin-red sm:block">
             <UserRound size={22} strokeWidth={1.7} />
           </button>
-          <button aria-label="Sacola" className="hidden text-beggin-ink transition-colors hover:text-beggin-red sm:block">
+          <button aria-label="Sacola" className="text-beggin-ink transition-colors hover:text-beggin-red">
             <ShoppingBag size={22} strokeWidth={1.7} />
           </button>
           <button aria-label="Abrir menu" className="text-beggin-ink lg:hidden">
