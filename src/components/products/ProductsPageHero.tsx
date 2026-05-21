@@ -3,23 +3,25 @@ import { heroAssets } from '@/data/hero-assets';
 
 export function ProductsPageHero() {
   return (
-    <section className="paper-texture relative min-h-[560px] overflow-hidden bg-[#FCF7F1] px-5 pt-[86px] md:px-8 lg:min-h-[650px] lg:pt-[76px] xl:min-h-[720px]">
+    <section className="paper-texture relative min-h-[500px] overflow-hidden bg-[#FCF7F1] px-5 pt-[86px] md:px-8 lg:min-h-[560px] lg:pt-[76px] xl:min-h-[620px]">
       <div className="absolute inset-0 bg-[#FCF7F1]" />
 
-      <div className="pointer-events-none absolute inset-0 z-[1]">
-        <Image
-          src="/images/produtos/design-hero-page-produtos-sem-texto.png"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center max-md:object-[68%_center]"
-        />
+      <div className="pointer-events-none absolute inset-0 z-[1] flex items-end justify-end overflow-hidden">
+        <div className="relative h-full w-full origin-right-bottom scale-[0.84] lg:scale-[0.82] xl:scale-[0.84]">
+          <Image
+            src="/images/produtos/design-hero-page-produtos-sem-texto.png"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-contain object-right-bottom max-md:object-[68%_bottom]"
+          />
+        </div>
       </div>
 
-      <div className="pointer-events-none absolute inset-0 z-[2] bg-[linear-gradient(90deg,rgba(252,247,241,0.92)_0%,rgba(252,247,241,0.72)_28%,rgba(252,247,241,0.16)_48%,rgba(252,247,241,0)_70%)] max-md:bg-[linear-gradient(180deg,rgba(252,247,241,0.92)_0%,rgba(252,247,241,0.62)_42%,rgba(252,247,241,0.08)_100%)]" />
+      <div className="pointer-events-none absolute inset-0 z-[2] bg-[linear-gradient(90deg,rgba(252,247,241,0.9)_0%,rgba(252,247,241,0.68)_28%,rgba(252,247,241,0.12)_52%,rgba(252,247,241,0)_76%)] max-md:bg-[linear-gradient(180deg,rgba(252,247,241,0.92)_0%,rgba(252,247,241,0.62)_42%,rgba(252,247,241,0.08)_100%)]" />
 
-      <div className="relative z-[5] mx-auto flex min-h-[450px] max-w-[1500px] items-center lg:min-h-[574px] xl:min-h-[644px]">
+      <div className="relative z-[5] mx-auto flex min-h-[414px] max-w-[1500px] items-center lg:min-h-[484px] xl:min-h-[544px]">
         <div className="max-w-[560px] pt-4 text-left max-lg:max-w-[500px] max-md:mx-auto max-md:max-w-[420px] max-md:pt-10 max-md:text-center">
           <p className="mb-5 font-serifDisplay text-[10px] font-bold uppercase tracking-[0.32em] text-beggin-ink md:text-[11px]">
             Beg Experience
