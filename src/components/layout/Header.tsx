@@ -6,12 +6,12 @@ import { Menu, ShoppingBag, UserRound } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const navItems = [
-  { label: 'Nossa História', href: '#historia' },
-  { label: 'Produtos', href: '#produtos' },
-  { label: 'Beg Experience', href: '#experience' },
-  { label: 'Prêmios', href: '#premios' },
-  { label: 'Sustentabilidade', href: '#sustentabilidade' },
-  { label: 'Contato', href: '#contato' },
+  { label: 'Nossa História', href: '/#historia' },
+  { label: 'Produtos', href: '/produtos' },
+  { label: 'Beg Experience', href: '/#experience' },
+  { label: 'Prêmios', href: '/#premios' },
+  { label: 'Sustentabilidade', href: '/#sustentabilidade' },
+  { label: 'Contato', href: '/#contato' },
 ];
 
 export function Header() {
@@ -26,7 +26,7 @@ export function Header() {
       className="fixed inset-x-0 top-0 z-50 border-b border-beggin-line/70 backdrop-blur-md"
     >
       <div className="mx-auto grid h-full max-w-[1500px] grid-cols-[110px_1fr_110px] items-center px-5 sm:px-8 lg:grid-cols-[150px_1fr_190px] lg:px-12">
-        <Link href="#inicio" aria-label="Beg Gin" className="flex items-center">
+        <Link href="/#inicio" aria-label="Beg Gin" className="flex items-center">
           <motion.div
             style={{ height: logoHeight }}
             className="relative flex w-[82px] items-center overflow-visible lg:w-[96px]"
