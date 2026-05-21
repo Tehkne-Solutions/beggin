@@ -31,36 +31,67 @@ export function ProductsPageHero() {
         </div>
       </div>
 
-      <div className="pointer-events-none absolute left-[-135px] top-[92px] z-[2] hidden h-[455px] w-[420px] opacity-58 lg:block xl:left-[-95px] xl:h-[520px] xl:w-[470px]">
+      <div className="pointer-events-none absolute left-[-145px] top-[88px] z-[2] hidden h-[485px] w-[450px] opacity-62 lg:block xl:left-[-105px] xl:h-[555px] xl:w-[500px]">
         <Image
           src="/images/home/beggin-home-nossa-historia-folhas-lateral-esquerdo.png"
           alt=""
           fill
           priority
-          sizes="470px"
+          sizes="500px"
           className="object-contain object-left-top"
         />
       </div>
 
-      <div className="pointer-events-none absolute right-[-135px] top-[86px] z-[2] hidden h-[455px] w-[420px] scale-x-[-1] opacity-52 lg:block xl:right-[-95px] xl:h-[520px] xl:w-[470px]">
+      <div className="pointer-events-none absolute right-[-145px] top-[82px] z-[2] hidden h-[485px] w-[450px] scale-x-[-1] opacity-56 lg:block xl:right-[-105px] xl:h-[555px] xl:w-[500px]">
         <Image
           src="/images/home/beggin-home-nossa-historia-folhas-lateral-esquerdo.png"
           alt=""
           fill
           priority
-          sizes="470px"
+          sizes="500px"
           className="object-contain object-right-top"
         />
       </div>
 
-      <div className="pointer-events-none absolute inset-0 z-[3]">
+      <div className="pointer-events-none absolute right-[-6%] top-[15%] z-[3] hidden h-[74%] w-[62%] lg:block xl:right-[-1%] xl:w-[58%]">
         <Image
-          src="/images/products/beggin-products-hero-bg.webp"
+          src={heroAssets.mainProduct}
           alt=""
           fill
           priority
-          sizes="100vw"
-          className="object-cover object-center max-md:object-[66%_center]"
+          sizes="(max-width: 1200px) 62vw, 860px"
+          className="object-contain object-right-bottom drop-shadow-[0_24px_42px_rgba(38,28,14,0.16)]"
+        />
+      </div>
+
+      <div className="pointer-events-none absolute right-[8.2%] top-[14.5%] z-[4] hidden w-[92px] lg:block xl:right-[7.5%] xl:w-[108px]">
+        <Image
+          src="/images/home/beggin-home-premios-selo-3.png"
+          alt=""
+          width={140}
+          height={140}
+          priority
+          className="h-auto w-full object-contain drop-shadow-[0_10px_18px_rgba(60,42,12,0.22)]"
+        />
+      </div>
+      <div className="pointer-events-none absolute right-[8.6%] top-[30%] z-[4] hidden w-[86px] lg:block xl:right-[7.9%] xl:w-[100px]">
+        <Image
+          src="/images/home/beggin-home-premios-selo-1.png"
+          alt=""
+          width={130}
+          height={130}
+          priority
+          className="h-auto w-full object-contain drop-shadow-[0_10px_18px_rgba(60,42,12,0.2)]"
+        />
+      </div>
+      <div className="pointer-events-none absolute right-[7.9%] top-[45.5%] z-[4] hidden w-[94px] lg:block xl:right-[7.2%] xl:w-[112px]">
+        <Image
+          src="/images/home/beggin-home-premios-selo-2.png"
+          alt=""
+          width={145}
+          height={145}
+          priority
+          className="h-auto w-full object-contain drop-shadow-[0_10px_18px_rgba(60,42,12,0.2)]"
         />
       </div>
 
