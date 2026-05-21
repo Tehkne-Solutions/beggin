@@ -8,9 +8,9 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 const navItems = [
   { label: 'Nossa História', href: '/nossa-historia' },
   { label: 'Produtos', href: '/produtos' },
-  { label: 'Beg Experience', href: 'https://agendamento.beggin.com.br' },
-  { label: 'Prêmios', href: '/#premios' },
-  { label: 'Sustentabilidade', href: '/#sustentabilidade' },
+  { label: 'Beg Experience', href: '/agendamento' },
+  { label: 'Prêmios', href: '/premios' },
+  { label: 'Sustentabilidade', href: '/sustentabilidade' },
   { label: 'Contato', href: '/contato' },
 ];
 
@@ -47,8 +47,6 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              target={item.href.startsWith('http') ? '_blank' : undefined}
-              rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
               className="font-serifDisplay text-[12px] font-bold uppercase tracking-[0.16em] text-beggin-ink transition-colors hover:text-beggin-red"
             >
               {item.label}
