@@ -8,11 +8,11 @@ import { heroAssets } from '@/data/hero-assets';
 const menu1 = [
   { label: 'Nossa História', href: '/nossa-historia' },
   { label: 'Produtos', href: '/produtos' },
-  { label: 'Beg Experience', href: 'https://agendamento.beggin.com.br' },
+  { label: 'Beg Experience', href: '/agendamento' },
 ];
 const menu2 = [
-  { label: 'Prêmios', href: '/#premios' },
-  { label: 'Sustentabilidade', href: '/#sustentabilidade' },
+  { label: 'Prêmios', href: '/premios-beg' },
+  { label: 'Sustentabilidade', href: '/sustentabilidade' },
   { label: 'Contato', href: '/contato' },
 ];
 const socials = [
@@ -63,7 +63,7 @@ export function Footer() {
             <p className="font-serifDisplay text-[15px] uppercase tracking-[0.08em] text-[#f4efe3]">Menu</p>
             <div className="space-y-3 text-[14px] font-serifDisplay uppercase tracking-[0.06em] text-[#f4efe3]/85">
               {menu1.map((item) => (
-                <Link key={item.label} href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noreferrer' : undefined} className="block transition-colors duration-300 hover:text-[#c8a759]">
+                <Link key={item.label} href={item.href} className="block transition-colors duration-300 hover:text-[#c8a759]">
                   {item.label}
                 </Link>
               ))}
