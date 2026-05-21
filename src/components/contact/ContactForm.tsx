@@ -12,11 +12,33 @@ const interestOptions = [
   'Outro assunto',
 ];
 
+const contactEmail = 'contato@beggin.com.br';
+
 export function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'sent'>('idle');
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    const form = new FormData(event.currentTarget);
+    const name = String(form.get('name') ?? '');
+    const email = String(form.get('email') ?? '');
+    const phone = String(form.get('phone') ?? '');
+    const interest = String(form.get('interest') ?? 'Contato geral');
+    const message = String(form.get('message') ?? '');
+
+    const subject = `Contato pelo site Beg Gin — ${interest}`;
+    const body = [
+      `Nome: ${name}`,
+      `E-mail: ${email}`,
+      `Telefone: ${phone}`,
+      `Interesse: ${interest}`,
+      '',
+      'Mensagem:',
+      message,
+    ].join('\n');
+
+    window.location.href = `mailto:${contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setStatus('sent');
     event.currentTarget.reset();
   }
@@ -61,7 +83,7 @@ export function ContactForm() {
 
       {status === 'sent' ? (
         <p className="font-serifDisplay text-[13px] uppercase tracking-[0.14em] text-beggin-red">
-          Mensagem registrada nesta versão provisória. O próximo passo é conectar este formulário a um serviço de envio.
+          Seu aplicativo de e-mail foi aberto com a mensagem pronta para envio.
         </p>
       ) : null}
     </form>
