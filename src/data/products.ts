@@ -29,13 +29,6 @@ export type Product = {
   }[];
 };
 
-const sharedGinSpecs = [
-  { label: 'Botânicos selecionados', value: 'Ingredientes naturais escolhidos para equilíbrio aromático.' },
-  { label: 'Produção artesanal', value: 'Pequenos lotes, processo cuidadoso e assinatura brasileira.' },
-  { label: 'Destilado em pequenos lotes', value: 'Mais controle, consistência e atenção em cada detalhe.' },
-  { label: 'Feito no Brasil', value: 'Orgulho de origem, pesquisa e coquetelaria nacional.' },
-] as const;
-
 export const productCategories = [
   { id: 'todos', label: 'Todos os produtos' },
   { id: 'kits', label: 'Kits' },
@@ -43,6 +36,15 @@ export const productCategories = [
   { id: 'refis', label: 'Refis' },
   { id: 'prontos-para-drinks', label: 'Prontos para drinks' },
 ] as const;
+
+const productImages = {
+  brazilianBottle: '/images/home/beggin-home-nossa-historia-enfeite-bebida-1.png',
+  modernBottle: '/images/home/beggin-home-nossa-historia-enfeite-bebida-2.png',
+  heroKit: '/images/home/beggin-home-hero-elemento-garrafa-principal.webp',
+  tonicDrink: '/images/home/beggin-home-coqueteis-autorais-card1-beg-and-tonica.png',
+  citricDrink: '/images/home/beggin-home-coqueteis-autorais-card2-citrico-brasileiro.png',
+  negroniDrink: '/images/home/beggin-home-coqueteis-autorais-card3-negroni-beg.png',
+} as const;
 
 export const products: Product[] = [
   {
@@ -52,12 +54,12 @@ export const products: Product[] = [
     description:
       'O BEG Brazilian Boutique Dry Gin foi criado para selecionar e preservar os mais delicados aromas e sabores da coquetelaria clássica. Sua receita conta com botânicos cuidadosamente selecionados, que juntos proporcionam toques iniciais frutados, florais e cítricos, com final surpreendentemente seco e levemente picante.',
     category: 'gins-750ml',
-    image: '/images/home/beggin-home-nossa-historia-enfeite-bebida-1.png',
+    image: productImages.brazilianBottle,
     gallery: [
-      '/images/home/beggin-home-nossa-historia-enfeite-bebida-1.png',
-      '/images/home/beggin-home-hero-elemento-garrafa-principal.webp',
-      '/images/home/beggin-home-nossa-historia-imagem-1.jpg',
-      '/images/home/beggin-home-nossa-historia-imagem-2.jpg',
+      productImages.brazilianBottle,
+      productImages.heroKit,
+      productImages.citricDrink,
+      productImages.negroniDrink,
     ],
     oldPrice: 'R$ 109,90',
     price: 'R$ 99,90',
@@ -86,11 +88,12 @@ export const products: Product[] = [
     description:
       'BEG Modern & Tropical apresenta uma leitura contemporânea da marca, com personalidade aromática, frescor tropical e acabamento elegante. É uma expressão pensada para drinks leves, vibrantes e marcantes.',
     category: 'gins-750ml',
-    image: '/images/home/beggin-home-nossa-historia-enfeite-bebida-2.png',
+    image: productImages.modernBottle,
     gallery: [
-      '/images/home/beggin-home-nossa-historia-enfeite-bebida-2.png',
-      '/images/home/beggin-home-nossa-historia-imagem-2.jpg',
-      '/images/home/beggin-home-nossa-historia-enfeite-bebida-1.png',
+      productImages.modernBottle,
+      productImages.brazilianBottle,
+      productImages.heroKit,
+      productImages.citricDrink,
     ],
     oldPrice: 'R$ 109,90',
     price: 'R$ 99,90',
@@ -118,11 +121,12 @@ export const products: Product[] = [
     description:
       'O Kit BEG Classic reúne a experiência visual e sensorial da marca em uma composição especial para presentear, experimentar ou montar um ritual de degustação com acabamento premium.',
     category: 'kits',
-    image: '/images/home/beggin-home-hero-elemento-garrafa-principal.webp',
+    image: productImages.heroKit,
     gallery: [
-      '/images/home/beggin-home-hero-elemento-garrafa-principal.webp',
-      '/images/home/beggin-home-nossa-historia-imagem-1.jpg',
-      '/images/home/beggin-home-nossa-historia-enfeite-bebida-1.png',
+      productImages.heroKit,
+      productImages.brazilianBottle,
+      productImages.modernBottle,
+      productImages.tonicDrink,
     ],
     price: 'R$ 105,90',
     essenceTitle: 'Uma experiência Beggin em formato de presente.',
@@ -148,11 +152,12 @@ export const products: Product[] = [
     description:
       'BEG & Tônica Pronto para Beber traduz o ritual do gin tônica em uma apresentação prática, leve e refrescante. É uma solução para servir gelado, com perfil equilibrado e assinatura visual alinhada à coquetelaria Beggin.',
     category: 'prontos-para-drinks',
-    image: '/images/home/beggin-home-coqueteis-autorais-card1-beg-and-tonica.png',
+    image: productImages.tonicDrink,
     gallery: [
-      '/images/home/beggin-home-coqueteis-autorais-card1-beg-and-tonica.png',
-      '/images/home/beggin-home-nossa-historia-imagem-1.jpg',
-      '/images/home/beggin-home-hero-elemento-garrafa-principal.webp',
+      productImages.tonicDrink,
+      productImages.heroKit,
+      productImages.brazilianBottle,
+      productImages.citricDrink,
     ],
     price: 'R$ 15,90',
     essenceTitle: 'Clássico e refrescante.',
@@ -178,11 +183,12 @@ export const products: Product[] = [
     description:
       'BEG Refil Brazilian Boutique leva a assinatura clássica da marca para um formato mais prático e consciente, pensado para reduzir impacto de embalagem sem abrir mão do perfil aromático da linha.',
     category: 'refis',
-    image: '/images/home/beggin-home-coqueteis-autorais-card2-citrico-brasileiro.png',
+    image: productImages.citricDrink,
     gallery: [
-      '/images/home/beggin-home-coqueteis-autorais-card2-citrico-brasileiro.png',
-      '/images/home/beggin-home-nossa-historia-enfeite-bebida-1.png',
-      '/images/home/beggin-home-nossa-historia-imagem-2.jpg',
+      productImages.citricDrink,
+      productImages.brazilianBottle,
+      productImages.heroKit,
+      productImages.tonicDrink,
     ],
     price: 'R$ 44,90',
     essenceTitle: 'Menos impacto, mesma assinatura.',
@@ -208,11 +214,12 @@ export const products: Product[] = [
     description:
       'BEG Refil Modern & Tropical traz o frescor da linha tropical para um formato prático de 500ml, mantendo a experiência aromática com menor impacto de embalagem.',
     category: 'refis',
-    image: '/images/home/beggin-home-nossa-historia-enfeite-bebida-2.png',
+    image: productImages.modernBottle,
     gallery: [
-      '/images/home/beggin-home-nossa-historia-enfeite-bebida-2.png',
-      '/images/home/beggin-home-coqueteis-autorais-card2-citrico-brasileiro.png',
-      '/images/home/beggin-home-nossa-historia-imagem-2.jpg',
+      productImages.modernBottle,
+      productImages.citricDrink,
+      productImages.heroKit,
+      productImages.tonicDrink,
     ],
     price: 'R$ 44,90',
     essenceTitle: 'Frescor tropical em formato consciente.',
@@ -238,11 +245,12 @@ export const products: Product[] = [
     description:
       'Negroni BEG Experience é uma experiência de coquetelaria intensa, equilibrada e autoral, inspirada em um dos clássicos mais marcantes do bar. É pensado para quem busca presença, amargor elegante e ritual visual.',
     category: 'prontos-para-drinks',
-    image: '/images/home/beggin-home-coqueteis-autorais-card3-negroni-beg.png',
+    image: productImages.negroniDrink,
     gallery: [
-      '/images/home/beggin-home-coqueteis-autorais-card3-negroni-beg.png',
-      '/images/home/beggin-home-nossa-historia-imagem-1.jpg',
-      '/images/home/beggin-home-hero-elemento-garrafa-principal.webp',
+      productImages.negroniDrink,
+      productImages.heroKit,
+      productImages.brazilianBottle,
+      productImages.tonicDrink,
     ],
     price: 'R$ 19,90',
     essenceTitle: 'Intenso e equilibrado.',
