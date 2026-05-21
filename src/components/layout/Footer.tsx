@@ -22,7 +22,7 @@ const socials = [
   { label: 'LinkedIn', icon: 'IN', href: '/contato' },
 ];
 const legalLinks = [
-  { label: 'Privacidade', href: '/contato' },
+  { label: 'Privacidade', href: '/termos-de-uso' },
   { label: 'Termos de Uso', href: '/termos-de-uso' },
 ];
 
