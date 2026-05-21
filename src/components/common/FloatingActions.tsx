@@ -30,14 +30,14 @@ export function FloatingActions() {
   return (
     <>
       {!isAccepted ? (
-        <div className="fixed inset-x-4 bottom-4 z-[80] mx-auto max-w-[960px] border border-[#c7b889]/70 bg-[#131413]/96 p-4 text-[#f4efe3] shadow-[0_24px_80px_rgba(0,0,0,0.28)] backdrop-blur-md md:bottom-6 md:p-5">
+        <div className="fixed inset-x-4 bottom-4 z-[80] mx-auto max-w-[960px] border border-[#c7b889] bg-[#131413] p-4 text-[#f4efe3] shadow-[0_24px_80px_rgba(0,0,0,0.42)] md:bottom-6 md:p-5">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
               <p className="font-serifDisplay text-[13px] font-bold uppercase tracking-[0.2em] text-[#f4efe3]">Preferências do site</p>
-              <p className="mt-2 max-w-[700px] text-[0.92rem] leading-relaxed text-[#f4efe3]/75">
+              <p className="mt-2 max-w-[700px] text-[0.92rem] leading-relaxed text-[#f4efe3]/85">
                 Usamos recursos técnicos para manter a navegação, medir desempenho e melhorar a experiência. Consulte nossa página de privacidade para mais detalhes.
               </p>
-              <Link href="/politica-de-privacidade" className="mt-2 inline-flex font-serifDisplay text-[11px] font-bold uppercase tracking-[0.18em] text-[#c8a759] hover:text-white">
+              <Link href="/termos-de-uso" className="mt-2 inline-flex font-serifDisplay text-[11px] font-bold uppercase tracking-[0.18em] text-[#c8a759] hover:text-white">
                 Ver detalhes
               </Link>
             </div>
