@@ -6,12 +6,12 @@ import { Menu, ShoppingBag, UserRound } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const navItems = [
-  { label: 'Nossa História', href: '/#historia' },
+  { label: 'Nossa História', href: '/nossa-historia' },
   { label: 'Produtos', href: '/produtos' },
-  { label: 'Beg Experience', href: '/#experience' },
+  { label: 'Beg Experience', href: 'https://agendamento.beggin.com.br' },
   { label: 'Prêmios', href: '/#premios' },
   { label: 'Sustentabilidade', href: '/#sustentabilidade' },
-  { label: 'Contato', href: '/#contato' },
+  { label: 'Contato', href: '/contato' },
 ];
 
 export function Header() {
@@ -47,6 +47,8 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
+              target={item.href.startsWith('http') ? '_blank' : undefined}
+              rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
               className="font-serifDisplay text-[12px] font-bold uppercase tracking-[0.16em] text-beggin-ink transition-colors hover:text-beggin-red"
             >
               {item.label}
@@ -55,15 +57,15 @@ export function Header() {
         </nav>
 
         <div className="flex items-center justify-end gap-3 sm:gap-4">
-          <button aria-label="Minha conta" className="hidden text-beggin-ink transition-colors hover:text-beggin-red sm:block">
+          <Link aria-label="Minha conta" href="/contato" className="hidden text-beggin-ink transition-colors hover:text-beggin-red sm:block">
             <UserRound size={22} strokeWidth={1.7} />
-          </button>
-          <button aria-label="Sacola" className="text-beggin-ink transition-colors hover:text-beggin-red">
+          </Link>
+          <Link aria-label="Produtos" href="/produtos" className="text-beggin-ink transition-colors hover:text-beggin-red">
             <ShoppingBag size={22} strokeWidth={1.7} />
-          </button>
-          <button aria-label="Abrir menu" className="text-beggin-ink lg:hidden">
+          </Link>
+          <Link aria-label="Abrir navegação" href="/contato" className="text-beggin-ink lg:hidden">
             <Menu size={26} strokeWidth={1.7} />
-          </button>
+          </Link>
         </div>
       </div>
     </motion.header>
