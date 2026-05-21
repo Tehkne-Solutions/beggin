@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Cormorant_Garamond, Inter } from 'next/font/google';
+import { FloatingActions } from '@/components/common/FloatingActions';
 import { MotionViewport } from '@/components/motion/MotionViewport';
 import './globals.css';
 
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body className={`${cormorant.variable} ${inter.variable}`}>
         <MotionViewport />
         {children}
+        <FloatingActions />
       </body>
     </html>
   );
