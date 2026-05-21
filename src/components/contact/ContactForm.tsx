@@ -13,6 +13,8 @@ const interestOptions = [
 ];
 
 const contactEmail = 'contato@beggin.com.br';
+const fieldClass = 'mt-3 h-14 w-full border border-[#c7b889]/70 bg-[#fffdf8]/90 px-4 font-sans text-[15px] normal-case tracking-normal text-beggin-ink outline-none transition duration-300 focus:border-beggin-red focus:bg-white focus:shadow-[0_0_0_3px_rgba(227,55,49,0.08)]';
+const labelClass = 'block font-serifDisplay text-[12px] font-bold uppercase tracking-[0.2em] text-beggin-ink/82';
 
 export function ContactForm() {
   const [status, setStatus] = useState<'idle' | 'sent'>('idle');
@@ -44,48 +46,53 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="grid gap-5 border border-[#c7b889]/60 bg-[#fffaf2]/78 p-6 shadow-[0_24px_70px_rgba(54,43,25,0.08)] backdrop-blur-sm lg:p-8">
-      <div className="grid gap-4 md:grid-cols-2">
-        <label className="grid gap-2 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-beggin-ink">
-          Nome
-          <input name="name" required className="h-12 border border-[#c7b889]/70 bg-white/70 px-4 font-sans text-[15px] normal-case tracking-normal outline-none transition focus:border-beggin-red" />
+    <form onSubmit={handleSubmit} className="relative overflow-hidden border border-[#c7b889]/65 bg-[#fffaf2]/86 p-7 shadow-[0_28px_80px_rgba(54,43,25,0.12)] backdrop-blur-sm lg:p-10">
+      <div className="pointer-events-none absolute inset-4 border border-[#c7b889]/35" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(185,154,93,0.12),transparent_38%)]" />
+
+      <div className="relative z-[1] grid gap-7">
+        <div className="grid gap-6 md:grid-cols-2">
+          <label className={labelClass}>
+            Nome
+            <input name="name" required className={fieldClass} />
+          </label>
+          <label className={labelClass}>
+            E-mail
+            <input name="email" type="email" required className={fieldClass} />
+          </label>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2">
+          <label className={labelClass}>
+            Telefone
+            <input name="phone" className={fieldClass} />
+          </label>
+          <label className={labelClass}>
+            Interesse
+            <select name="interest" className={fieldClass}>
+              {interestOptions.map((option) => (
+                <option key={option}>{option}</option>
+              ))}
+            </select>
+          </label>
+        </div>
+
+        <label className={labelClass}>
+          Mensagem
+          <textarea name="message" required rows={7} className="mt-3 w-full resize-none border border-[#c7b889]/70 bg-[#fffdf8]/90 p-4 font-sans text-[15px] normal-case leading-relaxed tracking-normal text-beggin-ink outline-none transition duration-300 focus:border-beggin-red focus:bg-white focus:shadow-[0_0_0_3px_rgba(227,55,49,0.08)]" />
         </label>
-        <label className="grid gap-2 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-beggin-ink">
-          E-mail
-          <input name="email" type="email" required className="h-12 border border-[#c7b889]/70 bg-white/70 px-4 font-sans text-[15px] normal-case tracking-normal outline-none transition focus:border-beggin-red" />
-        </label>
+
+        <button type="submit" className="group inline-flex h-14 items-center justify-center gap-3 bg-beggin-red px-8 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.22em] text-white shadow-[0_14px_32px_rgba(227,55,49,0.18)] transition duration-300 hover:-translate-y-1 hover:bg-beggin-ink hover:shadow-[0_18px_40px_rgba(20,20,18,0.16)]">
+          Enviar mensagem
+          <Send size={16} className="transition-transform group-hover:translate-x-1" />
+        </button>
+
+        {status === 'sent' ? (
+          <p className="font-serifDisplay text-[13px] uppercase tracking-[0.14em] text-beggin-red">
+            Seu aplicativo de e-mail foi aberto com a mensagem pronta para envio.
+          </p>
+        ) : null}
       </div>
-
-      <div className="grid gap-4 md:grid-cols-2">
-        <label className="grid gap-2 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-beggin-ink">
-          Telefone
-          <input name="phone" className="h-12 border border-[#c7b889]/70 bg-white/70 px-4 font-sans text-[15px] normal-case tracking-normal outline-none transition focus:border-beggin-red" />
-        </label>
-        <label className="grid gap-2 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-beggin-ink">
-          Interesse
-          <select name="interest" className="h-12 border border-[#c7b889]/70 bg-white/70 px-4 font-sans text-[15px] normal-case tracking-normal outline-none transition focus:border-beggin-red">
-            {interestOptions.map((option) => (
-              <option key={option}>{option}</option>
-            ))}
-          </select>
-        </label>
-      </div>
-
-      <label className="grid gap-2 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-beggin-ink">
-        Mensagem
-        <textarea name="message" required rows={6} className="resize-none border border-[#c7b889]/70 bg-white/70 p-4 font-sans text-[15px] normal-case leading-relaxed tracking-normal outline-none transition focus:border-beggin-red" />
-      </label>
-
-      <button type="submit" className="group inline-flex h-14 items-center justify-center gap-3 bg-beggin-red px-8 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.22em] text-white transition hover:bg-beggin-ink">
-        Enviar mensagem
-        <Send size={16} className="transition-transform group-hover:translate-x-1" />
-      </button>
-
-      {status === 'sent' ? (
-        <p className="font-serifDisplay text-[13px] uppercase tracking-[0.14em] text-beggin-red">
-          Seu aplicativo de e-mail foi aberto com a mensagem pronta para envio.
-        </p>
-      ) : null}
     </form>
   );
 }
