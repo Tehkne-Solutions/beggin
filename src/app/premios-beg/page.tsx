@@ -13,15 +13,18 @@ export const metadata: Metadata = {
 const notes = [
   {
     label: 'Competições',
-    text: 'Reconhecimento nacional e internacional em destilados.',
+    title: 'Reconhecimento em competições',
+    text: 'Trajetória construída em avaliações nacionais e internacionais dedicadas ao universo dos destilados.',
   },
   {
     label: 'Artesanal',
-    text: 'Pequenos lotes com atenção ao perfil sensorial.',
+    title: 'Produção em pequenos lotes',
+    text: 'Processo cuidadoso, atenção ao perfil sensorial e acabamento premium em cada rótulo Beg Gin.',
   },
   {
     label: 'Identidade',
-    text: 'Gin brasileiro premium, feito para ser lembrado.',
+    title: 'Gin brasileiro com presença',
+    text: 'Um destilado feito para ser lembrado, com personalidade própria, origem brasileira e assinatura visual marcante.',
   },
 ] as const;
 
@@ -36,42 +39,58 @@ export default function AwardsLandingPage() {
   return (
     <main className="min-h-screen bg-[#FEFAF3] text-beggin-ink">
       <Header />
-      <section className="paper-texture relative overflow-hidden bg-[#FEFAF3] px-5 pb-16 pt-[130px] md:px-8 lg:pb-20 lg:pt-[160px]">
-        <div className="pointer-events-none absolute right-[-110px] bottom-[30px] h-[470px] w-[330px] opacity-38">
-          <Image src={awardAssets.flowerRight} alt="" fill sizes="330px" className="object-contain" priority />
+
+      <section className="paper-texture relative overflow-hidden bg-[#FEFAF3] px-5 pb-20 pt-[130px] md:px-8 lg:pb-24 lg:pt-[160px]">
+        <div className="pointer-events-none absolute right-[-120px] bottom-[8px] hidden h-[520px] w-[360px] opacity-38 lg:block">
+          <Image src={awardAssets.flowerRight} alt="" fill sizes="360px" className="object-contain" priority />
         </div>
+
         <div className="mx-auto max-w-[1500px]">
-          <div className="grid gap-12 lg:grid-cols-[0.4fr_0.6fr] lg:items-end">
-            <div className="relative z-[2]">
-              <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.34em] text-beggin-ink/75">Prêmios</p>
-              <div className="mt-5 h-px w-20 bg-beggin-gold/70" />
-              <h1 className="mt-8 font-serifDisplay text-[clamp(3.5rem,6.7vw,8rem)] font-semibold uppercase leading-[0.84] tracking-[-0.055em]">Reconhecido. Premiado.</h1>
-              <div className="relative mt-7 h-[24px] w-[48px]">
-                <Image src={awardAssets.waves} alt="" fill sizes="48px" className="object-contain" />
-              </div>
-              <p className="mt-8 max-w-[650px] text-[1.05rem] leading-[1.85] text-beggin-ink/72">A Beg Gin carrega uma trajetória de reconhecimento, qualidade sensorial e atenção artesanal aos detalhes que fazem cada rótulo ter presença própria.</p>
-              <Link href="/produtos" className="mt-9 inline-flex bg-beggin-red px-7 py-4 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-beggin-ink">Conheça a linha Beg</Link>
+          <div className="relative z-[2] max-w-[880px]">
+            <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.34em] text-beggin-ink/75">Prêmios</p>
+            <div className="mt-5 h-px w-20 bg-beggin-gold/70" />
+            <h1 className="mt-8 font-serifDisplay text-[clamp(3.5rem,7.2vw,8.4rem)] font-semibold uppercase leading-[0.84] tracking-[-0.055em]">
+              Reconhecido.
+              <br />
+              Premiado.
+            </h1>
+            <div className="relative mt-7 h-[24px] w-[48px]">
+              <Image src={awardAssets.waves} alt="" fill sizes="48px" className="object-contain" />
             </div>
+            <p className="mt-8 max-w-[650px] text-[1.05rem] leading-[1.85] text-beggin-ink/72">
+              A Beg Gin carrega uma trajetória de reconhecimento, qualidade sensorial e atenção artesanal aos detalhes que fazem cada rótulo ter presença própria.
+            </p>
+            <Link href="/produtos" className="mt-9 inline-flex bg-beggin-red px-7 py-4 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-beggin-ink">
+              Conheça a linha Beg
+            </Link>
+          </div>
+        </div>
+      </section>
 
-            <div className="relative z-[2] flex justify-start lg:justify-center xl:justify-start">
-              <div className="w-full max-w-[620px] border border-[#c7b889]/70 bg-[#FFFCF6]/82 p-6 shadow-[0_18px_52px_rgba(54,43,25,0.055)] backdrop-blur-[2px] md:p-7">
-                <div className="mb-5 flex items-center gap-4">
-                  <span className="h-px flex-1 bg-[#c7b889]/65" />
-                  <span className="font-serifDisplay text-[10px] font-bold uppercase tracking-[0.28em] text-beggin-red">Reconhecimento</span>
-                  <span className="h-px flex-1 bg-[#c7b889]/65" />
-                </div>
-
-                <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
-                  {notes.map((note, index) => (
-                    <div key={note.label} className="relative border border-[#d7c89e]/55 bg-[#FEFAF3]/72 p-5 md:min-h-[150px] lg:min-h-0 xl:min-h-[150px]">
-                      <span className="font-serifDisplay text-[10px] font-bold uppercase tracking-[0.2em] text-beggin-gold">{String(index + 1).padStart(2, '0')}</span>
-                      <h2 className="mt-4 font-serifDisplay text-[1.1rem] font-bold uppercase leading-[1.05] tracking-[0.04em] text-beggin-ink">{note.label}</h2>
-                      <p className="mt-3 text-[0.92rem] leading-[1.65] text-beggin-ink/70">{note.text}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
+      <section className="paper-texture relative overflow-hidden bg-[#FEFAF3] px-5 pb-20 md:px-8 lg:pb-24">
+        <div className="mx-auto max-w-[1320px] border border-[#c7b889]/65 bg-[#FFFCF6] px-6 py-8 shadow-[0_22px_70px_rgba(54,43,25,0.055)] md:px-10 md:py-10 lg:px-14 lg:py-12">
+          <div className="mb-8 grid gap-6 border-b border-[#d7c89e]/55 pb-7 lg:grid-cols-[0.33fr_0.67fr] lg:items-end">
+            <div>
+              <p className="font-serifDisplay text-[10px] font-bold uppercase tracking-[0.3em] text-beggin-red">Reconhecimento</p>
+              <h2 className="mt-4 font-serifDisplay text-[clamp(2rem,3.3vw,3.8rem)] font-semibold uppercase leading-[0.9] tracking-[-0.04em] text-beggin-ink">
+                Três pilares de uma trajetória premiada.
+              </h2>
             </div>
+            <p className="max-w-[720px] text-[1rem] leading-[1.85] text-beggin-ink/68 lg:justify-self-end">
+              Qualidade sensorial, produção cuidadosa e identidade brasileira sustentam a presença da Beg Gin em premiações e experiências de destilados.
+            </p>
+          </div>
+
+          <div className="grid gap-5 md:grid-cols-3">
+            {notes.map((note, index) => (
+              <article key={note.label} className="group relative min-h-[230px] overflow-hidden border border-[#d7c89e]/60 bg-[#FEFAF3]/84 p-6 transition duration-300 hover:-translate-y-1 hover:bg-white/70 md:p-7">
+                <div className="absolute inset-x-6 top-0 h-px bg-beggin-gold/45" />
+                <span className="font-serifDisplay text-[10px] font-bold uppercase tracking-[0.22em] text-beggin-gold">{String(index + 1).padStart(2, '0')}</span>
+                <p className="mt-5 font-serifDisplay text-[10px] font-bold uppercase tracking-[0.28em] text-beggin-red/80">{note.label}</p>
+                <h3 className="mt-3 font-serifDisplay text-[1.45rem] font-bold uppercase leading-[1.02] tracking-[0.02em] text-beggin-ink">{note.title}</h3>
+                <p className="mt-5 text-[0.98rem] leading-[1.75] text-beggin-ink/70">{note.text}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
