@@ -6,7 +6,7 @@ import { Footer } from '@/components/layout/Footer';
 import { awardAssets, awards } from '@/data/awards';
 
 export const metadata: Metadata = {
-  title: 'Prêmios Beg | Beg Gin',
+  title: 'Prêmios | Beg Gin',
   description: 'Conheça os reconhecimentos e selos de premiação da Beg Gin.',
 };
 
@@ -16,20 +16,27 @@ const notes = [
   'Gin brasileiro feito para ser lembrado, com identidade própria e acabamento premium.',
 ];
 
+const awardDetails = [
+  'Premiação que reconhece destilados, marcas e experiências com olhar para qualidade, apresentação e presença no mercado de bebidas.',
+  'Competição internacional de destilados realizada em São Francisco, referência global para avaliação técnica e reconhecimento de bebidas premium.',
+  'Selo de ouro que reforça o posicionamento da Beg Gin entre rótulos de destaque no universo do gin artesanal e contemporâneo.',
+  'Reconhecimento que amplia a trajetória de conquistas da marca e confirma consistência sensorial, acabamento e identidade própria.',
+] as const;
+
 export default function AwardsLandingPage() {
   return (
     <main className="min-h-screen bg-[#FEFAF3] text-beggin-ink">
       <Header />
-      <section className="paper-texture relative overflow-hidden bg-[#FEFAF3] px-5 pb-20 pt-[130px] md:px-8 lg:pb-24 lg:pt-[160px]">
-        <div className="pointer-events-none absolute right-[-90px] bottom-[80px] h-[440px] w-[300px] opacity-45">
-          <Image src={awardAssets.flowerRight} alt="" fill sizes="300px" className="object-contain" />
+      <section className="paper-texture relative overflow-hidden bg-[#FEFAF3] px-5 pb-16 pt-[130px] md:px-8 lg:pb-20 lg:pt-[160px]">
+        <div className="pointer-events-none absolute right-[-110px] bottom-[30px] h-[470px] w-[330px] opacity-38">
+          <Image src={awardAssets.flowerRight} alt="" fill sizes="330px" className="object-contain" priority />
         </div>
         <div className="mx-auto max-w-[1500px]">
-          <div className="grid gap-12 lg:grid-cols-[0.38fr_0.62fr] lg:items-end">
+          <div className="grid gap-12 lg:grid-cols-[0.4fr_0.6fr] lg:items-end">
             <div className="relative z-[2]">
-              <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.34em] text-beggin-ink/75">Prêmios Beg</p>
+              <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.34em] text-beggin-ink/75">Prêmios</p>
               <div className="mt-5 h-px w-20 bg-beggin-gold/70" />
-              <h1 className="mt-8 font-serifDisplay text-[clamp(3.4rem,6vw,7rem)] font-semibold uppercase leading-[0.86] tracking-[-0.05em]">Reconhecido. Premiado.</h1>
+              <h1 className="mt-8 font-serifDisplay text-[clamp(3.5rem,6.7vw,8rem)] font-semibold uppercase leading-[0.84] tracking-[-0.055em]">Reconhecido. Premiado.</h1>
               <div className="relative mt-7 h-[24px] w-[48px]">
                 <Image src={awardAssets.waves} alt="" fill sizes="48px" className="object-contain" />
               </div>
@@ -44,17 +51,30 @@ export default function AwardsLandingPage() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
 
-          <div className="relative z-[2] mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {awards.map((award) => (
-              <article key={award.id} className="group border border-[#c7b889]/60 bg-[#FFFCF6] p-7 text-center shadow-[0_18px_50px_rgba(54,43,25,0.05)] transition duration-300 hover:-translate-y-1 hover:border-beggin-gold">
-                <div className="relative mx-auto h-[190px] w-[190px] transition duration-300 group-hover:scale-105">
-                  <Image src={award.image} alt={award.title} fill sizes="190px" className="object-contain" />
+      <section className="paper-texture bg-[#FEFAF3] px-5 pb-24 md:px-8 lg:pb-28">
+        <div className="mx-auto max-w-[1320px] space-y-10 lg:space-y-12">
+          {awards.map((award, index) => {
+            const reversed = index % 2 === 1;
+            return (
+              <article key={award.id} className="grid overflow-hidden border border-[#c7b889]/60 bg-[#FFFCF6] shadow-[0_24px_70px_rgba(54,43,25,0.055)] lg:grid-cols-[0.42fr_0.58fr]">
+                <div className={`${reversed ? 'lg:order-2' : ''} relative flex min-h-[300px] items-center justify-center bg-[#f6efe1] p-10 md:min-h-[380px]`}>
+                  <div className="absolute inset-6 border border-[#c7b889]/45" />
+                  <div className="relative h-[220px] w-[220px] md:h-[270px] md:w-[270px]">
+                    <Image src={award.image} alt={award.title} fill sizes="270px" className="object-contain drop-shadow-[0_16px_26px_rgba(54,43,25,0.12)]" />
+                  </div>
                 </div>
-                <h2 className="mt-6 font-serifDisplay text-[1.1rem] font-bold uppercase leading-tight tracking-[0.04em] text-beggin-ink">{award.title}</h2>
+                <div className={`${reversed ? 'lg:order-1' : ''} flex flex-col justify-center p-8 md:p-12 lg:p-16`}>
+                  <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.28em] text-beggin-red">Reconhecimento {String(index + 1).padStart(2, '0')}</p>
+                  <h2 className="mt-5 font-serifDisplay text-[clamp(2.2rem,3.9vw,4.4rem)] font-semibold uppercase leading-[0.9] tracking-[-0.04em] text-beggin-ink">{award.title}</h2>
+                  <div className="mt-6 h-px w-20 bg-beggin-gold/70" />
+                  <p className="mt-7 text-[1.03rem] leading-[1.85] text-beggin-ink/72">{awardDetails[index]}</p>
+                </div>
               </article>
-            ))}
-          </div>
+            );
+          })}
         </div>
       </section>
       <Footer />
