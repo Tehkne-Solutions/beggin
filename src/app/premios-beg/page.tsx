@@ -11,10 +11,19 @@ export const metadata: Metadata = {
 };
 
 const notes = [
-  'Reconhecimento em competições nacionais e internacionais de destilados.',
-  'Produção artesanal em pequenos lotes, com atenção ao perfil sensorial.',
-  'Gin brasileiro feito para ser lembrado, com identidade própria e acabamento premium.',
-];
+  {
+    label: 'Competições',
+    text: 'Reconhecimento nacional e internacional em destilados.',
+  },
+  {
+    label: 'Artesanal',
+    text: 'Pequenos lotes com atenção ao perfil sensorial.',
+  },
+  {
+    label: 'Identidade',
+    text: 'Gin brasileiro premium, feito para ser lembrado.',
+  },
+] as const;
 
 const awardDetails = [
   'Premiação que reconhece destilados, marcas e experiências com olhar para qualidade, apresentação e presença no mercado de bebidas.',
@@ -43,12 +52,25 @@ export default function AwardsLandingPage() {
               <p className="mt-8 max-w-[650px] text-[1.05rem] leading-[1.85] text-beggin-ink/72">A Beg Gin carrega uma trajetória de reconhecimento, qualidade sensorial e atenção artesanal aos detalhes que fazem cada rótulo ter presença própria.</p>
               <Link href="/produtos" className="mt-9 inline-flex bg-beggin-red px-7 py-4 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-beggin-ink">Conheça a linha Beg</Link>
             </div>
-            <div className="relative z-[2] grid gap-4 md:grid-cols-3">
-              {notes.map((note) => (
-                <div key={note} className="border border-[#c7b889]/60 bg-[#FFFCF6] p-5 text-[0.95rem] leading-relaxed text-beggin-ink/72 shadow-[0_14px_40px_rgba(54,43,25,0.04)]">
-                  {note}
+
+            <div className="relative z-[2] flex justify-start lg:justify-center xl:justify-start">
+              <div className="w-full max-w-[620px] border border-[#c7b889]/70 bg-[#FFFCF6]/82 p-6 shadow-[0_18px_52px_rgba(54,43,25,0.055)] backdrop-blur-[2px] md:p-7">
+                <div className="mb-5 flex items-center gap-4">
+                  <span className="h-px flex-1 bg-[#c7b889]/65" />
+                  <span className="font-serifDisplay text-[10px] font-bold uppercase tracking-[0.28em] text-beggin-red">Reconhecimento</span>
+                  <span className="h-px flex-1 bg-[#c7b889]/65" />
                 </div>
-              ))}
+
+                <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+                  {notes.map((note, index) => (
+                    <div key={note.label} className="relative border border-[#d7c89e]/55 bg-[#FEFAF3]/72 p-5 md:min-h-[150px] lg:min-h-0 xl:min-h-[150px]">
+                      <span className="font-serifDisplay text-[10px] font-bold uppercase tracking-[0.2em] text-beggin-gold">{String(index + 1).padStart(2, '0')}</span>
+                      <h2 className="mt-4 font-serifDisplay text-[1.1rem] font-bold uppercase leading-[1.05] tracking-[0.04em] text-beggin-ink">{note.label}</h2>
+                      <p className="mt-3 text-[0.92rem] leading-[1.65] text-beggin-ink/70">{note.text}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
