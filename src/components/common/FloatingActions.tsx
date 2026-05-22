@@ -35,10 +35,10 @@ export function FloatingActions() {
             <div>
               <p className="font-serifDisplay text-[13px] font-bold uppercase tracking-[0.2em] text-[#f4efe3]">Preferências do site</p>
               <p className="mt-2 max-w-[700px] text-[0.92rem] leading-relaxed text-[#f4efe3]/85">
-                Usamos recursos técnicos para manter a navegação, medir desempenho e melhorar a experiência. Consulte nossa página de privacidade para mais detalhes.
+                Usamos recursos técnicos para manter a navegação, medir desempenho e melhorar a experiência. Consulte nossa Política de Privacidade para mais detalhes.
               </p>
-              <Link href="/termos-de-uso" className="mt-2 inline-flex font-serifDisplay text-[11px] font-bold uppercase tracking-[0.18em] text-[#c8a759] hover:text-white">
-                Ver detalhes
+              <Link href="/politica-de-privacidade" className="mt-2 inline-flex font-serifDisplay text-[11px] font-bold uppercase tracking-[0.18em] text-[#c8a759] hover:text-white">
+                Ver Política de Privacidade
               </Link>
             </div>
             <button type="button" onClick={accept} className="inline-flex h-12 shrink-0 items-center justify-center bg-beggin-red px-6 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.2em] text-white transition hover:bg-[#f4efe3] hover:text-[#131413]">
