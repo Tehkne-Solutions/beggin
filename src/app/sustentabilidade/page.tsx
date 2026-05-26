@@ -6,21 +6,21 @@ import { Footer } from '@/components/layout/Footer';
 import { sustainabilityAssets, sustainabilityItems } from '@/data/sustainability';
 
 export const metadata: Metadata = {
-  title: 'Sustentabilidade | Beg Gin',
-  description: 'Conheça os pilares de sustentabilidade, produção artesanal e origem responsável da Beg Gin.',
+  title: 'Sustentabilidade | BEG Destilaria',
+  description: 'Conheça os pilares de sustentabilidade, produção artesanal e origem responsável da BEG Destilaria.',
 };
 
 const introParagraphs = [
-  'Crafted com propósito traduz a forma como a Beg Gin conecta produção artesanal, ingredientes naturais e atenção aos detalhes em pequenos lotes.',
+  'Orgulhosamente artesanal traduz a forma como a BEG Destilaria conecta produção em pequenos lotes, ingredientes naturais e atenção aos detalhes.',
   'A marca valoriza botânicos selecionados, processos cuidadosos, embalagens com menor impacto e orgulho por suas origens brasileiras.',
-  'Cada escolha reforça uma visão de produto premium: menos excesso, mais consciência, procedência e respeito pela experiência de quem aprecia o gin brasileiro.',
+  'Cada escolha reforça uma visão de produto premium: menos excesso, mais consciência, procedência e respeito pela experiência de quem aprecia bebidas artesanais brasileiras.',
 ];
 
 const detailCopy = [
-  'A seleção de botânicos é parte essencial da assinatura sensorial da Beg Gin. Ingredientes naturais, origem responsável e equilíbrio aromático conduzem o perfil de cada rótulo.',
+  'A seleção de botânicos é parte essencial da assinatura sensorial da BEG Destilaria. Ingredientes naturais, origem responsável e equilíbrio aromático conduzem o perfil de cada rótulo.',
   'A produção em pequenos lotes permite controle, cuidado e acabamento artesanal. Cada etapa é pensada para preservar qualidade, identidade e consistência.',
   'A embalagem faz parte da experiência e também da responsabilidade da marca. A escolha por materiais recicláveis reduz impacto e reforça uma relação mais consciente com o produto.',
-  'A Beg Gin nasce no Brasil e carrega esse orgulho em sua narrativa, em seus botânicos, em sua estética e na forma como apresenta o gin artesanal brasileiro ao mundo.',
+  'A BEG Destilaria nasce no Brasil e carrega esse orgulho em sua narrativa, em seus botânicos, em sua estética e na forma como apresenta a produção artesanal brasileira ao mundo.',
 ] as const;
 
 export default function SustainabilityPage() {
@@ -36,7 +36,7 @@ export default function SustainabilityPage() {
           <div className="relative z-[2]">
             <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.34em] text-beggin-ink/75">Sustentabilidade</p>
             <div className="mt-5 h-px w-20 bg-beggin-gold/70" />
-            <h1 className="mt-8 font-serifDisplay text-[clamp(3.5rem,6.6vw,8rem)] font-semibold uppercase leading-[0.84] tracking-[-0.055em]">Crafted com propósito</h1>
+            <h1 className="mt-8 font-serifDisplay text-[clamp(3.5rem,6.6vw,8rem)] font-semibold uppercase leading-[0.84] tracking-[-0.055em]">Orgulhosamente Artesanal.</h1>
             <div className="relative mt-7 h-[24px] w-[48px]">
               <Image src={sustainabilityAssets.waves} alt="" fill sizes="48px" className="object-contain" />
             </div>
@@ -60,7 +60,7 @@ export default function SustainabilityPage() {
                 <div className={`${reversed ? 'lg:order-2' : ''} relative min-h-[320px] bg-[#ebe7d7] p-10 md:min-h-[380px]`}>
                   <div className="absolute inset-6 border border-[#c8b98e]/45" />
                   <div className="relative mx-auto h-full min-h-[260px] max-w-[430px]">
-                    <Image src={item.image} alt={item.title} fill sizes="(max-width: 1024px) 80vw, 430px" className="object-contain" />
+                    <Image src={item.image} alt={item.title} fill sizes="(max-width: 1024px) 80vw, 430px" className="object-cover" />
                   </div>
                 </div>
                 <div className={`${reversed ? 'lg:order-1' : ''} flex flex-col justify-center p-8 md:p-12 lg:p-16`}>
