@@ -5,6 +5,7 @@ export const awardsContent = {
 } as const;
 
 export const awardAssets = {
+  medalsStrip: '/images/Medalhas%20site.png',
   flowerRight: '/images/home/beggin-home-premios-flor-direita.png',
   waves: '/images/home/beggin-home-hero-elemento-bandeiras.png',
 } as const;
