@@ -1,6 +1,6 @@
 export const storyAssets = {
-  photoLeft: '/images/home/beggin-home-nossa-historia-enfeite-bebida-2.png',
-  photoRight: '/images/home/beggin-home-nossa-historia-enfeite-bebida-1.png',
+  photoLeft: '/images/home/BEG-1.jpg',
+  photoRight: '/images/home/BEG-12.jpg',
   botanicalLeft: '/images/home/beggin-home-nossa-historia-folhas-lateral-esquerdo.png',
   centerSeal: '/images/home/beggin-home-nossa-historia-selo-central-com-folhas.png',
   smallSun: '/images/home/beggin-home-nossa-historia-sol-pequeno.png',
