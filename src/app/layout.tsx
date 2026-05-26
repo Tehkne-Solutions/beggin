@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import localFont from 'next/font/local';
 import { Cormorant_Garamond, Inter } from 'next/font/google';
 import { FloatingActions } from '@/components/common/FloatingActions';
 import { MotionViewport } from '@/components/motion/MotionViewport';
@@ -17,6 +18,20 @@ const inter = Inter({
   display: 'swap',
 });
 
+const intro = localFont({
+  src: '../../public/fonts/intro/intro-regular.ttf',
+  variable: '--font-intro',
+  display: 'swap',
+  weight: '400',
+});
+
+const gearedSlab = localFont({
+  src: '../../public/fonts/geared-slab/geared-slab-bold.ttf',
+  variable: '--font-geared',
+  display: 'swap',
+  weight: '700',
+});
+
 export const metadata: Metadata = {
   title: 'BEG Destilaria',
   description: 'O melhor gin do mundo é artesanal, é brasileiro.',
@@ -28,7 +43,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <body className={`${cormorant.variable} ${inter.variable}`}>
+      <body className={`${cormorant.variable} ${inter.variable} ${intro.variable} ${gearedSlab.variable}`}>
         <MotionViewport />
         {children}
         <FloatingActions />
