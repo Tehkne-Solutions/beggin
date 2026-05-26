@@ -30,7 +30,7 @@ export function SustainabilityItem({
           : '',
       ].join(' ')}
     >
-      <div className="relative mb-5 h-[118px] w-[150px]">
+      <div className="relative mb-5 h-[124px] w-[172px] overflow-hidden border border-[#b9a875]/25 bg-[#fdf9f1]/45">
         <motion.div
           initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.92 }}
           whileInView={shouldReduceMotion ? undefined : { opacity: 1, scale: 1 }}
@@ -42,8 +42,8 @@ export function SustainabilityItem({
             src={image}
             alt=""
             fill
-            sizes="150px"
-            className="object-contain"
+            sizes="172px"
+            className="object-cover transition duration-500 group-hover:scale-[1.04]"
           />
         </motion.div>
       </div>
