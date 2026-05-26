@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Selo edição especial Copa BEG">
+  <defs>
+    <path id="sealTop" d="M82 256a174 174 0 0 1 348 0" />
+    <path id="sealBottom" d="M430 256a174 174 0 0 1-348 0" />
+    <path id="sealLeft" d="M85 255a171 171 0 0 0 82 145" />
+    <path id="sealRight" d="M427 255a171 171 0 0 1-82 145" />
+  </defs>
+  <circle cx="256" cy="256" r="232" fill="none" stroke="#003052" stroke-width="0" />
+  <g fill="#003052" font-family="Georgia, 'Times New Roman', serif" font-weight="800" letter-spacing="7" text-transform="uppercase">
+    <text font-size="47">
+      <textPath href="#sealTop" startOffset="50%" text-anchor="middle">EDIÇÃO ESPECIAL</textPath>
+    </text>
+    <text font-size="38">
+      <textPath href="#sealBottom" startOffset="50%" text-anchor="middle">BRASILEIRO</textPath>
+    </text>
+    <text font-size="35" letter-spacing="5">
+      <textPath href="#sealLeft" startOffset="50%" text-anchor="middle">HANDCRAFTED</textPath>
+    </text>
+    <text font-size="35" letter-spacing="5">
+      <textPath href="#sealRight" startOffset="50%" text-anchor="middle">ORGULHOSAMENTE</textPath>
+    </text>
+  </g>
+  <g fill="#003052">
+    <circle cx="54" cy="256" r="8" />
+    <circle cx="458" cy="256" r="8" />
+  </g>
+  <g fill="none" stroke="#003052" stroke-width="24" stroke-linecap="round">
+    <path d="M128 215c35-31 70-31 105 0s70 31 105 0 70-31 105 0" />
+    <path d="M128 257c35-31 70-31 105 0s70 31 105 0 70-31 105 0" />
+    <path d="M128 299c35-31 70-31 105 0s70 31 105 0 70-31 105 0" />
+  </g>
+</svg>
