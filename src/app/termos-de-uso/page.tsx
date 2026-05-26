@@ -4,13 +4,13 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
-  title: 'Termos de Uso | Beg Gin',
-  description: 'Termos institucionais de uso do site Beg Gin.',
+  title: 'Termos de Uso | BEG Destilaria',
+  description: 'Termos institucionais de uso do site BEG Destilaria.',
 };
 
 const sections = [
-  ['Uso do site', 'Este site apresenta informações institucionais, produtos, experiências e canais oficiais da Beg Gin.'],
-  ['Conteúdo', 'Textos, imagens, marcas e elementos visuais pertencem à Beg Gin ou aos seus respectivos titulares.'],
+  ['Uso do site', 'Este site apresenta informações institucionais, produtos, experiências e canais oficiais da BEG Destilaria.'],
+  ['Conteúdo', 'Textos, imagens, marcas e elementos visuais pertencem à BEG Destilaria ou aos seus respectivos titulares.'],
   ['Informações comerciais', 'Valores, disponibilidade e condições comerciais podem ser ajustados pelos canais oficiais da marca.'],
   ['Contato', 'Dúvidas sobre o uso do site podem ser enviadas pela página de contato.'],
 ] as const;
@@ -25,7 +25,7 @@ export default function TermsPage() {
           <div className="mt-5 h-px w-20 bg-beggin-gold/70" />
           <h1 className="mt-8 font-serifDisplay text-[clamp(3.2rem,5.6vw,6.4rem)] font-semibold uppercase leading-[0.86] tracking-[-0.05em]">Termos de Uso</h1>
           <p className="mt-8 max-w-[760px] text-[1rem] leading-[1.85] text-beggin-ink/72">
-            Página provisória com diretrizes gerais de uso do site Beg Gin.
+            Página provisória com diretrizes gerais de uso do site BEG Destilaria.
           </p>
           <div className="mt-12 grid gap-5">
             {sections.map(([title, text]) => (
