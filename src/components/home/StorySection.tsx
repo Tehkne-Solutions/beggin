@@ -4,7 +4,6 @@ import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { motion, useAnimation, useInView, useReducedMotion } from 'framer-motion';
 import { MagneticLink } from '@/components/motion/MagneticLink';
-import { Reveal } from '@/components/motion/Reveal';
 import { storyAssets, storyContent } from '@/data/story';
 
 const easeOut = [0.25, 0.1, 0.25, 1] as [number, number, number, number];
@@ -49,7 +48,7 @@ export function StorySection() {
       className="paper-texture relative overflow-hidden bg-[#dfdec9] px-0 py-20 lg:py-24"
     >
       <motion.div
-        className="relative mx-auto w-[calc(100%-48px)] max-w-[1540px] overflow-hidden border border-[#b9a875]/38 bg-[#e3dfc9] px-10 py-12 shadow-[0_22px_60px_rgba(47,42,28,0.08)] lg:w-[calc(100%-64px)] lg:px-16 xl:px-20"
+        className="relative mx-auto w-[calc(100%-48px)] max-w-[1540px] overflow-hidden border border-[#b9a875]/38 bg-[#131413] px-10 py-12 text-[#f4efe3] shadow-[0_22px_60px_rgba(47,42,28,0.12)] lg:w-[calc(100%-64px)] lg:px-16 xl:px-20"
         initial="hidden"
         animate={controls}
         variants={panelMotion}
@@ -58,7 +57,7 @@ export function StorySection() {
         <div className="pointer-events-none absolute inset-[22px] z-[1] border border-[#b9a875]/32" />
 
         <motion.div
-          className="pointer-events-none absolute bottom-[-72px] left-[-54px] z-[1] h-[220px] w-[220px] opacity-45 lg:h-[270px] lg:w-[270px]"
+          className="pointer-events-none absolute bottom-[-72px] left-[-54px] z-[1] h-[220px] w-[220px] opacity-30 invert lg:h-[270px] lg:w-[270px]"
           initial="hidden"
           animate={controls}
           variants={fadeInUp}
@@ -99,14 +98,12 @@ export function StorySection() {
             variants={fadeInUp}
             transition={{ ...transition, delay: 0.18 }}
           >
-            <p className="font-serifDisplay text-[13px] xl:text-[14px] font-bold uppercase tracking-[0.22em] text-beggin-ink">
+            <p className="font-serifDisplay text-[13px] font-bold uppercase tracking-[0.22em] text-[#f4efe3] xl:text-[14px]">
               {storyContent.eyebrow}
               <span className="ml-3 text-beggin-gold">✧</span>
             </p>
-            <h2 className="mt-7 max-w-[500px] font-serifDisplay text-[clamp(3rem,3.35vw,4.55rem)] font-semibold uppercase leading-[0.95] text-beggin-ink">
-              De quatro amigos
-              <br />
-              para o mundo.
+            <h2 className="mt-7 max-w-[560px] font-serifDisplay text-[clamp(2.65rem,3.15vw,4.15rem)] font-semibold uppercase leading-[0.98] text-[#f4efe3]">
+              {storyContent.title}
             </h2>
             <div className="relative mt-7 h-[22px] w-[48px]" aria-hidden="true">
               <Image
@@ -119,7 +116,7 @@ export function StorySection() {
             </div>
 
             <motion.div
-              className="relative mt-7 h-[82px] w-[82px] self-center opacity-78 max-md:h-[58px] max-md:w-[58px]"
+              className="relative mt-7 h-[82px] w-[82px] self-center opacity-70 max-md:h-[58px] max-md:w-[58px]"
               whileHover={{ y: -2, scale: 1.02 }}
               transition={{ duration: 0.35, ease: 'easeOut' }}
             >
@@ -127,14 +124,14 @@ export function StorySection() {
                 src={storyAssets.smallSun}
                 alt=""
                 fill
-                className="object-contain"
+                className="object-contain invert"
                 sizes="82px"
               />
             </motion.div>
 
             <MagneticLink
-              href="#coqueteis"
-              className="group relative z-[8] mt-8 inline-flex w-fit items-center gap-4 font-serifDisplay text-[14px] font-bold uppercase tracking-[0.18em] text-beggin-ink xl:text-[15px]"
+              href="/nossa-historia"
+              className="group relative z-[8] mt-8 inline-flex w-fit items-center gap-4 font-serifDisplay text-[14px] font-bold uppercase tracking-[0.18em] text-[#f4efe3] xl:text-[15px]"
             >
               <span className="border-b border-beggin-gold/80 pb-2 pr-8 transition-colors duration-300 group-hover:border-beggin-red">
                 {storyContent.cta}
@@ -143,21 +140,21 @@ export function StorySection() {
             </MagneticLink>
           </motion.div>
 
-            <motion.div
-              className="relative z-[3] h-[320px] w-full max-w-[430px] justify-self-end overflow-hidden bg-transparent lg:h-[330px]"
-              initial="hidden"
-              animate={controls}
-              variants={photoMotion}
-              transition={{ ...transition, delay: 0.28 }}
-            >
-              <Image
-                src={storyAssets.photoLeft}
-                alt="Foto Beg com garrafa, caixa e taça"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 86vw, 395px"
-              />
-            </motion.div>
+          <motion.div
+            className="relative z-[3] h-[320px] w-full max-w-[430px] justify-self-end overflow-hidden bg-transparent lg:h-[330px]"
+            initial="hidden"
+            animate={controls}
+            variants={photoMotion}
+            transition={{ ...transition, delay: 0.28 }}
+          >
+            <Image
+              src={storyAssets.photoLeft}
+              alt="Foto Beg com garrafa, caixa e taça"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 86vw, 395px"
+            />
+          </motion.div>
 
           <motion.div
             className="pointer-events-none relative z-[10] mx-[-126px] h-[315px] w-[315px] justify-self-center"
@@ -176,7 +173,7 @@ export function StorySection() {
           </motion.div>
 
           <motion.div
-            className="relative z-[3] h-[320px] w-full max-w-[640px] lg:justify-self-start overflow-hidden bg-transparent lg:h-[330px]"
+            className="relative z-[3] h-[320px] w-full max-w-[640px] overflow-hidden bg-transparent lg:h-[330px] lg:justify-self-start"
             initial="hidden"
             animate={controls}
             variants={photoMotion}
