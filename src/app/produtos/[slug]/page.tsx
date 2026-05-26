@@ -23,12 +23,12 @@ export async function generateMetadata({ params }: ProductPageProps) {
 
   if (!product) {
     return {
-      title: 'Produto não encontrado | Beg Gin',
+      title: 'Produto não encontrado | BEG Destilaria',
     };
   }
 
   return {
-    title: `${product.name} | Beg Gin`,
+    title: `${product.name} | BEG Destilaria`,
     description: product.shortDescription,
   };
 }
