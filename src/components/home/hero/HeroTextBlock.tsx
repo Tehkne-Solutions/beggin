@@ -9,19 +9,19 @@ import { Reveal } from '@/components/motion/Reveal';
 
 export function HeroTextBlock() {
   return (
-    <div className="absolute left-[5.2%] top-[18.5%] z-[9] max-w-[620px] md:left-[6.4vw] md:top-[19.5%] max-md:left-6 max-md:right-6 max-md:top-[12%]">
+    <div className="absolute left-[5.2%] top-[18.5%] z-[9] max-w-[660px] md:left-[6.4vw] md:top-[19.5%] max-md:left-6 max-md:right-6 max-md:top-[12%]">
       <motion.h1
         initial={{ opacity: 0, y: 42, clipPath: 'inset(0 0 100% 0)' }}
         animate={{ opacity: 1, y: 0, clipPath: 'inset(0 0 0% 0)' }}
         transition={{ duration: 1.05, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
-        className="font-serifDisplay text-[clamp(7.02rem,11.7vw,13.78rem)] font-semibold uppercase leading-[0.78] tracking-[0em] text-beggin-ink max-md:text-[clamp(5.6rem,24vw,8.4rem)]"
+        className="font-serifDisplay text-[clamp(5.2rem,9.2vw,10.9rem)] font-semibold uppercase leading-[0.82] tracking-[0em] text-beggin-ink max-md:text-[clamp(4.6rem,18vw,7.2rem)]"
       >
         BEG
         <br />
-        GIN
+        Destilaria
       </motion.h1>
 
-      <Reveal delay={0.18} className="mt-8 max-w-[320px] text-center md:ml-5 max-md:mt-6">
+      <Reveal delay={0.18} className="mt-8 max-w-[390px] text-center md:ml-5 max-md:mt-6">
         <div className="relative mx-auto mb-5 h-[20px] w-[42px]">
           <Image
             src={heroAssets.waves}
@@ -33,18 +33,18 @@ export function HeroTextBlock() {
           />
         </div>
 
-        <p className="font-serifDisplay text-[clamp(1.05rem,1.25vw,1.35rem)] font-bold uppercase leading-[1.08] tracking-[0.08em] text-beggin-ink">
-          O clássico brasileiro.
+        <p className="font-serifDisplay text-[clamp(1.05rem,1.25vw,1.35rem)] font-bold uppercase leading-[1.12] tracking-[0.08em] text-beggin-ink">
+          O melhor gin do mundo é artesanal,
           <br />
-          Feito para ser lembrado.
+          é brasileiro!
         </p>
 
         <MagneticLink
-          href="#historia"
+          href="/blog"
           className="group mt-10 inline-flex items-center gap-3 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-beggin-ink"
         >
           <span className="relative pb-2 after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-center after:bg-beggin-gold after:transition-transform after:duration-300 group-hover:after:scale-x-125">
-            Descubra mais
+            Descubra e saiba mais
           </span>
           <span className="text-beggin-gold transition-transform duration-300 group-hover:translate-x-1">
             ✦
