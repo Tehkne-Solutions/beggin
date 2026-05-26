@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
 import { heroAssets } from '@/data/hero-assets';
+import { BrandLogo } from '@/components/brand/BrandLogo';
 
 const whatsappContactUrl =
   'https://wa.me/5519996638642?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20BEG%20Destilaria%20e%20gostaria%20de%20saber%20mais.';
@@ -58,7 +59,7 @@ export function Footer() {
         <div className="grid gap-10 lg:grid-cols-[0.25fr_0.22fr_1px_0.22fr_1px_0.31fr] lg:items-start lg:gap-12">
           <div className="max-w-[220px] lg:max-w-none">
             <Link href="/#inicio" aria-label="Voltar para a página inicial BEG Destilaria">
-              <Image src="/images/footer/beggin-footer-logo.png" alt="BEG Destilaria" width={220} height={220} className="h-auto w-[150px] object-contain lg:w-[180px]" />
+              <BrandLogo variant="light" className="h-auto w-[115px] lg:w-[145px]" />
             </Link>
           </div>
 

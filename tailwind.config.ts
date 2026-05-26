@@ -10,19 +10,20 @@ const config: Config = {
     extend: {
       colors: {
         beggin: {
-          paper: '#f8f1e3',
-          paperSoft: '#fbf7ee',
+          paper: '#FCF7F1',
+          paperSoft: '#FDF9F1',
           ink: '#111315',
           muted: '#6f685c',
-          red: '#e33731',
+          red: '#d71920',
           gold: '#b99a5d',
           sage: '#dfe4cf',
           line: '#d8c8a6',
+          pantone433: '#131413',
         },
       },
       fontFamily: {
-        serifDisplay: ['var(--font-cormorant)', 'Georgia', 'serif'],
-        sansUi: ['var(--font-inter)', 'Arial', 'sans-serif'],
+        serifDisplay: ['var(--font-intro)', 'var(--font-cormorant)', 'Georgia', 'serif'],
+        sansUi: ['var(--font-geared)', 'var(--font-inter)', 'Arial', 'sans-serif'],
       },
       boxShadow: {
         soft: '0 24px 70px rgba(38, 28, 14, 0.12)',

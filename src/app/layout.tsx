@@ -18,8 +18,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Beg Gin',
-  description: 'O clássico brasileiro. Feito para ser lembrado.',
+  title: 'BEG Destilaria',
+  description: 'O melhor gin do mundo é artesanal, é brasileiro.',
   other: {
     'link[rel=preload][as=image]': '/images/home/beggin-home-hero-elemento-garrafa-principal-mobile-lcp.webp',
   },
