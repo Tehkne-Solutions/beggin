@@ -1,6 +1,6 @@
 export const awardsContent = {
   eyebrow: 'Prêmios',
-  title: 'Reconhecido.\nPremiado.',
+  title: 'Medalha de Ouro\nno Brasil e no Mundo.',
   cta: 'Ver todos os prêmios',
 } as const;
 
