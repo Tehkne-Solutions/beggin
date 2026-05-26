@@ -8,19 +8,19 @@ export const cocktails = [
     id: 'drinks-dia-a-dia',
     title: 'Drinks para o dia a dia',
     description: 'Leves • Refrescantes • Práticos',
-    image: '/images/home/beggin-home-coqueteis-autorais-card1-beg-and-tonica.png',
+    image: '/images/Drinks (7).jpg',
   },
   {
     id: 'drinks-ocasioes-especiais',
     title: 'Drinks para ocasiões especiais',
     description: 'Elegantes • Aromáticos • Memoráveis',
-    image: '/images/home/beggin-home-coqueteis-autorais-card2-citrico-brasileiro.png',
+    image: '/images/Beg_Drinks (306).jpg',
   },
   {
     id: 'drinks-para-impressionar',
     title: 'Drinks para impressionar',
     description: 'Intensos • Autorais • Sofisticados',
-    image: '/images/home/beggin-home-coqueteis-autorais-card3-negroni-beg.png',
+    image: '/images/Beg_Drinks (101).jpg',
   },
 ] as const;
 
