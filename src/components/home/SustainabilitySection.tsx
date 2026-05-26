@@ -45,7 +45,7 @@ export function SustainabilitySection() {
 
             <div className="mt-3 h-px w-10 bg-beggin-gold/60 max-lg:mx-auto" />
 
-            <h2 className="mt-7 font-serifDisplay text-[clamp(3.1rem,4.4vw,5.05rem)] font-semibold uppercase leading-[0.9] tracking-[-0.045em] text-beggin-ink">
+            <h2 className="mt-7 font-serifDisplay text-[clamp(2.45rem,3.05vw,3.85rem)] font-semibold uppercase leading-[0.93] tracking-[-0.035em] text-beggin-ink">
               {sustainabilityContent.title}
             </h2>
 
