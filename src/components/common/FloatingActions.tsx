@@ -5,6 +5,8 @@ import Link from 'next/link';
 import { MessageCircle, Settings } from 'lucide-react';
 
 const STORAGE_KEY = 'beggin-consent-v1';
+const WHATSAPP_URL =
+  'https://wa.me/5519996638642?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20BEG%20Destilaria%20e%20gostaria%20de%20saber%20mais.';
 
 export function FloatingActions() {
   const [isReady, setIsReady] = useState(false);
@@ -52,7 +54,7 @@ export function FloatingActions() {
         </button>
       )}
 
-      <a href="https://wa.me/5519999999999?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Beg%20Gin%20e%20gostaria%20de%20saber%20mais." target="_blank" rel="noreferrer" aria-label="WhatsApp Beg Gin" className="fixed bottom-5 right-5 z-[70] inline-flex h-14 w-14 items-center justify-center rounded-full border border-[#c8a759]/70 bg-[#131413] text-[#f4efe3] shadow-[0_14px_38px_rgba(0,0,0,0.28)] transition hover:-translate-y-1 hover:bg-beggin-red hover:text-white">
+      <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" aria-label="WhatsApp BEG Destilaria" className="fixed bottom-5 right-5 z-[70] inline-flex h-14 w-14 items-center justify-center rounded-full border border-[#c8a759]/70 bg-[#131413] text-[#f4efe3] shadow-[0_14px_38px_rgba(0,0,0,0.28)] transition hover:-translate-y-1 hover:bg-beggin-red hover:text-white">
         <MessageCircle size={24} strokeWidth={1.8} />
       </a>
     </>

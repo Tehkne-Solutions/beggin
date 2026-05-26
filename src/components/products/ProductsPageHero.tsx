@@ -19,8 +19,6 @@ export function ProductsPageHero() {
   const imageX = useTransform(springX, [-1, 1], shouldReduceMotion ? [0, 0] : [-12, 12]);
   const imageY = useTransform(springY, [-1, 1], shouldReduceMotion ? [0, 0] : [-7, 7]);
   const imageRotate = useTransform(springX, [-1, 1], shouldReduceMotion ? [0, 0] : [-0.45, 0.45]);
-  const glowX = useTransform(springX, [-1, 1], shouldReduceMotion ? ['50%', '50%'] : ['42%', '60%']);
-  const glowY = useTransform(springY, [-1, 1], shouldReduceMotion ? ['42%', '42%'] : ['35%', '50%']);
 
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -55,11 +53,7 @@ export function ProductsPageHero() {
       className="hero-motion paper-texture relative min-h-[560px] overflow-hidden bg-[#FCF7F1] px-5 pt-[86px] md:px-8 lg:min-h-[650px] lg:pt-[76px] xl:min-h-[700px]"
     >
       <div className="absolute inset-0 bg-[#FCF7F1]" />
-      <motion.div
-        aria-hidden="true"
-        style={{ backgroundPosition: `${glowX.get()} ${glowY.get()}` }}
-        className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(circle_at_var(--hero-glow-x,58%)_var(--hero-glow-y,42%),rgba(185,154,93,0.22),transparent_34%),linear-gradient(90deg,rgba(252,247,241,1)_0%,rgba(252,247,241,0.54)_62%,rgba(252,247,241,0)_100%)]"
-      />
+      <div className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(circle_at_58%_42%,rgba(185,154,93,0.22),transparent_34%),linear-gradient(90deg,rgba(252,247,241,1)_0%,rgba(252,247,241,0.54)_62%,rgba(252,247,241,0)_100%)]" />
 
       <motion.div
         aria-hidden="true"
@@ -67,34 +61,6 @@ export function ProductsPageHero() {
         animate={shouldReduceMotion ? undefined : { opacity: 1, scale: 1 }}
         transition={{ duration: 1.15, delay: 0.12, ease: easeOut }}
         className="pointer-events-none absolute inset-5 z-[2] hidden border border-[#b99a5d]/45 lg:block"
-      />
-      <motion.div
-        aria-hidden="true"
-        initial={shouldReduceMotion ? false : { opacity: 0, x: -18, y: -18 }}
-        animate={shouldReduceMotion ? undefined : { opacity: 1, x: 0, y: 0 }}
-        transition={{ duration: 0.9, delay: 0.32, ease: easeOut }}
-        className="pointer-events-none absolute left-8 top-[100px] z-[2] hidden h-16 w-16 border-l border-t border-[#b99a5d]/55 lg:block"
-      />
-      <motion.div
-        aria-hidden="true"
-        initial={shouldReduceMotion ? false : { opacity: 0, x: 18, y: -18 }}
-        animate={shouldReduceMotion ? undefined : { opacity: 1, x: 0, y: 0 }}
-        transition={{ duration: 0.9, delay: 0.38, ease: easeOut }}
-        className="pointer-events-none absolute right-8 top-[100px] z-[2] hidden h-16 w-16 border-r border-t border-[#b99a5d]/55 lg:block"
-      />
-      <motion.div
-        aria-hidden="true"
-        initial={shouldReduceMotion ? false : { opacity: 0, x: -18, y: 18 }}
-        animate={shouldReduceMotion ? undefined : { opacity: 1, x: 0, y: 0 }}
-        transition={{ duration: 0.9, delay: 0.44, ease: easeOut }}
-        className="pointer-events-none absolute bottom-8 left-8 z-[2] hidden h-16 w-16 border-b border-l border-[#b99a5d]/55 lg:block"
-      />
-      <motion.div
-        aria-hidden="true"
-        initial={shouldReduceMotion ? false : { opacity: 0, x: 18, y: 18 }}
-        animate={shouldReduceMotion ? undefined : { opacity: 1, x: 0, y: 0 }}
-        transition={{ duration: 0.9, delay: 0.5, ease: easeOut }}
-        className="pointer-events-none absolute bottom-8 right-8 z-[2] hidden h-16 w-16 border-b border-r border-[#b99a5d]/55 lg:block"
       />
 
       <motion.div
@@ -138,14 +104,14 @@ export function ProductsPageHero() {
         style={{ y: scrollTextY, opacity: scrollFade }}
         className="relative z-[5] mx-auto flex min-h-[474px] max-w-[1500px] items-center lg:min-h-[574px] xl:min-h-[624px]"
       >
-        <div className="max-w-[610px] pt-3 text-left max-lg:max-w-[500px] max-md:mx-auto max-md:max-w-[420px] max-md:pt-10 max-md:text-center">
+        <div className="max-w-[630px] pt-3 text-left max-lg:max-w-[500px] max-md:mx-auto max-md:max-w-[420px] max-md:pt-10 max-md:text-center">
           <motion.p
             initial={shouldReduceMotion ? false : { opacity: 0, y: 18, letterSpacing: '0.18em' }}
             animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0, letterSpacing: '0.32em' }}
             transition={{ duration: 0.8, delay: 0.2, ease: easeOut }}
             className="mb-5 font-serifDisplay text-[10px] font-bold uppercase tracking-[0.32em] text-beggin-ink md:text-[11px]"
           >
-            Beg Experience
+            BEG Destilaria
           </motion.p>
           <motion.div
             initial={shouldReduceMotion ? false : { scaleX: 0, opacity: 0 }}
@@ -159,13 +125,13 @@ export function ProductsPageHero() {
             transition={{ duration: 1.05, delay: 0.48, ease: easeOut }}
             className="font-serifDisplay text-[clamp(2.25rem,3.85vw,4.45rem)] font-semibold uppercase leading-[0.96] tracking-[-0.045em] text-beggin-ink md:text-[clamp(2.55rem,4vw,4.75rem)]"
           >
-            Conheça toda
+            A sua melhor
             <br />
-            a nossa linha
+            experiência
             <br />
-            de produtos
+            em diferentes
             <br />
-            Beg Gin.
+            versões.
           </motion.h1>
 
           <motion.div
@@ -181,11 +147,9 @@ export function ProductsPageHero() {
             initial={shouldReduceMotion ? false : { opacity: 0, y: 18 }}
             animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.82, delay: 0.92, ease: easeOut }}
-            className="mt-5 max-w-[390px] font-serifDisplay text-[1.12rem] font-semibold leading-[1.22] text-beggin-ink/86 md:text-[1.3rem] max-md:mx-auto"
+            className="mt-5 max-w-[430px] font-serifDisplay text-[1.12rem] font-semibold leading-[1.22] text-beggin-ink/86 md:text-[1.3rem] max-md:mx-auto"
           >
-            Feito para ser lembrado.
-            <br />
-            Escolha o seu favorito.
+            Descubra a sua favorita.
           </motion.p>
         </div>
       </motion.div>

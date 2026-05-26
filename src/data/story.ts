@@ -9,6 +9,6 @@ export const storyAssets = {
 
 export const storyContent = {
   eyebrow: 'Nossa História',
-  title: 'De quatro amigos para o mundo.',
+  title: 'Do interior de São Paulo para o Mundo.',
   cta: 'Conheça a nossa trajetória',
 } as const;
