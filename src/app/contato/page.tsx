@@ -8,8 +8,8 @@ import { ContactForm } from '@/components/contact/ContactForm';
 import { heroAssets } from '@/data/hero-assets';
 
 export const metadata: Metadata = {
-  title: 'Contato | Beg Gin',
-  description: 'Fale com a Beg Gin para produtos, eventos, parcerias, visitas e experiências.',
+  title: 'Contato | BEG Destilaria',
+  description: 'Fale com a BEG Destilaria para produtos, eventos, parcerias, visitas e experiências.',
 };
 
 const contactCards = [
@@ -53,13 +53,13 @@ export default function ContactPage() {
             </p>
             <div className="mt-5 h-px w-20 bg-beggin-gold/70" />
             <h1 className="mt-8 max-w-[650px] font-serifDisplay text-[clamp(3.4rem,6vw,7.2rem)] font-semibold uppercase leading-[0.86] tracking-[-0.055em] text-beggin-ink">
-              Vamos conversar sobre a Beg Gin.
+              Vamos conversar sobre a BEG Destilaria.
             </h1>
             <div className="relative mt-8 h-[30px] w-[62px] wave-pulse">
               <Image src={heroAssets.waves} alt="" fill priority sizes="62px" className="object-contain" />
             </div>
             <p className="mt-7 max-w-[560px] text-[1.02rem] leading-[1.85] text-beggin-ink/72">
-              Entre em contato para falar sobre produtos, visitas, eventos, imprensa, distribuição ou parcerias. A Beg Gin nasceu em Campinas com produção artesanal, botânicos selecionados e uma experiência pensada para ser lembrada.
+              Entre em contato para falar sobre produtos, visitas, eventos, imprensa, distribuição ou parcerias. A BEG Destilaria nasceu em Campinas com produção artesanal, botânicos selecionados e uma experiência pensada para ser lembrada.
             </p>
 
             <div className="mt-10 grid gap-4 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
