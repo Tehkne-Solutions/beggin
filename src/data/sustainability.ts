@@ -5,7 +5,7 @@ export const sustainabilityAssets = {
 
 export const sustainabilityContent = {
   eyebrow: 'Sustentabilidade',
-  title: 'Crafted com propósito',
+  title: 'Orgulhosamente Artesanal.',
   cta: 'Saiba mais',
 };
 
@@ -13,21 +13,21 @@ export const sustainabilityItems = [
   {
     title: 'Botânicos selecionados',
     description: 'Ingredientes naturais de origem responsável.',
-    image: '/images/home/beggin-home-sustentabilidade-botanicos-selecionados.png',
+    image: '/images/20210107_Gin Beg4179.jpg',
   },
   {
-    title: 'Produção artesanal.',
+    title: 'Produção artesanal',
     description: 'Pequenos lotes e processo cuidadoso.',
-    image: '/images/home/beggin-home-sustentabilidade-producao-artesanal.png',
+    image: '/images/BEGGIN_DESTILARIA-0313.jpg',
   },
   {
-    title: 'Embalagem reciclável.',
+    title: 'Embalagem reciclável',
     description: 'Menos impacto, mais consciência.',
-    image: '/images/home/beggin-home-sustentabilidade-embalagem-reciclavel.png',
+    image: '/images/Beg (4).jpg',
   },
   {
-    title: 'Feito no Brasil.',
+    title: 'Feito no Brasil',
     description: 'Orgulho de nossas origens e pessoas.',
-    image: '/images/home/beggin-home-sustentabilidade-feito-no-brasil.png',
+    image: '/images/BEGGIN_DESTILARIA-1161.jpg',
   },
 ] as const;
