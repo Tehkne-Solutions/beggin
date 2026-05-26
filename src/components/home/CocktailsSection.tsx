@@ -1,8 +1,7 @@
-﻿'use client';
+'use client';
 
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { motion, useAnimation, useInView, useReducedMotion } from 'framer-motion';
 import { cocktails, cocktailsContent, cocktailAssets } from '@/data/cocktails';
 import { CocktailCard } from './cocktails/CocktailCard';
@@ -34,31 +33,17 @@ export function CocktailsSection() {
       id="coqueteis"
       className="paper-texture relative overflow-hidden bg-[#fdf9f1] px-5 py-24 md:px-8 lg:py-28"
     >
-      <div className="pointer-events-none absolute right-[-56px] top-10 z-[1] hidden h-[420px] w-[260px] opacity-80 lg:block">
-        <Image
-          src={cocktailAssets.flowersRight}
-          alt=""
-          fill
-          className="object-contain object-right-top"
-          sizes="320px"
-        />
-      </div>
-
       <motion.div
-        className="relative z-[2] mx-auto grid max-w-[1500px] gap-10 lg:grid-cols-[0.27fr_0.73fr] lg:items-start"
+        className="relative z-[2] mx-auto grid max-w-[1500px] gap-10 lg:grid-cols-[0.30fr_0.70fr] lg:items-start"
         initial="hidden"
         animate={controls}
         variants={fadeInUp}
         transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.8, ease: easeOut }}
       >
-        <div className="max-w-[320px]">
-          <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.26em] text-beggin-ink">
-            {cocktailsContent.label}
-          </p>
+        <div className="max-w-[390px]">
+          <div className="h-px w-10 bg-beggin-gold/60" />
 
-          <div className="mt-3 h-px w-10 bg-beggin-gold/60" />
-
-          <h2 className="mt-8 font-serifDisplay text-[clamp(2.8rem,4.2vw,4.8rem)] font-semibold uppercase leading-[0.9] tracking-[-0.04em] text-beggin-ink">
+          <h2 className="mt-8 font-serifDisplay text-[clamp(2.45rem,3.8vw,4.45rem)] font-semibold uppercase leading-[0.98] tracking-[-0.04em] text-beggin-ink">
             {cocktailsContent.title}
           </h2>
 
@@ -74,7 +59,7 @@ export function CocktailsSection() {
 
           <Reveal delay={0.1} className="mt-16">
             <MagneticLink
-              href="#coqueteis"
+              href="/blog"
               className="group inline-flex items-center gap-3 font-serifDisplay text-[11px] font-bold uppercase tracking-[0.2em] text-beggin-ink"
             >
               <span className="relative pb-2 after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-beggin-gold after:transition-transform after:duration-300 group-hover:after:scale-x-125">
