@@ -4,14 +4,14 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
-  title: 'Política de Privacidade | Beg Gin',
-  description: 'Política de Privacidade da Beg Gin, com informações sobre LGPD, cookies, direitos do titular e canais de contato.',
+  title: 'Política de Privacidade | BEG Destilaria',
+  description: 'Política de Privacidade da BEG Destilaria, com informações sobre LGPD, cookies, direitos do titular e canais de contato.',
 };
 
 const sections = [
   {
     title: '1. Quem somos',
-    text: 'Esta Política de Privacidade descreve como a Beg Gin trata informações relacionadas aos visitantes do site, contatos comerciais, interessados em produtos, experiências, visitas, eventos, distribuição, imprensa e parcerias. O site tem finalidade institucional, informativa e comercial, apresentando a marca, sua história, seus produtos e seus canais oficiais de relacionamento.',
+    text: 'Esta Política de Privacidade descreve como a BEG Destilaria trata informações relacionadas aos visitantes do site, contatos comerciais, interessados em produtos, experiências, visitas, eventos, distribuição, imprensa e parcerias. O site tem finalidade institucional, informativa e comercial, apresentando a marca, sua história, seus produtos e seus canais oficiais de relacionamento.',
   },
   {
     title: '2. Dados que podemos coletar',
@@ -19,11 +19,11 @@ const sections = [
   },
   {
     title: '3. Finalidades do tratamento',
-    text: 'Os dados podem ser utilizados para responder solicitações, registrar contatos, encaminhar demandas comerciais, melhorar a experiência de navegação, medir desempenho do site, preservar segurança, cumprir obrigações legais e aperfeiçoar a comunicação institucional da Beg Gin.',
+    text: 'Os dados podem ser utilizados para responder solicitações, registrar contatos, encaminhar demandas comerciais, melhorar a experiência de navegação, medir desempenho do site, preservar segurança, cumprir obrigações legais e aperfeiçoar a comunicação institucional da BEG Destilaria.',
   },
   {
     title: '4. Bases legais',
-    text: 'O tratamento poderá ocorrer com base no consentimento, na execução de procedimentos preliminares relacionados a uma solicitação do usuário, no legítimo interesse da Beg Gin, no cumprimento de obrigação legal ou regulatória e na proteção contra fraudes e usos indevidos do site, sempre observando a legislação aplicável, incluindo a Lei Geral de Proteção de Dados.',
+    text: 'O tratamento poderá ocorrer com base no consentimento, na execução de procedimentos preliminares relacionados a uma solicitação do usuário, no legítimo interesse da BEG Destilaria, no cumprimento de obrigação legal ou regulatória e na proteção contra fraudes e usos indevidos do site, sempre observando a legislação aplicável, incluindo a Lei Geral de Proteção de Dados.',
   },
   {
     title: '5. Cookies e tecnologias semelhantes',
@@ -39,47 +39,35 @@ const sections = [
   },
   {
     title: '8. Direitos do titular',
-    text: 'Você pode solicitar confirmação de tratamento, acesso, correção, anonimização, bloqueio, eliminação, portabilidade, informação sobre compartilhamento e revogação de consentimento, conforme hipóteses previstas na LGPD. Algumas solicitações podem depender de validação de identidade e análise legal.',
+    text: 'Você pode solicitar confirmação de tratamento, acesso, correção, atualização, exclusão, portabilidade, informação sobre compartilhamento, revisão de consentimentos e demais direitos previstos na LGPD, conforme aplicável ao caso concreto.',
   },
   {
-    title: '9. Menores de idade',
-    text: 'O conteúdo da Beg Gin está relacionado a bebidas alcoólicas e é destinado a pessoas maiores de idade, conforme a legislação aplicável. Não buscamos coletar intencionalmente dados de crianças ou adolescentes.',
-  },
-  {
-    title: '10. Atualizações desta política',
-    text: 'Esta Política de Privacidade pode ser atualizada para refletir mudanças no site, nos processos internos, em fornecedores ou na legislação. A versão publicada nesta página será considerada a versão vigente.',
+    title: '9. Contato',
+    text: 'Solicitações relacionadas à privacidade podem ser enviadas pelos canais oficiais indicados no site. A BEG Destilaria avaliará a solicitação e responderá conforme os prazos e critérios legais aplicáveis.',
   },
 ];
 
-export default function PrivacyPolicyPage() {
+export default function PrivacyPage() {
   return (
     <main className="min-h-screen bg-[#FCF7F1] text-beggin-ink">
       <Header />
       <section className="paper-texture bg-[#FCF7F1] px-5 pb-20 pt-[130px] md:px-8 lg:pb-24 lg:pt-[160px]">
-        <div className="mx-auto max-w-[1040px]">
-          <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.34em] text-beggin-ink/75">Privacidade e LGPD</p>
+        <div className="mx-auto max-w-[980px]">
+          <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.34em] text-beggin-ink/75">Privacidade</p>
           <div className="mt-5 h-px w-20 bg-beggin-gold/70" />
-          <h1 className="mt-8 font-serifDisplay text-[clamp(3.1rem,5.8vw,6.8rem)] font-semibold uppercase leading-[0.86] tracking-[-0.05em]">Política de Privacidade</h1>
-          <p className="mt-8 max-w-[820px] text-[1.04rem] leading-[1.85] text-beggin-ink/72">
-            Esta página explica, de forma transparente, como tratamos informações pessoais, cookies e solicitações de contato realizadas pelos canais digitais da Beg Gin.
+          <h1 className="mt-8 font-serifDisplay text-[clamp(3.2rem,5.6vw,6.4rem)] font-semibold uppercase leading-[0.86] tracking-[-0.05em]">Política de Privacidade</h1>
+          <p className="mt-8 max-w-[760px] text-[1rem] leading-[1.85] text-beggin-ink/72">
+            Esta página reúne as diretrizes de privacidade, cookies e proteção de dados da BEG Destilaria.
           </p>
-
           <div className="mt-12 grid gap-5">
             {sections.map((section) => (
-              <article key={section.title} className="border border-[#c7b889]/60 bg-[#FFFCF6]/82 p-6 shadow-[0_14px_42px_rgba(54,43,25,0.04)] md:p-8">
+              <article key={section.title} className="border border-[#c7b889]/60 bg-[#FFFCF6]/78 p-6">
                 <h2 className="font-serifDisplay text-[1.45rem] font-bold uppercase tracking-[0.04em] text-beggin-ink">{section.title}</h2>
-                <p className="mt-4 text-[1rem] leading-[1.85] text-beggin-ink/72">{section.text}</p>
+                <p className="mt-4 text-[1rem] leading-[1.8] text-beggin-ink/70">{section.text}</p>
               </article>
             ))}
           </div>
-
-          <div className="mt-12 border border-[#c7b889]/60 bg-[#DFDEC9]/70 p-7 md:p-9">
-            <h2 className="font-serifDisplay text-[1.65rem] font-bold uppercase tracking-[0.04em]">Contato sobre privacidade</h2>
-            <p className="mt-4 text-[1rem] leading-[1.8] text-beggin-ink/72">
-              Para exercer direitos de titular ou tirar dúvidas sobre esta política, entre em contato pelos canais oficiais da Beg Gin.
-            </p>
-            <Link href="/contato" className="mt-7 inline-flex bg-beggin-red px-7 py-4 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-beggin-ink">Falar com a Beg Gin</Link>
-          </div>
+          <Link href="/contato" className="mt-10 inline-flex bg-beggin-red px-7 py-4 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-beggin-ink">Fale conosco</Link>
         </div>
       </section>
       <Footer />
