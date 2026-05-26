@@ -19,9 +19,9 @@ export function HeroSun() {
     offset: ['start start', 'end start'],
   });
 
-  const scrollX = useTransform<number, number>(scrollYProgress, [0, 1], [0, -16]);
-  const scrollY = useTransform<number, number>(scrollYProgress, [0, 1], [0, 58]);
-  const opacity = useTransform<number, number>(scrollYProgress, [0, 0.65, 1], [0.42, 0.58, 0.22]);
+  const scrollX = useTransform<number, number>(scrollYProgress, [0, 1], [0, -18]);
+  const scrollY = useTransform<number, number>(scrollYProgress, [0, 1], [0, 48]);
+  const opacity = useTransform<number, number>(scrollYProgress, [0, 0.65, 1], [0.72, 0.86, 0.28]);
 
   useEffect(() => {
     const reset = () => {
@@ -51,7 +51,7 @@ export function HeroSun() {
       const deltaX = event.clientX - centerX;
       const deltaY = event.clientY - centerY;
       const distance = Math.hypot(deltaX, deltaY);
-      const radius = 260;
+      const radius = 240;
 
       if (distance >= radius) {
         reset();
@@ -62,8 +62,8 @@ export function HeroSun() {
       const directionX = distance === 0 ? 0 : deltaX / distance;
       const directionY = distance === 0 ? 0 : deltaY / distance;
 
-      avoidX.set(directionX * -24 * strength);
-      avoidY.set(directionY * -18 * strength);
+      avoidX.set(directionX * -22 * strength);
+      avoidY.set(directionY * -16 * strength);
     };
 
     window.addEventListener('pointermove', handlePointerMove);
@@ -81,17 +81,22 @@ export function HeroSun() {
     <motion.div
       ref={ref}
       style={{ x: scrollX, y: scrollY, opacity }}
-      className="pointer-events-none absolute right-[11%] top-[16%] z-[2] hidden h-[170px] w-[170px] lg:block"
+      className="pointer-events-none absolute right-[10.5%] top-[15%] z-[6] hidden h-[142px] w-[142px] lg:block"
       aria-hidden="true"
     >
-      <motion.div style={{ x: mouseX, y: mouseY }} className="relative h-full w-full">
-          <Image
-            src={heroAssets.sun}
-            alt=""
-            fill
-            sizes="100vw"
-            className="object-contain"
-          />
+      <motion.div
+        style={{ x: mouseX, y: mouseY }}
+        animate={shouldReduceMotion ? undefined : { rotateZ: [-1.4, 1.2, -1.4], rotateY: [0, 8, 0] }}
+        transition={{ duration: 9.5, repeat: Infinity, ease: 'easeInOut' }}
+        className="relative h-full w-full drop-shadow-[0_14px_22px_rgba(38,28,14,0.16)] [transform-style:preserve-3d]"
+      >
+        <Image
+          src={heroAssets.copaSeal}
+          alt=""
+          fill
+          sizes="142px"
+          className="object-contain"
+        />
       </motion.div>
     </motion.div>
   );
