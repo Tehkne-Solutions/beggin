@@ -1,9 +1,9 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { Menu, ShoppingBag, UserRound } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { BrandLogo } from '@/components/brand/BrandLogo';
 
 const whatsappContactUrl =
   'https://wa.me/5519996638642?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20BEG%20Destilaria%20e%20gostaria%20de%20saber%20mais.';
@@ -20,8 +20,8 @@ const navItems = [
 export function Header() {
   const { scrollY } = useScroll();
   const height = useTransform(scrollY, [0, 80], [76, 56]);
-  const background = useTransform(scrollY, [0, 80], ['rgba(251, 247, 238, 0.72)', 'rgba(251, 247, 238, 0.92)']);
-  const logoHeight = useTransform(scrollY, [0, 80], [68, 42]);
+  const background = useTransform(scrollY, [0, 80], ['rgba(252, 247, 241, 0.72)', 'rgba(252, 247, 241, 0.92)']);
+  const logoHeight = useTransform(scrollY, [0, 80], [62, 42]);
 
   return (
     <motion.header
@@ -32,16 +32,9 @@ export function Header() {
         <Link href="/#inicio" aria-label="BEG Destilaria" className="flex items-center">
           <motion.div
             style={{ height: logoHeight }}
-            className="relative flex w-[82px] items-center overflow-visible lg:w-[96px]"
+            className="relative flex w-[54px] items-center overflow-visible lg:w-[62px]"
           >
-            <Image
-              src="/images/home/beggin-header-logo.avif"
-              alt="BEG Destilaria"
-              fill
-              priority
-              sizes="96px"
-              className="object-contain object-left"
-            />
+            <BrandLogo variant="dark" className="h-full w-auto" />
           </motion.div>
         </Link>
 
