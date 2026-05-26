@@ -1,6 +1,8 @@
 export const heroAssets = {
   mainProduct: '/images/home/beggin-home-hero-elemento-garrafa-principal.webp',
   mainProductMobile: '/images/home/beggin-home-hero-elemento-garrafa-principal-mobile-lcp.webp',
+  heroVideo: '/videos/Motion rotação.mp4',
+  copaSeal: '/images/home/selo-garrafa-copa.svg',
   bottle: '/images/home/beggin-home-hero-elemento-garrafa.png',
   cloudsBottom: '/images/home/beggin-home-hero-elemento-nuvens-inferiores.png',
   cloudsTop: '/images/home/beggin-home-hero-elemento-nuvens-superiores.png',

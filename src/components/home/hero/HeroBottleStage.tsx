@@ -17,19 +17,17 @@ export function HeroBottleStage() {
   const rotate = useSpring(pointerRotate, { stiffness: 70, damping: 28, mass: 0.4 });
 
   useEffect(() => {
-    // Detect mobile based on screen size
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     checkMobile();
     window.addEventListener('resize', checkMobile);
-    
+
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
   useEffect(() => {
-    // Skip mouse tracking on mobile or if reduced motion is preferred
     if (isMobile || shouldReduceMotion) return;
 
     const reset = () => {
@@ -62,6 +60,8 @@ export function HeroBottleStage() {
     };
   }, [pointerRotate, pointerX, pointerY, shouldReduceMotion, isMobile]);
 
+  const shouldShowVideo = !isMobile && !shouldReduceMotion;
+
   return (
     <div
       className="pointer-events-none absolute left-[65%] top-[51.5%] z-[5] h-[clamp(624px,86vh,912px)] w-[clamp(624px,50vw,912px)] -translate-x-1/2 -translate-y-1/2 max-lg:left-[64%] max-lg:w-[744px] max-md:left-1/2 max-md:top-[78%] max-md:h-[408px] max-md:w-[360px]"
@@ -74,7 +74,6 @@ export function HeroBottleStage() {
           transition={{ duration: 1.1, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
           className="h-full w-full"
         >
-          {/* Disable hover effects on mobile */}
           <motion.div
             {...(!isMobile ? {
               whileHover: { scale: 1.02, y: -6 },
@@ -87,14 +86,28 @@ export function HeroBottleStage() {
               transition={{ duration: 11.5, repeat: Infinity, ease: 'easeInOut' }}
               className="relative h-full w-full drop-shadow-[0_34px_48px_rgba(38,28,14,0.16)] transition-[filter] duration-300 hover:drop-shadow-[0_40px_62px_rgba(38,28,14,0.18)]"
             >
-              <Image
-                src={heroAssets.mainProduct}
-                alt="Beg Gin"
-                fill
-                priority
-                sizes="(max-width: 768px) 360px, (max-width: 1280px) 620px, 912px"
-                className="object-contain"
-              />
+              {shouldShowVideo ? (
+                <video
+                  className="h-full w-full object-contain"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="metadata"
+                  poster={heroAssets.mainProduct}
+                >
+                  <source src={heroAssets.heroVideo} type="video/mp4" />
+                </video>
+              ) : (
+                <Image
+                  src={isMobile ? heroAssets.mainProductMobile : heroAssets.mainProduct}
+                  alt="BEG Destilaria"
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 360px, (max-width: 1280px) 620px, 912px"
+                  className="object-contain"
+                />
+              )}
             </motion.div>
           </motion.div>
         </motion.div>
