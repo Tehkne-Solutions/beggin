@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Leaf, Recycle, Sprout, SunMedium, Waves, Droplets, RefreshCcw } from 'lucide-react';
+import { ArrowRight, Leaf, Sprout, SunMedium, Droplets, RefreshCcw } from 'lucide-react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { sustainabilityAssets } from '@/data/sustainability';
@@ -16,7 +16,6 @@ const heroText =
   'A sustentabilidade não é uma opção, é uma obrigação. Operamos de maneira ecológica, desde a origem dos nossos ingredientes, práticas de produção e embalagem. Nosso compromisso com a sustentabilidade é tão forte quanto nosso compromisso com a qualidade.';
 
 const sustainabilityImages = {
-  recycleBottleIcon: '/images/sustentabilidade/i%CC%81cone%20recicle%20garrafa%20preto.png',
   refilRepeat: '/images/sustentabilidade/post%20feed%20refil%20recicle%20e%20repita.jpg',
   freedomRefil: '/images/sustentabilidade/IMG_2516.jpg',
   sameGinLessImpact: '/images/sustentabilidade/Beg%20(1).jpg',
@@ -107,26 +106,6 @@ export default function SustainabilityPage() {
             <Link href="/produtos?categoria=refis" className="mt-9 inline-flex bg-beggin-red px-7 py-4 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-beggin-ink">
               Conheça nossas opções
             </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="paper-texture bg-[#FCF7F1] px-5 pb-16 md:px-8 lg:pb-20">
-        <div className="mx-auto grid max-w-[1380px] gap-10 border-y border-[#d8caa4]/70 py-12 lg:grid-cols-[0.38fr_0.62fr] lg:items-center">
-          <div className="relative mx-auto flex min-h-[280px] w-full max-w-[420px] items-center justify-center bg-[#F7F2E7]/72 p-10">
-            <div className="absolute inset-6 border border-[#d8caa4]/65" />
-            <div className="relative h-[190px] w-[190px] md:h-[230px] md:w-[230px]">
-              <Image src={sustainabilityImages.recycleBottleIcon} alt="Ícone recicle garrafa BEG" fill sizes="230px" className="object-contain" />
-            </div>
-          </div>
-          <div>
-            <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.32em] text-beggin-red">Ciclo consciente</p>
-            <h2 className="mt-5 font-serifDisplay text-[clamp(2.5rem,4.6vw,5.4rem)] font-semibold uppercase leading-[0.88] tracking-[-0.04em]">
-              Menos excesso. Mais responsabilidade.
-            </h2>
-            <p className="mt-7 max-w-[760px] text-[1.04rem] leading-[1.86] text-beggin-ink/72">
-              A embalagem, os refis, a origem dos ingredientes e o processo produtivo fazem parte de uma mesma visão: entregar qualidade com consciência ambiental.
-            </p>
           </div>
         </div>
       </section>
