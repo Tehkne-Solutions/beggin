@@ -34,12 +34,28 @@ const proofPillars = [
 
 const featuredMedals = [
   {
-    src: '/images/premios/Medalha%20BEG%20Brazilian%20IWSC%202024.png',
-    alt: 'Medalha BEG Brazilian IWSC 2024',
-  },
-  {
     src: '/images/premios/Medalha%20BEG%20Brazilian%20Tonic%20IWSC%202024.png',
     alt: 'Medalha BEG Brazilian Tonic IWSC 2024',
+  },
+  {
+    src: '/images/premios/selo-premio-1.png',
+    alt: 'Selo World Gin Awards Brazil Classic Winner',
+  },
+  {
+    src: '/images/premios/selo-premio-2.png',
+    alt: 'Selo World Gin Awards Gold',
+  },
+  {
+    src: '/images/premios/selo-premio-3.png',
+    alt: 'Selo World Gin Awards Brazil Colour Changing Winner',
+  },
+  {
+    src: '/images/premios/1-main_std-iwsc2024-gold-98-medal-lores-png.png',
+    alt: 'Medalha IWSC Gold 98 pontos 2024',
+  },
+  {
+    src: '/images/premios/Medalha%20BEG%20Brazilian%20IWSC%202024.png',
+    alt: 'Medalha BEG Brazilian IWSC 2024',
   },
 ] as const;
 
@@ -133,8 +149,8 @@ export default function AwardsLandingPage() {
         </div>
       </section>
 
-      <section className="paper-texture overflow-visible bg-[#FEFAF3] px-5 pb-32 pt-4 md:px-8 lg:pb-36">
-        <div className="relative mx-auto max-w-[1320px] overflow-visible border border-[#c7b889]/35 bg-[#131413] px-6 pb-0 pt-12 text-center text-[#FCF7F1] shadow-[0_24px_70px_rgba(19,20,19,0.16)] md:px-10 md:pt-16 lg:px-16 lg:pt-20">
+      <section className="paper-texture overflow-visible bg-[#FEFAF3] px-5 pb-28 pt-4 md:px-8 lg:pb-32">
+        <div className="relative mx-auto max-w-[1320px] overflow-visible border border-[#c7b889]/35 bg-[#131413] px-5 pb-0 pt-12 text-center text-[#FCF7F1] shadow-[0_24px_70px_rgba(19,20,19,0.16)] md:px-8 md:pt-16 lg:px-10 lg:pt-20">
           <div className="mx-auto max-w-[980px]">
             <p className="font-serifDisplay text-[10px] font-bold uppercase tracking-[0.34em] text-[#d7b866]">
               Medalhas
@@ -147,14 +163,22 @@ export default function AwardsLandingPage() {
             </p>
           </div>
 
-          <div className="relative z-[2] mx-auto mt-12 flex w-[calc(100%+60px)] translate-y-16 items-end justify-center gap-5 overflow-x-auto px-4 pb-4 sm:gap-6 lg:w-[calc(100%+140px)] lg:gap-8 lg:overflow-visible">
-            {featuredMedals.map((medal) => (
-              <div key={medal.src} className="relative h-[190px] w-[190px] shrink-0 sm:h-[230px] sm:w-[230px] md:h-[270px] md:w-[270px] lg:h-[310px] lg:w-[310px] xl:h-[340px] xl:w-[340px]">
+          <div className="relative z-[2] mx-auto mt-12 flex w-[calc(100%+36px)] translate-y-14 items-end justify-center gap-3 overflow-x-auto px-2 pb-4 sm:gap-4 md:gap-5 lg:w-[calc(100%+96px)] lg:gap-5 lg:overflow-visible xl:gap-6">
+            {featuredMedals.map((medal, index) => (
+              <div
+                key={medal.src}
+                className={[
+                  'relative shrink-0',
+                  index === 0 || index === 4 || index === 5
+                    ? 'h-[150px] w-[150px] sm:h-[170px] sm:w-[170px] md:h-[190px] md:w-[190px] lg:h-[205px] lg:w-[205px] xl:h-[220px] xl:w-[220px]'
+                    : 'h-[150px] w-[150px] sm:h-[170px] sm:w-[170px] md:h-[190px] md:w-[190px] lg:h-[205px] lg:w-[205px] xl:h-[220px] xl:w-[220px]',
+                ].join(' ')}
+              >
                 <Image
                   src={medal.src}
                   alt={medal.alt}
                   fill
-                  sizes="(max-width: 640px) 190px, (max-width: 768px) 230px, (max-width: 1024px) 270px, 340px"
+                  sizes="(max-width: 640px) 150px, (max-width: 768px) 170px, (max-width: 1024px) 190px, 220px"
                   className="object-contain drop-shadow-[0_22px_34px_rgba(0,0,0,0.42)]"
                 />
               </div>
