@@ -17,7 +17,7 @@ const menu1 = [
 const menu2 = [
   { label: 'Prêmios', href: '/premios' },
   { label: 'Sustentabilidade', href: '/sustentabilidade' },
-  { label: 'WhatsApp', href: whatsappContactUrl, external: true },
+  { label: 'Contato', href: '/#contato' },
 ];
 const socials = [
   { label: 'Instagram', icon: 'IG', href: 'https://www.instagram.com/beg_gin/' },
@@ -83,8 +83,6 @@ export function Footer() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  target={item.external ? '_blank' : undefined}
-                  rel={item.external ? 'noreferrer' : undefined}
                   className="block transition-colors duration-300 hover:text-[#c8a759]"
                 >
                   {item.label}
