@@ -14,9 +14,9 @@ export function SustainabilitySection() {
   return (
     <section
       id="sustentabilidade"
-      className="paper-texture relative overflow-hidden bg-[#dfdec9] px-5 py-12 md:px-8 lg:py-14"
+      className="paper-texture relative overflow-hidden bg-[#dfdec9] px-5 py-14 md:px-8 lg:py-16"
     >
-      <div className="relative mx-auto min-h-[340px] max-w-[1500px]">
+      <div className="relative mx-auto min-h-[390px] max-w-[1500px]">
         <div className="pointer-events-none absolute left-[-44px] top-[26px] z-[1] hidden h-[310px] w-[190px] opacity-70 lg:block">
           <Image
             src={sustainabilityAssets.leftOrnament}
@@ -37,16 +37,17 @@ export function SustainabilitySection() {
           />
         </div>
 
-        <div className="relative z-[2] grid min-h-[340px] items-center gap-10 lg:grid-cols-[0.30fr_0.70fr] xl:gap-14">
-          <Reveal className="relative max-w-[360px] max-lg:mx-auto max-lg:text-center lg:pl-20 xl:pl-24" delay={0.05}>
+        <div className="relative z-[2] grid min-h-[390px] items-center gap-14 lg:grid-cols-[0.34fr_0.66fr] xl:gap-16">
+          <Reveal className="relative max-w-[430px] max-lg:mx-auto max-lg:text-center lg:pl-20 xl:pl-24" delay={0.05}>
             <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.28em] text-beggin-ink">
               {sustainabilityContent.eyebrow}
             </p>
 
             <div className="mt-3 h-px w-10 bg-beggin-gold/60 max-lg:mx-auto" />
 
-            <h2 className="mt-7 font-serifDisplay text-[clamp(2.45rem,3.05vw,3.85rem)] font-semibold uppercase leading-[0.93] tracking-[-0.035em] text-beggin-ink">
-              {sustainabilityContent.title}
+            <h2 className="mt-7 font-serifDisplay text-[clamp(2.45rem,3.05vw,3.85rem)] font-semibold uppercase leading-[0.9] tracking-[-0.04em] text-beggin-ink">
+              <span className="block">Orgulhosamente</span>
+              <span className="block">Artesanal.</span>
             </h2>
 
             <div className="relative mt-6 h-[22px] w-[44px] max-lg:mx-auto">
@@ -60,7 +61,7 @@ export function SustainabilitySection() {
             </div>
 
             <MagneticLink
-              href="#sustentabilidade"
+              href="/sustentabilidade"
               className="group mt-12 inline-flex items-center gap-3 font-serifDisplay text-[11px] font-bold uppercase tracking-[0.2em] text-beggin-ink"
             >
               <span className="relative pb-2 after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-beggin-gold after:transition-transform after:duration-300 group-hover:after:scale-x-125">
