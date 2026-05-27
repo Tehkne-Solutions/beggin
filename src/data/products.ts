@@ -1,5 +1,6 @@
 export type ProductCategory =
   | 'todos'
+  | 'novidades'
   | 'kits'
   | 'gins-750ml'
   | 'refis'
@@ -31,6 +32,7 @@ export type Product = {
 
 export const productCategories = [
   { id: 'todos', label: 'Todos os produtos' },
+  { id: 'novidades', label: 'Novidades' },
   { id: 'kits', label: 'Kits' },
   { id: 'gins-750ml', label: 'Gins 750ml' },
   { id: 'refis', label: 'Refis' },
@@ -46,228 +48,235 @@ const productImages = {
   negroniDrink: '/images/home/beggin-home-coqueteis-autorais-card3-negroni-beg.png',
 } as const;
 
+const defaultGallery = [
+  productImages.heroKit,
+  productImages.brazilianBottle,
+  productImages.modernBottle,
+  productImages.tonicDrink,
+];
+
+function productSpecs(volume: string, category: string, profile: string) {
+  return [
+    { label: 'Volume', value: volume },
+    { label: 'Categoria', value: category },
+    { label: 'Perfil', value: profile },
+    { label: 'BEG Destilaria', value: 'Produção brasileira com identidade artesanal.' },
+  ];
+}
+
+function additionalInfo(volume: string, category: string, service: string) {
+  return [
+    { label: 'Volume', value: volume },
+    { label: 'Categoria', value: category },
+    { label: 'Sugestão de serviço', value: service },
+    { label: 'Origem', value: 'Joaquim Egídio — Campinas, SP' },
+  ];
+}
+
 export const products: Product[] = [
   {
-    slug: 'beg-brazilian-boutique-750ml',
-    name: 'BEG Brazilian Boutique – 750ml',
-    shortDescription: 'O clássico brasileiro. Feito para ser lembrado.',
+    slug: 'beg-brazilian-750ml',
+    name: 'BEG Brazilian 750ml',
+    shortDescription: 'O clássico brasileiro da BEG Destilaria.',
     description:
-      'O BEG Brazilian Boutique Dry Gin foi criado para selecionar e preservar os mais delicados aromas e sabores da coquetelaria clássica. Sua receita conta com botânicos cuidadosamente selecionados, que juntos proporcionam toques iniciais frutados, florais e cítricos, com final surpreendentemente seco e levemente picante.',
+      'BEG Brazilian é a assinatura clássica da destilaria: um gin artesanal brasileiro, equilibrado, aromático e feito para elevar drinks simples ou coquetéis autorais.',
     category: 'gins-750ml',
     image: productImages.brazilianBottle,
-    gallery: [
-      productImages.brazilianBottle,
-      productImages.heroKit,
-      productImages.citricDrink,
-      productImages.negroniDrink,
-    ],
-    oldPrice: 'R$ 109,90',
-    price: 'R$ 99,90',
-    badge: 'Oferta!',
-    essenceTitle: 'O clássico brasileiro. Feito para ser lembrado.',
+    gallery: [productImages.brazilianBottle, ...defaultGallery],
+    price: 'Sob consulta',
+    badge: 'Clássico',
+    essenceTitle: 'A assinatura brasileira da BEG.',
     essenceText:
-      'Uma assinatura de gin seco com botânicos naturais, perfil aromático equilibrado e presença ideal para coquetéis autorais ou clássicos atemporais.',
-    specs: [
-      { label: '11 botânicos selecionados', value: 'Equilíbrio perfeito entre aromas e sabores.' },
-      { label: 'Final seco e picante', value: 'Surpreendente, limpo e marcante.' },
-      { label: 'Grad. alcoólica 45% vol.', value: 'Corpo e intensidade na medida certa.' },
-      { label: 'Garrafa 750ml', value: 'Design exclusivo que valoriza cada detalhe.' },
-    ],
-    additionalInfo: [
-      { label: 'Estilo', value: 'London Dry Gin brasileiro' },
-      { label: 'Volume', value: '750ml' },
-      { label: 'Graduação alcoólica', value: '45% vol.' },
-      { label: 'Perfil sensorial', value: 'Frutado, floral, cítrico, seco e levemente picante' },
-      { label: 'Sugestão de serviço', value: 'Gin tônica clássico, negroni, martini seco e coquetéis autorais' },
-    ],
+      'Um gin versátil, elegante e aromático, pensado para quem busca uma experiência artesanal com identidade brasileira.',
+    specs: productSpecs('750ml', 'Gin artesanal', 'Seco, aromático e equilibrado'),
+    additionalInfo: additionalInfo('750ml', 'Gin 750ml', 'Gin tônica, negroni, martini seco e coquetéis autorais'),
+  },
+  {
+    slug: 'beg-brazilian-gold-edition-750ml',
+    name: 'BEG Brazilian Gold Edition 750ml',
+    shortDescription: 'Edição especial dourada da linha Brazilian.',
+    description:
+      'BEG Brazilian Gold Edition celebra a presença premiada da marca em uma versão especial, pensada para presente, coleção e momentos de destaque.',
+    category: 'novidades',
+    image: productImages.heroKit,
+    gallery: [productImages.heroKit, productImages.brazilianBottle, productImages.modernBottle],
+    price: 'Sob consulta',
+    badge: 'Gold Edition',
+    essenceTitle: 'Uma edição para celebrar.',
+    essenceText:
+      'Uma versão especial da assinatura Brazilian, com presença visual premium e vocação para momentos memoráveis.',
+    specs: productSpecs('750ml', 'Edição especial', 'Clássico, premium e presenteável'),
+    additionalInfo: additionalInfo('750ml', 'Novidade / edição especial', 'Presentes, celebrações e coquetelaria premium'),
+  },
+  {
+    slug: 'beg-brazilian-refil-500ml',
+    name: 'BEG Brazilian Refil 500ml',
+    shortDescription: 'A assinatura Brazilian em formato refil.',
+    description:
+      'BEG Brazilian Refil leva a experiência clássica da destilaria para um formato prático, mais leve e pensado para reposição com consciência.',
+    category: 'refis',
+    image: productImages.citricDrink,
+    gallery: [productImages.citricDrink, productImages.brazilianBottle, productImages.heroKit],
+    price: 'Sob consulta',
+    badge: 'Refil',
+    essenceTitle: 'Menos impacto, mesma assinatura.',
+    essenceText:
+      'Formato refil para manter o ritual BEG Brazilian com praticidade e menor impacto de embalagem.',
+    specs: productSpecs('500ml', 'Refil', 'Clássico, seco e aromático'),
+    additionalInfo: additionalInfo('500ml', 'Refil', 'Reposição prática para drinks clássicos e autorais'),
   },
   {
     slug: 'beg-modern-tropical-750ml',
-    name: 'BEG Modern & Tropical – 750ml',
-    shortDescription: 'Gin brasileiro moderno, aromático e tropical.',
+    name: 'Modern & Tropical 750ml',
+    shortDescription: 'Gin moderno, aromático e tropical.',
     description:
-      'BEG Modern & Tropical apresenta uma leitura contemporânea da marca, com personalidade aromática, frescor tropical e acabamento elegante. É uma expressão pensada para drinks leves, vibrantes e marcantes.',
+      'Modern & Tropical apresenta uma leitura contemporânea da BEG Destilaria, com frescor, botânicos marcantes e personalidade ideal para drinks vibrantes.',
     category: 'gins-750ml',
     image: productImages.modernBottle,
-    gallery: [
-      productImages.modernBottle,
-      productImages.brazilianBottle,
-      productImages.heroKit,
-      productImages.citricDrink,
-    ],
-    oldPrice: 'R$ 109,90',
-    price: 'R$ 99,90',
-    badge: 'Premiado',
+    gallery: [productImages.modernBottle, productImages.brazilianBottle, productImages.citricDrink],
+    price: 'Sob consulta',
+    badge: 'Tropical',
     essenceTitle: 'Aromático, tropical e brasileiro.',
     essenceText:
-      'Uma leitura moderna do gin brasileiro, feita para destacar frescor, botânicos e coquetelaria tropical com acabamento premium.',
-    specs: [
-      { label: 'Perfil tropical', value: 'Aromas expressivos e refrescantes.' },
-      { label: 'Botânicos naturais', value: 'Ingredientes selecionados com cuidado.' },
-      { label: 'Garrafa 750ml', value: 'Presença marcante para bar e presente.' },
-      { label: 'Coquetelaria tropical', value: 'Ideal para drinks cítricos, leves e aromáticos.' },
-    ],
-    additionalInfo: [
-      { label: 'Estilo', value: 'Gin brasileiro moderno e tropical' },
-      { label: 'Volume', value: '750ml' },
-      { label: 'Perfil sensorial', value: 'Aromático, tropical, fresco e contemporâneo' },
-      { label: 'Sugestão de serviço', value: 'Gin tônica com cítricos, drinks tropicais e coquetéis refrescantes' },
-    ],
+      'Uma expressão moderna para drinks cítricos, leves e refrescantes, mantendo a sofisticação artesanal da BEG.',
+    specs: productSpecs('750ml', 'Gin artesanal', 'Tropical, fresco e aromático'),
+    additionalInfo: additionalInfo('750ml', 'Gin 750ml', 'Gin tônica com cítricos, drinks tropicais e coquetéis refrescantes'),
   },
   {
-    slug: 'kit-beg-classic',
-    name: 'Kit BEG Classic',
-    shortDescription: 'Kit especial para presentear ou experimentar.',
+    slug: 'beg-modern-tropical-refil-500ml',
+    name: 'Modern & Tropical Refil 500ml',
+    shortDescription: 'Frescor tropical em formato refil.',
     description:
-      'O Kit BEG Classic reúne a experiência visual e sensorial da marca em uma composição especial para presentear, experimentar ou montar um ritual de degustação com acabamento premium.',
-    category: 'kits',
-    image: productImages.heroKit,
-    gallery: [
-      productImages.heroKit,
-      productImages.brazilianBottle,
-      productImages.modernBottle,
-      productImages.tonicDrink,
-    ],
-    price: 'R$ 105,90',
-    essenceTitle: 'Uma experiência Beggin em formato de presente.',
-    essenceText:
-      'Combina produto, estética e ritual para transformar a degustação em uma experiência completa e memorável.',
-    specs: [
-      { label: 'Seleção especial', value: 'Pensado para presentear e experimentar.' },
-      { label: 'Visual premium', value: 'Composição elegante e marcante.' },
-      { label: 'Experiência completa', value: 'Produto, apresentação e ritual em uma só entrega.' },
-      { label: 'Feito para lembrar', value: 'Ideal para momentos especiais e presentes.' },
-    ],
-    additionalInfo: [
-      { label: 'Categoria', value: 'Kit presenteável' },
-      { label: 'Indicação', value: 'Presentes, degustação e primeira experiência com Beggin' },
-      { label: 'Perfil', value: 'Clássico, elegante e visualmente marcante' },
-      { label: 'Conteúdo', value: 'Composição especial da linha Beggin conforme disponibilidade comercial' },
-    ],
-  },
-  {
-    slug: 'beg-tonica-pronto-para-beber',
-    name: 'BEG & Tônica Pronto para Beber',
-    shortDescription: 'Clássico, refrescante e pronto para servir.',
-    description:
-      'BEG & Tônica Pronto para Beber traduz o ritual do gin tônica em uma apresentação prática, leve e refrescante. É uma solução para servir gelado, com perfil equilibrado e assinatura visual alinhada à coquetelaria Beggin.',
-    category: 'prontos-para-drinks',
-    image: productImages.tonicDrink,
-    gallery: [
-      productImages.tonicDrink,
-      productImages.heroKit,
-      productImages.brazilianBottle,
-      productImages.citricDrink,
-    ],
-    price: 'R$ 15,90',
-    essenceTitle: 'Clássico e refrescante.',
-    essenceText:
-      'O ritual do gin tônica em uma apresentação prática, equilibrada e visualmente alinhada à coquetelaria Beggin.',
-    specs: [
-      { label: 'Pronto para beber', value: 'Sirva gelado e aproveite.' },
-      { label: 'Perfil refrescante', value: 'Leve, cítrico e aromático.' },
-      { label: 'Ritual prático', value: 'Experiência de bar em formato simples.' },
-      { label: 'Coquetel clássico', value: 'Inspirado no gin tônica Beggin.' },
-    ],
-    additionalInfo: [
-      { label: 'Categoria', value: 'Pronto para beber' },
-      { label: 'Perfil sensorial', value: 'Clássico, refrescante e leve' },
-      { label: 'Sugestão de serviço', value: 'Servir bem gelado, com gelo e garnish cítrico se desejar' },
-      { label: 'Ocasião', value: 'Encontros, praia, festas e consumo prático' },
-    ],
-  },
-  {
-    slug: 'beg-refil-brazilian-boutique-500ml',
-    name: 'BEG Refil Brazilian Boutique – 500ml',
-    shortDescription: 'A essência clássica em formato mais leve.',
-    description:
-      'BEG Refil Brazilian Boutique leva a assinatura clássica da marca para um formato mais prático e consciente, pensado para reduzir impacto de embalagem sem abrir mão do perfil aromático da linha.',
-    category: 'refis',
-    image: productImages.citricDrink,
-    gallery: [
-      productImages.citricDrink,
-      productImages.brazilianBottle,
-      productImages.heroKit,
-      productImages.tonicDrink,
-    ],
-    price: 'R$ 44,90',
-    essenceTitle: 'Menos impacto, mesma assinatura.',
-    essenceText:
-      'Uma alternativa prática para manter a experiência Beggin com mais consciência e menor impacto de embalagem.',
-    specs: [
-      { label: 'Refil 500ml', value: 'Formato prático para reposição.' },
-      { label: 'Consumo consciente', value: 'Menos embalagem, mais propósito.' },
-      { label: 'Assinatura clássica', value: 'Mantém o perfil Brazilian Boutique.' },
-      { label: 'Uso versátil', value: 'Ideal para drinks clássicos e autorais.' },
-    ],
-    additionalInfo: [
-      { label: 'Categoria', value: 'Refil' },
-      { label: 'Volume', value: '500ml' },
-      { label: 'Perfil', value: 'Clássico, seco e aromático' },
-      { label: 'Diferencial', value: 'Formato de menor impacto e reposição prática' },
-    ],
-  },
-  {
-    slug: 'beg-refil-modern-tropical-500ml',
-    name: 'BEG Refil Modern & Tropical – 500ml',
-    shortDescription: 'Refil tropical, aromático e consciente.',
-    description:
-      'BEG Refil Modern & Tropical traz o frescor da linha tropical para um formato prático de 500ml, mantendo a experiência aromática com menor impacto de embalagem.',
+      'Modern & Tropical Refil mantém o perfil aromático e refrescante da linha em um formato prático para reposição e consumo consciente.',
     category: 'refis',
     image: productImages.modernBottle,
-    gallery: [
-      productImages.modernBottle,
-      productImages.citricDrink,
-      productImages.heroKit,
-      productImages.tonicDrink,
-    ],
-    price: 'R$ 44,90',
-    essenceTitle: 'Frescor tropical em formato consciente.',
+    gallery: [productImages.modernBottle, productImages.citricDrink, productImages.heroKit],
+    price: 'Sob consulta',
+    badge: 'Refil',
+    essenceTitle: 'Tropicalidade com consciência.',
     essenceText:
-      'Um refil pensado para manter a assinatura tropical da Beggin com praticidade, consciência e presença aromática.',
-    specs: [
-      { label: 'Refil 500ml', value: 'Formato prático para reposição.' },
-      { label: 'Perfil tropical', value: 'Aromático, fresco e contemporâneo.' },
-      { label: 'Menos embalagem', value: 'Mais consciência no ritual de consumo.' },
-      { label: 'Coquetelaria leve', value: 'Perfeito para drinks cítricos e tropicais.' },
-    ],
-    additionalInfo: [
-      { label: 'Categoria', value: 'Refil' },
-      { label: 'Volume', value: '500ml' },
-      { label: 'Perfil sensorial', value: 'Tropical, aromático e refrescante' },
-      { label: 'Diferencial', value: 'Reposição prática com menor impacto' },
-    ],
+      'Um refil pensado para preservar frescor, praticidade e menor impacto dentro do ritual BEG.',
+    specs: productSpecs('500ml', 'Refil', 'Tropical, aromático e refrescante'),
+    additionalInfo: additionalInfo('500ml', 'Refil', 'Reposição para drinks tropicais, cítricos e refrescantes'),
   },
   {
-    slug: 'negroni-beg-experience',
-    name: 'Negroni BEG Experience',
-    shortDescription: 'Intenso, equilibrado e autoral.',
+    slug: 'beg-aged-negroni-750ml',
+    name: 'Aged Negroni 750ml',
+    shortDescription: 'Negroni autoral envelhecido e pronto para servir.',
     description:
-      'Negroni BEG Experience é uma experiência de coquetelaria intensa, equilibrada e autoral, inspirada em um dos clássicos mais marcantes do bar. É pensado para quem busca presença, amargor elegante e ritual visual.',
+      'Aged Negroni traduz a coquetelaria clássica em uma versão autoral da BEG, intensa, equilibrada e pronta para criar uma experiência marcante.',
     category: 'prontos-para-drinks',
     image: productImages.negroniDrink,
-    gallery: [
-      productImages.negroniDrink,
-      productImages.heroKit,
-      productImages.brazilianBottle,
-      productImages.tonicDrink,
-    ],
-    price: 'R$ 19,90',
-    essenceTitle: 'Intenso e equilibrado.',
+    gallery: [productImages.negroniDrink, productImages.heroKit, productImages.brazilianBottle],
+    price: 'Sob consulta',
+    badge: 'Aged',
+    essenceTitle: 'Intenso, clássico e autoral.',
     essenceText:
-      'Um tributo à coquetelaria clássica, reinterpretado com presença visual e assinatura Beggin.',
-    specs: [
-      { label: 'Perfil intenso', value: 'Notas amargas e equilíbrio aromático.' },
-      { label: 'Coquetel autoral', value: 'Inspirado na experiência da marca.' },
-      { label: 'Serviço prático', value: 'Pronto para compor o ritual do drink.' },
-      { label: 'Visual marcante', value: 'Cor, gelo e garnish como protagonistas.' },
-    ],
-    additionalInfo: [
-      { label: 'Categoria', value: 'Pronto para drinks' },
-      { label: 'Perfil sensorial', value: 'Intenso, equilibrado e amargo elegante' },
-      { label: 'Sugestão de serviço', value: 'Servir gelado em copo baixo com gelo e laranja' },
-      { label: 'Ocasião', value: 'Aperitivo, encontros e coquetelaria clássica' },
-    ],
+      'Um coquetel com presença, amargor elegante e vocação para momentos de degustação.',
+    specs: productSpecs('750ml', 'Pronto para drinks', 'Intenso, amargo e equilibrado'),
+    additionalInfo: additionalInfo('750ml', 'Pronto para drinks', 'Servir gelado em copo baixo com gelo e casca de laranja'),
+  },
+  {
+    slug: 'beg-aged-negroni-refil-500ml',
+    name: 'Aged Negroni Refil 500ml',
+    shortDescription: 'O Negroni BEG em formato refil 500ml.',
+    description:
+      'Aged Negroni Refil 500ml facilita a reposição do coquetel autoral da BEG, preservando intensidade, equilíbrio e praticidade.',
+    category: 'refis',
+    image: productImages.negroniDrink,
+    gallery: [productImages.negroniDrink, productImages.citricDrink, productImages.heroKit],
+    price: 'Sob consulta',
+    badge: 'Refil',
+    essenceTitle: 'Reposição prática para o ritual Negroni.',
+    essenceText:
+      'Formato refil para manter o coquetel favorito sempre pronto para servir.',
+    specs: productSpecs('500ml', 'Refil', 'Intenso e equilibrado'),
+    additionalInfo: additionalInfo('500ml', 'Refil', 'Servir gelado com gelo grande e casca de laranja'),
+  },
+  {
+    slug: 'beg-aged-negroni-refil-250ml',
+    name: 'Aged Negroni Refil 250ml',
+    shortDescription: 'Versão compacta do Negroni autoral BEG.',
+    description:
+      'Aged Negroni Refil 250ml é uma versão menor e prática para experimentar, presentear ou levar o ritual BEG para diferentes ocasiões.',
+    category: 'refis',
+    image: productImages.negroniDrink,
+    gallery: [productImages.negroniDrink, productImages.tonicDrink, productImages.heroKit],
+    price: 'Sob consulta',
+    badge: '250ml',
+    essenceTitle: 'Compacto, intenso e pronto.',
+    essenceText:
+      'Uma porta de entrada para o universo Aged Negroni da BEG, em formato menor e prático.',
+    specs: productSpecs('250ml', 'Refil', 'Intenso e prático'),
+    additionalInfo: additionalInfo('250ml', 'Refil', 'Degustação, presente e consumo prático'),
+  },
+  {
+    slug: 'kit-tal-cha-beg-collab',
+    name: 'Kit Tal Chá & BEG Collab',
+    shortDescription: 'Collab especial para experiências botânicas.',
+    description:
+      'Kit Tal Chá & BEG Collab une a identidade artesanal da BEG com uma proposta de experiência botânica, presenteável e sensorial.',
+    category: 'kits',
+    image: productImages.heroKit,
+    gallery: [productImages.heroKit, productImages.brazilianBottle, productImages.modernBottle],
+    price: 'Sob consulta',
+    badge: 'Collab',
+    essenceTitle: 'Uma collab para presentear e experimentar.',
+    essenceText:
+      'Uma composição especial para explorar aromas, botânicos e momentos de celebração.',
+    specs: productSpecs('Kit', 'Kit / collab', 'Botânico, presenteável e sensorial'),
+    additionalInfo: additionalInfo('Kit', 'Kits', 'Presentes, experiências e momentos especiais'),
+  },
+  {
+    slug: 'hype-gin-750ml',
+    name: 'Hype Gin 750ml',
+    shortDescription: 'Novidade Hype com assinatura BEG.',
+    description:
+      'Hype Gin 750ml integra a linha de novidades, trazendo uma leitura jovem, marcante e contemporânea para diferentes momentos de consumo.',
+    category: 'novidades',
+    image: productImages.brazilianBottle,
+    gallery: [productImages.brazilianBottle, productImages.heroKit, productImages.tonicDrink],
+    price: 'Sob consulta',
+    badge: 'Hype',
+    essenceTitle: 'Uma novidade para descobrir.',
+    essenceText:
+      'A linha Hype expande o universo BEG com produtos de personalidade e presença comercial.',
+    specs: productSpecs('750ml', 'Novidade', 'Moderno e versátil'),
+    additionalInfo: additionalInfo('750ml', 'Novidades', 'Drinks, presentes e ocasiões contemporâneas'),
+  },
+  {
+    slug: 'hype-vodka-1000ml',
+    name: 'Hype Vodka 1000ml',
+    shortDescription: 'Vodka Hype em formato 1000ml.',
+    description:
+      'Hype Vodka 1000ml amplia o portfólio com uma opção versátil, prática e pensada para diferentes composições de drinks.',
+    category: 'novidades',
+    image: productImages.citricDrink,
+    gallery: [productImages.citricDrink, productImages.heroKit, productImages.modernBottle],
+    price: 'Sob consulta',
+    badge: 'Hype',
+    essenceTitle: 'Versatilidade em 1000ml.',
+    essenceText:
+      'Uma vodka para compor drinks, eventos e experiências comerciais da linha Hype.',
+    specs: productSpecs('1000ml', 'Novidade', 'Versátil e prático'),
+    additionalInfo: additionalInfo('1000ml', 'Novidades', 'Drinks longos, eventos e consumo compartilhado'),
+  },
+  {
+    slug: 'hype-drop-licor-fino-framboesa-750ml',
+    name: 'Hype Drop Licor Fino de Framboesa 750ml',
+    shortDescription: 'Licor fino de framboesa da linha Hype Drop.',
+    description:
+      'Hype Drop Licor Fino de Framboesa 750ml é uma novidade de perfil frutado, vibrante e comercial, pensada para drinks, finalizações e experiências marcantes.',
+    category: 'novidades',
+    image: productImages.tonicDrink,
+    gallery: [productImages.tonicDrink, productImages.citricDrink, productImages.heroKit],
+    price: 'Sob consulta',
+    badge: 'Hype Drop',
+    essenceTitle: 'Framboesa, intensidade e cor.',
+    essenceText:
+      'Uma novidade frutada para criar drinks expressivos e experiências visuais marcantes.',
+    specs: productSpecs('750ml', 'Licor fino', 'Frutado, vibrante e marcante'),
+    additionalInfo: additionalInfo('750ml', 'Novidades', 'Drinks autorais, finalizações e ocasiões especiais'),
   },
 ];
 

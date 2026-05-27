@@ -5,8 +5,8 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
-  title: 'Agendamento | Beg Gin',
-  description: 'Agende uma experiência Beg Gin e conheça a destilaria em Joaquim Egídio, Campinas.',
+  title: 'Beg Experience | BEG Destilaria',
+  description: 'Agende uma experiência na BEG Destilaria e conheça a destilaria em Joaquim Egídio, Campinas.',
 };
 
 const steps = [
@@ -25,7 +25,7 @@ export default function SchedulingPage() {
             <div>
               <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.34em] text-beggin-ink/75">Beg Experience</p>
               <div className="mt-5 h-px w-20 bg-beggin-gold/70" />
-              <h1 className="mt-8 font-serifDisplay text-[clamp(3.4rem,6vw,7rem)] font-semibold uppercase leading-[0.86] tracking-[-0.05em]">Agende sua experiência Beg Gin.</h1>
+              <h1 className="mt-8 font-serifDisplay text-[clamp(3.4rem,6vw,7rem)] font-semibold uppercase leading-[0.86] tracking-[-0.05em]">Agende sua experiência na BEG Destilaria.</h1>
               <p className="mt-8 max-w-[720px] text-[1.06rem] leading-[1.85] text-beggin-ink/72">Uma página provisória de alto nível para direcionar visitantes interessados em visitas, eventos, parcerias e contato comercial. A experiência oficial pode continuar em plataforma dedicada quando necessário.</p>
               <div className="mt-9 flex flex-wrap gap-4">
                 <Link href="/contato" className="inline-flex bg-beggin-red px-7 py-4 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-beggin-ink">Solicitar contato</Link>
@@ -41,7 +41,7 @@ export default function SchedulingPage() {
               <article className="border border-[#c7b889]/60 bg-[#FFFCF6] p-6 shadow-[0_18px_50px_rgba(54,43,25,0.05)]">
                 <MapPin className="text-beggin-red" size={28} strokeWidth={1.7} />
                 <h2 className="mt-5 font-serifDisplay text-[1.55rem] font-bold uppercase tracking-[0.04em]">Joaquim Egídio, Campinas</h2>
-                <p className="mt-3 text-[1rem] leading-[1.75] text-beggin-ink/70">A origem da Beg Gin está conectada ao cuidado artesanal, aos botânicos e à identidade brasileira.</p>
+                <p className="mt-3 text-[1rem] leading-[1.75] text-beggin-ink/70">A origem da BEG Destilaria está conectada ao cuidado artesanal, aos botânicos e à identidade brasileira.</p>
               </article>
             </div>
           </div>

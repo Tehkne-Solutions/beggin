@@ -7,8 +7,8 @@ import { heroAssets } from '@/data/hero-assets';
 import { storyAssets } from '@/data/story';
 
 export const metadata: Metadata = {
-  title: 'Nossa História | Beg Gin',
-  description: 'Conheça a trajetória da Beg Gin, da paixão de quatro amigos pela destilação à produção artesanal brasileira em Campinas.',
+  title: 'Nossa História | BEG Destilaria',
+  description: 'Conheça a trajetória da BEG Destilaria, da paixão de quatro amigos pela destilação à produção artesanal brasileira em Campinas.',
 };
 
 const botanicals = [
@@ -46,7 +46,7 @@ export default function NossaHistoriaPage() {
             </p>
             <div className="mt-5 h-px w-20 bg-beggin-gold/70" />
             <h1 className="mt-8 max-w-[760px] font-serifDisplay text-[clamp(3.3rem,6.2vw,7.2rem)] font-semibold uppercase leading-[0.84] tracking-[-0.055em] text-beggin-ink">
-              Conheça a história do autêntico Beg Gin.
+              Conheça a história da BEG Destilaria.
             </h1>
             <div className="relative mt-8 h-[30px] w-[62px] wave-pulse">
               <Image src={heroAssets.waves} alt="" fill priority sizes="62px" className="object-contain" />
@@ -54,7 +54,7 @@ export default function NossaHistoriaPage() {
           </div>
 
           <div className="relative min-h-[360px] border border-[#c7b889]/60 bg-[#FFFCF6]/60 p-4 shadow-[0_24px_70px_rgba(54,43,25,0.08)] lg:min-h-[470px]">
-            <Image src={storyAssets.photoRight} alt="Beg Gin em coquetelaria" fill priority sizes="(max-width: 1024px) 92vw, 650px" className="object-cover p-4" />
+            <Image src={storyAssets.photoRight} alt="BEG Destilaria em coquetelaria" fill priority sizes="(max-width: 1024px) 92vw, 650px" className="object-cover p-4" />
           </div>
         </div>
       </section>
@@ -74,7 +74,7 @@ export default function NossaHistoriaPage() {
             </div>
             <div className="space-y-5 text-[1.02rem] leading-[1.85] text-beggin-ink/75">
               <p>
-                A jornada da BEG Gin começou em 2012, quando quatro amigos, unidos por sua paixão por destilados, decidiram explorar o universo das bebidas destiladas. Essa aventura marcou o ponto de partida para algo verdadeiramente especial e pioneiro no país.
+                A jornada da BEG Destilaria começou em 2012, quando quatro amigos, unidos por sua paixão por destilados, decidiram explorar o universo das bebidas destiladas. Essa aventura marcou o ponto de partida para algo verdadeiramente especial e pioneiro no país.
               </p>
               <p>
                 Ao longo dessa jornada, acumulamos mais de 80 medalhas, sendo 9 delas conquistadas apenas em 2023. Conquistamos premiações a nível nacional e internacional, como o San Francisco World Spirits Competition e o World Gin Awards, que destacam a excelência dos nossos produtos.
@@ -93,7 +93,7 @@ export default function NossaHistoriaPage() {
       <section className="paper-texture bg-[#FCF7F1] px-5 py-16 md:px-8 lg:py-20">
         <div className="mx-auto grid max-w-[1280px] gap-12 lg:grid-cols-2 lg:items-center">
           <div className="relative min-h-[360px] border border-[#c7b889]/65 bg-[#FFFCF6] p-3 shadow-[0_20px_54px_rgba(54,43,25,0.08)]">
-            <Image src={storyAssets.photoLeft} alt="Destilaria Beg Gin" fill sizes="(max-width: 1024px) 92vw, 560px" className="object-cover p-3" />
+            <Image src={storyAssets.photoLeft} alt="Destilaria BEG" fill sizes="(max-width: 1024px) 92vw, 560px" className="object-cover p-3" />
           </div>
           <div>
             <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.32em] text-beggin-red">A Destilaria</p>
@@ -116,10 +116,10 @@ export default function NossaHistoriaPage() {
             <h2 className="font-serifDisplay text-[clamp(2.7rem,4.6vw,5.2rem)] font-semibold uppercase leading-[0.86] tracking-[-0.045em]">
               Botânicos
               <br />
-              Beg
+              BEG
             </h2>
             <p className="mt-7 text-[1.02rem] leading-[1.85] text-beggin-ink/74">
-              Na BEG Gin, dedicamos cuidadosa atenção à seleção de botânicos que compõem nossos produtos. A essência britânica é meticulosamente recriada com zimbro, semente de coentro e raiz de angélica, proporcionando o caráter seco e as notas frutadas típicas de um London Dry clássico.
+              Na BEG Destilaria, dedicamos cuidadosa atenção à seleção de botânicos que compõem nossos produtos. A essência britânica é meticulosamente recriada com zimbro, semente de coentro e raiz de angélica, proporcionando o caráter seco e as notas frutadas típicas de um London Dry clássico.
             </p>
             <p className="mt-5 text-[1.02rem] leading-[1.85] text-beggin-ink/74">
               Contudo, nossa paixão pelo Brasil se manifesta nos botânicos exclusivos, como as folhas de pitangueira, que conferem notas picantes e cítricas, e o sabugueiro-do-Brasil, que contribui com suaves toques florais e doces.

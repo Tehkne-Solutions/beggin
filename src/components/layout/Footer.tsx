@@ -101,10 +101,22 @@ export function Footer() {
               <Link href={whatsappContactUrl} target="_blank" rel="noreferrer" className="block transition-colors duration-300 hover:text-[#c8a759]">Fale pelo WhatsApp</Link>
               <Link href="/nossa-historia" className="block transition-colors duration-300 hover:text-[#c8a759]">Joaquim Egídio — Campinas, SP</Link>
             </div>
-            <div className="flex flex-wrap items-center gap-3 pt-2">
+            <div className="grid grid-cols-1 gap-2 pt-2 sm:grid-cols-2">
               {socials.map((social) => (
-                <Link key={social.label} href={social.href} target="_blank" rel="noreferrer" aria-label={social.label} className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#b99f60]/65 bg-[#1d1f1a]/80 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#b99f60] transition duration-300 hover:border-[#c8a759] hover:text-[#c8a759]">
-                  {social.icon}
+                <Link
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Abrir ${social.label} da BEG Destilaria`}
+                  className="inline-flex min-h-9 items-center gap-2 rounded-full border border-[#b99f60]/55 bg-[#1d1f1a]/80 px-3 py-2 text-[#b99f60] transition duration-300 hover:border-[#c8a759] hover:text-[#f4efe3]"
+                >
+                  <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-[#b99f60]/45 text-[10px] font-semibold uppercase tracking-[0.12em]">
+                    {social.icon}
+                  </span>
+                  <span className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.12em]">
+                    {social.label}
+                  </span>
                 </Link>
               ))}
             </div>

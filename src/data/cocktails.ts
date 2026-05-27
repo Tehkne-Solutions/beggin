@@ -1,5 +1,4 @@
 export const cocktailAssets = {
-  flowersRight: '/images/home/beggin-home-coqueteis-autorais-flores-canto-direito.png',
   waves: '/images/home/beggin-home-hero-elemento-bandeiras.png',
 } as const;
 
