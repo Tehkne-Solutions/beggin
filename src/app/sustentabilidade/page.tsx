@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, BottleWine, Leaf, PackageCheck, Play, Recycle, Sprout } from 'lucide-react';
+import { ArrowRight, Leaf, PackageCheck, Play, Recycle, Sprout } from 'lucide-react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { sustainabilityAssets, sustainabilityItems } from '@/data/sustainability';
@@ -38,7 +38,7 @@ const impactCards = [
     text: 'O Projeto Refil incentiva uma relação mais duradoura com a embalagem e reduz desperdícios desnecessários.',
   },
   {
-    icon: BottleWine,
+    icon: Leaf,
     title: 'Mesmo padrão BEG',
     text: 'A proposta mantém o cuidado artesanal e a assinatura sensorial da destilaria em cada reposição.',
   },
