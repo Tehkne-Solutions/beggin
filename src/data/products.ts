@@ -39,20 +39,30 @@ export const productCategories = [
   { id: 'prontos-para-drinks', label: 'Prontos para drinks' },
 ] as const;
 
+const omieBase = '/images/fotos-omie';
+
 const productImages = {
-  brazilianBottle: '/images/home/beggin-home-nossa-historia-enfeite-bebida-1.png',
-  modernBottle: '/images/home/beggin-home-nossa-historia-enfeite-bebida-2.png',
-  heroKit: '/images/home/beggin-home-hero-elemento-garrafa-principal.webp',
-  tonicDrink: '/images/home/beggin-home-coqueteis-autorais-card1-beg-and-tonica.png',
-  citricDrink: '/images/home/beggin-home-coqueteis-autorais-card2-citrico-brasileiro.png',
-  negroniDrink: '/images/home/beggin-home-coqueteis-autorais-card3-negroni-beg.png',
+  brazilian: `${omieBase}/BEG%20BRAZILIAN.jpg`,
+  brazilianGold: `${omieBase}/GOLD%20EDITION.jpg`,
+  brazilianRefil: `${omieBase}/BEG%20BRAZILIAN%20REFIL.jpg`,
+  modern: `${omieBase}/MODERN.jpg`,
+  modernRefil: `${omieBase}/MODERN%20REFIL.jpg`,
+  negroni: `${omieBase}/NEGRONI.jpg`,
+  negroniRefil: `${omieBase}/NEGRONI%20REFIL.jpg`,
+  miniNegroni: `${omieBase}/MINI%20NEGRONI.jpg`,
+  hypeGin: `${omieBase}/HYPE%20GIN.jpg`,
+  hypeVodka: `${omieBase}/HYPE%20VODKA.jpg`,
+  hypeDrop: `${omieBase}/HYPE%20DROP.jpg`,
+  leatherCoaster: `${omieBase}/COASTER%20COURO.jpeg`,
+  ovalGlass: `${omieBase}/COPO%20OVAL.jpeg`,
+  kitFallback: '/images/home/beggin-home-hero-elemento-garrafa-principal.webp',
 } as const;
 
 const defaultGallery = [
-  productImages.heroKit,
-  productImages.brazilianBottle,
-  productImages.modernBottle,
-  productImages.tonicDrink,
+  productImages.brazilian,
+  productImages.modern,
+  productImages.negroni,
+  productImages.brazilianGold,
 ];
 
 function productSpecs(volume: string, category: string, profile: string) {
@@ -81,8 +91,8 @@ export const products: Product[] = [
     description:
       'BEG Brazilian é a assinatura clássica da destilaria: um gin artesanal brasileiro, equilibrado, aromático e feito para elevar drinks simples ou coquetéis autorais.',
     category: 'gins-750ml',
-    image: productImages.brazilianBottle,
-    gallery: [productImages.brazilianBottle, ...defaultGallery],
+    image: productImages.brazilian,
+    gallery: [productImages.brazilian, productImages.ovalGlass, productImages.leatherCoaster, ...defaultGallery],
     price: 'Sob consulta',
     badge: 'Clássico',
     essenceTitle: 'A assinatura brasileira da BEG.',
@@ -98,8 +108,8 @@ export const products: Product[] = [
     description:
       'BEG Brazilian Gold Edition celebra a presença premiada da marca em uma versão especial, pensada para presente, coleção e momentos de destaque.',
     category: 'novidades',
-    image: productImages.heroKit,
-    gallery: [productImages.heroKit, productImages.brazilianBottle, productImages.modernBottle],
+    image: productImages.brazilianGold,
+    gallery: [productImages.brazilianGold, productImages.brazilian, productImages.ovalGlass, productImages.leatherCoaster],
     price: 'Sob consulta',
     badge: 'Gold Edition',
     essenceTitle: 'Uma edição para celebrar.',
@@ -115,8 +125,8 @@ export const products: Product[] = [
     description:
       'BEG Brazilian Refil leva a experiência clássica da destilaria para um formato prático, mais leve e pensado para reposição com consciência.',
     category: 'refis',
-    image: productImages.citricDrink,
-    gallery: [productImages.citricDrink, productImages.brazilianBottle, productImages.heroKit],
+    image: productImages.brazilianRefil,
+    gallery: [productImages.brazilianRefil, productImages.brazilian, productImages.ovalGlass, productImages.leatherCoaster],
     price: 'Sob consulta',
     badge: 'Refil',
     essenceTitle: 'Menos impacto, mesma assinatura.',
@@ -132,8 +142,8 @@ export const products: Product[] = [
     description:
       'Modern & Tropical apresenta uma leitura contemporânea da BEG Destilaria, com frescor, botânicos marcantes e personalidade ideal para drinks vibrantes.',
     category: 'gins-750ml',
-    image: productImages.modernBottle,
-    gallery: [productImages.modernBottle, productImages.brazilianBottle, productImages.citricDrink],
+    image: productImages.modern,
+    gallery: [productImages.modern, productImages.ovalGlass, productImages.leatherCoaster, productImages.brazilian],
     price: 'Sob consulta',
     badge: 'Tropical',
     essenceTitle: 'Aromático, tropical e brasileiro.',
@@ -149,8 +159,8 @@ export const products: Product[] = [
     description:
       'Modern & Tropical Refil mantém o perfil aromático e refrescante da linha em um formato prático para reposição e consumo consciente.',
     category: 'refis',
-    image: productImages.modernBottle,
-    gallery: [productImages.modernBottle, productImages.citricDrink, productImages.heroKit],
+    image: productImages.modernRefil,
+    gallery: [productImages.modernRefil, productImages.modern, productImages.ovalGlass, productImages.leatherCoaster],
     price: 'Sob consulta',
     badge: 'Refil',
     essenceTitle: 'Tropicalidade com consciência.',
@@ -166,8 +176,8 @@ export const products: Product[] = [
     description:
       'Aged Negroni traduz a coquetelaria clássica em uma versão autoral da BEG, intensa, equilibrada e pronta para criar uma experiência marcante.',
     category: 'prontos-para-drinks',
-    image: productImages.negroniDrink,
-    gallery: [productImages.negroniDrink, productImages.heroKit, productImages.brazilianBottle],
+    image: productImages.negroni,
+    gallery: [productImages.negroni, productImages.ovalGlass, productImages.leatherCoaster, productImages.brazilian],
     price: 'Sob consulta',
     badge: 'Aged',
     essenceTitle: 'Intenso, clássico e autoral.',
@@ -183,8 +193,8 @@ export const products: Product[] = [
     description:
       'Aged Negroni Refil 500ml facilita a reposição do coquetel autoral da BEG, preservando intensidade, equilíbrio e praticidade.',
     category: 'refis',
-    image: productImages.negroniDrink,
-    gallery: [productImages.negroniDrink, productImages.citricDrink, productImages.heroKit],
+    image: productImages.negroniRefil,
+    gallery: [productImages.negroniRefil, productImages.negroni, productImages.ovalGlass, productImages.leatherCoaster],
     price: 'Sob consulta',
     badge: 'Refil',
     essenceTitle: 'Reposição prática para o ritual Negroni.',
@@ -200,8 +210,8 @@ export const products: Product[] = [
     description:
       'Aged Negroni Refil 250ml é uma versão menor e prática para experimentar, presentear ou levar o ritual BEG para diferentes ocasiões.',
     category: 'refis',
-    image: productImages.negroniDrink,
-    gallery: [productImages.negroniDrink, productImages.tonicDrink, productImages.heroKit],
+    image: productImages.miniNegroni,
+    gallery: [productImages.miniNegroni, productImages.negroni, productImages.ovalGlass, productImages.leatherCoaster],
     price: 'Sob consulta',
     badge: '250ml',
     essenceTitle: 'Compacto, intenso e pronto.',
@@ -217,13 +227,13 @@ export const products: Product[] = [
     description:
       'Kit Tal Chá & BEG Collab une a identidade artesanal da BEG com uma proposta de experiência botânica, presenteável e sensorial.',
     category: 'kits',
-    image: productImages.heroKit,
-    gallery: [productImages.heroKit, productImages.brazilianBottle, productImages.modernBottle],
+    image: productImages.kitFallback,
+    gallery: [productImages.kitFallback, productImages.ovalGlass, productImages.leatherCoaster, productImages.brazilian],
     price: 'Sob consulta',
     badge: 'Collab',
     essenceTitle: 'Uma collab para presentear e experimentar.',
     essenceText:
-      'Uma composição especial para explorar aromas, botânicos e momentos de celebração.',
+      'Uma composição especial para explorar aromas, botânicos e momentos de celebração. A foto definitiva existe como HEIC e precisa ser convertida para JPG/WebP antes de entrar no site.',
     specs: productSpecs('Kit', 'Kit / collab', 'Botânico, presenteável e sensorial'),
     additionalInfo: additionalInfo('Kit', 'Kits', 'Presentes, experiências e momentos especiais'),
   },
@@ -234,8 +244,8 @@ export const products: Product[] = [
     description:
       'Hype Gin 750ml integra a linha de novidades, trazendo uma leitura jovem, marcante e contemporânea para diferentes momentos de consumo.',
     category: 'novidades',
-    image: productImages.brazilianBottle,
-    gallery: [productImages.brazilianBottle, productImages.heroKit, productImages.tonicDrink],
+    image: productImages.hypeGin,
+    gallery: [productImages.hypeGin, productImages.ovalGlass, productImages.leatherCoaster, productImages.brazilian],
     price: 'Sob consulta',
     badge: 'Hype',
     essenceTitle: 'Uma novidade para descobrir.',
@@ -251,8 +261,8 @@ export const products: Product[] = [
     description:
       'Hype Vodka 1000ml amplia o portfólio com uma opção versátil, prática e pensada para diferentes composições de drinks.',
     category: 'novidades',
-    image: productImages.citricDrink,
-    gallery: [productImages.citricDrink, productImages.heroKit, productImages.modernBottle],
+    image: productImages.hypeVodka,
+    gallery: [productImages.hypeVodka, productImages.ovalGlass, productImages.leatherCoaster, productImages.brazilian],
     price: 'Sob consulta',
     badge: 'Hype',
     essenceTitle: 'Versatilidade em 1000ml.',
@@ -268,8 +278,8 @@ export const products: Product[] = [
     description:
       'Hype Drop Licor Fino de Framboesa 750ml é uma novidade de perfil frutado, vibrante e comercial, pensada para drinks, finalizações e experiências marcantes.',
     category: 'novidades',
-    image: productImages.tonicDrink,
-    gallery: [productImages.tonicDrink, productImages.citricDrink, productImages.heroKit],
+    image: productImages.hypeDrop,
+    gallery: [productImages.hypeDrop, productImages.ovalGlass, productImages.leatherCoaster, productImages.brazilian],
     price: 'Sob consulta',
     badge: 'Hype Drop',
     essenceTitle: 'Framboesa, intensidade e cor.',
