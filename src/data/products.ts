@@ -50,12 +50,12 @@ const productImages = {
   negroni: `${omieBase}/NEGRONI.jpg`,
   negroniRefil: `${omieBase}/NEGRONI%20REFIL.jpg`,
   miniNegroni: `${omieBase}/MINI%20NEGRONI.jpg`,
+  kitTalCha: `${omieBase}/KIT%20TAL%20CH%C3%81.jpg`,
   hypeGin: `${omieBase}/HYPE%20GIN.jpg`,
   hypeVodka: `${omieBase}/HYPE%20VODKA.jpg`,
   hypeDrop: `${omieBase}/HYPE%20DROP.jpg`,
   leatherCoaster: `${omieBase}/COASTER%20COURO.jpeg`,
   ovalGlass: `${omieBase}/COPO%20OVAL.jpeg`,
-  kitFallback: '/images/home/beggin-home-hero-elemento-garrafa-principal.webp',
 } as const;
 
 const defaultGallery = [
@@ -227,13 +227,13 @@ export const products: Product[] = [
     description:
       'Kit Tal Chá & BEG Collab une a identidade artesanal da BEG com uma proposta de experiência botânica, presenteável e sensorial.',
     category: 'kits',
-    image: productImages.kitFallback,
-    gallery: [productImages.kitFallback, productImages.ovalGlass, productImages.leatherCoaster, productImages.brazilian],
+    image: productImages.kitTalCha,
+    gallery: [productImages.kitTalCha, productImages.ovalGlass, productImages.leatherCoaster, productImages.brazilian],
     price: 'Sob consulta',
     badge: 'Collab',
     essenceTitle: 'Uma collab para presentear e experimentar.',
     essenceText:
-      'Uma composição especial para explorar aromas, botânicos e momentos de celebração. A foto definitiva existe como HEIC e precisa ser convertida para JPG/WebP antes de entrar no site.',
+      'Uma composição especial para explorar aromas, botânicos e momentos de celebração.',
     specs: productSpecs('Kit', 'Kit / collab', 'Botânico, presenteável e sensorial'),
     additionalInfo: additionalInfo('Kit', 'Kits', 'Presentes, experiências e momentos especiais'),
   },
