@@ -206,22 +206,22 @@ export default function AwardsLandingPage() {
       </section>
 
       <section className="paper-texture bg-[#FEFAF3] px-5 pb-24 md:px-8 lg:pb-28">
-        <div className="mx-auto max-w-[1320px] space-y-10 lg:space-y-12">
+        <div className="mx-auto max-w-[1320px] space-y-8 lg:space-y-10">
           {awards.map((award, index) => {
             const reversed = index % 2 === 1;
             return (
-              <article key={award.id} className="grid overflow-hidden border border-[#c7b889]/60 bg-[#FFFCF6] shadow-[0_24px_70px_rgba(54,43,25,0.055)] lg:grid-cols-[0.42fr_0.58fr]">
-                <div className={`${reversed ? 'lg:order-2' : ''} relative flex min-h-[300px] items-center justify-center bg-[#f6efe1] p-10 md:min-h-[380px]`}>
+              <article key={award.id} className="grid overflow-hidden border border-[#c7b889]/60 bg-[#FFFCF6] shadow-[0_24px_70px_rgba(54,43,25,0.055)] lg:grid-cols-2 lg:items-stretch">
+                <div className={`${reversed ? 'lg:order-2' : ''} relative flex min-h-[300px] items-center justify-center bg-[#f6efe1] px-6 py-10 md:min-h-[360px] lg:min-h-[420px] lg:px-10 lg:py-12`}>
                   <div className="absolute inset-6 border border-[#c7b889]/45" />
-                  <div className="relative h-[220px] w-[220px] md:h-[270px] md:w-[270px]">
-                    <Image src={award.image} alt={award.title} fill sizes="270px" className="object-contain drop-shadow-[0_16px_26px_rgba(54,43,25,0.12)]" />
+                  <div className="relative z-[2] h-[230px] w-full max-w-[330px] md:h-[280px] md:max-w-[390px] lg:h-[315px] lg:max-w-[430px]">
+                    <Image src={award.image} alt={award.title} fill sizes="(max-width: 768px) 78vw, (max-width: 1024px) 390px, 430px" className="object-contain drop-shadow-[0_18px_30px_rgba(54,43,25,0.16)]" />
                   </div>
                 </div>
-                <div className={`${reversed ? 'lg:order-1' : ''} flex flex-col justify-center p-8 md:p-12 lg:p-16`}>
+                <div className={`${reversed ? 'lg:order-1' : ''} flex min-h-[300px] flex-col justify-center p-8 md:p-12 lg:min-h-[420px] lg:p-14 xl:p-16`}>
                   <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.28em] text-beggin-red">Reconhecimento {String(index + 1).padStart(2, '0')}</p>
-                  <h2 className="mt-5 font-serifDisplay text-[clamp(2.2rem,3.9vw,4.4rem)] font-semibold uppercase leading-[0.9] tracking-[-0.04em] text-beggin-ink">{award.title}</h2>
+                  <h2 className="mt-5 max-w-[620px] font-serifDisplay text-[clamp(2.2rem,3.8vw,4.25rem)] font-semibold uppercase leading-[0.9] tracking-[-0.04em] text-beggin-ink">{award.title}</h2>
                   <div className="mt-6 h-px w-20 bg-beggin-gold/70" />
-                  <p className="mt-7 text-[1.03rem] leading-[1.85] text-beggin-ink/72">{awardNarratives[index]}</p>
+                  <p className="mt-7 max-w-[620px] text-[1.03rem] leading-[1.85] text-beggin-ink/72">{awardNarratives[index]}</p>
                 </div>
               </article>
             );
