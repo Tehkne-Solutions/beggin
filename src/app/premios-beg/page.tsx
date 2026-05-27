@@ -122,16 +122,28 @@ export default function AwardsLandingPage() {
         </div>
       </section>
 
-      <section className="paper-texture bg-[#FEFAF3] px-5 pb-16 md:px-8 lg:pb-20">
-        <div className="mx-auto max-w-[1320px] overflow-hidden border border-[#c7b889]/65 bg-[#131413] px-6 py-10 text-[#FCF7F1] shadow-[0_24px_70px_rgba(19,20,19,0.16)] md:px-10 lg:px-14">
-          <div className="grid gap-8 lg:grid-cols-[0.34fr_0.66fr] lg:items-center">
-            <div>
-              <p className="font-serifDisplay text-[10px] font-bold uppercase tracking-[0.32em] text-[#d7b866]">Medalhas</p>
-              <h2 className="mt-4 font-serifDisplay text-[clamp(2.3rem,4vw,4.6rem)] font-semibold uppercase leading-[0.9] tracking-[-0.04em]">Ouro no Brasil e no Mundo.</h2>
-            </div>
-            <div className="relative min-h-[150px]">
-              <Image src={awardAssets.medalsStrip} alt="Sequência de medalhas BEG Destilaria" fill sizes="(max-width: 1024px) 90vw, 820px" className="object-contain" />
-            </div>
+      <section className="paper-texture overflow-visible bg-[#FEFAF3] px-5 pb-24 pt-4 md:px-8 lg:pb-28">
+        <div className="relative mx-auto max-w-[1320px] overflow-visible border border-[#c7b889]/35 bg-[#131413] px-6 pb-0 pt-12 text-center text-[#FCF7F1] shadow-[0_24px_70px_rgba(19,20,19,0.16)] md:px-10 md:pt-16 lg:px-16 lg:pt-20">
+          <div className="mx-auto max-w-[980px]">
+            <p className="font-serifDisplay text-[10px] font-bold uppercase tracking-[0.34em] text-[#d7b866]">
+              Medalhas
+            </p>
+            <h2 className="mx-auto mt-5 max-w-[940px] font-serifDisplay text-[clamp(2.6rem,5.7vw,7rem)] font-semibold uppercase leading-[0.86] tracking-[-0.055em]">
+              Ouro no Brasil e no Mundo.
+            </h2>
+            <p className="mx-auto mt-7 max-w-[720px] text-[1rem] leading-[1.82] text-[#FCF7F1]/74">
+              A sequência de medalhas simboliza uma trajetória construída com técnica, botânicos selecionados e reconhecimento internacional para o gin artesanal brasileiro.
+            </p>
+          </div>
+
+          <div className="relative mx-auto mt-12 h-[150px] w-[calc(100%+32px)] translate-y-12 sm:h-[175px] md:h-[210px] lg:h-[250px] lg:w-[calc(100%+96px)] lg:translate-y-16">
+            <Image
+              src={awardAssets.medalsStrip}
+              alt="Sequência de medalhas BEG Destilaria"
+              fill
+              sizes="(max-width: 768px) 96vw, (max-width: 1280px) 90vw, 1320px"
+              className="object-contain drop-shadow-[0_22px_38px_rgba(0,0,0,0.34)]"
+            />
           </div>
         </div>
       </section>
