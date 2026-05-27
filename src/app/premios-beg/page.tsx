@@ -32,6 +32,17 @@ const proofPillars = [
   },
 ] as const;
 
+const featuredMedals = [
+  {
+    src: '/images/premios/Medalha%20BEG%20Brazilian%20IWSC%202024.png',
+    alt: 'Medalha BEG Brazilian IWSC 2024',
+  },
+  {
+    src: '/images/premios/Medalha%20BEG%20Brazilian%20Tonic%20IWSC%202024.png',
+    alt: 'Medalha BEG Brazilian Tonic IWSC 2024',
+  },
+] as const;
+
 const awardNarratives = [
   'Reconhecimento que valoriza destilados com qualidade sensorial, presença de marca, apresentação e consistência técnica no mercado de bebidas.',
   'Competição internacional respeitada no universo de destilados, com avaliação técnica criteriosa e alcance global.',
@@ -122,7 +133,7 @@ export default function AwardsLandingPage() {
         </div>
       </section>
 
-      <section className="paper-texture overflow-visible bg-[#FEFAF3] px-5 pb-24 pt-4 md:px-8 lg:pb-28">
+      <section className="paper-texture overflow-visible bg-[#FEFAF3] px-5 pb-32 pt-4 md:px-8 lg:pb-36">
         <div className="relative mx-auto max-w-[1320px] overflow-visible border border-[#c7b889]/35 bg-[#131413] px-6 pb-0 pt-12 text-center text-[#FCF7F1] shadow-[0_24px_70px_rgba(19,20,19,0.16)] md:px-10 md:pt-16 lg:px-16 lg:pt-20">
           <div className="mx-auto max-w-[980px]">
             <p className="font-serifDisplay text-[10px] font-bold uppercase tracking-[0.34em] text-[#d7b866]">
@@ -132,18 +143,22 @@ export default function AwardsLandingPage() {
               Ouro no Brasil e no Mundo.
             </h2>
             <p className="mx-auto mt-7 max-w-[720px] text-[1rem] leading-[1.82] text-[#FCF7F1]/74">
-              A sequência de medalhas simboliza uma trajetória construída com técnica, botânicos selecionados e reconhecimento internacional para o gin artesanal brasileiro.
+              Cada medalha representa uma conquista real da BEG Destilaria em competições nacionais e internacionais.
             </p>
           </div>
 
-          <div className="relative mx-auto mt-12 h-[150px] w-[calc(100%+32px)] translate-y-12 sm:h-[175px] md:h-[210px] lg:h-[250px] lg:w-[calc(100%+96px)] lg:translate-y-16">
-            <Image
-              src={awardAssets.medalsStrip}
-              alt="Sequência de medalhas BEG Destilaria"
-              fill
-              sizes="(max-width: 768px) 96vw, (max-width: 1280px) 90vw, 1320px"
-              className="object-contain drop-shadow-[0_22px_38px_rgba(0,0,0,0.34)]"
-            />
+          <div className="relative z-[2] mx-auto mt-12 flex w-[calc(100%+60px)] translate-y-16 items-end justify-center gap-5 overflow-x-auto px-4 pb-4 sm:gap-6 lg:w-[calc(100%+140px)] lg:gap-8 lg:overflow-visible">
+            {featuredMedals.map((medal) => (
+              <div key={medal.src} className="relative h-[190px] w-[190px] shrink-0 sm:h-[230px] sm:w-[230px] md:h-[270px] md:w-[270px] lg:h-[310px] lg:w-[310px] xl:h-[340px] xl:w-[340px]">
+                <Image
+                  src={medal.src}
+                  alt={medal.alt}
+                  fill
+                  sizes="(max-width: 640px) 190px, (max-width: 768px) 230px, (max-width: 1024px) 270px, 340px"
+                  className="object-contain drop-shadow-[0_22px_34px_rgba(0,0,0,0.42)]"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>
