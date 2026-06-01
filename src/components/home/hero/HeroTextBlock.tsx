@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { heroAssets } from '@/data/hero-assets';
 import { MagneticLink } from '@/components/motion/MagneticLink';
@@ -22,8 +21,8 @@ export function HeroTextBlock() {
         <span className="block">LARIA</span>
       </motion.h1>
 
-      <Reveal delay={0.18} className="mt-8 max-w-[390px] text-center md:ml-5 max-md:mt-6">
-        <div className="relative mx-auto mb-5 h-[20px] w-[42px]">
+      <Reveal delay={0.18} className="mt-8 max-w-[420px] md:ml-5 max-md:mt-6 max-md:text-center">
+        <div className="relative mb-5 h-[20px] w-[42px] max-md:mx-auto">
           <Image
             src={heroAssets.waves}
             alt=""
