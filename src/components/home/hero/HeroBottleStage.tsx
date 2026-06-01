@@ -37,16 +37,14 @@ export function HeroBottleStage() {
     };
 
     const handlePointerMove = (event: PointerEvent) => {
-      if (event.pointerType && event.pointerType !== 'mouse') {
-        return;
-      }
+      if (event.pointerType && event.pointerType !== 'mouse') return;
 
       const normalizedX = (event.clientX / window.innerWidth - 0.5) * 2;
       const normalizedY = (event.clientY / window.innerHeight - 0.5) * 2;
 
-      pointerX.set(normalizedX * 4);
-      pointerY.set(normalizedY * 3);
-      pointerRotate.set(normalizedX * 0.2);
+      pointerX.set(normalizedX * 2.5);
+      pointerY.set(normalizedY * 1.8);
+      pointerRotate.set(normalizedX * 0.1);
     };
 
     window.addEventListener('pointermove', handlePointerMove);
@@ -59,8 +57,6 @@ export function HeroBottleStage() {
       document.documentElement.removeEventListener('mouseleave', reset);
     };
   }, [pointerRotate, pointerX, pointerY, shouldReduceMotion, isMobile]);
-
-  const shouldShowVideo = !isMobile && !shouldReduceMotion;
 
   return (
     <div
@@ -75,39 +71,27 @@ export function HeroBottleStage() {
           className="h-full w-full"
         >
           <motion.div
-            {...(!isMobile ? {
-              whileHover: { scale: 1.02, y: -6 },
-              transition: { type: 'spring', stiffness: 200, damping: 22, mass: 0.45 }
-            } : {})}
+            {...(!isMobile
+              ? {
+                  whileHover: { scale: 1.008, y: -2 },
+                  transition: { type: 'spring', stiffness: 170, damping: 24, mass: 0.45 },
+                }
+              : {})}
             className="pointer-events-auto h-full w-full"
           >
             <motion.div
-              animate={{ y: [0, -3, 0], rotate: [-0.12, 0.12, -0.12] }}
-              transition={{ duration: 11.5, repeat: Infinity, ease: 'easeInOut' }}
+              animate={shouldReduceMotion ? undefined : { y: [0, -2, 0], rotate: [-0.08, 0.08, -0.08] }}
+              transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
               className="relative h-full w-full drop-shadow-[0_34px_48px_rgba(38,28,14,0.16)] transition-[filter] duration-300 hover:drop-shadow-[0_40px_62px_rgba(38,28,14,0.18)]"
             >
-              {shouldShowVideo ? (
-                <video
-                  className="h-full w-full object-contain"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  preload="metadata"
-                  poster={heroAssets.mainProduct}
-                >
-                  <source src={heroAssets.heroVideo} type="video/mp4" />
-                </video>
-              ) : (
-                <Image
-                  src={isMobile ? heroAssets.mainProductMobile : heroAssets.mainProduct}
-                  alt="BEG Destilaria"
-                  fill
-                  priority
-                  sizes="(max-width: 768px) 360px, (max-width: 1280px) 620px, 912px"
-                  className="object-contain"
-                />
-              )}
+              <Image
+                src={isMobile ? heroAssets.mainProductMobile : heroAssets.mainProduct}
+                alt="BEG Destilaria"
+                fill
+                priority
+                sizes="(max-width: 768px) 360px, (max-width: 1280px) 620px, 912px"
+                className="object-contain"
+              />
             </motion.div>
           </motion.div>
         </motion.div>
