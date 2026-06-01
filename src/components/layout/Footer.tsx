@@ -38,15 +38,15 @@ export function Footer() {
 
   return (
     <>
-      <section id="contato" className="paper-texture bg-[#FCF7F1] px-5 py-16 text-beggin-ink md:px-8 lg:py-20">
-        <div className="mx-auto grid max-w-[1380px] gap-8 border-y border-[#c8b98e]/60 py-12 text-center lg:grid-cols-[0.62fr_0.38fr] lg:items-center lg:text-left">
+      <section id="contato" className="paper-texture bg-[#FCF7F1] px-5 py-14 text-beggin-ink md:px-8 lg:py-18">
+        <div className="mx-auto grid max-w-[1380px] gap-8 border-y border-[#c8b98e]/60 py-12 text-center lg:grid-cols-[0.58fr_0.42fr] lg:items-center lg:text-left xl:py-14">
           <div>
-            <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.32em] text-beggin-red">Contato</p>
-            <h2 className="mt-5 max-w-[760px] font-serifDisplay text-[clamp(2.5rem,4.7vw,5.5rem)] font-semibold uppercase leading-[0.88] tracking-[-0.045em] max-lg:mx-auto">
+            <p className="font-serifDisplay text-[12px] font-bold uppercase tracking-[0.32em] text-beggin-red">Contato</p>
+            <h2 className="mt-5 max-w-[760px] font-serifDisplay text-[clamp(2.75rem,5.05vw,5.95rem)] font-semibold uppercase leading-[0.86] tracking-[-0.05em] max-lg:mx-auto">
               Fale com a BEG Destilaria.
             </h2>
-            <p className="mt-6 max-w-[690px] text-[1.03rem] leading-[1.85] text-beggin-ink/72 max-lg:mx-auto">
-              Tire dúvidas, conheça os produtos, fale sobre eventos ou solicite atendimento direto pelo WhatsApp.
+            <p className="mt-6 max-w-[720px] text-[1.08rem] leading-[1.85] text-beggin-ink/72 max-lg:mx-auto">
+              Quer levar a experiência BEG para seu evento, carta de drinks ou ponto de venda? Fale direto com a equipe pelo WhatsApp.
             </p>
           </div>
           <div className="flex justify-center lg:justify-end">
@@ -54,9 +54,9 @@ export function Footer() {
               href={whatsappContactUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-3 bg-beggin-red px-8 py-4 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-beggin-ink"
+              className="inline-flex items-center gap-3 bg-beggin-red px-9 py-5 font-serifDisplay text-[13px] font-bold uppercase tracking-[0.18em] text-white shadow-[0_18px_34px_rgba(215,25,32,0.18)] transition hover:bg-beggin-ink"
             >
-              <MessageCircle size={18} strokeWidth={1.7} />
+              <MessageCircle size={19} strokeWidth={1.7} />
               Entrar em contato
             </Link>
           </div>
@@ -64,13 +64,13 @@ export function Footer() {
       </section>
 
       <footer className="relative overflow-hidden bg-[#131413] text-[#f4efe3]">
-        <div className="pointer-events-none absolute left-[-8%] top-[20%] z-0 h-[130px] w-[420px] opacity-20">
+        <div className="pointer-events-none absolute left-[-8%] top-[20%] z-0 h-[130px] w-[420px] opacity-18">
           <motion.div animate={topMotion} transition={{ duration: 38, repeat: Infinity, ease: 'easeInOut' }} className="relative h-full w-full">
             <Image src={heroAssets.cloudsTop} alt="" fill sizes="420px" className="object-contain opacity-35 grayscale saturate-0 mix-blend-normal" />
           </motion.div>
         </div>
 
-        <div className="pointer-events-none absolute right-[-8%] bottom-[18%] z-0 h-[150px] w-[460px] opacity-18">
+        <div className="pointer-events-none absolute right-[-8%] bottom-[18%] z-0 h-[150px] w-[460px] opacity-16">
           <motion.div animate={bottomMotion} transition={{ duration: 38, repeat: Infinity, ease: 'easeInOut' }} className="relative h-full w-full">
             <Image src={heroAssets.cloudsTop} alt="" fill sizes="460px" className="object-contain opacity-35 grayscale saturate-0 mix-blend-normal" />
           </motion.div>
@@ -86,7 +86,7 @@ export function Footer() {
           <div className="grid gap-10 lg:grid-cols-[0.25fr_0.22fr_1px_0.22fr_1px_0.31fr] lg:items-start lg:gap-12">
             <div className="max-w-[220px] lg:max-w-none">
               <Link href="/#inicio" aria-label="Voltar para a página inicial BEG Destilaria">
-                <BrandLogo variant="light" className="h-auto w-[115px] lg:w-[145px]" />
+                <BrandLogo variant="light" className="h-auto w-[125px] lg:w-[155px]" />
               </Link>
             </div>
 
