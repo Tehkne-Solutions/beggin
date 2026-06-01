@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+### Sprint de acabamento visual premium da Home
+
+- fix(home): melhorada a hierarquia da seção de drinks, com título editorial em quebras controladas, coluna esquerda mais forte e cards menos comprimidos.
+- fix(home): cards de drinks ampliados para melhorar legibilidade de título, imagem e descrição em desktop/mobile.
+- fix(home): seção de prêmios reequilibrada com título em quebra premium e medalhas individuais mais bem agrupadas.
+- fix(home): seção de sustentabilidade ganhou mais respiro, título maior e melhor distribuição entre coluna editorial e pilares.
+- fix(home): cards de sustentabilidade ampliados, com imagens e textos mais legíveis.
+- fix(layout): CTA de contato fortalecido antes do footer, com copy comercial e botão de WhatsApp com mais presença visual.
+- fix(layout): footer refinado para encerrar a página com mais autoridade visual e menor sensação de miniatura.
+
 ### Ajustes pós-reunião BEG Destilaria
 
 - fix(home-hero): removida a renderização em vídeo rejeitada na Hero e restaurada a composição estática do produto principal.
