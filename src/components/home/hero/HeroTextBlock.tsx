@@ -22,14 +22,14 @@ export function HeroTextBlock() {
       </motion.h1>
 
       <Reveal delay={0.18} className="mt-8 max-w-[420px] md:ml-5 max-md:mt-6 max-md:text-center">
-        <div className="relative mb-5 h-[20px] w-[42px] max-md:mx-auto">
+        <div className="relative mb-5 h-[20px] w-[42px] max-md:mx-auto" aria-hidden="true">
           <Image
             src={heroAssets.waves}
             alt=""
             fill
             priority
             sizes="42px"
-            className="object-contain wave-pulse"
+            className="object-contain"
           />
         </div>
 
