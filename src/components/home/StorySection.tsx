@@ -158,7 +158,7 @@ export function StorySection() {
           </motion.div>
 
           <div className="relative z-[4] min-h-[360px] lg:min-h-[390px]">
-            <div className="grid items-center gap-5 lg:grid-cols-[minmax(0,1fr)_170px_minmax(0,1fr)] xl:grid-cols-[minmax(0,1fr)_205px_minmax(0,1fr)] xl:gap-7">
+            <div className="grid items-center gap-0 lg:grid-cols-[minmax(0,1fr)_142px_minmax(0,1fr)] xl:grid-cols-[minmax(0,1fr)_172px_minmax(0,1fr)]">
               <motion.div
                 className="relative z-[3] h-[300px] w-full overflow-hidden bg-[#1b1c1a] lg:h-[330px] xl:h-[350px]"
                 initial="hidden"
@@ -176,7 +176,7 @@ export function StorySection() {
               </motion.div>
 
               <motion.div
-                className="relative z-[5] mx-auto h-[190px] w-[170px] max-lg:-my-8 xl:h-[230px] xl:w-[205px]"
+                className="relative z-[5] mx-auto h-[214px] w-[176px] max-lg:-my-8 lg:-mx-4 xl:h-[258px] xl:w-[212px] xl:-mx-5"
                 initial="hidden"
                 animate={controls}
                 variants={sealMotion}
@@ -188,7 +188,7 @@ export function StorySection() {
                   alt="Selo central Beg"
                   fill
                   className="object-contain drop-shadow-[0_14px_24px_rgba(0,0,0,0.24)]"
-                  sizes="(max-width: 1024px) 170px, 205px"
+                  sizes="(max-width: 1024px) 176px, 212px"
                 />
               </motion.div>
 
