@@ -28,31 +28,37 @@ const refilHighlights = [
     title: 'Um verdadeiro ícone de sustentabilidade, inovação e liberdade.',
     text: 'O Projeto Refil nasce para transformar a forma como o consumidor se relaciona com um gin premium: menos impacto, mais praticidade e a mesma assinatura BEG.',
     image: sustainabilityImages.refilRepeat,
+    imageMode: 'cover',
   },
   {
     title: '9x Mais Leve que o Vidro.',
     text: 'Feita 100% em alumínio, a nossa garrafa refil reduz consideravelmente a nossa pegada de carbono durante o transporte.',
     image: sustainabilityImages.refilRepeat,
+    imageMode: 'cover',
   },
   {
     title: 'Infinitamente Reciclável.',
     text: 'O alumínio economiza uma quantidade imensa de energia no processo de reciclagem. É a escolha mais eco consciente para o seu destilado.',
     image: sustainabilityImages.refilRepeat,
+    imageMode: 'cover',
   },
   {
     title: 'O alumínio vai onde o vidro não vai.',
     text: 'Muito mais do que sustentável, o nosso refil é sinônimo de liberdade. Leve o seu Refil BEG com total segurança para praias, piscinas, barcos e shows.',
     image: sustainabilityImages.freedomRefil,
+    imageMode: 'cover',
   },
   {
     title: 'O Mesmo Gin, Menos Impacto e Menor Custo.',
     text: 'Você leva para casa o mesmo gin premium, paga menos por isso e ainda apoia ativamente a cadeia de reciclagem nacional.',
     image: sustainabilityImages.sameGinLessImpact,
+    imageMode: 'cover',
   },
   {
     title: 'Selo Eu Reciclo.',
     text: 'Garantimos a compensação ambiental das nossas embalagens, apoiando ativamente a reciclagem em mais de 12 estados do Brasil.',
     image: sustainabilityImages.euReciclo,
+    imageMode: 'contain',
   },
 ] as const;
 
@@ -137,8 +143,14 @@ export default function SustainabilityPage() {
           <div className="grid border-t border-[#d7b866]/25 bg-[#171816] md:grid-cols-2 xl:grid-cols-3">
             {refilHighlights.map((item, index) => (
               <article key={item.title} className="grid min-h-[430px] border-b border-r border-[#d7b866]/18 md:min-h-[470px]">
-                <div className="relative min-h-[210px] overflow-hidden bg-[#23241f]">
-                  <Image src={item.image} alt={item.title} fill sizes="(max-width: 768px) 92vw, 460px" className="object-cover opacity-90 transition duration-700 hover:scale-[1.04]" />
+                <div className="relative flex min-h-[210px] items-center justify-center overflow-hidden bg-[#23241f] p-6">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    sizes="(max-width: 768px) 92vw, 460px"
+                    className={`${item.imageMode === 'contain' ? 'object-contain p-10 opacity-95' : 'object-cover opacity-90'} transition duration-700 hover:scale-[1.04]`}
+                  />
                   <div className="absolute left-5 top-5 font-serifDisplay text-[10px] font-bold uppercase tracking-[0.22em] text-[#d7b866]">
                     {String(index + 1).padStart(2, '0')}
                   </div>

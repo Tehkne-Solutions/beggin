@@ -15,6 +15,20 @@ const fadeInUp = {
   visible: { opacity: 1, y: 0 },
 };
 
+function CocktailTitle({ title }: { title: string }) {
+  if (title === 'Descubra o Drink perfeito para cada momento.') {
+    return (
+      <>
+        O Drink Perfeito
+        <br />
+        Para Cada Momento.
+      </>
+    );
+  }
+
+  return <>{title}</>;
+}
+
 export function CocktailsSection() {
   const ref = useRef<HTMLElement | null>(null);
   const isInView = useInView(ref, { once: true, margin: '-120px' });
@@ -31,23 +45,23 @@ export function CocktailsSection() {
     <section
       ref={ref}
       id="coqueteis"
-      className="paper-texture relative overflow-hidden bg-[#fdf9f1] px-5 py-24 md:px-8 lg:py-28"
+      className="paper-texture relative overflow-hidden bg-[#fdf9f1] px-5 py-20 md:px-8 lg:py-24 xl:py-28"
     >
       <motion.div
-        className="relative z-[2] mx-auto grid max-w-[1500px] gap-10 lg:grid-cols-[0.30fr_0.70fr] lg:items-start"
+        className="relative z-[2] mx-auto grid max-w-[1500px] gap-12 lg:grid-cols-[0.30fr_0.70fr] lg:items-center xl:gap-16"
         initial="hidden"
         animate={controls}
         variants={fadeInUp}
         transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.8, ease: easeOut }}
       >
-        <div className="max-w-[390px]">
-          <div className="h-px w-10 bg-beggin-gold/60" />
+        <div className="max-w-[430px] max-lg:mx-auto max-lg:text-center lg:pl-2">
+          <div className="h-px w-10 bg-beggin-gold/60 max-lg:mx-auto" />
 
-          <h2 className="mt-8 font-serifDisplay text-[clamp(2.45rem,3.8vw,4.45rem)] font-semibold uppercase leading-[0.98] tracking-[-0.04em] text-beggin-ink">
-            {cocktailsContent.title}
+          <h2 className="mt-8 font-serifDisplay text-[clamp(2.9rem,4.05vw,5.1rem)] font-semibold uppercase leading-[0.88] tracking-[-0.048em] text-beggin-ink">
+            <CocktailTitle title={cocktailsContent.title} />
           </h2>
 
-          <div className="relative mt-7 h-[22px] w-[44px]">
+          <div className="relative mt-7 h-[22px] w-[44px] max-lg:mx-auto">
             <Image
               src={cocktailAssets.waves}
               alt=""
@@ -57,10 +71,10 @@ export function CocktailsSection() {
             />
           </div>
 
-          <Reveal delay={0.1} className="mt-16">
+          <Reveal delay={0.1} className="mt-12 lg:mt-14">
             <MagneticLink
               href="/blog"
-              className="group inline-flex items-center gap-3 font-serifDisplay text-[11px] font-bold uppercase tracking-[0.2em] text-beggin-ink"
+              className="group inline-flex items-center gap-3 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-beggin-ink xl:text-[13px]"
             >
               <span className="relative pb-2 after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-beggin-gold after:transition-transform after:duration-300 group-hover:after:scale-x-125">
                 {cocktailsContent.cta}
@@ -72,7 +86,7 @@ export function CocktailsSection() {
           </Reveal>
         </div>
 
-        <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-7">
           {cocktails.map((cocktail, index) => (
             <CocktailCard
               key={cocktail.id}

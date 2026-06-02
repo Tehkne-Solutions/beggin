@@ -14,7 +14,7 @@ const navItems = [
   { label: 'Beg Experience', href: '/agendamento' },
   { label: 'Prêmios', href: '/premios' },
   { label: 'Sustentabilidade', href: '/sustentabilidade' },
-  { label: 'WhatsApp', href: whatsappContactUrl, external: true },
+  { label: 'Contato', href: '/#contato' },
 ];
 
 export function Header() {
@@ -43,8 +43,6 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
-              target={item.external ? '_blank' : undefined}
-              rel={item.external ? 'noreferrer' : undefined}
               className="font-serifDisplay text-[12px] font-bold uppercase tracking-[0.16em] text-beggin-ink transition-colors hover:text-beggin-red"
             >
               {item.label}
@@ -59,7 +57,7 @@ export function Header() {
           <Link aria-label="Produtos" href="/produtos" className="text-beggin-ink transition-colors hover:text-beggin-red">
             <ShoppingBag size={22} strokeWidth={1.7} />
           </Link>
-          <Link aria-label="Fale pelo WhatsApp" href={whatsappContactUrl} target="_blank" rel="noreferrer" className="text-beggin-ink lg:hidden">
+          <Link aria-label="Contato" href="/#contato" className="text-beggin-ink lg:hidden">
             <Menu size={26} strokeWidth={1.7} />
           </Link>
         </div>
