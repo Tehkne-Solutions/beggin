@@ -28,3 +28,4 @@
 - feat(motion): add shared motion utilities (Reveal, MagneticLink, TiltCard, ParallaxLayer, hooks, motion-presets)
 - feat(interactions): integrate motion & interaction pass across home (hero, cocktails, story, awards, sustainability)
 - chore(rename): update displayed site name to "Beg Gin" (title, header aria-label, image alts)
+  ...
