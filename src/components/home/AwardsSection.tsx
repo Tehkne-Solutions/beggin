@@ -77,13 +77,13 @@ export function AwardsSection() {
       className="paper-texture relative overflow-hidden bg-[#fefaf3] px-0 py-16 lg:py-18"
     >
       <div className="relative mx-auto grid w-[calc(100%-44px)] max-w-[1540px] items-center gap-10 border-y border-[#c8b98e]/30 py-12 lg:w-[calc(100%-64px)] lg:grid-cols-[0.28fr_0.72fr] lg:py-14 xl:gap-12">
-        <div className="pointer-events-none absolute bottom-[-58px] right-[-104px] z-[1] hidden h-[360px] w-[280px] opacity-28 lg:block">
+        <div className="pointer-events-none absolute bottom-[-72px] right-[-120px] z-[1] hidden h-[350px] w-[260px] opacity-18 lg:block 2xl:opacity-26">
           <Image
             src={awardAssets.flowerRight}
             alt=""
             fill
             className="object-contain object-right-bottom"
-            sizes="280px"
+            sizes="260px"
           />
         </div>
 
@@ -93,7 +93,7 @@ export function AwardsSection() {
             <span className="ml-3 text-beggin-gold">✧</span>
           </p>
 
-          <h2 className="mt-5 max-w-[430px] font-serifDisplay text-[clamp(2.5rem,3.65vw,4.75rem)] font-semibold uppercase leading-[0.88] tracking-[-0.04em] text-beggin-ink max-lg:mx-auto">
+          <h2 className="mt-5 max-w-[430px] font-serifDisplay text-[clamp(2.45rem,3.45vw,4.55rem)] font-semibold uppercase leading-[0.88] tracking-[-0.04em] text-beggin-ink max-lg:mx-auto">
             <AwardsTitle title={awardsContent.title} />
           </h2>
 
@@ -121,19 +121,19 @@ export function AwardsSection() {
         </Reveal>
 
         <motion.div
-          className="relative z-[3] w-full overflow-x-auto pb-3 lg:overflow-visible lg:pb-0"
+          className="relative z-[3] w-full pb-2"
           animate={controls}
           initial="hidden"
           variants={stripVariants}
         >
-          <div className="mx-auto flex min-w-max items-center justify-start gap-4 px-2 sm:gap-5 lg:min-w-0 lg:justify-center lg:gap-4 xl:gap-5 2xl:gap-6">
+          <div className="mx-auto grid max-w-[720px] grid-cols-2 items-center justify-items-center gap-5 sm:grid-cols-3 lg:max-w-[760px] lg:grid-cols-3 xl:max-w-[820px] xl:gap-6 2xl:flex 2xl:max-w-none 2xl:items-center 2xl:justify-center 2xl:gap-6">
             {featuredMedals.map((medal) => (
-              <div key={medal.src} className="relative h-[138px] w-[138px] shrink-0 sm:h-[160px] sm:w-[160px] lg:h-[150px] lg:w-[150px] xl:h-[172px] xl:w-[172px] 2xl:h-[188px] 2xl:w-[188px]">
+              <div key={medal.src} className="relative h-[128px] w-[128px] sm:h-[148px] sm:w-[148px] lg:h-[154px] lg:w-[154px] xl:h-[168px] xl:w-[168px] 2xl:h-[188px] 2xl:w-[188px]">
                 <Image
                   src={medal.src}
                   alt={medal.alt}
                   fill
-                  sizes="(max-width: 640px) 138px, (max-width: 1024px) 160px, (max-width: 1280px) 150px, 188px"
+                  sizes="(max-width: 640px) 128px, (max-width: 1024px) 148px, (max-width: 1536px) 168px, 188px"
                   className="object-contain drop-shadow-[0_14px_22px_rgba(54,43,25,0.13)]"
                 />
               </div>
