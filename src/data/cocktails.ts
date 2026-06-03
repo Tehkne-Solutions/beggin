@@ -26,5 +26,6 @@ export const cocktails = [
 export const cocktailsContent = {
   label: '',
   title: 'Descubra o Drink perfeito para cada momento.',
-  cta: 'Descubra mais',
+  cta: 'Ver drinks',
+  href: '/drinks',
 } as const;
