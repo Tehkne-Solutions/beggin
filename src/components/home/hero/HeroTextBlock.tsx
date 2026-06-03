@@ -40,7 +40,7 @@ export function HeroTextBlock() {
         </p>
 
         <MagneticLink
-          href="/blog"
+          href="/nossa-historia"
           className="group mt-10 inline-flex items-center gap-3 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-beggin-ink"
         >
           <span className="relative pb-2 after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:origin-center after:bg-beggin-gold after:transition-transform after:duration-300 group-hover:after:scale-x-125">
