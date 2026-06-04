@@ -11,6 +11,7 @@ const whatsappContactUrl =
 const navItems = [
   { label: 'Nossa História', href: '/nossa-historia' },
   { label: 'Produtos', href: '/produtos' },
+  { label: 'Drinks', href: '/drinks' },
   { label: 'Beg Experience', href: '/agendamento' },
   { label: 'Prêmios', href: '/premios' },
   { label: 'Sustentabilidade', href: '/sustentabilidade' },
@@ -38,12 +39,12 @@ export function Header() {
           </motion.div>
         </Link>
 
-        <nav className="hidden items-center justify-center gap-8 lg:flex" aria-label="Navegação principal">
+        <nav className="hidden items-center justify-center gap-6 xl:gap-8 lg:flex" aria-label="Navegação principal">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="font-serifDisplay text-[12px] font-bold uppercase tracking-[0.16em] text-beggin-ink transition-colors hover:text-beggin-red"
+              className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.14em] text-beggin-ink transition-colors hover:text-beggin-red xl:text-[12px] xl:tracking-[0.16em]"
             >
               {item.label}
             </Link>
