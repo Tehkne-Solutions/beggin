@@ -23,11 +23,6 @@ const photoMotion = {
   visible: { opacity: 1, y: 0, scale: 1 },
 };
 
-const sealMotion = {
-  hidden: { opacity: 0, scale: 0.94, rotate: -1.5 },
-  visible: { opacity: 1, scale: 1, rotate: 0 },
-};
-
 function StoryTitle({ title }: { title: string }) {
   if (title === 'Do interior de São Paulo para o Mundo.') {
     return (
@@ -71,23 +66,6 @@ export function StorySection() {
         transition={transition}
       >
         <div className="pointer-events-none absolute inset-[18px] z-[1] border border-[#b9a875]/32 lg:inset-[22px]" />
-
-        <motion.div
-          className="pointer-events-none absolute bottom-[-78px] left-[-62px] z-[1] h-[245px] w-[245px] opacity-25 invert lg:bottom-[-92px] lg:left-[-76px] lg:h-[315px] lg:w-[315px]"
-          initial="hidden"
-          animate={controls}
-          variants={fadeInUp}
-          transition={{ ...transition, delay: 0.45 }}
-          aria-hidden="true"
-        >
-          <Image
-            src={storyAssets.botanicalLeft}
-            alt=""
-            fill
-            className="object-contain object-left-bottom"
-            sizes="360px"
-          />
-        </motion.div>
 
         <motion.div
           className="pointer-events-none absolute right-[30px] top-[52%] z-[3] hidden h-[28px] w-[54px] -translate-y-1/2 lg:block xl:right-[54px]"
@@ -158,7 +136,7 @@ export function StorySection() {
           </motion.div>
 
           <div className="relative z-[4] min-h-[360px] lg:min-h-[390px]">
-            <div className="grid items-center gap-0 lg:grid-cols-[minmax(0,1fr)_142px_minmax(0,1fr)] xl:grid-cols-[minmax(0,1fr)_172px_minmax(0,1fr)]">
+            <div className="grid items-center gap-4 lg:grid-cols-2 xl:gap-5">
               <motion.div
                 className="relative z-[3] h-[300px] w-full overflow-hidden bg-[#1b1c1a] lg:h-[330px] xl:h-[350px]"
                 initial="hidden"
@@ -172,23 +150,6 @@ export function StorySection() {
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 86vw, 500px"
-                />
-              </motion.div>
-
-              <motion.div
-                className="relative z-[5] mx-auto h-[214px] w-[176px] max-lg:-my-8 lg:-mx-4 xl:h-[258px] xl:w-[212px] xl:-mx-5"
-                initial="hidden"
-                animate={controls}
-                variants={sealMotion}
-                transition={{ ...transition, delay: 0.36 }}
-                aria-label="Selo central Beg"
-              >
-                <Image
-                  src={storyAssets.centerSeal}
-                  alt="Selo central Beg"
-                  fill
-                  className="object-contain drop-shadow-[0_14px_24px_rgba(0,0,0,0.24)]"
-                  sizes="(max-width: 1024px) 176px, 212px"
                 />
               </motion.div>
 
