@@ -17,20 +17,20 @@ export function SustainabilitySection() {
       className="paper-texture relative overflow-hidden bg-[#dfdec9] px-5 py-20 md:px-8 lg:py-24 xl:py-28"
     >
       <div className="relative mx-auto max-w-[1560px]">
-        <div className="relative z-[2] grid gap-12 lg:grid-cols-[0.34fr_0.66fr] lg:items-center xl:gap-18 2xl:grid-cols-[0.33fr_0.67fr]">
-          <Reveal className="relative max-w-[590px] max-lg:mx-auto max-lg:text-center lg:pl-4 xl:pl-8" delay={0.05}>
+        <div className="relative z-[2] space-y-12 xl:space-y-14">
+          <Reveal className="relative mx-auto max-w-[980px] text-center" delay={0.05}>
             <p className="font-serifDisplay text-[12px] font-bold uppercase tracking-[0.28em] text-beggin-ink">
               {sustainabilityContent.eyebrow}
             </p>
 
-            <div className="mt-4 h-px w-12 bg-beggin-gold/60 max-lg:mx-auto" />
+            <div className="mx-auto mt-4 h-px w-12 bg-beggin-gold/60" />
 
-            <h2 className="mt-8 max-w-[560px] font-serifDisplay text-[clamp(2.8rem,3.8vw,5rem)] font-semibold uppercase leading-[0.9] tracking-[-0.045em] text-beggin-ink max-lg:mx-auto">
+            <h2 className="mx-auto mt-8 max-w-[940px] font-serifDisplay text-[clamp(3.1rem,4.6vw,6rem)] font-semibold uppercase leading-[0.88] tracking-[-0.05em] text-beggin-ink">
               <span className="block">Orgulhosamente</span>
               <span className="block">Artesanal.</span>
             </h2>
 
-            <div className="relative mt-7 h-[22px] w-[44px] max-lg:mx-auto">
+            <div className="relative mx-auto mt-7 h-[22px] w-[44px]">
               <Image
                 src={sustainabilityAssets.waves}
                 alt=""
@@ -42,7 +42,7 @@ export function SustainabilitySection() {
 
             <MagneticLink
               href="/sustentabilidade"
-              className="group mt-12 inline-flex items-center gap-3 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-beggin-ink"
+              className="group mt-9 inline-flex items-center gap-3 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-beggin-ink"
             >
               <span className="relative pb-2 after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-beggin-gold after:transition-transform after:duration-300 group-hover:after:scale-x-125">
                 {sustainabilityContent.cta}
@@ -53,7 +53,7 @@ export function SustainabilitySection() {
             </MagneticLink>
           </Reveal>
 
-          <Reveal className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4 xl:gap-5" delay={0.14}>
+          <Reveal className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4 xl:gap-6" delay={0.14}>
             {sustainabilityItems.map((item, index) => (
               <SustainabilityItem
                 key={item.title}
