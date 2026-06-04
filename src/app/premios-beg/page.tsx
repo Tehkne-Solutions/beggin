@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Globe2, Medal, Sparkles, Trophy } from 'lucide-react';
+import { ArrowRight, Globe2, Medal, MessageSquareQuote, Sparkles, Star, Trophy } from 'lucide-react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { awardAssets, awards, awardsContent } from '@/data/awards';
@@ -67,9 +67,30 @@ const awardNarratives = [
 ] as const;
 
 const timeline = [
-  ['2012', 'Início da jornada', 'Quatro amigos unidos pela paixão por destilados começam a construir a história da BEG.'],
-  ['2024', 'Marco histórico', 'A destilaria consolida sua presença internacional com reconhecimentos que elevam o gin artesanal brasileiro.'],
-  ['2026', 'Nova fase', 'A marca segue expandindo sua narrativa, portfólio e presença entre consumidores, experiências e premiações.'],
+  {
+    year: '2012',
+    title: 'Início da jornada',
+    text: 'Quatro amigos unidos pela paixão por destilados começam a construir a história da BEG.',
+    status: 'História da marca',
+  },
+  {
+    year: '2024',
+    title: 'Gold 98 pontos',
+    text: 'Marco preparado para destacar a conquista de 98 pontos e as medalhas internacionais já presentes no acervo visual.',
+    status: 'Conteúdo a validar',
+  },
+  {
+    year: '2026',
+    title: 'Nova fase',
+    text: 'Espaço preparado para receber a ordem correta das próximas medalhas e reconhecimentos enviados pelo cliente.',
+    status: 'Aguardando ordem final',
+  },
+] as const;
+
+const tripadvisorPlaceholders = [
+  'Avaliação real com link original será inserida após envio do cliente.',
+  'Bloco preparado para comentário verificado, nota e referência externa.',
+  'Espaço reservado para prova social conectada ao TripAdvisor.',
 ] as const;
 
 export default function AwardsLandingPage() {
@@ -78,7 +99,7 @@ export default function AwardsLandingPage() {
       <Header />
 
       <section className="paper-texture relative overflow-hidden bg-[#FEFAF3] px-5 pb-16 pt-[130px] md:px-8 lg:pb-20 lg:pt-[160px]">
-        <div className="pointer-events-none absolute right-[-120px] bottom-[-24px] hidden h-[520px] w-[360px] opacity-35 lg:block">
+        <div className="pointer-events-none absolute right-[-120px] bottom-[-24px] hidden h-[520px] w-[360px] opacity-24 lg:block">
           <Image src={awardAssets.flowerRight} alt="" fill sizes="360px" className="object-contain" priority />
         </div>
 
@@ -100,8 +121,9 @@ export default function AwardsLandingPage() {
             <p className="mt-6 max-w-[680px] text-[1.05rem] leading-[1.85] text-beggin-ink/72">
               Do interior de São Paulo para o mundo, a BEG Destilaria transforma botânicos, técnica e brasilidade em uma trajetória reconhecida dentro e fora do país.
             </p>
-            <Link href="/produtos" className="mt-9 inline-flex bg-beggin-red px-7 py-4 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-beggin-ink">
+            <Link href="/produtos" className="mt-9 inline-flex items-center gap-3 bg-beggin-red px-7 py-4 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-beggin-ink">
               Conheça a linha BEG
+              <ArrowRight size={16} />
             </Link>
           </div>
 
@@ -149,36 +171,26 @@ export default function AwardsLandingPage() {
         </div>
       </section>
 
-      <section className="paper-texture overflow-visible bg-[#FEFAF3] px-5 pb-28 pt-4 md:px-8 lg:pb-32">
-        <div className="relative mx-auto max-w-[1320px] overflow-visible border border-[#c7b889]/35 bg-[#131413] px-5 pb-0 pt-12 text-center text-[#FCF7F1] shadow-[0_24px_70px_rgba(19,20,19,0.16)] md:px-8 md:pt-16 lg:px-10 lg:pt-20">
-          <div className="mx-auto max-w-[980px]">
-            <p className="font-serifDisplay text-[10px] font-bold uppercase tracking-[0.34em] text-[#d7b866]">
-              Medalhas
-            </p>
-            <h2 className="mx-auto mt-5 max-w-[940px] font-serifDisplay text-[clamp(2.6rem,5.7vw,7rem)] font-semibold uppercase leading-[0.86] tracking-[-0.055em]">
-              Ouro no Brasil e no Mundo.
+      <section className="paper-texture bg-[#FEFAF3] px-5 pb-16 md:px-8 lg:pb-20">
+        <div className="mx-auto grid max-w-[1320px] overflow-hidden border border-[#c7b889]/60 bg-[#131413] text-[#FCF7F1] shadow-[0_24px_70px_rgba(19,20,19,0.16)] lg:grid-cols-[0.42fr_0.58fr]">
+          <div className="flex flex-col justify-center p-8 md:p-12 lg:p-14 xl:p-16">
+            <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.34em] text-[#d7b866]">Destaque técnico</p>
+            <h2 className="mt-5 font-serifDisplay text-[clamp(3.6rem,7vw,8.2rem)] font-semibold uppercase leading-[0.78] tracking-[-0.06em] text-[#FCF7F1]">
+              98
+              <span className="block text-[0.38em] leading-none tracking-[0.16em] text-[#d7b866]">pontos</span>
             </h2>
-            <p className="mx-auto mt-7 max-w-[720px] text-[1rem] leading-[1.82] text-[#FCF7F1]/74">
-              Cada medalha representa uma conquista real da BEG Destilaria em competições nacionais e internacionais.
+            <p className="mt-7 max-w-[620px] text-[1.04rem] leading-[1.82] text-[#FCF7F1]/74">
+              Área preparada para destacar a conquista de 98 pontos com narrativa, medalha e confirmação oficial assim que a ordem final e o conteúdo validado forem enviados.
             </p>
           </div>
-
-          <div className="relative z-[2] mx-auto mt-12 flex w-[calc(100%+36px)] translate-y-14 items-end justify-center gap-3 overflow-x-auto px-2 pb-4 sm:gap-4 md:gap-5 lg:w-[calc(100%+96px)] lg:gap-5 lg:overflow-visible xl:gap-6">
-            {featuredMedals.map((medal, index) => (
-              <div
-                key={medal.src}
-                className={[
-                  'relative shrink-0',
-                  index === 0 || index === 4 || index === 5
-                    ? 'h-[150px] w-[150px] sm:h-[170px] sm:w-[170px] md:h-[190px] md:w-[190px] lg:h-[205px] lg:w-[205px] xl:h-[220px] xl:w-[220px]'
-                    : 'h-[150px] w-[150px] sm:h-[170px] sm:w-[170px] md:h-[190px] md:w-[190px] lg:h-[205px] lg:w-[205px] xl:h-[220px] xl:w-[220px]',
-                ].join(' ')}
-              >
+          <div className="grid grid-cols-2 items-center justify-items-center gap-5 border-t border-[#d7b866]/20 bg-[#171816] p-8 md:grid-cols-3 lg:border-l lg:border-t-0 lg:p-10">
+            {featuredMedals.map((medal) => (
+              <div key={medal.src} className="relative h-[132px] w-[132px] sm:h-[154px] sm:w-[154px] xl:h-[174px] xl:w-[174px]">
                 <Image
                   src={medal.src}
                   alt={medal.alt}
                   fill
-                  sizes="(max-width: 640px) 150px, (max-width: 768px) 170px, (max-width: 1024px) 190px, 220px"
+                  sizes="(max-width: 640px) 132px, (max-width: 1280px) 154px, 174px"
                   className="object-contain drop-shadow-[0_22px_34px_rgba(0,0,0,0.42)]"
                 />
               </div>
@@ -194,11 +206,14 @@ export default function AwardsLandingPage() {
             <h2 className="mt-5 font-serifDisplay text-[clamp(2.6rem,4.4vw,5.2rem)] font-semibold uppercase leading-[0.88] tracking-[-0.045em]">Do primeiro lote aos grandes palcos.</h2>
           </div>
           <div className="grid gap-5 md:grid-cols-3">
-            {timeline.map(([year, title, text]) => (
-              <article key={year} className="border border-[#c7b889]/60 bg-[#FFFCF6] p-7">
-                <span className="font-serifDisplay text-[3.6rem] font-semibold leading-none text-beggin-gold/55">{year}</span>
-                <h3 className="mt-5 font-serifDisplay text-[1.5rem] font-bold uppercase leading-[1] tracking-[0.04em]">{title}</h3>
-                <p className="mt-4 text-[1rem] leading-[1.75] text-beggin-ink/70">{text}</p>
+            {timeline.map((item) => (
+              <article key={item.year} className="border border-[#c7b889]/60 bg-[#FFFCF6] p-7 shadow-[0_18px_52px_rgba(54,43,25,0.045)]">
+                <div className="flex items-start justify-between gap-4">
+                  <span className="font-serifDisplay text-[3.6rem] font-semibold leading-none text-beggin-gold/55">{item.year}</span>
+                  <span className="border border-[#c7b889]/55 px-3 py-2 font-serifDisplay text-[9px] font-bold uppercase tracking-[0.16em] text-beggin-ink/58">{item.status}</span>
+                </div>
+                <h3 className="mt-5 font-serifDisplay text-[1.5rem] font-bold uppercase leading-[1] tracking-[0.04em]">{item.title}</h3>
+                <p className="mt-4 text-[1rem] leading-[1.75] text-beggin-ink/70">{item.text}</p>
               </article>
             ))}
           </div>
@@ -226,6 +241,31 @@ export default function AwardsLandingPage() {
               </article>
             );
           })}
+        </div>
+      </section>
+
+      <section className="paper-texture bg-[#FEFAF3] px-5 pb-20 md:px-8 lg:pb-24">
+        <div className="mx-auto grid max-w-[1320px] gap-8 border-y border-[#c7b889]/55 py-12 lg:grid-cols-[0.35fr_0.65fr] lg:items-center">
+          <div>
+            <MessageSquareQuote className="text-beggin-red" size={34} strokeWidth={1.55} />
+            <p className="mt-6 font-serifDisplay text-[11px] font-bold uppercase tracking-[0.32em] text-beggin-red">TripAdvisor</p>
+            <h2 className="mt-5 max-w-[680px] font-serifDisplay text-[clamp(2.4rem,4.2vw,4.9rem)] font-semibold uppercase leading-[0.9] tracking-[-0.04em]">Avaliações verificadas em preparação.</h2>
+            <p className="mt-6 max-w-[620px] text-[1.02rem] leading-[1.85] text-beggin-ink/72">
+              Bloco criado para receber selo dourado, comentários reais e links originais assim que o cliente enviar os materiais oficiais.
+            </p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-3">
+            {tripadvisorPlaceholders.map((review) => (
+              <article key={review} className="border border-[#c7b889]/60 bg-[#FFFCF6] p-6">
+                <div className="flex gap-1 text-beggin-gold" aria-hidden="true">
+                  {Array.from({ length: 5 }).map((_, index) => (
+                    <Star key={index} size={15} fill="currentColor" strokeWidth={1.4} />
+                  ))}
+                </div>
+                <p className="mt-5 text-[0.98rem] leading-[1.72] text-beggin-ink/70">“{review}”</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
