@@ -37,8 +37,8 @@ const pillars = [
   },
   {
     icon: CalendarDays,
-    title: 'Eventos na destilaria',
-    text: 'Um ambiente especial para celebrações, encontros corporativos e momentos memoráveis.',
+    title: 'Agendamento no site',
+    text: 'A página já está preparada para receber o módulo oficial de reserva indicado pela equipe.',
   },
   {
     icon: MapPin,
@@ -49,7 +49,7 @@ const pillars = [
 
 const visitSteps = [
   ['01', 'Escolha o formato', 'Visita, degustação, evento, parceria ou experiência personalizada.'],
-  ['02', 'Fale com a equipe', 'Envie sua solicitação pelo WhatsApp de eventos para alinharmos disponibilidade.'],
+  ['02', 'Solicite disponibilidade', 'Enquanto o módulo oficial não entra, o WhatsApp funciona como fallback direto com a equipe.'],
   ['03', 'Viva a experiência', 'Conheça a destilaria, os botânicos e o cuidado artesanal por trás da BEG.'],
 ] as const;
 
@@ -96,16 +96,14 @@ export default function BegExperiencePage() {
                 className="inline-flex items-center gap-3 bg-beggin-red px-7 py-4 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-beggin-ink"
               >
                 <MessageCircle size={18} strokeWidth={1.8} />
-                Faça seu evento em nossa destilaria
+                Solicitar agendamento
               </Link>
-              <Link
-                href="https://agendamento.beggin.com.br"
-                target="_blank"
-                rel="noreferrer"
+              <a
+                href="#modulo-agendamento"
                 className="inline-flex border border-beggin-gold/65 px-7 py-4 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-beggin-ink transition hover:border-beggin-red hover:text-beggin-red"
               >
-                Abrir agendamento oficial
-              </Link>
+                Ver módulo interno
+              </a>
             </div>
           </div>
 
@@ -135,6 +133,29 @@ export default function BegExperiencePage() {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="modulo-agendamento" className="paper-texture bg-[#131413] px-5 py-16 text-[#FCF7F1] md:px-8 lg:py-20">
+        <div className="mx-auto grid max-w-[1320px] gap-10 lg:grid-cols-[0.44fr_0.56fr] lg:items-center">
+          <div>
+            <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.32em] text-[#d7b866]">Agendamento interno</p>
+            <h2 className="mt-5 font-serifDisplay text-[clamp(2.8rem,4.9vw,5.7rem)] font-semibold uppercase leading-[0.86] tracking-[-0.045em]">
+              Espaço pronto para o módulo oficial.
+            </h2>
+            <p className="mt-7 max-w-[620px] text-[1.03rem] leading-[1.85] text-[#FCF7F1]/72">
+              Assim que a ferramenta indicada for confirmada, o embed será incorporado diretamente aqui, sem redirecionar o usuário para uma página externa.
+            </p>
+          </div>
+          <div className="border border-[#c8a759]/45 bg-[#1a1b18] p-5 shadow-[0_24px_70px_rgba(0,0,0,0.28)]">
+            <div className="flex min-h-[340px] flex-col items-center justify-center border border-dashed border-[#c8a759]/45 p-8 text-center">
+              <CalendarDays className="text-[#d7b866]" size={42} strokeWidth={1.55} />
+              <h3 className="mt-6 font-serifDisplay text-[1.65rem] font-bold uppercase tracking-[0.06em]">Embed de agendamento</h3>
+              <p className="mt-4 max-w-[520px] text-[0.98rem] leading-[1.75] text-[#FCF7F1]/68">
+                Placeholder técnico para iframe, script ou widget oficial. Enquanto isso, o fallback é o botão de WhatsApp da página.
+              </p>
             </div>
           </div>
         </div>
