@@ -4,11 +4,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
 import type { Product } from '@/data/products';
+import { productTagLabels } from '@/data/products';
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
 
 export function ProductCard({ product, index = 0 }: { product: Product; index?: number }) {
   const shouldReduceMotion = useReducedMotion();
+  const visibleTags = product.tags?.slice(0, 3) ?? [];
 
   return (
     <motion.article
@@ -27,7 +29,7 @@ export function ProductCard({ product, index = 0 }: { product: Product; index?: 
               rotateY: index % 2 === 0 ? -0.6 : 0.6,
             }
       }
-      className="group relative flex min-h-[560px] transform-gpu flex-col overflow-hidden border border-[#b9a875]/55 bg-[#FFFCF6] px-7 py-7 shadow-[0_14px_34px_rgba(55,44,25,0.035)] transition-colors duration-300 hover:border-[#a99255]/75 hover:bg-white hover:shadow-[0_24px_52px_rgba(55,44,25,0.12)] [transform-style:preserve-3d]"
+      className="group relative flex min-h-[610px] transform-gpu flex-col overflow-hidden border border-[#b9a875]/55 bg-[#FFFCF6] px-7 py-7 shadow-[0_14px_34px_rgba(55,44,25,0.035)] transition-colors duration-300 hover:border-[#a99255]/75 hover:bg-white hover:shadow-[0_24px_52px_rgba(55,44,25,0.12)] [transform-style:preserve-3d]"
     >
       <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(185,154,93,0.13),transparent_36%)]" />
@@ -40,17 +42,30 @@ export function ProductCard({ product, index = 0 }: { product: Product; index?: 
       <span className="pointer-events-none absolute bottom-3 left-3 h-5 w-5 border-b border-l border-[#8e7b4c]/55 transition-all duration-500 group-hover:bottom-4 group-hover:left-4" />
       <span className="pointer-events-none absolute bottom-3 right-3 h-5 w-5 border-b border-r border-[#8e7b4c]/55 transition-all duration-500 group-hover:bottom-4 group-hover:right-4" />
 
-      {product.badge ? (
-        <motion.span
-          initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.84 }}
-          whileInView={shouldReduceMotion ? undefined : { opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.55, delay: 0.18 + Math.min(index * 0.08, 0.32), ease: easeOut }}
-          className="absolute right-7 top-7 z-[3] rounded-full border border-beggin-gold/55 bg-[#f7ead2] px-3 py-1 font-serifDisplay text-[11px] font-bold uppercase tracking-[0.12em] text-beggin-red shadow-[0_8px_18px_rgba(55,44,25,0.08)]"
-        >
-          {product.badge}
-        </motion.span>
-      ) : null}
+      <div className="absolute right-7 top-7 z-[3] flex flex-col items-end gap-2">
+        {product.isNew ? (
+          <motion.span
+            initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.84 }}
+            whileInView={shouldReduceMotion ? undefined : { opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55, delay: 0.16 + Math.min(index * 0.08, 0.32), ease: easeOut }}
+            className="rounded-full border border-beggin-red/45 bg-beggin-red px-3 py-1 font-serifDisplay text-[10px] font-bold uppercase tracking-[0.12em] text-white shadow-[0_8px_18px_rgba(55,44,25,0.08)]"
+          >
+            Novidade
+          </motion.span>
+        ) : null}
+        {product.badge ? (
+          <motion.span
+            initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.84 }}
+            whileInView={shouldReduceMotion ? undefined : { opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55, delay: 0.2 + Math.min(index * 0.08, 0.32), ease: easeOut }}
+            className="rounded-full border border-beggin-gold/55 bg-[#f7ead2] px-3 py-1 font-serifDisplay text-[11px] font-bold uppercase tracking-[0.12em] text-beggin-red shadow-[0_8px_18px_rgba(55,44,25,0.08)]"
+          >
+            {product.badge}
+          </motion.span>
+        ) : null}
+      </div>
 
       <div className="relative z-[2] mb-7 flex h-[270px] items-center justify-center overflow-hidden bg-white/20">
         <motion.div
@@ -76,7 +91,22 @@ export function ProductCard({ product, index = 0 }: { product: Product; index?: 
           {product.shortDescription}
         </p>
 
-        <div className="mt-6 min-h-[32px] font-serifDisplay text-[1.35rem] font-bold text-beggin-red">
+        {visibleTags.length > 0 ? (
+          <div className="mx-auto mt-5 flex max-w-[310px] flex-wrap justify-center gap-2">
+            {visibleTags.map((tag) => (
+              <span key={tag} className="border border-[#c8b98e]/60 px-3 py-1.5 font-serifDisplay text-[10px] font-bold uppercase tracking-[0.13em] text-beggin-ink/68">
+                {productTagLabels[tag]}
+              </span>
+            ))}
+          </div>
+        ) : null}
+
+        <div className="mt-5 grid grid-cols-2 gap-2 border-y border-[#c8b98e]/45 py-4 font-serifDisplay text-[11px] font-bold uppercase tracking-[0.12em] text-beggin-ink/64">
+          <span>{product.volume ?? 'Volume a confirmar'}</span>
+          <span>{product.alcoholByVolume ?? 'Teor a confirmar'}</span>
+        </div>
+
+        <div className="mt-5 min-h-[32px] font-serifDisplay text-[1.35rem] font-bold text-beggin-red">
           {product.oldPrice ? (
             <span className="mr-3 text-[1rem] font-semibold text-beggin-ink/55 line-through">
               {product.oldPrice}
