@@ -6,6 +6,17 @@ export type ProductCategory =
   | 'refis'
   | 'prontos-para-drinks';
 
+export type ProductTag =
+  | 'leve'
+  | 'refrescante'
+  | 'aromatico'
+  | 'intenso'
+  | 'premium'
+  | 'novidade'
+  | 'presenteavel'
+  | 'refil'
+  | 'pronto-para-servir';
+
 export type Product = {
   slug: string;
   name: string;
@@ -17,6 +28,11 @@ export type Product = {
   price?: string;
   oldPrice?: string;
   badge?: string;
+  tags?: ProductTag[];
+  isNew?: boolean;
+  alcoholByVolume?: string;
+  volume?: string;
+  transparentImageReady?: boolean;
   essenceTitle?: string;
   essenceText?: string;
   specs?: {
@@ -34,10 +50,22 @@ export const productCategories = [
   { id: 'todos', label: 'Todos os produtos' },
   { id: 'novidades', label: 'Novidades' },
   { id: 'kits', label: 'Kits' },
-  { id: 'gins-750ml', label: 'Gins 750ml' },
+  { id: 'gins-750ml', label: 'Gins' },
   { id: 'refis', label: 'Refis' },
   { id: 'prontos-para-drinks', label: 'Prontos para drinks' },
 ] as const;
+
+export const productTagLabels: Record<ProductTag, string> = {
+  leve: 'Leve',
+  refrescante: 'Refrescante',
+  aromatico: 'Aromático',
+  intenso: 'Intenso',
+  premium: 'Premium',
+  novidade: 'Novidade',
+  presenteavel: 'Presenteável',
+  refil: 'Refil',
+  'pronto-para-servir': 'Pronto para servir',
+};
 
 const omieBase = '/images/fotos-omie';
 
@@ -65,9 +93,10 @@ const defaultGallery = [
   productImages.brazilianGold,
 ];
 
-function productSpecs(volume: string, category: string, profile: string) {
+function productSpecs(volume: string, category: string, profile: string, alcoholByVolume = 'A confirmar') {
   return [
     { label: 'Volume', value: volume },
+    { label: 'Teor alcoólico', value: alcoholByVolume },
     { label: 'Categoria', value: category },
     { label: 'Perfil', value: profile },
     { label: 'BEG Destilaria', value: 'Produção brasileira com identidade artesanal.' },
@@ -95,6 +124,10 @@ export const products: Product[] = [
     gallery: [productImages.brazilian, productImages.ovalGlass, productImages.leatherCoaster, ...defaultGallery],
     price: 'Sob consulta',
     badge: 'Clássico',
+    tags: ['premium', 'aromatico'],
+    volume: '750ml',
+    alcoholByVolume: 'A confirmar',
+    transparentImageReady: false,
     essenceTitle: 'A assinatura brasileira da BEG.',
     essenceText:
       'Um gin versátil, elegante e aromático, pensado para quem busca uma experiência artesanal com identidade brasileira.',
@@ -112,6 +145,11 @@ export const products: Product[] = [
     gallery: [productImages.brazilianGold, productImages.brazilian, productImages.ovalGlass, productImages.leatherCoaster],
     price: 'Sob consulta',
     badge: 'Gold Edition',
+    tags: ['novidade', 'premium', 'presenteavel'],
+    isNew: true,
+    volume: '750ml',
+    alcoholByVolume: 'A confirmar',
+    transparentImageReady: false,
     essenceTitle: 'Uma edição para celebrar.',
     essenceText:
       'Uma versão especial da assinatura Brazilian, com presença visual premium e vocação para momentos memoráveis.',
@@ -129,6 +167,10 @@ export const products: Product[] = [
     gallery: [productImages.brazilianRefil, productImages.brazilian, productImages.ovalGlass, productImages.leatherCoaster],
     price: 'Sob consulta',
     badge: 'Refil',
+    tags: ['refil', 'leve'],
+    volume: '500ml',
+    alcoholByVolume: 'A confirmar',
+    transparentImageReady: false,
     essenceTitle: 'Menos impacto, mesma assinatura.',
     essenceText:
       'Formato refil para manter o ritual BEG Brazilian com praticidade e menor impacto de embalagem.',
@@ -146,6 +188,10 @@ export const products: Product[] = [
     gallery: [productImages.modern, productImages.ovalGlass, productImages.leatherCoaster, productImages.brazilian],
     price: 'Sob consulta',
     badge: 'Tropical',
+    tags: ['refrescante', 'aromatico', 'leve'],
+    volume: '750ml',
+    alcoholByVolume: 'A confirmar',
+    transparentImageReady: false,
     essenceTitle: 'Aromático, tropical e brasileiro.',
     essenceText:
       'Uma expressão moderna para drinks cítricos, leves e refrescantes, mantendo a sofisticação artesanal da BEG.',
@@ -163,6 +209,10 @@ export const products: Product[] = [
     gallery: [productImages.modernRefil, productImages.modern, productImages.ovalGlass, productImages.leatherCoaster],
     price: 'Sob consulta',
     badge: 'Refil',
+    tags: ['refil', 'refrescante', 'leve'],
+    volume: '500ml',
+    alcoholByVolume: 'A confirmar',
+    transparentImageReady: false,
     essenceTitle: 'Tropicalidade com consciência.',
     essenceText:
       'Um refil pensado para preservar frescor, praticidade e menor impacto dentro do ritual BEG.',
@@ -180,6 +230,10 @@ export const products: Product[] = [
     gallery: [productImages.negroni, productImages.ovalGlass, productImages.leatherCoaster, productImages.brazilian],
     price: 'Sob consulta',
     badge: 'Aged',
+    tags: ['intenso', 'premium', 'pronto-para-servir'],
+    volume: '750ml',
+    alcoholByVolume: 'A confirmar',
+    transparentImageReady: false,
     essenceTitle: 'Intenso, clássico e autoral.',
     essenceText:
       'Um coquetel com presença, amargor elegante e vocação para momentos de degustação.',
@@ -197,6 +251,10 @@ export const products: Product[] = [
     gallery: [productImages.negroniRefil, productImages.negroni, productImages.ovalGlass, productImages.leatherCoaster],
     price: 'Sob consulta',
     badge: 'Refil',
+    tags: ['refil', 'intenso', 'pronto-para-servir'],
+    volume: '500ml',
+    alcoholByVolume: 'A confirmar',
+    transparentImageReady: false,
     essenceTitle: 'Reposição prática para o ritual Negroni.',
     essenceText:
       'Formato refil para manter o coquetel favorito sempre pronto para servir.',
@@ -214,6 +272,10 @@ export const products: Product[] = [
     gallery: [productImages.miniNegroni, productImages.negroni, productImages.ovalGlass, productImages.leatherCoaster],
     price: 'Sob consulta',
     badge: '250ml',
+    tags: ['refil', 'intenso'],
+    volume: '250ml',
+    alcoholByVolume: 'A confirmar',
+    transparentImageReady: false,
     essenceTitle: 'Compacto, intenso e pronto.',
     essenceText:
       'Uma porta de entrada para o universo Aged Negroni da BEG, em formato menor e prático.',
@@ -231,6 +293,10 @@ export const products: Product[] = [
     gallery: [productImages.kitTalCha, productImages.ovalGlass, productImages.leatherCoaster, productImages.brazilian],
     price: 'Sob consulta',
     badge: 'Collab',
+    tags: ['presenteavel', 'premium'],
+    volume: 'Kit',
+    alcoholByVolume: 'A confirmar',
+    transparentImageReady: false,
     essenceTitle: 'Uma collab para presentear e experimentar.',
     essenceText:
       'Uma composição especial para explorar aromas, botânicos e momentos de celebração.',
@@ -247,66 +313,51 @@ export const products: Product[] = [
     image: productImages.hypeGin,
     gallery: [productImages.hypeGin, productImages.ovalGlass, productImages.leatherCoaster, productImages.brazilian],
     price: 'Sob consulta',
-    badge: 'Hype',
-    essenceTitle: 'Uma novidade para descobrir.',
-    essenceText:
-      'A linha Hype expande o universo BEG com produtos de personalidade e presença comercial.',
-    specs: productSpecs('750ml', 'Novidade', 'Moderno e versátil'),
-    additionalInfo: additionalInfo('750ml', 'Novidades', 'Drinks, presentes e ocasiões contemporâneas'),
+    badge: 'Novidade',
+    tags: ['novidade', 'refrescante'],
+    isNew: true,
+    volume: '750ml',
+    alcoholByVolume: 'A confirmar',
+    transparentImageReady: false,
+    specs: productSpecs('750ml', 'Novidade', 'Jovem, marcante e contemporâneo'),
+    additionalInfo: additionalInfo('750ml', 'Novidade', 'Drinks autorais, ativações e consumo contemporâneo'),
   },
   {
-    slug: 'hype-vodka-1000ml',
-    name: 'Hype Vodka 1000ml',
-    shortDescription: 'Vodka Hype em formato 1000ml.',
+    slug: 'hype-vodka-750ml',
+    name: 'Hype Vodka 750ml',
+    shortDescription: 'Vodka Hype para drinks e ativações.',
     description:
-      'Hype Vodka 1000ml amplia o portfólio com uma opção versátil, prática e pensada para diferentes composições de drinks.',
+      'Hype Vodka 750ml amplia a linha de novidades com uma proposta versátil para drinks, eventos e ativações de marca.',
     category: 'novidades',
     image: productImages.hypeVodka,
-    gallery: [productImages.hypeVodka, productImages.ovalGlass, productImages.leatherCoaster, productImages.brazilian],
+    gallery: [productImages.hypeVodka, productImages.hypeDrop, productImages.ovalGlass, productImages.leatherCoaster],
     price: 'Sob consulta',
-    badge: 'Hype',
-    essenceTitle: 'Versatilidade em 1000ml.',
-    essenceText:
-      'Uma vodka para compor drinks, eventos e experiências comerciais da linha Hype.',
-    specs: productSpecs('1000ml', 'Novidade', 'Versátil e prático'),
-    additionalInfo: additionalInfo('1000ml', 'Novidades', 'Drinks longos, eventos e consumo compartilhado'),
+    badge: 'Novidade',
+    tags: ['novidade', 'leve', 'refrescante'],
+    isNew: true,
+    volume: '750ml',
+    alcoholByVolume: 'A confirmar',
+    transparentImageReady: false,
+    specs: productSpecs('750ml', 'Novidade', 'Versátil, leve e moderno'),
+    additionalInfo: additionalInfo('750ml', 'Novidade', 'Drinks longos, festas, ativações e collabs'),
   },
   {
-    slug: 'hype-drop-licor-fino-framboesa-750ml',
-    name: 'Hype Drop Licor Fino de Framboesa 750ml',
-    shortDescription: 'Licor fino de framboesa da linha Hype Drop.',
+    slug: 'hype-drop',
+    name: 'Hype Drop',
+    shortDescription: 'Produto de entrada para ativações Hype.',
     description:
-      'Hype Drop Licor Fino de Framboesa 750ml é uma novidade de perfil frutado, vibrante e comercial, pensada para drinks, finalizações e experiências marcantes.',
+      'Hype Drop é uma novidade pensada para experiências, ativações e momentos de descoberta dentro do universo Hype.',
     category: 'novidades',
     image: productImages.hypeDrop,
-    gallery: [productImages.hypeDrop, productImages.ovalGlass, productImages.leatherCoaster, productImages.brazilian],
+    gallery: [productImages.hypeDrop, productImages.hypeGin, productImages.hypeVodka, productImages.ovalGlass],
     price: 'Sob consulta',
-    badge: 'Hype Drop',
-    essenceTitle: 'Framboesa, intensidade e cor.',
-    essenceText:
-      'Uma novidade frutada para criar drinks expressivos e experiências visuais marcantes.',
-    specs: productSpecs('750ml', 'Licor fino', 'Frutado, vibrante e marcante'),
-    additionalInfo: additionalInfo('750ml', 'Novidades', 'Drinks autorais, finalizações e ocasiões especiais'),
+    badge: 'Drop',
+    tags: ['novidade', 'leve'],
+    isNew: true,
+    volume: 'A confirmar',
+    alcoholByVolume: 'A confirmar',
+    transparentImageReady: false,
+    specs: productSpecs('A confirmar', 'Novidade', 'Ativação, descoberta e experiência'),
+    additionalInfo: additionalInfo('A confirmar', 'Novidade', 'Ativações, experiências e collabs'),
   },
 ];
-
-export function getProductBySlug(slug: string) {
-  return products.find((product) => product.slug === slug);
-}
-
-export function getRelatedProducts(slug: string, limit = 4) {
-  const current = getProductBySlug(slug);
-
-  if (!current) {
-    return products.slice(0, limit);
-  }
-
-  const sameCategory = products.filter(
-    (product) => product.slug !== slug && product.category === current.category,
-  );
-  const fallback = products.filter(
-    (product) => product.slug !== slug && product.category !== current.category,
-  );
-
-  return [...sameCategory, ...fallback].slice(0, limit);
-}
