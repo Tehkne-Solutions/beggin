@@ -3,10 +3,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, useReducedMotion } from 'framer-motion';
-import { MessageCircle } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { heroAssets } from '@/data/hero-assets';
 import { BrandLogo } from '@/components/brand/BrandLogo';
 
+const vivaHypeUrl = 'https://vivahype.com.br/#contato';
 const whatsappContactUrl =
   'https://wa.me/5519996638642?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20BEG%20Destilaria%20e%20gostaria%20de%20saber%20mais.';
 
@@ -43,21 +44,21 @@ export function Footer() {
           <div>
             <p className="font-serifDisplay text-[12px] font-bold uppercase tracking-[0.32em] text-beggin-red">Contato</p>
             <h2 className="mt-5 max-w-[760px] font-serifDisplay text-[clamp(2.75rem,5.05vw,5.95rem)] font-semibold uppercase leading-[0.86] tracking-[-0.05em] max-lg:mx-auto">
-              Fale com a BEG Destilaria.
+              Viva Hype: atendimento e experiências.
             </h2>
             <p className="mt-6 max-w-[720px] text-[1.08rem] leading-[1.85] text-beggin-ink/72 max-lg:mx-auto">
-              Quer levar a experiência BEG para seu evento, carta de drinks ou ponto de venda? Fale direto com a equipe pelo WhatsApp.
+              Para ativações, eventos, collabs e experiências da linha Hype, siga para o canal dedicado da Viva Hype. A comunicação acontece fora do formulário local da BEG.
             </p>
           </div>
           <div className="flex justify-center lg:justify-end">
             <Link
-              href={whatsappContactUrl}
+              href={vivaHypeUrl}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-3 bg-beggin-red px-9 py-5 font-serifDisplay text-[13px] font-bold uppercase tracking-[0.18em] text-white shadow-[0_18px_34px_rgba(215,25,32,0.18)] transition hover:bg-beggin-ink"
             >
-              <MessageCircle size={19} strokeWidth={1.7} />
-              Entrar em contato
+              Ir para Viva Hype
+              <ExternalLink size={18} strokeWidth={1.7} />
             </Link>
           </div>
         </div>
@@ -123,6 +124,7 @@ export function Footer() {
             <div className="space-y-5">
               <p className="font-serifDisplay text-[15px] uppercase tracking-[0.08em] text-[#f4efe3]">Contato</p>
               <div className="space-y-3 text-[14px] font-serifDisplay uppercase tracking-[0.06em] text-[#f4efe3]/85">
+                <Link href={vivaHypeUrl} target="_blank" rel="noreferrer" className="block transition-colors duration-300 hover:text-[#c8a759]">Viva Hype</Link>
                 <Link href={whatsappContactUrl} target="_blank" rel="noreferrer" className="block transition-colors duration-300 hover:text-[#c8a759]">Fale pelo WhatsApp</Link>
                 <Link href="/nossa-historia" className="block transition-colors duration-300 hover:text-[#c8a759]">Joaquim Egídio — Campinas, SP</Link>
               </div>
