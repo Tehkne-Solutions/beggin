@@ -361,3 +361,24 @@ export const products: Product[] = [
     additionalInfo: additionalInfo('A confirmar', 'Novidade', 'Ativações, experiências e collabs'),
   },
 ];
+
+export function getProductBySlug(slug: string) {
+  return products.find((product) => product.slug === slug);
+}
+
+export function getRelatedProducts(slug: string, limit = 4) {
+  const currentProduct = getProductBySlug(slug);
+
+  if (!currentProduct) {
+    return products.filter((product) => product.slug !== slug).slice(0, limit);
+  }
+
+  const sameCategory = products.filter(
+    (product) => product.slug !== slug && product.category === currentProduct.category,
+  );
+  const fallback = products.filter(
+    (product) => product.slug !== slug && product.category !== currentProduct.category,
+  );
+
+  return [...sameCategory, ...fallback].slice(0, limit);
+}
