@@ -77,16 +77,6 @@ export function AwardsSection() {
       className="paper-texture relative overflow-hidden bg-[#fefaf3] px-0 py-16 lg:py-18"
     >
       <div className="relative mx-auto grid w-[calc(100%-44px)] max-w-[1540px] items-center gap-10 border-y border-[#c8b98e]/30 py-12 lg:w-[calc(100%-64px)] lg:grid-cols-[0.28fr_0.72fr] lg:py-14 xl:gap-12">
-        <div className="pointer-events-none absolute bottom-[-72px] right-[-120px] z-[1] hidden h-[350px] w-[260px] opacity-18 lg:block 2xl:opacity-26">
-          <Image
-            src={awardAssets.flowerRight}
-            alt=""
-            fill
-            className="object-contain object-right-bottom"
-            sizes="260px"
-          />
-        </div>
-
         <Reveal className="relative z-[3] space-y-6 max-lg:text-center">
           <p className="font-serifDisplay text-[12px] font-bold uppercase tracking-[0.24em] text-beggin-ink xl:text-[13px]">
             {awardsContent.eyebrow}
