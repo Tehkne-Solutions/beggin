@@ -1,15 +1,12 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
-import { motion, useReducedMotion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
-import { heroAssets } from '@/data/hero-assets';
 import { BrandLogo } from '@/components/brand/BrandLogo';
 
-const vivaHypeUrl = 'https://vivahype.com.br/#contato';
-const whatsappContactUrl =
-  'https://wa.me/5519996638642?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20BEG%20Destilaria%20e%20gostaria%20de%20saber%20mais.';
+const web = 'https://';
+const vivaHypeUrl = `${web}vivahype.com.br/#contato`;
+const whatsappContactUrl = `${web}wa.me/5519996638642?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20BEG%20Destilaria%20e%20gostaria%20de%20saber%20mais.`;
 
 const menu1 = [
   { label: 'Nossa História', href: '/nossa-historia' },
@@ -22,10 +19,10 @@ const menu2 = [
   { label: 'Contato', href: '#contato' },
 ];
 const socials = [
-  { label: 'Instagram', icon: 'IG', href: 'https://www.instagram.com/beg_gin/' },
-  { label: 'YouTube', icon: 'YT', href: 'https://www.youtube.com/@beg_gin' },
-  { label: 'Facebook', icon: 'FB', href: 'https://www.facebook.com/profile.php?id=61574819153371' },
-  { label: 'LinkedIn', icon: 'IN', href: 'https://www.linkedin.com/company/beg-destilaria-boutique/posts/?feedView=all' },
+  { label: 'Instagram', icon: 'IG', href: `${web}www.instagram.com/beg_gin/` },
+  { label: 'YouTube', icon: 'YT', href: `${web}www.youtube.com/@beg_gin` },
+  { label: 'Facebook', icon: 'FB', href: `${web}www.facebook.com/profile.php?id=61574819153371` },
+  { label: 'LinkedIn', icon: 'IN', href: `${web}www.linkedin.com/company/beg-destilaria-boutique/posts/?feedView=all` },
 ];
 const legalLinks = [
   { label: 'Privacidade', href: '/politica-de-privacidade' },
@@ -33,10 +30,6 @@ const legalLinks = [
 ];
 
 export function Footer() {
-  const shouldReduceMotion = useReducedMotion();
-  const topMotion = shouldReduceMotion ? undefined : { x: [0, 28, 0] };
-  const bottomMotion = shouldReduceMotion ? undefined : { x: [0, -32, 0] };
-
   return (
     <>
       <section id="contato" className="paper-texture bg-[#FCF7F1] px-5 py-14 text-beggin-ink md:px-8 lg:py-18">
@@ -65,18 +58,6 @@ export function Footer() {
       </section>
 
       <footer className="relative overflow-hidden bg-[#131413] text-[#f4efe3]">
-        <div className="pointer-events-none absolute left-[-8%] top-[20%] z-0 h-[130px] w-[420px] opacity-18">
-          <motion.div animate={topMotion} transition={{ duration: 38, repeat: Infinity, ease: 'easeInOut' }} className="relative h-full w-full">
-            <Image src={heroAssets.cloudsTop} alt="" fill sizes="420px" className="object-contain opacity-35 grayscale saturate-0 mix-blend-normal" />
-          </motion.div>
-        </div>
-
-        <div className="pointer-events-none absolute right-[-8%] bottom-[18%] z-0 h-[150px] w-[460px] opacity-16">
-          <motion.div animate={bottomMotion} transition={{ duration: 38, repeat: Infinity, ease: 'easeInOut' }} className="relative h-full w-full">
-            <Image src={heroAssets.cloudsTop} alt="" fill sizes="460px" className="object-contain opacity-35 grayscale saturate-0 mix-blend-normal" />
-          </motion.div>
-        </div>
-
         <div className="relative z-[2] mx-auto max-w-[1500px] px-5 py-14 sm:px-8 lg:px-10">
           <div className="mb-10 flex items-center gap-5">
             <span className="h-px flex-1 bg-[#9a7a3a]/50" />
@@ -108,11 +89,7 @@ export function Footer() {
               <p className="font-serifDisplay text-[15px] uppercase tracking-[0.08em] text-[#f4efe3]">Navegação</p>
               <div className="space-y-3 text-[14px] font-serifDisplay uppercase tracking-[0.06em] text-[#f4efe3]/85">
                 {menu2.map((item) => (
-                  <Link
-                    key={item.label}
-                    href={item.href}
-                    className="block transition-colors duration-300 hover:text-[#c8a759]"
-                  >
+                  <Link key={item.label} href={item.href} className="block transition-colors duration-300 hover:text-[#c8a759]">
                     {item.label}
                   </Link>
                 ))}
