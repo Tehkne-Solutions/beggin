@@ -73,7 +73,7 @@ export function CocktailsSection() {
 
           <Reveal delay={0.1} className="mt-12 lg:mt-14">
             <MagneticLink
-              href="/blog"
+              href={cocktailsContent.href}
               className="group inline-flex items-center gap-3 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-beggin-ink xl:text-[13px]"
             >
               <span className="relative pb-2 after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-beggin-gold after:transition-transform after:duration-300 group-hover:after:scale-x-125">
