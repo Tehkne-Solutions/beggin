@@ -23,9 +23,9 @@ export function SustainabilityItem({
       viewport={{ once: true, amount: 0.4 }}
       whileHover={shouldReduceMotion ? undefined : { y: -4 }}
       transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-      className="group relative flex min-h-[350px] flex-col items-center justify-start border border-[#b9a875]/35 bg-[#fdf9f1]/42 px-6 py-7 text-center shadow-[0_18px_42px_rgba(54,43,25,0.045)] transition duration-300 sm:px-8 lg:min-h-[360px] xl:min-h-[370px]"
+      className="group relative flex min-h-[420px] flex-col items-center justify-start border border-[#b9a875]/42 bg-[#fdf9f1]/48 px-8 py-9 text-center shadow-[0_18px_42px_rgba(54,43,25,0.045)] transition duration-300 lg:min-h-[430px] xl:min-h-[455px]"
     >
-      <div className="relative mb-7 h-[150px] w-full max-w-[250px] overflow-hidden border border-[#b9a875]/30 bg-[#fdf9f1]/65 sm:h-[165px] sm:max-w-[270px] lg:h-[160px] xl:h-[170px] 2xl:h-[140px] 2xl:max-w-[210px]">
+      <div className="relative mb-8 h-[185px] w-full max-w-[315px] overflow-hidden border border-[#b9a875]/35 bg-[#fdf9f1]/70 sm:h-[200px] lg:h-[205px] xl:h-[215px]">
         <motion.div
           initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.94 }}
           whileInView={shouldReduceMotion ? undefined : { opacity: 1, scale: 1 }}
@@ -37,17 +37,17 @@ export function SustainabilityItem({
             src={image}
             alt=""
             fill
-            sizes="(max-width: 768px) 270px, (max-width: 1536px) 270px, 210px"
+            sizes="(max-width: 768px) 315px, (max-width: 1536px) 315px, 315px"
             className="object-cover transition duration-500 group-hover:scale-[1.035]"
           />
         </motion.div>
       </div>
 
-      <h3 className="max-w-[280px] font-serifDisplay text-[1.42rem] font-bold uppercase leading-[1.02] tracking-[-0.015em] text-beggin-ink lg:text-[1.34rem] xl:text-[1.46rem] 2xl:text-[1.18rem]">
+      <h3 className="max-w-[320px] font-serifDisplay text-[1.72rem] font-bold uppercase leading-[0.98] tracking-[-0.018em] text-beggin-ink lg:text-[1.62rem] xl:text-[1.72rem]">
         {title}
       </h3>
 
-      <p className="mt-5 max-w-[265px] font-serifDisplay text-[15px] font-semibold leading-[1.28] text-beggin-ink/80 lg:text-[15px] xl:text-[15px] 2xl:text-[14px]">
+      <p className="mt-6 max-w-[310px] font-serifDisplay text-[17px] font-semibold leading-[1.35] text-beggin-ink/82 lg:text-[16px] xl:text-[17px]">
         {description}
       </p>
     </motion.article>
