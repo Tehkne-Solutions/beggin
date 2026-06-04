@@ -16,16 +16,16 @@ export function SustainabilitySection() {
       id="sustentabilidade"
       className="paper-texture relative overflow-hidden bg-[#dfdec9] px-5 py-20 md:px-8 lg:py-24 xl:py-28"
     >
-      <div className="relative mx-auto max-w-[1500px]">
-        <div className="relative z-[2] grid gap-12 lg:grid-cols-[0.36fr_0.64fr] lg:items-center xl:gap-16 2xl:grid-cols-[0.38fr_0.62fr]">
-          <Reveal className="relative max-w-[560px] max-lg:mx-auto max-lg:text-center lg:pl-6 xl:pl-10" delay={0.05}>
+      <div className="relative mx-auto max-w-[1560px]">
+        <div className="relative z-[2] grid gap-12 lg:grid-cols-[0.34fr_0.66fr] lg:items-center xl:gap-18 2xl:grid-cols-[0.33fr_0.67fr]">
+          <Reveal className="relative max-w-[590px] max-lg:mx-auto max-lg:text-center lg:pl-4 xl:pl-8" delay={0.05}>
             <p className="font-serifDisplay text-[12px] font-bold uppercase tracking-[0.28em] text-beggin-ink">
               {sustainabilityContent.eyebrow}
             </p>
 
             <div className="mt-4 h-px w-12 bg-beggin-gold/60 max-lg:mx-auto" />
 
-            <h2 className="mt-8 max-w-[540px] font-serifDisplay text-[clamp(2.45rem,3.4vw,4.6rem)] font-semibold uppercase leading-[0.9] tracking-[-0.045em] text-beggin-ink max-lg:mx-auto">
+            <h2 className="mt-8 max-w-[560px] font-serifDisplay text-[clamp(2.8rem,3.8vw,5rem)] font-semibold uppercase leading-[0.9] tracking-[-0.045em] text-beggin-ink max-lg:mx-auto">
               <span className="block">Orgulhosamente</span>
               <span className="block">Artesanal.</span>
             </h2>
@@ -53,7 +53,7 @@ export function SustainabilitySection() {
             </MagneticLink>
           </Reveal>
 
-          <Reveal className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-4 2xl:gap-0" delay={0.14}>
+          <Reveal className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4 xl:gap-5" delay={0.14}>
             {sustainabilityItems.map((item, index) => (
               <SustainabilityItem
                 key={item.title}
