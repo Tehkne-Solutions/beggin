@@ -16,7 +16,7 @@ const menu1 = [
 const menu2 = [
   { label: 'Prêmios', href: '/premios' },
   { label: 'Sustentabilidade', href: '/sustentabilidade' },
-  { label: 'Contato', href: '#contato' },
+  { label: 'Contato', href: '/contato' },
 ];
 const socials = [
   { label: 'Instagram', icon: 'IG', href: `${web}www.instagram.com/beg_gin/` },
