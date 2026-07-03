@@ -14,7 +14,7 @@ const navItems = [
   { label: 'Beg Experience', href: '/agendamento' },
   { label: 'Prêmios', href: '/premios' },
   { label: 'Sustentabilidade', href: '/sustentabilidade' },
-  { label: 'Contato', href: '/#contato' },
+  { label: 'Contato', href: '/contato' },
 ];
 
 export function Header() {
@@ -57,7 +57,7 @@ export function Header() {
           <Link aria-label="Produtos" href="/produtos" className="text-beggin-ink transition-colors hover:text-beggin-red">
             <ShoppingBag size={22} strokeWidth={1.7} />
           </Link>
-          <Link aria-label="Contato" href="/#contato" className="text-beggin-ink lg:hidden">
+          <Link aria-label="Contato" href="/contato" className="text-beggin-ink lg:hidden">
             <Menu size={26} strokeWidth={1.7} />
           </Link>
         </div>
