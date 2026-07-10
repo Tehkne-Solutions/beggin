@@ -6,9 +6,11 @@ import type { Product } from '@/data/products';
 
 export function ProductGallery({ product }: { product: Product }) {
   const images = useMemo(() => {
-    const gallery = product.gallery.length > 0 ? product.gallery : [product.image];
-    return Array.from(new Set([product.image, ...gallery]));
-  }, [product.gallery, product.image]);
+    // Enquanto as galerias oficiais individualizadas não forem recebidas,
+    // exibimos somente a capa Omie do próprio produto. Isso evita usar
+    // rótulos de outros produtos como se fossem fotos oficiais da single.
+    return [product.image];
+  }, [product.image]);
   const [selectedIndex, setSelectedIndex] = useState(0);
   const selectedImage = images[selectedIndex] ?? images[0];
 
@@ -32,33 +34,35 @@ export function ProductGallery({ product }: { product: Product }) {
         />
       </div>
 
-      <div className="grid grid-cols-4 gap-4">
-        {images.slice(0, 4).map((image, index) => {
-          const isActive = index === selectedIndex;
+      {images.length > 1 ? (
+        <div className="grid grid-cols-4 gap-4">
+          {images.slice(0, 4).map((image, index) => {
+            const isActive = index === selectedIndex;
 
-          return (
-            <button
-              key={`${image}-${index}`}
-              type="button"
-              aria-label={`Ver imagem ${index + 1} de ${product.name}`}
-              aria-pressed={isActive}
-              onClick={() => setSelectedIndex(index)}
-              className={[
-                'relative h-28 border bg-[#FFFCF6] transition duration-300 focus:outline-none focus:ring-2 focus:ring-beggin-red/35',
-                isActive ? 'border-beggin-red shadow-[0_12px_24px_rgba(55,44,25,0.08)]' : 'border-beggin-line/65 hover:border-beggin-gold/70',
-              ].join(' ')}
-            >
-              <Image
-                src={image}
-                alt={`${product.name} ${index + 1}`}
-                fill
-                sizes="140px"
-                className="object-contain p-3"
-              />
-            </button>
-          );
-        })}
-      </div>
+            return (
+              <button
+                key={`${image}-${index}`}
+                type="button"
+                aria-label={`Ver imagem ${index + 1} de ${product.name}`}
+                aria-pressed={isActive}
+                onClick={() => setSelectedIndex(index)}
+                className={[
+                  'relative h-28 border bg-[#FFFCF6] transition duration-300 focus:outline-none focus:ring-2 focus:ring-beggin-red/35',
+                  isActive ? 'border-beggin-red shadow-[0_12px_24px_rgba(55,44,25,0.08)]' : 'border-beggin-line/65 hover:border-beggin-gold/70',
+                ].join(' ')}
+              >
+                <Image
+                  src={image}
+                  alt={`${product.name} ${index + 1}`}
+                  fill
+                  sizes="140px"
+                  className="object-contain p-3"
+                />
+              </button>
+            );
+          })}
+        </div>
+      ) : null}
     </div>
   );
 }
