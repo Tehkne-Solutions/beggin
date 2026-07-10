@@ -7,17 +7,20 @@ import { Reveal } from '@/components/motion/Reveal';
 
 export function HeroTextBlock() {
   return (
-    <div className="absolute left-[5.2%] top-[16.5%] z-[9] max-w-[560px] md:left-[6.4vw] md:top-[17.5%] max-md:left-6 max-md:right-6 max-md:top-[11%]">
+    <div className="absolute left-[5.2%] top-[15.5%] z-[9] w-[min(47vw,720px)] md:left-[6.4vw] md:top-[16.5%] max-md:left-5 max-md:right-5 max-md:top-[10.5%] max-md:w-auto">
       <motion.h1
         initial={{ opacity: 0, y: 42, clipPath: 'inset(0 0 100% 0)' }}
         animate={{ opacity: 1, y: 0, clipPath: 'inset(0 0 0% 0)' }}
         transition={{ duration: 1.05, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
-        className="font-serifDisplay text-[clamp(4.65rem,7.55vw,9.15rem)] font-semibold uppercase leading-[0.76] tracking-[-0.035em] text-beggin-ink max-md:text-[clamp(4.1rem,16vw,6.7rem)]"
+        className="font-serifDisplay font-semibold uppercase text-beggin-ink"
         aria-label="BEG Destilaria"
       >
-        <span className="block">BEG</span>
-        <span className="block">DESTI</span>
-        <span className="block">LARIA</span>
+        <span className="block text-[clamp(5rem,8.2vw,9.7rem)] leading-[0.72] tracking-[-0.045em] max-md:text-[clamp(4.4rem,20vw,7rem)]">
+          BEG
+        </span>
+        <span className="mt-3 block whitespace-nowrap text-[clamp(2.35rem,4.15vw,5rem)] leading-[0.86] tracking-[-0.055em] max-md:mt-2 max-md:text-[clamp(2.25rem,10.4vw,3.9rem)]">
+          Destilaria
+        </span>
       </motion.h1>
 
       <Reveal delay={0.18} className="mt-8 max-w-[420px] md:ml-5 max-md:mt-6 max-md:text-center">

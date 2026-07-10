@@ -47,9 +47,7 @@ export function StorySection() {
   const transition = shouldReduceMotion ? { duration: 0 } : { duration: 0.82, ease: easeOut };
 
   useEffect(() => {
-    if (isInView) {
-      controls.start('visible');
-    }
+    if (isInView) controls.start('visible');
   }, [controls, isInView]);
 
   return (
@@ -75,13 +73,7 @@ export function StorySection() {
           transition={{ ...transition, delay: 0.5 }}
           aria-hidden="true"
         >
-          <Image
-            src={storyAssets.waves}
-            alt=""
-            fill
-            className="object-contain"
-            sizes="48px"
-          />
+          <Image src={storyAssets.waves} alt="" fill className="object-contain" sizes="48px" />
         </motion.div>
 
         <div className="relative z-[3] grid gap-10 lg:grid-cols-[0.92fr_2.25fr] lg:items-center lg:gap-10 xl:gap-14">
@@ -96,37 +88,16 @@ export function StorySection() {
               {storyContent.eyebrow}
               <span className="ml-3 text-beggin-gold">✧</span>
             </p>
-            <h2 className="mt-7 font-serifDisplay text-[clamp(2.75rem,3.65vw,4.45rem)] font-semibold uppercase leading-[0.88] tracking-[-0.035em] text-[#f4efe3]">
+            <h2 className="mt-7 font-serifDisplay text-[clamp(2.75rem,3.65vw,4.45rem)] font-semibold uppercase leading-[0.92] tracking-[-0.035em] text-[#f4efe3]">
               <StoryTitle title={storyContent.title} />
             </h2>
             <div className="relative mt-7 h-[22px] w-[48px] max-lg:mx-auto" aria-hidden="true">
-              <Image
-                src={storyAssets.waves}
-                alt=""
-                fill
-                className="object-contain"
-                sizes="48px"
-              />
+              <Image src={storyAssets.waves} alt="" fill className="object-contain" sizes="48px" />
             </div>
-
-            <motion.div
-              className="relative mt-7 h-[78px] w-[78px] opacity-70 max-lg:mx-auto max-md:h-[58px] max-md:w-[58px]"
-              whileHover={shouldReduceMotion ? undefined : { y: -2, scale: 1.02 }}
-              transition={{ duration: 0.35, ease: 'easeOut' }}
-              aria-hidden="true"
-            >
-              <Image
-                src={storyAssets.smallSun}
-                alt=""
-                fill
-                className="object-contain invert"
-                sizes="82px"
-              />
-            </motion.div>
 
             <MagneticLink
               href="/nossa-historia"
-              className="group relative z-[8] mt-8 inline-flex w-fit items-center gap-4 font-serifDisplay text-[13px] font-bold uppercase tracking-[0.18em] text-[#f4efe3] max-lg:mx-auto xl:text-[14px]"
+              className="group relative z-[8] mt-10 inline-flex w-fit items-center gap-4 font-serifDisplay text-[13px] font-bold uppercase tracking-[0.18em] text-[#f4efe3] max-lg:mx-auto xl:text-[14px]"
             >
               <span className="border-b border-beggin-gold/80 pb-2 pr-8 transition-colors duration-300 group-hover:border-beggin-red">
                 {storyContent.cta}
@@ -146,7 +117,7 @@ export function StorySection() {
               >
                 <Image
                   src={storyAssets.photoLeft}
-                  alt="Foto Beg com garrafa, caixa e taça"
+                  alt="Foto BEG com garrafa, caixa e taça"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 86vw, 500px"
@@ -162,7 +133,7 @@ export function StorySection() {
               >
                 <Image
                   src={storyAssets.photoRight}
-                  alt="Foto Beg com garrafa e taça"
+                  alt="Foto BEG com garrafa e taça"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 90vw, 500px"

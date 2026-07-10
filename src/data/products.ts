@@ -4,7 +4,7 @@ export type ProductCategory =
   | 'kits'
   | 'gins-750ml'
   | 'refis'
-  | 'prontos-para-drinks';
+  | 'pronto-para-servir';
 
 export type ProductTag =
   | 'leve'
@@ -52,7 +52,7 @@ export const productCategories = [
   { id: 'kits', label: 'Kits' },
   { id: 'gins-750ml', label: 'Gins' },
   { id: 'refis', label: 'Refis' },
-  { id: 'prontos-para-drinks', label: 'Prontos para drinks' },
+  { id: 'pronto-para-servir', label: 'Pronto para servir' },
 ] as const;
 
 export const productTagLabels: Record<ProductTag, string> = {
@@ -93,13 +93,12 @@ const defaultGallery = [
   productImages.brazilianGold,
 ];
 
-function productSpecs(volume: string, category: string, profile: string, alcoholByVolume = 'A confirmar') {
+function productSpecs(volume: string, category: string, profile: string) {
   return [
     { label: 'Volume', value: volume },
-    { label: 'Teor alcoólico', value: alcoholByVolume },
     { label: 'Categoria', value: category },
     { label: 'Perfil', value: profile },
-    { label: 'BEG Destilaria', value: 'Produção brasileira com identidade artesanal.' },
+    { label: 'Origem', value: 'Joaquim Egídio — Campinas, SP' },
   ];
 }
 
@@ -108,7 +107,7 @@ function additionalInfo(volume: string, category: string, service: string) {
     { label: 'Volume', value: volume },
     { label: 'Categoria', value: category },
     { label: 'Sugestão de serviço', value: service },
-    { label: 'Origem', value: 'Joaquim Egídio — Campinas, SP' },
+    { label: 'Produção', value: 'Produção brasileira com identidade artesanal.' },
   ];
 }
 
@@ -122,17 +121,16 @@ export const products: Product[] = [
     category: 'gins-750ml',
     image: productImages.brazilian,
     gallery: [productImages.brazilian, productImages.ovalGlass, productImages.leatherCoaster, ...defaultGallery],
-    price: 'Sob consulta',
+    price: 'R$ 99,90',
     badge: 'Clássico',
     tags: ['premium', 'aromatico'],
     volume: '750ml',
-    alcoholByVolume: 'A confirmar',
     transparentImageReady: false,
     essenceTitle: 'A assinatura brasileira da BEG.',
     essenceText:
       'Um gin versátil, elegante e aromático, pensado para quem busca uma experiência artesanal com identidade brasileira.',
     specs: productSpecs('750ml', 'Gin artesanal', 'Seco, aromático e equilibrado'),
-    additionalInfo: additionalInfo('750ml', 'Gin 750ml', 'Gin tônica, negroni, martini seco e coquetéis autorais'),
+    additionalInfo: additionalInfo('750ml', 'Gin', 'Gin tônica, negroni, martini seco e coquetéis autorais'),
   },
   {
     slug: 'beg-brazilian-gold-edition-750ml',
@@ -143,18 +141,17 @@ export const products: Product[] = [
     category: 'novidades',
     image: productImages.brazilianGold,
     gallery: [productImages.brazilianGold, productImages.brazilian, productImages.ovalGlass, productImages.leatherCoaster],
-    price: 'Sob consulta',
+    price: 'R$ 119,90',
     badge: 'Gold Edition',
     tags: ['novidade', 'premium', 'presenteavel'],
     isNew: true,
     volume: '750ml',
-    alcoholByVolume: 'A confirmar',
     transparentImageReady: false,
     essenceTitle: 'Uma edição para celebrar.',
     essenceText:
       'Uma versão especial da assinatura Brazilian, com presença visual premium e vocação para momentos memoráveis.',
     specs: productSpecs('750ml', 'Edição especial', 'Clássico, premium e presenteável'),
-    additionalInfo: additionalInfo('750ml', 'Novidade / edição especial', 'Presentes, celebrações e coquetelaria premium'),
+    additionalInfo: additionalInfo('750ml', 'Edição especial', 'Presentes, celebrações e coquetelaria premium'),
   },
   {
     slug: 'beg-brazilian-refil-500ml',
@@ -165,11 +162,10 @@ export const products: Product[] = [
     category: 'refis',
     image: productImages.brazilianRefil,
     gallery: [productImages.brazilianRefil, productImages.brazilian, productImages.ovalGlass, productImages.leatherCoaster],
-    price: 'Sob consulta',
+    price: 'R$ 49,90',
     badge: 'Refil',
     tags: ['refil', 'leve'],
     volume: '500ml',
-    alcoholByVolume: 'A confirmar',
     transparentImageReady: false,
     essenceTitle: 'Menos impacto, mesma assinatura.',
     essenceText:
@@ -186,17 +182,16 @@ export const products: Product[] = [
     category: 'gins-750ml',
     image: productImages.modern,
     gallery: [productImages.modern, productImages.ovalGlass, productImages.leatherCoaster, productImages.brazilian],
-    price: 'Sob consulta',
+    price: 'R$ 99,90',
     badge: 'Tropical',
     tags: ['refrescante', 'aromatico', 'leve'],
     volume: '750ml',
-    alcoholByVolume: 'A confirmar',
     transparentImageReady: false,
     essenceTitle: 'Aromático, tropical e brasileiro.',
     essenceText:
       'Uma expressão moderna para drinks cítricos, leves e refrescantes, mantendo a sofisticação artesanal da BEG.',
     specs: productSpecs('750ml', 'Gin artesanal', 'Tropical, fresco e aromático'),
-    additionalInfo: additionalInfo('750ml', 'Gin 750ml', 'Gin tônica com cítricos, drinks tropicais e coquetéis refrescantes'),
+    additionalInfo: additionalInfo('750ml', 'Gin', 'Gin tônica com cítricos, drinks tropicais e coquetéis refrescantes'),
   },
   {
     slug: 'beg-modern-tropical-refil-500ml',
@@ -207,11 +202,10 @@ export const products: Product[] = [
     category: 'refis',
     image: productImages.modernRefil,
     gallery: [productImages.modernRefil, productImages.modern, productImages.ovalGlass, productImages.leatherCoaster],
-    price: 'Sob consulta',
+    price: 'R$ 49,90',
     badge: 'Refil',
     tags: ['refil', 'refrescante', 'leve'],
     volume: '500ml',
-    alcoholByVolume: 'A confirmar',
     transparentImageReady: false,
     essenceTitle: 'Tropicalidade com consciência.',
     essenceText:
@@ -225,20 +219,19 @@ export const products: Product[] = [
     shortDescription: 'Negroni autoral envelhecido e pronto para servir.',
     description:
       'Aged Negroni traduz a coquetelaria clássica em uma versão autoral da BEG, intensa, equilibrada e pronta para criar uma experiência marcante.',
-    category: 'prontos-para-drinks',
+    category: 'pronto-para-servir',
     image: productImages.negroni,
     gallery: [productImages.negroni, productImages.ovalGlass, productImages.leatherCoaster, productImages.brazilian],
-    price: 'Sob consulta',
+    price: 'R$ 119,90',
     badge: 'Aged',
     tags: ['intenso', 'premium', 'pronto-para-servir'],
     volume: '750ml',
-    alcoholByVolume: 'A confirmar',
     transparentImageReady: false,
     essenceTitle: 'Intenso, clássico e autoral.',
     essenceText:
       'Um coquetel com presença, amargor elegante e vocação para momentos de degustação.',
-    specs: productSpecs('750ml', 'Pronto para drinks', 'Intenso, amargo e equilibrado'),
-    additionalInfo: additionalInfo('750ml', 'Pronto para drinks', 'Servir gelado em copo baixo com gelo e casca de laranja'),
+    specs: productSpecs('750ml', 'Pronto para servir', 'Intenso, amargo e equilibrado'),
+    additionalInfo: additionalInfo('750ml', 'Pronto para servir', 'Servir gelado em copo baixo com gelo e casca de laranja'),
   },
   {
     slug: 'beg-aged-negroni-refil-500ml',
@@ -249,11 +242,10 @@ export const products: Product[] = [
     category: 'refis',
     image: productImages.negroniRefil,
     gallery: [productImages.negroniRefil, productImages.negroni, productImages.ovalGlass, productImages.leatherCoaster],
-    price: 'Sob consulta',
+    price: 'R$ 59,90',
     badge: 'Refil',
     tags: ['refil', 'intenso', 'pronto-para-servir'],
     volume: '500ml',
-    alcoholByVolume: 'A confirmar',
     transparentImageReady: false,
     essenceTitle: 'Reposição prática para o ritual Negroni.',
     essenceText:
@@ -270,11 +262,9 @@ export const products: Product[] = [
     category: 'refis',
     image: productImages.miniNegroni,
     gallery: [productImages.miniNegroni, productImages.negroni, productImages.ovalGlass, productImages.leatherCoaster],
-    price: 'Sob consulta',
     badge: '250ml',
     tags: ['refil', 'intenso'],
     volume: '250ml',
-    alcoholByVolume: 'A confirmar',
     transparentImageReady: false,
     essenceTitle: 'Compacto, intenso e pronto.',
     essenceText:
@@ -291,11 +281,9 @@ export const products: Product[] = [
     category: 'kits',
     image: productImages.kitTalCha,
     gallery: [productImages.kitTalCha, productImages.ovalGlass, productImages.leatherCoaster, productImages.brazilian],
-    price: 'Sob consulta',
     badge: 'Collab',
     tags: ['presenteavel', 'premium'],
     volume: 'Kit',
-    alcoholByVolume: 'A confirmar',
     transparentImageReady: false,
     essenceTitle: 'Uma collab para presentear e experimentar.',
     essenceText:
@@ -306,59 +294,63 @@ export const products: Product[] = [
   {
     slug: 'hype-gin-750ml',
     name: 'Hype Gin 750ml',
-    shortDescription: 'Novidade Hype com assinatura BEG.',
+    shortDescription: 'Gin Hype com assinatura BEG.',
     description:
-      'Hype Gin 750ml integra a linha de novidades, trazendo uma leitura jovem, marcante e contemporânea para diferentes momentos de consumo.',
+      'Hype Gin integra a linha contemporânea da destilaria, trazendo uma leitura jovem, marcante e versátil para diferentes momentos de consumo.',
     category: 'novidades',
     image: productImages.hypeGin,
     gallery: [productImages.hypeGin, productImages.ovalGlass, productImages.leatherCoaster, productImages.brazilian],
-    price: 'Sob consulta',
-    badge: 'Novidade',
+    price: 'R$ 45,90',
+    badge: 'Hype',
     tags: ['novidade', 'refrescante'],
     isNew: true,
     volume: '750ml',
-    alcoholByVolume: 'A confirmar',
     transparentImageReady: false,
-    specs: productSpecs('750ml', 'Novidade', 'Jovem, marcante e contemporâneo'),
-    additionalInfo: additionalInfo('750ml', 'Novidade', 'Drinks autorais, ativações e consumo contemporâneo'),
+    essenceTitle: 'Contemporâneo, versátil e marcante.',
+    essenceText: 'Uma expressão criada para drinks, encontros e ativações com personalidade.',
+    specs: productSpecs('750ml', 'Gin', 'Jovem, marcante e contemporâneo'),
+    additionalInfo: additionalInfo('750ml', 'Gin', 'Drinks autorais, ativações e consumo contemporâneo'),
   },
   {
-    slug: 'hype-vodka-750ml',
-    name: 'Hype Vodka 750ml',
+    slug: 'hype-vodka-1000ml',
+    name: 'Hype Vodka 1000ml',
     shortDescription: 'Vodka Hype para drinks e ativações.',
     description:
-      'Hype Vodka 750ml amplia a linha de novidades com uma proposta versátil para drinks, eventos e ativações de marca.',
+      'Hype Vodka amplia a linha contemporânea da destilaria com uma proposta versátil para drinks, eventos e ativações de marca.',
     category: 'novidades',
     image: productImages.hypeVodka,
     gallery: [productImages.hypeVodka, productImages.hypeDrop, productImages.ovalGlass, productImages.leatherCoaster],
-    price: 'Sob consulta',
-    badge: 'Novidade',
+    price: 'R$ 39,90',
+    badge: 'Hype',
     tags: ['novidade', 'leve', 'refrescante'],
     isNew: true,
-    volume: '750ml',
-    alcoholByVolume: 'A confirmar',
+    volume: '1000ml',
     transparentImageReady: false,
-    specs: productSpecs('750ml', 'Novidade', 'Versátil, leve e moderno'),
-    additionalInfo: additionalInfo('750ml', 'Novidade', 'Drinks longos, festas, ativações e collabs'),
+    essenceTitle: 'Versatilidade para diferentes ocasiões.',
+    essenceText: 'Uma vodka pensada para drinks longos, festas, ativações e collabs.',
+    specs: productSpecs('1000ml', 'Vodka', 'Versátil, leve e moderno'),
+    additionalInfo: additionalInfo('1000ml', 'Vodka', 'Drinks longos, festas, ativações e collabs'),
   },
   {
-    slug: 'hype-drop',
-    name: 'Hype Drop',
-    shortDescription: 'Produto de entrada para ativações Hype.',
+    slug: 'hype-drop-licor-framboesa-750ml',
+    name: 'Hype Drop Licor Fino de Framboesa 750ml',
+    shortDescription: 'Licor fino de framboesa pronto para servir e criar drinks.',
     description:
-      'Hype Drop é uma novidade pensada para experiências, ativações e momentos de descoberta dentro do universo Hype.',
-    category: 'novidades',
+      'Hype Drop é um licor fino de framboesa de perfil frutado e contemporâneo, pensado para servir gelado, compor drinks e criar experiências dentro do universo Hype.',
+    category: 'pronto-para-servir',
     image: productImages.hypeDrop,
     gallery: [productImages.hypeDrop, productImages.hypeGin, productImages.hypeVodka, productImages.ovalGlass],
-    price: 'Sob consulta',
-    badge: 'Drop',
-    tags: ['novidade', 'leve'],
+    price: 'R$ 69,90',
+    badge: 'Hype Drop',
+    tags: ['novidade', 'pronto-para-servir', 'refrescante'],
     isNew: true,
-    volume: 'A confirmar',
-    alcoholByVolume: 'A confirmar',
+    volume: '750ml',
     transparentImageReady: false,
-    specs: productSpecs('A confirmar', 'Novidade', 'Ativação, descoberta e experiência'),
-    additionalInfo: additionalInfo('A confirmar', 'Novidade', 'Ativações, experiências e collabs'),
+    essenceTitle: 'Framboesa, cor e personalidade.',
+    essenceText:
+      'Um licor fino para servir gelado, explorar combinações frutadas e criar drinks visualmente marcantes.',
+    specs: productSpecs('750ml', 'Licor fino', 'Frutado, vibrante e contemporâneo'),
+    additionalInfo: additionalInfo('750ml', 'Pronto para servir', 'Servir gelado ou utilizar em drinks frutados'),
   },
 ];
 

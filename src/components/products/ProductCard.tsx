@@ -11,6 +11,7 @@ const easeOut = [0.22, 1, 0.36, 1] as const;
 export function ProductCard({ product, index = 0 }: { product: Product; index?: number }) {
   const shouldReduceMotion = useReducedMotion();
   const visibleTags = product.tags?.slice(0, 3) ?? [];
+  const metadata = [product.volume, product.alcoholByVolume].filter(Boolean);
 
   return (
     <motion.article
@@ -44,26 +45,14 @@ export function ProductCard({ product, index = 0 }: { product: Product; index?: 
 
       <div className="absolute right-7 top-7 z-[3] flex flex-col items-end gap-2">
         {product.isNew ? (
-          <motion.span
-            initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.84 }}
-            whileInView={shouldReduceMotion ? undefined : { opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.55, delay: 0.16 + Math.min(index * 0.08, 0.32), ease: easeOut }}
-            className="rounded-full border border-beggin-red/45 bg-beggin-red px-3 py-1 font-serifDisplay text-[10px] font-bold uppercase tracking-[0.12em] text-white shadow-[0_8px_18px_rgba(55,44,25,0.08)]"
-          >
+          <span className="rounded-full border border-beggin-red/45 bg-beggin-red px-3 py-1 font-serifDisplay text-[10px] font-bold uppercase tracking-[0.12em] text-white shadow-[0_8px_18px_rgba(55,44,25,0.08)]">
             Novidade
-          </motion.span>
+          </span>
         ) : null}
         {product.badge ? (
-          <motion.span
-            initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.84 }}
-            whileInView={shouldReduceMotion ? undefined : { opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.55, delay: 0.2 + Math.min(index * 0.08, 0.32), ease: easeOut }}
-            className="rounded-full border border-beggin-gold/55 bg-[#f7ead2] px-3 py-1 font-serifDisplay text-[11px] font-bold uppercase tracking-[0.12em] text-beggin-red shadow-[0_8px_18px_rgba(55,44,25,0.08)]"
-          >
+          <span className="rounded-full border border-beggin-gold/55 bg-[#f7ead2] px-3 py-1 font-serifDisplay text-[11px] font-bold uppercase tracking-[0.12em] text-beggin-red shadow-[0_8px_18px_rgba(55,44,25,0.08)]">
             {product.badge}
-          </motion.span>
+          </span>
         ) : null}
       </div>
 
@@ -101,19 +90,22 @@ export function ProductCard({ product, index = 0 }: { product: Product; index?: 
           </div>
         ) : null}
 
-        <div className="mt-5 grid grid-cols-2 gap-2 border-y border-[#c8b98e]/45 py-4 font-serifDisplay text-[11px] font-bold uppercase tracking-[0.12em] text-beggin-ink/64">
-          <span>{product.volume ?? 'Volume a confirmar'}</span>
-          <span>{product.alcoholByVolume ?? 'Teor a confirmar'}</span>
-        </div>
+        {metadata.length > 0 ? (
+          <div className={`mt-5 grid gap-2 border-y border-[#c8b98e]/45 py-4 font-serifDisplay text-[11px] font-bold uppercase tracking-[0.12em] text-beggin-ink/64 ${metadata.length > 1 ? 'grid-cols-2' : 'grid-cols-1'}`}>
+            {metadata.map((item) => <span key={item}>{item}</span>)}
+          </div>
+        ) : null}
 
-        <div className="mt-5 min-h-[32px] font-serifDisplay text-[1.35rem] font-bold text-beggin-red">
-          {product.oldPrice ? (
-            <span className="mr-3 text-[1rem] font-semibold text-beggin-ink/55 line-through">
-              {product.oldPrice}
-            </span>
-          ) : null}
-          {product.price ?? 'Sob consulta'}
-        </div>
+        {product.price ? (
+          <div className="mt-5 min-h-[32px] font-serifDisplay text-[1.35rem] font-bold text-beggin-red">
+            {product.oldPrice ? (
+              <span className="mr-3 text-[1rem] font-semibold text-beggin-ink/55 line-through">
+                {product.oldPrice}
+              </span>
+            ) : null}
+            {product.price}
+          </div>
+        ) : null}
 
         <div className="mt-auto pt-7">
           <Link
