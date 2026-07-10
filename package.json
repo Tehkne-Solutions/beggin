@@ -8,6 +8,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "audit:release": "node scripts/audit-release.mjs",
+    "qa": "npm run typecheck && npm run audit:release && npm run build",
     "images:optimize": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
