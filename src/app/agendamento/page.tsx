@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 const eventWhatsappUrl =
-  'https://wa.me/5519996638642?text=Ol%C3%A1%21%20Gostaria%20de%20conhecer%20a%20BEG%20Experience%20e%20consultar%20datas%20para%20visita%2C%20degusta%C3%A7%C3%A3o%20ou%20evento.';
+  'https://wa.me/5519996638642?text=Ol%C3%A1%21%20Gostaria%20de%20realizar%20meu%20evento%20na%20BEG%20Destilaria.%20Poderia%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F';
 
 const tripadvisorUrl =
   'https://www.tripadvisor.com.br/Attraction_Review-g303605-d25045490-Reviews-BEG_Destilaria_Boutique-Campinas_State_of_Sao_Paulo.html';
@@ -88,7 +88,7 @@ export default function BegExperiencePage() {
               className="mt-9 inline-flex items-center gap-3 bg-beggin-red px-7 py-4 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-beggin-ink"
             >
               <MessageCircle size={18} strokeWidth={1.8} />
-              Consultar disponibilidade
+              Faça seu evento na BEG
             </Link>
           </div>
 
@@ -203,7 +203,7 @@ export default function BegExperiencePage() {
             className="mt-9 inline-flex items-center gap-3 bg-beggin-red px-8 py-4 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-beggin-ink"
           >
             <MessageCircle size={18} strokeWidth={1.8} />
-            Falar com a BEG
+            Consultar evento e disponibilidade
           </Link>
         </div>
       </section>
