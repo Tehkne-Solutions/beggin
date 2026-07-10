@@ -34,8 +34,10 @@ const requiredRoutes = [
   'src/app/premios/page.tsx',
   'src/app/sustentabilidade/page.tsx',
   'src/app/blog/page.tsx',
+  'src/app/contato/page.tsx',
   'src/app/politica-de-privacidade/page.tsx',
   'src/app/termos-de-uso/page.tsx',
+  'src/app/not-found.tsx',
 ];
 
 for (const route of requiredRoutes) {
