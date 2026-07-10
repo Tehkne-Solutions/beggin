@@ -5,9 +5,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/audit-release.mjs && next build",
     "start": "next start",
     "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "audit:release": "node scripts/audit-release.mjs",
+    "qa": "npm run typecheck && npm run build",
     "images:optimize": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
