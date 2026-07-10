@@ -3,14 +3,13 @@
 import Image from 'next/image';
 import { useMemo, useState } from 'react';
 import type { Product } from '@/data/products';
+import { getVerifiedProductGallery } from '@/data/verified-product-galleries';
 
 export function ProductGallery({ product }: { product: Product }) {
-  const images = useMemo(() => {
-    // Enquanto as galerias oficiais individualizadas não forem recebidas,
-    // exibimos somente a capa Omie do próprio produto. Isso evita usar
-    // rótulos de outros produtos como se fossem fotos oficiais da single.
-    return [product.image];
-  }, [product.image]);
+  const images = useMemo(
+    () => getVerifiedProductGallery(product),
+    [product.image, product.slug],
+  );
   const [selectedIndex, setSelectedIndex] = useState(0);
   const selectedImage = images[selectedIndex] ?? images[0];
 
@@ -48,7 +47,9 @@ export function ProductGallery({ product }: { product: Product }) {
                 onClick={() => setSelectedIndex(index)}
                 className={[
                   'relative h-28 border bg-[#FFFCF6] transition duration-300 focus:outline-none focus:ring-2 focus:ring-beggin-red/35',
-                  isActive ? 'border-beggin-red shadow-[0_12px_24px_rgba(55,44,25,0.08)]' : 'border-beggin-line/65 hover:border-beggin-gold/70',
+                  isActive
+                    ? 'border-beggin-red shadow-[0_12px_24px_rgba(55,44,25,0.08)]'
+                    : 'border-beggin-line/65 hover:border-beggin-gold/70',
                 ].join(' ')}
               >
                 <Image
