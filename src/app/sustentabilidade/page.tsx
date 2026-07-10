@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Leaf, Sprout, SunMedium, Droplets, RefreshCcw, Recycle } from 'lucide-react';
+import { ArrowRight, Leaf, Sprout, SunMedium, Droplets, RefreshCcw } from 'lucide-react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { sustainabilityAssets } from '@/data/sustainability';
@@ -66,7 +66,7 @@ const biodiversityBullets = [
   {
     icon: Leaf,
     title: 'Botânicos Locais e Redução de Carbono.',
-    text: 'Priorizamos o uso de botânicos brasileiros em grande parte da composição — como o Flor de sabugueiro do Brasil, mexerica, limão Tahiti e a folha de pitangueira.',
+    text: 'Priorizamos o uso de botânicos brasileiros em grande parte da composição — como flor de sabugueiro do Brasil, mexerica, limão Tahiti e folha de pitangueira.',
   },
   {
     icon: Droplets,
@@ -113,7 +113,7 @@ export default function SustainabilityPage() {
 
       <section className="paper-texture bg-[#FCF7F1] px-5 pb-16 md:px-8 lg:pb-24">
         <div className="mx-auto max-w-[1380px] overflow-hidden border border-[#d8caa4]/70 bg-[#131413] text-[#FCF7F1] shadow-[0_28px_78px_rgba(19,20,19,0.2)]">
-          <div className="grid gap-0 lg:grid-cols-[0.50fr_0.50fr]">
+          <div className="grid gap-0 lg:grid-cols-2">
             <div className="flex flex-col justify-center p-8 md:p-12 lg:p-16">
               <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.34em] text-[#d7b866]">O Grande Destaque</p>
               <h2 className="mt-6 font-serifDisplay text-[clamp(2.6rem,4.9vw,5.9rem)] font-semibold uppercase leading-[0.86] tracking-[-0.045em]">
@@ -141,20 +141,20 @@ export default function SustainabilityPage() {
 
           <div className="grid border-t border-[#d7b866]/25 bg-[#171816] md:grid-cols-2 xl:grid-cols-5">
             {refilHighlights.map((item, index) => (
-              <article key={item.title} className="grid min-h-[390px] border-b border-r border-[#d7b866]/18 xl:min-h-[430px]">
-                <div className="relative flex min-h-[180px] items-center justify-center overflow-hidden bg-[#23241f] p-6">
+              <article key={item.title} className="flex min-h-[410px] flex-col border-b border-r border-[#d7b866]/18">
+                <div className="relative h-[210px] shrink-0 overflow-hidden bg-[#23241f]">
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
                     sizes="(max-width: 768px) 92vw, 320px"
-                    className={`${item.imageMode === 'contain' ? 'object-contain p-10 opacity-95' : 'object-cover opacity-90'} transition duration-700 hover:scale-[1.04]`}
+                    className={item.imageMode === 'contain' ? 'object-contain p-10 opacity-95' : 'object-cover opacity-92'}
                   />
                   <div className="absolute left-5 top-5 font-serifDisplay text-[10px] font-bold uppercase tracking-[0.22em] text-[#d7b866]">
                     {String(index + 1).padStart(2, '0')}
                   </div>
                 </div>
-                <div className="p-6 md:p-7">
+                <div className="flex flex-1 flex-col p-6 md:p-7">
                   <h3 className="font-serifDisplay text-[1.28rem] font-bold uppercase leading-[1.02] tracking-[0.03em] text-[#FCF7F1]">{item.title}</h3>
                   <p className="mt-4 text-[0.95rem] leading-[1.7] text-[#FCF7F1]/72">{item.text}</p>
                 </div>
@@ -165,22 +165,22 @@ export default function SustainabilityPage() {
       </section>
 
       <section className="paper-texture bg-[#FCF7F1] px-5 pb-20 md:px-8 lg:pb-24">
-        <div className="mx-auto grid max-w-[1380px] overflow-hidden border border-[#d8caa4]/70 bg-[#FFFCF6]/90 shadow-[0_24px_70px_rgba(54,43,25,0.065)] lg:grid-cols-[0.52fr_0.48fr]">
-          <div className="relative min-h-[420px] bg-[#e9e3d2] lg:min-h-[620px]">
+        <div className="mx-auto max-w-[1380px] overflow-hidden border border-[#d8caa4]/70 bg-[#FFFCF6]/90 shadow-[0_24px_70px_rgba(54,43,25,0.065)]">
+          <div className="relative aspect-[16/8] min-h-[300px] w-full bg-[#e9e3d2] md:min-h-[440px] lg:aspect-[16/7] lg:min-h-[560px]">
             <Image
               src={sustainabilityImages.solarPanels}
               alt="Painéis solares da BEG Destilaria"
               fill
-              sizes="(max-width: 1024px) 92vw, 680px"
-              className="object-cover object-[50%_28%]"
+              sizes="(max-width: 1024px) 94vw, 1380px"
+              className="object-contain"
             />
           </div>
-          <div className="flex flex-col justify-center p-8 md:p-12 lg:p-16">
+          <div className="border-t border-[#d8caa4]/70 p-8 md:p-12 lg:p-16">
             <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.32em] text-beggin-red">Respeito à Nossa Terra e Biodiversidade</p>
-            <h2 className="mt-5 font-serifDisplay text-[clamp(2.4rem,4.4vw,5.1rem)] font-semibold uppercase leading-[0.88] tracking-[-0.04em]">
+            <h2 className="mt-5 max-w-[940px] font-serifDisplay text-[clamp(2.4rem,4.4vw,5.1rem)] font-semibold uppercase leading-[0.88] tracking-[-0.04em]">
               Uma destilaria conectada ao território.
             </h2>
-            <div className="mt-8 grid gap-5">
+            <div className="mt-10 grid gap-6 md:grid-cols-2">
               {biodiversityBullets.map((item) => {
                 const Icon = item.icon;
                 return (
