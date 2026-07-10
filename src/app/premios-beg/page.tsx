@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { ArrowRight, Medal, Sparkles, Trophy } from 'lucide-react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { awardAssets, awards, awardsContent } from '@/data/awards';
+import { awardAssets, awardsContent } from '@/data/awards';
 
 export const metadata: Metadata = {
   title: 'Prêmios | BEG Destilaria',
@@ -27,7 +27,7 @@ const proofPillars = [
   {
     icon: Sparkles,
     label: 'Excelência',
-    title: 'Consistência premiada',
+    title: 'Mais de 100 medalhas globais',
     text: 'Qualidade, inovação e personalidade conectam os diferentes capítulos da história da destilaria.',
   },
 ] as const;
@@ -43,40 +43,33 @@ const timeline = [
   {
     year: '2018',
     title: 'O Começo de Tudo',
-    text: 'A produção ganha forma, método e identidade própria, consolidando as bases da destilaria artesanal.',
+    text: 'A BEG Destilaria inicia suas atividades na Fazenda Quinta Monte Sinai, em Joaquim Egídio (Campinas). No mesmo ano, o BEG Brazilian Dry entra no mercado internacional conquistando medalhas de Ouro e Prata no prestigiado The Spirits Business (Londres) e Ouro no Concours Mondial de Bruxelles.',
   },
   {
     year: '2019',
     title: 'Reconhecimento Máximo de Engenharia e Experiência',
-    text: 'A estrutura, o processo produtivo e a experiência BEG passam a representar a união entre técnica e hospitalidade.',
+    text: 'A fábrica ganha o prêmio máximo de Master na categoria The Distillery Masters pela The Spirits Business em Londres, eleita pela Melhor Experiência do Consumidor do mundo. No mesmo ano, o BEG New World Navy estreia com a raríssima medalha Grand Gold em Bruxelas.',
   },
   {
     year: '2021–2022',
     title: 'Consagração nos EUA e Reino Unido',
-    text: 'A BEG amplia sua presença internacional e fortalece o reconhecimento da produção brasileira fora do país.',
+    text: "O BEG New World Navy alcança a icônica medalha de Duplo Ouro no San Francisco World Spirits Competition em 2021 e 2022. Em 2022, o Navy ganha o título máximo de World's Best Gin, Melhor do Mundo, pelo World Gin Awards.",
   },
   {
     year: '2023',
     title: 'A Nota Quase Perfeita em São Francisco',
-    text: 'Um novo marco técnico reafirma a qualidade sensorial, o equilíbrio e a consistência dos rótulos BEG.',
+    text: 'O BEG Brazilian Boutique Dry Gin atinge a marca histórica de 98 de 100 pontos no Bartender Spirits Awards em São Francisco, sendo consagrado como o 2º melhor gin de todo o mundo. A BEG também recebe o prêmio de Highly Commended como a segunda melhor destilaria artesanal do planeta no Icons of Gin em Londres.',
   },
   {
     year: '2024',
     title: 'GOLD 98 PONTOS — O Topo do Mundo',
-    text: 'O BEG New World Navy conquista a medalha GOLD Outstanding e a marca alcança o maior marco de sua história.',
+    text: "O BEG New World Navy atinge o ápice absoluto da coquetelaria global sendo eleito oficialmente o Melhor Gin Estilo Navy do Mundo, World's Best Navy Gin, no renomado World Gin Awards e alcança impressionantes 98 pontos no IWSC Londres. Na mesma edição, o BEG Negroni engarrafado é eleito o segundo melhor negroni do mundo.",
   },
   {
     year: '2026',
-    title: 'O MAIS PREMIADO DO BRASIL',
-    text: 'Consagração absoluta: os melhores do Brasil e uma trajetória que continua levando a destilaria artesanal brasileira ao mundo.',
+    title: 'O MAIS PREMIADO DO BRASIL — Consagração Absoluta',
+    text: 'A BEG domina o cenário nacional no World Gin Awards 2026, trazendo os títulos de Melhor Gin London Dry do Brasil, Country Winner Classic, com o BEG Brazilian Dry e Melhor Gin Moderno do Brasil, Country Winner Colour-Changing, com o BEG Modern & Tropical. A nova linha Hype também brilha internacionalmente com medalhas de Prata para o Hype Gin e a Hype Vodka.',
   },
-] as const;
-
-const awardNarratives = [
-  'Reconhecimento que valoriza destilados com qualidade sensorial, presença de marca, apresentação e consistência técnica.',
-  'Competição internacional respeitada no universo de destilados, com avaliação criteriosa e alcance global.',
-  'Selo que reforça o posicionamento da BEG entre os rótulos de destaque do gin artesanal contemporâneo.',
-  'Conquista que amplia a trajetória internacional da marca e confirma personalidade, equilíbrio e acabamento sensorial.',
 ] as const;
 
 export default function AwardsLandingPage() {
@@ -151,7 +144,7 @@ export default function AwardsLandingPage() {
               <span className="block text-[0.38em] leading-none tracking-[0.16em] text-[#d7b866]">pontos</span>
             </h2>
             <p className="mt-7 max-w-[760px] text-[1.04rem] leading-[1.82] text-[#FCF7F1]/78">
-              Em 2024, cravamos o nosso maior marco histórico: fomos eleitos o Melhor Gin do Mundo. No gigantesco IWSC Londres, o BEG New World Navy conquistou a raríssima medalha GOLD Outstanding. Na mesma edição, o BEG Brazilian Dry brilhou com Prata (Qualidade) e Bronze (Gin & Tonic).
+              Em 2024, cravamos o nosso maior marco histórico: fomos eleitos o Melhor Gin do Mundo. No gigantesco IWSC Londres, o BEG New World Navy conquistou a raríssima medalha GOLD Outstanding. Na mesma edição, o BEG Brazilian Dry brilhou com Prata (Qualidade) e Bronze (Gin &amp; Tonic).
             </p>
           </div>
           <div className="relative flex min-h-[360px] items-center justify-center border-t border-[#d7b866]/20 bg-[#171816] p-10 lg:border-l lg:border-t-0">
@@ -168,13 +161,16 @@ export default function AwardsLandingPage() {
         </div>
       </section>
 
-      <section className="paper-texture bg-[#FEFAF3] px-5 pb-16 md:px-8 lg:pb-20">
+      <section className="paper-texture bg-[#FEFAF3] px-5 pb-24 md:px-8 lg:pb-28">
         <div className="mx-auto max-w-[1320px]">
-          <div className="mb-10 max-w-[820px]">
-            <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.32em] text-beggin-red">Linha do tempo</p>
+          <div className="mb-10 max-w-[900px]">
+            <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.32em] text-beggin-red">Linha do tempo de premiações</p>
             <h2 className="mt-5 font-serifDisplay text-[clamp(2.6rem,4.4vw,5.2rem)] font-semibold uppercase leading-[0.88] tracking-[-0.045em]">
-              Do primeiro lote ao topo do mundo.
+              Do primeiro lote aos grandes palcos.
             </h2>
+            <p className="mt-6 max-w-[860px] text-[1.03rem] leading-[1.82] text-beggin-ink/72">
+              Consolidação e expansão. Com mais de 100 medalhas globais acumuladas, entramos em uma nova era focada na alta coquetelaria e em levar a autenticidade dos botânicos brasileiros para novos mercados e paladares ao redor do mundo.
+            </p>
           </div>
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {timeline.map((item) => (
@@ -185,30 +181,6 @@ export default function AwardsLandingPage() {
               </article>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="paper-texture bg-[#FEFAF3] px-5 pb-24 md:px-8 lg:pb-28">
-        <div className="mx-auto max-w-[1320px] space-y-8 lg:space-y-10">
-          {awards.map((award, index) => {
-            const reversed = index % 2 === 1;
-            return (
-              <article key={award.id} className="grid overflow-hidden border border-[#c7b889]/60 bg-[#FFFCF6] shadow-[0_24px_70px_rgba(54,43,25,0.055)] lg:grid-cols-2 lg:items-stretch">
-                <div className={`${reversed ? 'lg:order-2' : ''} relative flex min-h-[300px] items-center justify-center bg-[#f6efe1] px-6 py-10 md:min-h-[360px] lg:min-h-[420px] lg:px-10 lg:py-12`}>
-                  <div className="absolute inset-6 border border-[#c7b889]/45" />
-                  <div className="relative z-[2] h-[230px] w-full max-w-[330px] md:h-[280px] md:max-w-[390px] lg:h-[315px] lg:max-w-[430px]">
-                    <Image src={award.image} alt={award.title} fill sizes="(max-width: 768px) 78vw, 430px" className="object-contain drop-shadow-[0_18px_30px_rgba(54,43,25,0.16)]" />
-                  </div>
-                </div>
-                <div className={`${reversed ? 'lg:order-1' : ''} flex min-h-[300px] flex-col justify-center p-8 md:p-12 lg:min-h-[420px] lg:p-14 xl:p-16`}>
-                  <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.28em] text-beggin-red">Reconhecimento {String(index + 1).padStart(2, '0')}</p>
-                  <h2 className="mt-5 max-w-[620px] font-serifDisplay text-[clamp(2.2rem,3.8vw,4.25rem)] font-semibold uppercase leading-[0.9] tracking-[-0.04em]">{award.title}</h2>
-                  <div className="mt-6 h-px w-20 bg-beggin-gold/70" />
-                  <p className="mt-7 max-w-[620px] text-[1.03rem] leading-[1.85] text-beggin-ink/72">{awardNarratives[index]}</p>
-                </div>
-              </article>
-            );
-          })}
         </div>
       </section>
 
