@@ -93,14 +93,16 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
                     </div>
 
                     <div className="mt-7 border-t border-[#c8b98e]/55 pt-6">
-                      <h4 className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.2em] text-beggin-red">Preparo</h4>
+                      <h4 className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.2em] text-beggin-red">Modo de preparo</h4>
                       <p className="mt-4 text-[0.98rem] leading-[1.75] text-beggin-ink/72">{recipe.method}</p>
                     </div>
 
-                    <div className="mt-6 bg-[#f6efe1] p-4">
-                      <span className="font-serifDisplay text-[10px] font-bold uppercase tracking-[0.18em] text-beggin-ink/65">Finalização</span>
-                      <p className="mt-2 text-[0.94rem] leading-[1.65] text-beggin-ink/72">{recipe.garnish}</p>
-                    </div>
+                    {recipe.garnish ? (
+                      <div className="mt-6 bg-[#f6efe1] p-4">
+                        <span className="font-serifDisplay text-[10px] font-bold uppercase tracking-[0.18em] text-beggin-ink/65">Finalização</span>
+                        <p className="mt-2 text-[0.94rem] leading-[1.65] text-beggin-ink/72">{recipe.garnish}</p>
+                      </div>
+                    ) : null}
                   </article>
                 ))}
               </div>
