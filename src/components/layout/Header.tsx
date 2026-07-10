@@ -10,7 +10,13 @@ const whatsappContactUrl =
   'https://wa.me/5519996638642?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20BEG%20Destilaria%20e%20gostaria%20de%20saber%20mais.';
 const vivaHypeUrl = 'https://vivahype.com.br/#contato';
 
-const navItems = [
+type NavItem = {
+  label: string;
+  href: string;
+  external?: boolean;
+};
+
+const navItems: NavItem[] = [
   { label: 'Nossa História', href: '/nossa-historia' },
   { label: 'Produtos', href: '/produtos' },
   { label: 'BEG Experience', href: '/beg-experience' },
@@ -18,7 +24,7 @@ const navItems = [
   { label: 'Sustentabilidade', href: '/sustentabilidade' },
   { label: 'Blog', href: '/blog' },
   { label: 'Viva Hype', href: vivaHypeUrl, external: true },
-] as const;
+];
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
