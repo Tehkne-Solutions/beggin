@@ -84,9 +84,10 @@ export function Footer() {
         </div>
 
         <div className="mt-14 border-t border-[#9a7a3a]/35 pt-6">
-          <div className="flex flex-col gap-4 font-sansUi text-[13px] font-bold uppercase tracking-[0.18em] text-[#d6c7a2] sm:flex-row sm:items-center sm:justify-between">
-            <p>© 2026 BEG DESTILARIA. TODOS OS DIREITOS RESERVADOS.</p>
-            <div className="flex flex-wrap items-center justify-center gap-3 text-[#f4efe3]/80">
+          <div className="grid gap-4 font-sansUi text-[13px] font-bold uppercase tracking-[0.18em] text-[#d6c7a2] md:grid-cols-[1fr_auto_1fr] md:items-center">
+            <span className="hidden md:block" aria-hidden="true" />
+            <p className="text-center">© 2026 BEG DESTILARIA. TODOS OS DIREITOS RESERVADOS.</p>
+            <div className="flex flex-wrap items-center justify-center gap-3 text-[#f4efe3]/80 md:justify-self-end">
               <Link href={legalLinks[0].href} className="transition-colors duration-300 hover:text-[#c8a759]">{legalLinks[0].label}</Link>
               <span className="text-[#b99f60]">✧</span>
               <Link href={legalLinks[1].href} className="transition-colors duration-300 hover:text-[#c8a759]">{legalLinks[1].label}</Link>
