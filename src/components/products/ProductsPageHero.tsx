@@ -30,9 +30,7 @@ export function ProductsPageHero() {
   const scrollFade = useTransform(scrollYProgress, [0, 0.82], [1, 0.82]);
 
   function handlePointerMove(event: React.PointerEvent<HTMLElement>) {
-    if (shouldReduceMotion || event.pointerType === 'touch') {
-      return;
-    }
+    if (shouldReduceMotion || event.pointerType === 'touch') return;
 
     const bounds = event.currentTarget.getBoundingClientRect();
     pointerX.set(((event.clientX - bounds.left) / bounds.width - 0.5) * 2);
@@ -50,10 +48,9 @@ export function ProductsPageHero() {
       data-motion-skip
       onPointerMove={handlePointerMove}
       onPointerLeave={handlePointerLeave}
-      className="hero-motion paper-texture relative min-h-[560px] overflow-hidden bg-[#FCF7F1] px-5 pt-[86px] md:px-8 lg:min-h-[650px] lg:pt-[76px] xl:min-h-[700px]"
+      className="hero-motion relative min-h-[560px] overflow-hidden bg-white px-5 pt-[86px] md:px-8 lg:min-h-[650px] lg:pt-[76px] xl:min-h-[700px]"
     >
-      <div className="absolute inset-0 bg-[#FCF7F1]" />
-      <div className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(circle_at_58%_42%,rgba(185,154,93,0.22),transparent_34%),linear-gradient(90deg,rgba(252,247,241,1)_0%,rgba(252,247,241,0.54)_62%,rgba(252,247,241,0)_100%)]" />
+      <div className="absolute inset-0 bg-white" />
 
       <motion.div
         aria-hidden="true"
@@ -77,7 +74,7 @@ export function ProductsPageHero() {
             fill
             priority
             sizes="(max-width: 1280px) 64vw, 980px"
-            className="object-contain object-right-bottom drop-shadow-[0_28px_46px_rgba(48,35,18,0.12)]"
+            className="object-contain object-right-bottom"
           />
         </motion.div>
       </motion.div>
@@ -98,7 +95,7 @@ export function ProductsPageHero() {
         />
       </motion.div>
 
-      <div className="pointer-events-none absolute inset-0 z-[3] bg-[linear-gradient(90deg,#FCF7F1_0%,rgba(252,247,241,0.98)_28%,rgba(252,247,241,0.68)_43%,rgba(252,247,241,0.2)_58%,rgba(252,247,241,0)_75%)] max-md:bg-[linear-gradient(180deg,rgba(252,247,241,0.96)_0%,rgba(252,247,241,0.76)_46%,rgba(252,247,241,0.2)_100%)]" />
+      <div className="pointer-events-none absolute inset-0 z-[3] bg-[linear-gradient(90deg,#FFFFFF_0%,rgba(255,255,255,0.98)_28%,rgba(255,255,255,0.68)_43%,rgba(255,255,255,0.2)_58%,rgba(255,255,255,0)_75%)] max-md:bg-[linear-gradient(180deg,rgba(255,255,255,0.96)_0%,rgba(255,255,255,0.76)_46%,rgba(255,255,255,0.2)_100%)]" />
 
       <motion.div
         style={{ y: scrollTextY, opacity: scrollFade }}
