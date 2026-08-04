@@ -9,10 +9,7 @@ export function HeroSection() {
       id="inicio"
       className="hero-motion relative min-h-[820px] overflow-hidden bg-white pt-[76px] max-lg:min-h-[760px] max-md:min-h-[820px]"
     >
-      <div
-        className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_62%_39%,rgba(255,255,255,.86),transparent_31%),radial-gradient(circle_at_78%_30%,rgba(185,154,93,.13),transparent_24%)]"
-        aria-hidden="true"
-      />
+      <div className="absolute inset-0 z-0 bg-white" aria-hidden="true" />
 
       <HeroClouds />
 
