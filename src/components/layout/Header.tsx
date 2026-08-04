@@ -48,10 +48,7 @@ export function Header() {
       >
         <div className="mx-auto grid h-full max-w-[1500px] grid-cols-[110px_1fr_110px] items-center px-5 sm:px-8 xl:grid-cols-[150px_1fr_170px] xl:px-12">
           <Link href="/#inicio" aria-label="BEG Destilaria" className="flex items-center">
-            <motion.div
-              style={{ height: logoHeight }}
-              className="relative flex w-[54px] items-center overflow-visible xl:w-[62px]"
-            >
+            <motion.div style={{ height: logoHeight }} className="relative flex w-[54px] items-center overflow-visible xl:w-[62px]">
               <BrandLogo variant="dark" className="h-full w-auto" />
             </motion.div>
           </Link>
@@ -63,7 +60,7 @@ export function Header() {
                 href={item.href}
                 target={item.external ? '_blank' : undefined}
                 rel={item.external ? 'noreferrer' : undefined}
-                className="inline-flex items-center gap-1 whitespace-nowrap font-serifDisplay text-[11px] font-bold uppercase tracking-[0.15em] text-beggin-ink transition-colors hover:text-beggin-red"
+                className="inline-flex items-center gap-1 whitespace-nowrap font-sansUi text-[11px] font-bold uppercase tracking-[0.15em] text-beggin-ink transition-colors hover:text-beggin-red"
               >
                 {item.label}
                 {item.external ? <ExternalLink size={11} strokeWidth={1.8} aria-hidden="true" /> : null}
@@ -72,25 +69,13 @@ export function Header() {
           </nav>
 
           <div className="flex items-center justify-end gap-3 sm:gap-4">
-            <Link
-              aria-label="Fale pelo WhatsApp"
-              href={whatsappContactUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="hidden text-beggin-ink transition-colors hover:text-beggin-red sm:block"
-            >
+            <Link aria-label="Fale pelo WhatsApp" href={whatsappContactUrl} target="_blank" rel="noreferrer" className="hidden text-beggin-ink transition-colors hover:text-beggin-red sm:block">
               <MessageCircle size={22} strokeWidth={1.7} />
             </Link>
             <Link aria-label="Produtos" href="/produtos" className="text-beggin-ink transition-colors hover:text-beggin-red">
               <ShoppingBag size={22} strokeWidth={1.7} />
             </Link>
-            <button
-              type="button"
-              aria-label={isMenuOpen ? 'Fechar navegação' : 'Abrir navegação'}
-              aria-expanded={isMenuOpen}
-              onClick={() => setIsMenuOpen((current) => !current)}
-              className="inline-flex h-10 w-10 items-center justify-center text-beggin-ink transition-colors hover:text-beggin-red xl:hidden"
-            >
+            <button type="button" aria-label={isMenuOpen ? 'Fechar navegação' : 'Abrir navegação'} aria-expanded={isMenuOpen} onClick={() => setIsMenuOpen((current) => !current)} className="inline-flex h-10 w-10 items-center justify-center text-beggin-ink transition-colors hover:text-beggin-red xl:hidden">
               {isMenuOpen ? <X size={27} strokeWidth={1.7} /> : <Menu size={27} strokeWidth={1.7} />}
             </button>
           </div>
@@ -99,43 +84,16 @@ export function Header() {
 
       <AnimatePresence>
         {isMenuOpen ? (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-[#131413]/45 pt-[76px] backdrop-blur-sm xl:hidden"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            <motion.nav
-              initial={{ y: -20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -20, opacity: 0 }}
-              transition={{ duration: 0.24, ease: 'easeOut' }}
-              onClick={(event) => event.stopPropagation()}
-              aria-label="Navegação mobile"
-              className="max-h-[calc(100svh-76px)] overflow-y-auto border-t border-beggin-line/70 bg-white px-6 py-8 shadow-[0_24px_70px_rgba(0,0,0,0.2)]"
-            >
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-40 bg-[#131413]/45 pt-[76px] backdrop-blur-sm xl:hidden" onClick={() => setIsMenuOpen(false)}>
+            <motion.nav initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: -20, opacity: 0 }} transition={{ duration: 0.24, ease: 'easeOut' }} onClick={(event) => event.stopPropagation()} aria-label="Navegação mobile" className="max-h-[calc(100svh-76px)] overflow-y-auto border-t border-beggin-line/70 bg-white px-6 py-8 shadow-[0_24px_70px_rgba(0,0,0,0.2)]">
               <div className="mx-auto flex max-w-[620px] flex-col divide-y divide-[#c8b98e]/45">
                 {navItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    target={item.external ? '_blank' : undefined}
-                    rel={item.external ? 'noreferrer' : undefined}
-                    onClick={() => setIsMenuOpen(false)}
-                    className="flex items-center justify-between py-5 font-serifDisplay text-[1rem] font-bold uppercase tracking-[0.15em] text-beggin-ink transition-colors hover:text-beggin-red"
-                  >
+                  <Link key={item.href} href={item.href} target={item.external ? '_blank' : undefined} rel={item.external ? 'noreferrer' : undefined} onClick={() => setIsMenuOpen(false)} className="flex items-center justify-between py-5 font-sansUi text-[1rem] font-bold uppercase tracking-[0.15em] text-beggin-ink transition-colors hover:text-beggin-red">
                     {item.label}
                     {item.external ? <ExternalLink size={16} strokeWidth={1.7} aria-hidden="true" /> : <span className="text-beggin-gold">✦</span>}
                   </Link>
                 ))}
-                <Link
-                  href={whatsappContactUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="mt-7 inline-flex items-center justify-center gap-3 bg-beggin-red px-6 py-4 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-white"
-                >
+                <Link href={whatsappContactUrl} target="_blank" rel="noreferrer" onClick={() => setIsMenuOpen(false)} className="mt-7 inline-flex items-center justify-center gap-3 bg-beggin-red px-6 py-4 font-sansUi text-[12px] font-bold uppercase tracking-[0.18em] text-white">
                   <MessageCircle size={18} strokeWidth={1.7} />
                   Falar com a BEG
                 </Link>
