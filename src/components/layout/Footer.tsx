@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { Facebook, Instagram, Linkedin, Youtube, type LucideIcon } from 'lucide-react';
 import { BrandLogo } from '@/components/brand/BrandLogo';
 
 const web = 'https://';
@@ -16,11 +17,18 @@ const menu2 = [
   { label: 'Sustentabilidade', href: '/sustentabilidade' },
   { label: 'Blog', href: '/blog' },
 ];
-const socials = [
-  { label: 'Instagram', icon: 'IG', href: `${web}www.instagram.com/beg_gin/` },
-  { label: 'YouTube', icon: 'YT', href: `${web}www.youtube.com/@beg_gin` },
-  { label: 'Facebook', icon: 'FB', href: `${web}www.facebook.com/profile.php?id=61574819153371` },
-  { label: 'LinkedIn', icon: 'IN', href: `${web}www.linkedin.com/company/beg-destilaria-boutique/posts/?feedView=all` },
+
+type SocialLink = {
+  label: string;
+  icon: LucideIcon;
+  href: string;
+};
+
+const socials: SocialLink[] = [
+  { label: 'Instagram', icon: Instagram, href: `${web}www.instagram.com/beg_gin/` },
+  { label: 'YouTube', icon: Youtube, href: `${web}www.youtube.com/@beg_gin` },
+  { label: 'Facebook', icon: Facebook, href: `${web}www.facebook.com/profile.php?id=61574819153371` },
+  { label: 'LinkedIn', icon: Linkedin, href: `${web}www.linkedin.com/company/beg-destilaria-boutique/posts/?feedView=all` },
 ];
 const legalLinks = [
   { label: 'Privacidade', href: '/politica-de-privacidade' },
@@ -78,24 +86,25 @@ export function Footer() {
               </Link>
               <span className="block">Joaquim Egídio — Campinas, SP</span>
             </div>
-            <div className="grid grid-cols-1 gap-2 pt-2 sm:grid-cols-2">
-              {socials.map((social) => (
-                <Link
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={`Abrir ${social.label} da BEG Destilaria`}
-                  className="inline-flex min-h-9 items-center gap-2 rounded-full border border-[#b99f60]/55 bg-[#1d1f1a]/80 px-3 py-2 text-[#b99f60] transition duration-300 hover:border-[#c8a759] hover:text-[#f4efe3]"
-                >
-                  <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-[#b99f60]/45 text-[10px] font-semibold uppercase tracking-[0.12em]">
-                    {social.icon}
-                  </span>
-                  <span className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.12em]">
-                    {social.label}
-                  </span>
-                </Link>
-              ))}
+            <div className="flex flex-wrap gap-3 pt-2" aria-label="Redes sociais da BEG Destilaria">
+              {socials.map((social) => {
+                const SocialIcon = social.icon;
+
+                return (
+                  <Link
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`Abrir ${social.label} da BEG Destilaria`}
+                    title={social.label}
+                    className="group inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#b99f60]/55 bg-[#1d1f1a]/80 text-[#b99f60] transition duration-300 hover:-translate-y-0.5 hover:border-[#c8a759] hover:bg-[#25271f] hover:text-[#f4efe3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c8a759] focus-visible:ring-offset-2 focus-visible:ring-offset-[#131413]"
+                  >
+                    <SocialIcon aria-hidden="true" className="h-[20px] w-[20px] stroke-[1.8] transition-transform duration-300 group-hover:scale-110" />
+                    <span className="sr-only">{social.label}</span>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </div>
