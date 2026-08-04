@@ -41,11 +41,11 @@ export default function NossaHistoriaPage() {
 
         <div className="relative mx-auto grid max-w-[1500px] gap-12 lg:grid-cols-[0.48fr_0.52fr] lg:items-center">
           <div>
-            <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.34em] text-beggin-ink/80">
+            <p className="font-sansUi text-[11px] font-bold uppercase tracking-[0.34em] text-beggin-ink/80">
               Nossa História
             </p>
             <div className="mt-5 h-px w-20 bg-beggin-gold/70" />
-            <h1 className="mt-8 max-w-[760px] font-serifDisplay text-[clamp(3.3rem,6.2vw,7.2rem)] font-semibold uppercase leading-[0.84] tracking-[-0.055em] text-beggin-ink">
+            <h1 className="mt-8 max-w-[760px] font-serifDisplay text-[clamp(3.3rem,6.2vw,7.2rem)] font-normal uppercase leading-[1.02] tracking-[-0.03em] text-beggin-ink">
               Conheça a história da BEG Destilaria.
             </h1>
             <div className="relative mt-8 h-[30px] w-[62px] wave-pulse">
@@ -66,7 +66,7 @@ export default function NossaHistoriaPage() {
               <div className="relative h-[28px] w-[58px] wave-pulse">
                 <Image src={heroAssets.waves} alt="" fill sizes="58px" className="object-contain" />
               </div>
-              <h2 className="mt-5 font-serifDisplay text-[clamp(2.6rem,4.2vw,4.8rem)] font-semibold uppercase leading-[0.88] tracking-[-0.045em]">
+              <h2 className="mt-5 font-serifDisplay text-[clamp(2.6rem,4.2vw,4.8rem)] font-normal uppercase leading-[1.02] tracking-[-0.025em]">
                 Nossa
                 <br />
                 História
@@ -82,7 +82,7 @@ export default function NossaHistoriaPage() {
               <p>
                 Sabemos que um produto BEG é facilmente reconhecível pela sua qualidade superior, pelo design exclusivo e pelo cuidado artesanal com que é produzido. Nossa dedicação aos detalhes e o uso de tecnologia de destilação de ponta se unem para criar bebidas verdadeiramente especiais.
               </p>
-              <p className="font-serifDisplay text-[1.12rem] font-bold text-beggin-ink">
+              <p className="font-sansUi text-[1.12rem] font-bold text-beggin-ink">
                 Você sabe que o BEG só de pegar na mão.
               </p>
             </div>
@@ -96,14 +96,14 @@ export default function NossaHistoriaPage() {
             <Image src={storyAssets.photoLeft} alt="Destilaria BEG" fill sizes="(max-width: 1024px) 92vw, 560px" className="object-cover p-3" />
           </div>
           <div>
-            <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.32em] text-beggin-red">A Destilaria</p>
-            <h2 className="mt-4 font-serifDisplay text-[clamp(2.7rem,4.5vw,5rem)] font-semibold uppercase leading-[0.86] tracking-[-0.045em]">
+            <p className="font-sansUi text-[11px] font-bold uppercase tracking-[0.32em] text-beggin-red">A Destilaria</p>
+            <h2 className="mt-4 font-serifDisplay text-[clamp(2.7rem,4.5vw,5rem)] font-normal uppercase leading-[1.02] tracking-[-0.025em]">
               Produção artesanal em pequenos lotes.
             </h2>
             <p className="mt-7 text-[1.02rem] leading-[1.85] text-beggin-ink/74">
               A BEG Destilaria está localizada no charmoso e bucólico distrito de Joaquim Egídio, em Campinas-SP. Uma antiga sede tombada de uma fazenda de café, construída em meados do século XIX, foi cuidadosamente revitalizada pela BEG com o intuito de proporcionar uma experiência inesquecível para nossos clientes.
             </p>
-            <Link href="https://agendamento.beggin.com.br" target="_blank" rel="noreferrer" className="mt-8 inline-flex bg-beggin-red px-7 py-4 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-beggin-ink">
+            <Link href="https://agendamento.beggin.com.br" target="_blank" rel="noreferrer" className="mt-8 inline-flex bg-beggin-red px-7 py-4 font-sansUi text-[12px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-beggin-ink">
               Conheça a Beg Experience
             </Link>
           </div>
@@ -113,7 +113,7 @@ export default function NossaHistoriaPage() {
       <section className="bg-white px-5 py-16 md:px-8 lg:py-24">
         <div className="mx-auto max-w-[1180px]">
           <div className="max-w-[900px]">
-            <h2 className="font-serifDisplay text-[clamp(2.7rem,4.6vw,5.2rem)] font-semibold uppercase leading-[0.86] tracking-[-0.045em]">
+            <h2 className="font-serifDisplay text-[clamp(2.7rem,4.6vw,5.2rem)] font-normal uppercase leading-[1.02] tracking-[-0.025em]">
               Botânicos
               <br />
               BEG
@@ -130,7 +130,7 @@ export default function NossaHistoriaPage() {
             {botanicals.map((item) => (
               <div key={item} className="border border-[#c7b889]/50 bg-white px-5 py-6 text-center transition duration-300 hover:-translate-y-1 hover:border-beggin-gold/80">
                 <div className="mx-auto mb-4 h-14 w-14 rounded-full border border-[#c7b889]/70 bg-[#DFDEC9]" />
-                <p className="font-serifDisplay text-[1.05rem] font-bold text-beggin-ink">{item}</p>
+                <p className="font-sansUi text-[1.05rem] font-bold text-beggin-ink">{item}</p>
               </div>
             ))}
           </div>
