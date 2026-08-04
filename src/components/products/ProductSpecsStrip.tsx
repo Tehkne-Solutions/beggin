@@ -8,7 +8,7 @@ export function ProductSpecsStrip({ product }: { product: Product }) {
   }
 
   return (
-    <section className="paper-texture bg-[#FDF9F1] px-5 py-12 md:px-8">
+    <section className="bg-white px-5 py-12 md:px-8">
       <div className="mx-auto grid max-w-[1300px] gap-8 border-y border-beggin-line/55 py-9 sm:grid-cols-2 lg:grid-cols-4">
         {specs.slice(0, 4).map((spec) => (
           <article key={spec.label} className="text-center">

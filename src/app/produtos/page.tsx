@@ -21,11 +21,11 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
   const filteredProducts = category === 'todos' ? products : products.filter((product) => product.category === category);
 
   return (
-    <main className="min-h-screen bg-[#FDF9F1] text-beggin-ink">
+    <main className="min-h-screen bg-white text-beggin-ink">
       <Header />
       <ProductsPageHero />
 
-      <section className="paper-texture bg-[#FDF9F1] px-5 py-14 md:px-8 lg:py-18">
+      <section className="bg-white px-5 py-14 md:px-8 lg:py-18">
         <div className="mx-auto max-w-[1500px]">
           <ProductCategoryTabs categories={productCategories} activeCategory={category} />
           <div className="mt-9">

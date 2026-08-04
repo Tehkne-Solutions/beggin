@@ -74,7 +74,7 @@ export function AwardsSection() {
     <section
       ref={sectionRef}
       id="premios"
-      className="paper-texture relative overflow-hidden bg-[#fefaf3] px-0 py-16 lg:py-18"
+      className="relative overflow-hidden bg-white px-0 py-16 lg:py-18"
     >
       <div className="relative mx-auto grid w-[calc(100%-44px)] max-w-[1540px] items-center gap-10 border-y border-[#c8b98e]/30 py-12 lg:w-[calc(100%-64px)] lg:grid-cols-[0.28fr_0.72fr] lg:py-14 xl:gap-12">
         <Reveal className="relative z-[3] space-y-6 max-lg:text-center">
