@@ -102,6 +102,20 @@ if (/Arial|Helvetica/.test(brandLogoSource)) {
   warnings.push('BrandLogo ainda é uma reconstrução tipográfica; substituir pelo SVG/PNG oficial quando o arquivo chegar.');
 }
 
+const footerSource = read('src/components/layout/Footer.tsx');
+const socialInitialPlaceholders = ["icon: 'IG'", "icon: 'YT'", "icon: 'FB'", "icon: 'IN'"];
+for (const placeholder of socialInitialPlaceholders) {
+  if (footerSource.includes(placeholder)) {
+    failures.push(`Footer voltou a usar sigla provisória de rede social: ${placeholder}.`);
+  }
+}
+
+for (const iconName of ['Instagram', 'Youtube', 'Facebook', 'Linkedin']) {
+  if (!footerSource.includes(iconName)) {
+    failures.push(`Footer sem ícone real obrigatório da rede social: ${iconName}.`);
+  }
+}
+
 const sustainabilitySource = read('src/app/sustentabilidade/page.tsx');
 const highlightedImages = [
   ...sustainabilitySource.matchAll(/image:\s*sustainabilityImages\.([A-Za-z0-9_]+)/g),
