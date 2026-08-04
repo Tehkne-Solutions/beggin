@@ -35,10 +35,10 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
   if (!post) notFound();
 
   return (
-    <main className="min-h-screen bg-[#FCF7F1] text-beggin-ink">
+    <main className="min-h-screen bg-white text-beggin-ink">
       <Header />
 
-      <article className="paper-texture px-5 pb-20 pt-[128px] md:px-8 lg:pb-28 lg:pt-[154px]">
+      <article className="bg-white px-5 pb-20 pt-[128px] md:px-8 lg:pb-28 lg:pt-[154px]">
         <div className="mx-auto max-w-[1220px]">
           <Link href="/blog" className="inline-flex items-center gap-2 font-serifDisplay text-[11px] font-bold uppercase tracking-[0.18em] text-beggin-ink/65 transition hover:text-beggin-red">
             <ArrowLeft size={15} />
@@ -53,7 +53,7 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
             <p className="mx-auto mt-7 max-w-[780px] text-[1.08rem] leading-[1.82] text-beggin-ink/72">{post.excerpt}</p>
           </header>
 
-          <div className="relative mt-10 aspect-[16/8] min-h-[320px] overflow-hidden border border-[#c8b98e]/60 bg-[#e7dfc9] md:min-h-[520px]">
+          <div className="relative mt-10 aspect-[16/8] min-h-[320px] overflow-hidden border border-[#c8b98e]/60 bg-white md:min-h-[520px]">
             <Image src={post.image} alt={post.eyebrow} fill priority sizes="(max-width: 1280px) 94vw, 1220px" className="object-cover" />
           </div>
 
@@ -72,11 +72,8 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
 
               <div className="mt-12 grid gap-6 lg:grid-cols-2">
                 {post.recipes.map((recipe) => (
-                  <article key={recipe.number} className="border border-[#c8b98e]/60 bg-[#FFFCF6] p-7 shadow-[0_18px_52px_rgba(54,43,25,0.05)] md:p-9">
-                    <div className="flex items-start justify-between gap-5">
-                      <span className="font-serifDisplay text-[3.2rem] font-semibold leading-none text-beggin-red">
-                        {String(recipe.number).padStart(2, '0')}
-                      </span>
+                  <article key={recipe.number} className="border border-[#c8b98e]/60 bg-white p-7 shadow-[0_18px_52px_rgba(54,43,25,0.05)] md:p-9">
+                    <div className="flex items-start justify-end gap-5">
                       <span className="border border-[#c8b98e]/60 px-3 py-2 font-serifDisplay text-[9px] font-bold uppercase tracking-[0.16em] text-beggin-ink/65">
                         {recipe.occasion}
                       </span>
@@ -98,7 +95,7 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
                     </div>
 
                     {recipe.garnish ? (
-                      <div className="mt-6 bg-[#f6efe1] p-4">
+                      <div className="mt-6 border border-[#c8b98e]/45 bg-white p-4">
                         <span className="font-serifDisplay text-[10px] font-bold uppercase tracking-[0.18em] text-beggin-ink/65">Finalização</span>
                         <p className="mt-2 text-[0.94rem] leading-[1.65] text-beggin-ink/72">{recipe.garnish}</p>
                       </div>
