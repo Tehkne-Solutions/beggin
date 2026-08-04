@@ -14,7 +14,9 @@ export const metadata: Metadata = {
 const heroText = 'A sustentabilidade não é uma opção, é uma obrigação. Operamos de maneira ecológica, desde a origem dos nossos ingredientes, práticas de produção e embalagem. Nosso compromisso com a sustentabilidade é tão forte quanto nosso compromisso com a qualidade.';
 
 const sustainabilityImages = {
-  refilRepeat: '/images/sustentabilidade/post%20feed%20refil%20recicle%20e%20repita.jpg',
+  refilFirst: '/images/official/sustainability/6-2.webp',
+  refilSecond: '/images/official/sustainability/16-1.webp',
+  destilaria1326: '/images/official/sustainability/beggin-destilaria-1326.webp',
   freedomRefil: '/images/sustentabilidade/IMG_2516.jpg',
   sameGinLessImpact: '/images/sustentabilidade/Beg%20(1).jpg',
   euReciclo: '/images/sustentabilidade/i%CC%81cone%20eureciclo%20preto.png',
@@ -23,8 +25,8 @@ const sustainabilityImages = {
 } as const;
 
 const refilHighlights = [
-  { title: '9x Mais Leve que o Vidro.', text: 'Feita 100% em alumínio, a nossa garrafa refil reduz consideravelmente a nossa pegada de carbono durante o transporte.', image: sustainabilityImages.refilRepeat, imageMode: 'cover' },
-  { title: 'Infinitamente Reciclável.', text: 'O alumínio economiza uma quantidade imensa de energia no processo de reciclagem. É a escolha mais eco consciente para o seu destilado.', image: sustainabilityImages.refilRepeat, imageMode: 'cover' },
+  { title: '9x Mais Leve que o Vidro.', text: 'Feita 100% em alumínio, a nossa garrafa refil reduz consideravelmente a nossa pegada de carbono durante o transporte.', image: sustainabilityImages.refilFirst, imageMode: 'cover' },
+  { title: 'Infinitamente Reciclável.', text: 'O alumínio economiza uma quantidade imensa de energia no processo de reciclagem. É a escolha mais eco consciente para o seu destilado.', image: sustainabilityImages.refilSecond, imageMode: 'cover' },
   { title: 'O alumínio vai onde o vidro não vai.', text: 'Leve o seu Refil BEG com total segurança para praias, piscinas, barcos e shows.', image: sustainabilityImages.freedomRefil, imageMode: 'cover' },
   { title: 'O Mesmo Gin, Menos Impacto e Menor Custo.', text: 'Você leva para casa o mesmo gin premium, paga menos por isso e ainda apoia ativamente a cadeia de reciclagem nacional.', image: sustainabilityImages.sameGinLessImpact, imageMode: 'cover' },
   { title: 'Selo Eu Reciclo.', text: 'Garantimos a compensação ambiental das nossas embalagens, apoiando ativamente a reciclagem em mais de 12 estados do Brasil.', image: sustainabilityImages.euReciclo, imageMode: 'contain' },
@@ -49,10 +51,12 @@ export default function SustainabilityPage() {
             <h1 className="mt-8 max-w-[960px] font-serifDisplay text-[clamp(3rem,5.85vw,7.2rem)] font-normal uppercase leading-[1.02] tracking-[-0.03em]">Muito Além do Gin: Nosso Compromisso com o Futuro</h1>
             <div className="relative mt-7 h-[24px] w-[48px]"><Image src={sustainabilityAssets.waves} alt="" fill sizes="48px" className="object-contain" /></div>
           </div>
-          <div className="relative z-[2] border border-[#d8caa4]/70 bg-white p-7 shadow-[0_24px_70px_rgba(54,43,25,0.08)] md:p-10">
-            <div className="relative mb-7 h-[92px] w-[92px] opacity-90"><Image src={sustainabilityImages.recycleBottle} alt="Ícone de garrafa reciclável" fill sizes="92px" className="object-contain" /></div>
-            <p className="text-[1.06rem] leading-[1.92] text-beggin-ink/76">{heroText}</p>
-            <Link href="/produtos?categoria=refis" className="mt-9 inline-flex items-center gap-3 bg-beggin-red px-7 py-4 font-sansUi text-[12px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-beggin-ink">Conheça os Refis <ArrowRight size={16} /></Link>
+          <div className="relative z-[2] overflow-hidden border border-[#d8caa4]/70 bg-white shadow-[0_24px_70px_rgba(54,43,25,0.08)]">
+            <div className="relative aspect-[4/3] w-full"><Image src={sustainabilityImages.destilaria1326} alt="BEG Destilaria e garrafa refil" fill priority sizes="(max-width:1024px) 92vw, 620px" className="object-cover" /></div>
+            <div className="p-7 md:p-10">
+              <p className="text-[1.06rem] leading-[1.92] text-beggin-ink/76">{heroText}</p>
+              <Link href="/produtos?categoria=refis" className="mt-9 inline-flex items-center gap-3 bg-beggin-red px-7 py-4 font-sansUi text-[12px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-beggin-ink">Conheça os Refis <ArrowRight size={16} /></Link>
+            </div>
           </div>
         </div>
       </section>
