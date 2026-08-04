@@ -10,13 +10,6 @@ export const awardAssets = {
   waves: '/images/home/beggin-home-hero-elemento-bandeiras.png',
 } as const;
 
-// Ordem canônica validada contra a referência visual enviada pelo cliente:
-// 1) WGA Brazil Classic Winner
-// 2) WGA Gold
-// 3) WGA Brazil Colour Changing Winner
-// 4) IWSC Gold 98 pts
-// 5) IWSC Silver 93 pts
-// 6) IWSC Bronze Gin & Tonic
 export const awards = [
   {
     id: 'bartender-spirits-awards',
