@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
-import { Cormorant_Garamond, Inter } from 'next/font/google';
+import { Cormorant_Garamond } from 'next/font/google';
 import { FloatingActions } from '@/components/common/FloatingActions';
 import { MotionViewport } from '@/components/motion/MotionViewport';
 import './globals.css';
@@ -9,12 +9,6 @@ const cormorant = Cormorant_Garamond({
   variable: '--font-cormorant',
   subsets: ['latin'],
   weight: ['500', '600', '700'],
-  display: 'swap',
-});
-
-const inter = Inter({
-  variable: '--font-inter',
-  subsets: ['latin'],
   display: 'swap',
 });
 
@@ -43,7 +37,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
-      <body className={`${cormorant.variable} ${inter.variable} ${intro.variable} ${gearedSlab.variable}`}>
+      <body className={`${cormorant.variable} ${intro.variable} ${gearedSlab.variable}`}>
         <MotionViewport />
         {children}
         <FloatingActions />
