@@ -8,12 +8,10 @@ import { sustainabilityAssets } from '@/data/sustainability';
 
 export const metadata: Metadata = {
   title: 'Sustentabilidade | BEG Destilaria',
-  description:
-    'Muito Além do Gin: conheça o compromisso da BEG Destilaria com sustentabilidade, Projeto Refil, energia limpa, biodiversidade e produção consciente.',
+  description: 'Muito Além do Gin: conheça o compromisso da BEG Destilaria com sustentabilidade, Projeto Refil, energia limpa, biodiversidade e produção consciente.',
 };
 
-const heroText =
-  'A sustentabilidade não é uma opção, é uma obrigação. Operamos de maneira ecológica, desde a origem dos nossos ingredientes, práticas de produção e embalagem. Nosso compromisso com a sustentabilidade é tão forte quanto nosso compromisso com a qualidade.';
+const heroText = 'A sustentabilidade não é uma opção, é uma obrigação. Operamos de maneira ecológica, desde a origem dos nossos ingredientes, práticas de produção e embalagem. Nosso compromisso com a sustentabilidade é tão forte quanto nosso compromisso com a qualidade.';
 
 const sustainabilityImages = {
   refilRepeat: '/images/sustentabilidade/post%20feed%20refil%20recicle%20e%20repita.jpg',
@@ -25,174 +23,65 @@ const sustainabilityImages = {
 } as const;
 
 const refilHighlights = [
-  {
-    title: '9x Mais Leve que o Vidro.',
-    text: 'Feita 100% em alumínio, a nossa garrafa refil reduz consideravelmente a nossa pegada de carbono durante o transporte.',
-    image: sustainabilityImages.refilRepeat,
-    imageMode: 'cover',
-  },
-  {
-    title: 'Infinitamente Reciclável.',
-    text: 'O alumínio economiza uma quantidade imensa de energia no processo de reciclagem. É a escolha mais eco consciente para o seu destilado.',
-    image: sustainabilityImages.refilRepeat,
-    imageMode: 'cover',
-  },
-  {
-    title: 'O alumínio vai onde o vidro não vai.',
-    text: 'Leve o seu Refil BEG com total segurança para praias, piscinas, barcos e shows.',
-    image: sustainabilityImages.freedomRefil,
-    imageMode: 'cover',
-  },
-  {
-    title: 'O Mesmo Gin, Menos Impacto e Menor Custo.',
-    text: 'Você leva para casa o mesmo gin premium, paga menos por isso e ainda apoia ativamente a cadeia de reciclagem nacional.',
-    image: sustainabilityImages.sameGinLessImpact,
-    imageMode: 'cover',
-  },
-  {
-    title: 'Selo Eu Reciclo.',
-    text: 'Garantimos a compensação ambiental das nossas embalagens, apoiando ativamente a reciclagem em mais de 12 estados do Brasil.',
-    image: sustainabilityImages.euReciclo,
-    imageMode: 'contain',
-  },
+  { title: '9x Mais Leve que o Vidro.', text: 'Feita 100% em alumínio, a nossa garrafa refil reduz consideravelmente a nossa pegada de carbono durante o transporte.', image: sustainabilityImages.refilRepeat, imageMode: 'cover' },
+  { title: 'Infinitamente Reciclável.', text: 'O alumínio economiza uma quantidade imensa de energia no processo de reciclagem. É a escolha mais eco consciente para o seu destilado.', image: sustainabilityImages.refilRepeat, imageMode: 'cover' },
+  { title: 'O alumínio vai onde o vidro não vai.', text: 'Leve o seu Refil BEG com total segurança para praias, piscinas, barcos e shows.', image: sustainabilityImages.freedomRefil, imageMode: 'cover' },
+  { title: 'O Mesmo Gin, Menos Impacto e Menor Custo.', text: 'Você leva para casa o mesmo gin premium, paga menos por isso e ainda apoia ativamente a cadeia de reciclagem nacional.', image: sustainabilityImages.sameGinLessImpact, imageMode: 'cover' },
+  { title: 'Selo Eu Reciclo.', text: 'Garantimos a compensação ambiental das nossas embalagens, apoiando ativamente a reciclagem em mais de 12 estados do Brasil.', image: sustainabilityImages.euReciclo, imageMode: 'contain' },
 ] as const;
 
 const biodiversityBullets = [
-  {
-    icon: SunMedium,
-    title: 'Energia 100% Limpa.',
-    text: 'Nossa destilaria opera com painéis solares, gerando até 200% de energia limpa e renovável para a nossa produção.',
-  },
-  {
-    icon: Leaf,
-    title: 'Botânicos Locais e Redução de Carbono.',
-    text: 'Priorizamos o uso de botânicos brasileiros em grande parte da composição — como flor de sabugueiro do Brasil, mexerica, limão Tahiti e folha de pitangueira.',
-  },
-  {
-    icon: Droplets,
-    title: 'Água Sustentável.',
-    text: 'Toda a água utilizada em nosso processo de produção provém de um poço artesiano próprio, com controle rigoroso.',
-  },
-  {
-    icon: RefreshCcw,
-    title: 'Upcycling.',
-    text: 'Operamos com uma política de reaproveitamento dos excedentes de produção, evitando desperdícios e reforçando uma produção consciente.',
-  },
+  { icon: SunMedium, title: 'Energia 100% Limpa.', text: 'Nossa destilaria opera com painéis solares, gerando até 200% de energia limpa e renovável para a nossa produção.' },
+  { icon: Leaf, title: 'Botânicos Locais e Redução de Carbono.', text: 'Priorizamos o uso de botânicos brasileiros em grande parte da composição — como flor de sabugueiro do Brasil, mexerica, limão Tahiti e folha de pitangueira.' },
+  { icon: Droplets, title: 'Água Sustentável.', text: 'Toda a água utilizada em nosso processo de produção provém de um poço artesiano próprio, com controle rigoroso.' },
+  { icon: RefreshCcw, title: 'Upcycling.', text: 'Operamos com uma política de reaproveitamento dos excedentes de produção, evitando desperdícios e reforçando uma produção consciente.' },
 ] as const;
 
 export default function SustainabilityPage() {
   return (
     <main className="min-h-screen bg-white text-beggin-ink">
       <Header />
-
       <section className="relative overflow-hidden bg-white px-5 pb-16 pt-[130px] md:px-8 lg:pb-20 lg:pt-[160px]">
         <div className="mx-auto grid max-w-[1500px] gap-12 lg:grid-cols-[0.56fr_0.44fr] lg:items-center">
           <div className="relative z-[2]">
-            <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.34em] text-beggin-ink/75">Sustentabilidade</p>
+            <p className="font-sansUi text-[11px] font-bold uppercase tracking-[0.34em] text-beggin-ink/75">Sustentabilidade</p>
             <div className="mt-5 h-px w-20 bg-beggin-gold/70" />
-            <h1 className="mt-8 max-w-[960px] font-serifDisplay text-[clamp(3rem,5.85vw,7.2rem)] font-semibold uppercase leading-[0.84] tracking-[-0.055em]">
-              Muito Além do Gin: Nosso Compromisso com o Futuro
-            </h1>
-            <div className="relative mt-7 h-[24px] w-[48px]">
-              <Image src={sustainabilityAssets.waves} alt="" fill sizes="48px" className="object-contain" />
-            </div>
+            <h1 className="mt-8 max-w-[960px] font-serifDisplay text-[clamp(3rem,5.85vw,7.2rem)] font-normal uppercase leading-[1.02] tracking-[-0.03em]">Muito Além do Gin: Nosso Compromisso com o Futuro</h1>
+            <div className="relative mt-7 h-[24px] w-[48px]"><Image src={sustainabilityAssets.waves} alt="" fill sizes="48px" className="object-contain" /></div>
           </div>
-
           <div className="relative z-[2] border border-[#d8caa4]/70 bg-white p-7 shadow-[0_24px_70px_rgba(54,43,25,0.08)] md:p-10">
-            <div className="relative mb-7 h-[92px] w-[92px] opacity-90">
-              <Image src={sustainabilityImages.recycleBottle} alt="Ícone de garrafa reciclável" fill sizes="92px" className="object-contain" />
-            </div>
+            <div className="relative mb-7 h-[92px] w-[92px] opacity-90"><Image src={sustainabilityImages.recycleBottle} alt="Ícone de garrafa reciclável" fill sizes="92px" className="object-contain" /></div>
             <p className="text-[1.06rem] leading-[1.92] text-beggin-ink/76">{heroText}</p>
-            <Link href="/produtos?categoria=refis" className="mt-9 inline-flex items-center gap-3 bg-beggin-red px-7 py-4 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-beggin-ink">
-              Conheça os Refis
-              <ArrowRight size={16} />
-            </Link>
+            <Link href="/produtos?categoria=refis" className="mt-9 inline-flex items-center gap-3 bg-beggin-red px-7 py-4 font-sansUi text-[12px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-beggin-ink">Conheça os Refis <ArrowRight size={16} /></Link>
           </div>
         </div>
       </section>
 
       <section className="bg-white px-5 pb-16 md:px-8 lg:pb-24">
-        <div className="mx-auto max-w-[1380px] overflow-hidden border border-[#d8caa4]/70 bg-[#131413] text-[#FCF7F1] shadow-[0_28px_78px_rgba(19,20,19,0.2)]">
+        <div className="mx-auto max-w-[1380px] overflow-hidden border border-[#d8caa4]/70 bg-[#131413] text-white shadow-[0_28px_78px_rgba(19,20,19,0.2)]">
           <div className="grid gap-0 lg:grid-cols-2">
             <div className="flex flex-col justify-center p-8 md:p-12 lg:p-16">
-              <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.34em] text-[#d7b866]">O Grande Destaque</p>
-              <h2 className="mt-6 font-serifDisplay text-[clamp(2.6rem,4.9vw,5.9rem)] font-semibold uppercase leading-[0.86] tracking-[-0.045em]">
-                Projeto Refil: O Mesmo Gin Premium, com Menos Impacto Ambiental
-              </h2>
-              <p className="mt-7 max-w-[720px] text-[1.05rem] leading-[1.82] text-[#FCF7F1]/76">
-                Um verdadeiro ícone de sustentabilidade, inovação e liberdade: menos impacto, mais praticidade e a mesma assinatura BEG.
-              </p>
-              <Link href="/produtos?categoria=refis" className="mt-9 inline-flex w-fit items-center gap-3 border border-[#d7b866]/65 px-7 py-4 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-[#FCF7F1] transition hover:border-[#FCF7F1] hover:text-[#d7b866]">
-                Ver Refis
-                <ArrowRight size={16} />
-              </Link>
+              <p className="font-sansUi text-[11px] font-bold uppercase tracking-[0.34em] text-[#d7b866]">O Grande Destaque</p>
+              <h2 className="mt-6 font-serifDisplay text-[clamp(2.6rem,4.9vw,5.9rem)] font-normal uppercase leading-[1.02] tracking-[-0.025em]">Projeto Refil: O Mesmo Gin Premium, com Menos Impacto Ambiental</h2>
+              <p className="mt-7 max-w-[720px] text-[1.05rem] leading-[1.82] text-white/76">Um verdadeiro ícone de sustentabilidade, inovação e liberdade: menos impacto, mais praticidade e a mesma assinatura BEG.</p>
+              <Link href="/produtos?categoria=refis" className="mt-9 inline-flex w-fit items-center gap-3 border border-[#d7b866]/65 px-7 py-4 font-sansUi text-[12px] font-bold uppercase tracking-[0.18em] text-white transition hover:border-white hover:text-[#d7b866]">Ver Refis <ArrowRight size={16} /></Link>
             </div>
-
-            <div className="relative min-h-[330px] bg-[#0f100f] lg:min-h-[520px]">
-              <iframe
-                className="absolute inset-0 h-full w-full"
-                src="https://www.youtube.com/embed/pVYi8eKMpVo"
-                title="Projeto Refil Sustentabilidade"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              />
-            </div>
+            <div className="relative min-h-[330px] bg-[#0f100f] lg:min-h-[520px]"><iframe className="absolute inset-0 h-full w-full" src="https://www.youtube.com/embed/pVYi8eKMpVo" title="Projeto Refil Sustentabilidade" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen /></div>
           </div>
-
           <div className="grid border-t border-[#d7b866]/25 bg-[#171816] md:grid-cols-2 xl:grid-cols-5">
-            {refilHighlights.map((item, index) => (
-              <article key={item.title} className="flex min-h-[410px] flex-col border-b border-r border-[#d7b866]/18">
-                <div className="relative h-[210px] shrink-0 overflow-hidden bg-[#23241f]">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    sizes="(max-width: 768px) 92vw, 320px"
-                    className={item.imageMode === 'contain' ? 'object-contain p-10 opacity-95' : 'object-cover opacity-92'}
-                  />
-                  <div className="absolute left-5 top-5 font-serifDisplay text-[10px] font-bold uppercase tracking-[0.22em] text-[#d7b866]">
-                    {String(index + 1).padStart(2, '0')}
-                  </div>
-                </div>
-                <div className="flex flex-1 flex-col p-6 md:p-7">
-                  <h3 className="font-serifDisplay text-[1.28rem] font-bold uppercase leading-[1.02] tracking-[0.03em] text-[#FCF7F1]">{item.title}</h3>
-                  <p className="mt-4 text-[0.95rem] leading-[1.7] text-[#FCF7F1]/72">{item.text}</p>
-                </div>
-              </article>
-            ))}
+            {refilHighlights.map((item, index) => <article key={item.title} className="flex min-h-[410px] flex-col border-b border-r border-[#d7b866]/18"><div className="relative h-[210px] shrink-0 overflow-hidden bg-[#23241f]"><Image src={item.image} alt={item.title} fill sizes="(max-width: 768px) 92vw, 320px" className={item.imageMode === 'contain' ? 'object-contain p-10 opacity-95' : 'object-cover opacity-92'} /><div className="absolute left-5 top-5 font-sansUi text-[10px] font-bold uppercase tracking-[0.22em] text-[#d7b866]">{String(index + 1).padStart(2, '0')}</div></div><div className="flex flex-1 flex-col p-6 md:p-7"><h3 className="font-sansUi text-[1.18rem] font-bold uppercase leading-[1.2] tracking-[0.03em] text-white">{item.title}</h3><p className="mt-4 text-[0.95rem] leading-[1.7] text-white/72">{item.text}</p></div></article>)}
           </div>
         </div>
       </section>
 
       <section className="bg-white px-5 pb-20 md:px-8 lg:pb-24">
         <div className="mx-auto max-w-[1380px] overflow-hidden border border-[#d8caa4]/70 bg-white shadow-[0_24px_70px_rgba(54,43,25,0.065)]">
-          <div className="relative aspect-[16/8] min-h-[300px] w-full bg-white md:min-h-[440px] lg:aspect-[16/7] lg:min-h-[560px]">
-            <Image
-              src={sustainabilityImages.solarPanels}
-              alt="Painéis solares da BEG Destilaria"
-              fill
-              sizes="(max-width: 1024px) 94vw, 1380px"
-              className="object-contain"
-            />
-          </div>
+          <div className="relative aspect-[16/8] min-h-[300px] w-full bg-white md:min-h-[440px] lg:aspect-[16/7] lg:min-h-[560px]"><Image src={sustainabilityImages.solarPanels} alt="Painéis solares da BEG Destilaria" fill sizes="(max-width: 1024px) 94vw, 1380px" className="object-contain" /></div>
           <div className="border-t border-[#d8caa4]/70 p-8 md:p-12 lg:p-16">
-            <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.32em] text-beggin-red">Respeito à Nossa Terra e Biodiversidade</p>
-            <h2 className="mt-5 max-w-[940px] font-serifDisplay text-[clamp(2.4rem,4.4vw,5.1rem)] font-semibold uppercase leading-[0.88] tracking-[-0.04em]">
-              Uma destilaria conectada ao território.
-            </h2>
+            <p className="font-sansUi text-[11px] font-bold uppercase tracking-[0.32em] text-beggin-red">Respeito à Nossa Terra e Biodiversidade</p>
+            <h2 className="mt-5 max-w-[940px] font-serifDisplay text-[clamp(2.4rem,4.4vw,5.1rem)] font-normal uppercase leading-[1.02] tracking-[-0.025em]">Uma destilaria conectada ao território.</h2>
             <div className="mt-10 grid gap-6 md:grid-cols-2">
-              {biodiversityBullets.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <div key={item.title} className="flex gap-4 border-t border-[#d8caa4]/65 pt-5">
-                    <Icon className="mt-1 shrink-0 text-beggin-red" size={24} strokeWidth={1.7} />
-                    <div>
-                      <h3 className="font-serifDisplay text-[1.05rem] font-bold uppercase tracking-[0.08em] text-beggin-ink">{item.title}</h3>
-                      <p className="mt-2 text-[0.98rem] leading-[1.72] text-beggin-ink/72">{item.text}</p>
-                    </div>
-                  </div>
-                );
-              })}
+              {biodiversityBullets.map((item) => { const Icon = item.icon; return <div key={item.title} className="flex gap-4 border-t border-[#d8caa4]/65 pt-5"><Icon className="mt-1 shrink-0 text-beggin-red" size={24} strokeWidth={1.7} /><div><h3 className="font-sansUi text-[1.05rem] font-bold uppercase tracking-[0.08em] text-beggin-ink">{item.title}</h3><p className="mt-2 text-[0.98rem] leading-[1.72] text-beggin-ink/72">{item.text}</p></div></div>; })}
             </div>
           </div>
         </div>
@@ -201,25 +90,14 @@ export default function SustainabilityPage() {
       <section className="bg-white px-5 pb-20 md:px-8 lg:pb-24">
         <div className="mx-auto max-w-[1380px] border-y border-[#d8caa4]/70 py-12 text-center">
           <Sprout className="mx-auto text-beggin-red" size={34} strokeWidth={1.55} />
-          <h2 className="mx-auto mt-6 max-w-[900px] font-serifDisplay text-[clamp(2.4rem,4.2vw,4.9rem)] font-semibold uppercase leading-[0.9] tracking-[-0.04em]">
-            Produzir melhor também é escolher melhor.
-          </h2>
-          <p className="mx-auto mt-6 max-w-[760px] text-[1.03rem] leading-[1.85] text-beggin-ink/72">
-            Da escolha dos botânicos ao envase, da energia limpa aos refis, cada etapa reforça o compromisso da BEG com qualidade, consciência e futuro.
-          </p>
+          <h2 className="mx-auto mt-6 max-w-[900px] font-serifDisplay text-[clamp(2.4rem,4.2vw,4.9rem)] font-normal uppercase leading-[1.04] tracking-[-0.025em]">Produzir melhor também é escolher melhor.</h2>
+          <p className="mx-auto mt-6 max-w-[760px] text-[1.03rem] leading-[1.85] text-beggin-ink/72">Da escolha dos botânicos ao envase, da energia limpa aos refis, cada etapa reforça o compromisso da BEG com qualidade, consciência e futuro.</p>
           <div className="mt-9 flex flex-wrap justify-center gap-4">
-            <Link href="/produtos?categoria=refis" className="inline-flex items-center gap-3 bg-beggin-red px-7 py-4 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-beggin-ink">
-              Conheça os Refis
-              <ArrowRight size={16} />
-            </Link>
-            <Link href="/blog" className="inline-flex items-center gap-3 border border-beggin-ink/35 px-7 py-4 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-beggin-ink transition hover:border-beggin-red hover:text-beggin-red">
-              Ver conteúdos
-              <ArrowRight size={16} />
-            </Link>
+            <Link href="/produtos?categoria=refis" className="inline-flex items-center gap-3 bg-beggin-red px-7 py-4 font-sansUi text-[12px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-beggin-ink">Conheça os Refis <ArrowRight size={16} /></Link>
+            <Link href="/blog" className="inline-flex items-center gap-3 border border-beggin-ink/35 px-7 py-4 font-sansUi text-[12px] font-bold uppercase tracking-[0.18em] text-beggin-ink transition hover:border-beggin-red hover:text-beggin-red">Ver conteúdos <ArrowRight size={16} /></Link>
           </div>
         </div>
       </section>
-
       <Footer />
     </main>
   );
