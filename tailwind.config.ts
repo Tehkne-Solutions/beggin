@@ -23,7 +23,7 @@ const config: Config = {
       },
       fontFamily: {
         serifDisplay: ['var(--font-intro)', 'var(--font-cormorant)', 'Georgia', 'serif'],
-        sansUi: ['var(--font-geared)', 'var(--font-inter)', 'Arial', 'sans-serif'],
+        sansUi: ['var(--font-geared)', 'Arial', 'sans-serif'],
       },
       boxShadow: {
         soft: '0 24px 70px rgba(38, 28, 14, 0.12)',
