@@ -46,24 +46,24 @@ export function Header() {
         style={{ height, background }}
         className="fixed inset-x-0 top-0 z-50 border-b border-beggin-line/70 backdrop-blur-md"
       >
-        <div className="mx-auto grid h-full max-w-[1500px] grid-cols-[110px_1fr_110px] items-center px-5 sm:px-8 lg:grid-cols-[120px_1fr_150px] lg:px-10 xl:grid-cols-[150px_1fr_170px] xl:px-12">
+        <div className="mx-auto grid h-full max-w-[1500px] grid-cols-[110px_1fr_110px] items-center px-5 sm:px-8 xl:grid-cols-[150px_1fr_170px] xl:px-12">
           <Link href="/#inicio" aria-label="BEG Destilaria" className="flex items-center">
             <motion.div
               style={{ height: logoHeight }}
-              className="relative flex w-[54px] items-center overflow-visible lg:w-[62px]"
+              className="relative flex w-[54px] items-center overflow-visible xl:w-[62px]"
             >
               <BrandLogo variant="dark" className="h-full w-auto" />
             </motion.div>
           </Link>
 
-          <nav className="hidden items-center justify-center gap-4 xl:gap-6 lg:flex" aria-label="Navegação principal">
+          <nav className="hidden items-center justify-center gap-6 xl:flex" aria-label="Navegação principal">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 target={item.external ? '_blank' : undefined}
                 rel={item.external ? 'noreferrer' : undefined}
-                className="inline-flex items-center gap-1 font-serifDisplay text-[10px] font-bold uppercase tracking-[0.13em] text-beggin-ink transition-colors hover:text-beggin-red xl:text-[11px] xl:tracking-[0.15em]"
+                className="inline-flex items-center gap-1 whitespace-nowrap font-serifDisplay text-[11px] font-bold uppercase tracking-[0.15em] text-beggin-ink transition-colors hover:text-beggin-red"
               >
                 {item.label}
                 {item.external ? <ExternalLink size={11} strokeWidth={1.8} aria-hidden="true" /> : null}
@@ -89,7 +89,7 @@ export function Header() {
               aria-label={isMenuOpen ? 'Fechar navegação' : 'Abrir navegação'}
               aria-expanded={isMenuOpen}
               onClick={() => setIsMenuOpen((current) => !current)}
-              className="inline-flex h-10 w-10 items-center justify-center text-beggin-ink transition-colors hover:text-beggin-red lg:hidden"
+              className="inline-flex h-10 w-10 items-center justify-center text-beggin-ink transition-colors hover:text-beggin-red xl:hidden"
             >
               {isMenuOpen ? <X size={27} strokeWidth={1.7} /> : <Menu size={27} strokeWidth={1.7} />}
             </button>
@@ -103,7 +103,7 @@ export function Header() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-[#131413]/45 pt-[76px] backdrop-blur-sm lg:hidden"
+            className="fixed inset-0 z-40 bg-[#131413]/45 pt-[76px] backdrop-blur-sm xl:hidden"
             onClick={() => setIsMenuOpen(false)}
           >
             <motion.nav
