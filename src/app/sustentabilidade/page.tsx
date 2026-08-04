@@ -82,10 +82,10 @@ const biodiversityBullets = [
 
 export default function SustainabilityPage() {
   return (
-    <main className="min-h-screen bg-[#FCF7F1] text-beggin-ink">
+    <main className="min-h-screen bg-white text-beggin-ink">
       <Header />
 
-      <section className="paper-texture relative overflow-hidden bg-[#FCF7F1] px-5 pb-16 pt-[130px] md:px-8 lg:pb-20 lg:pt-[160px]">
+      <section className="relative overflow-hidden bg-white px-5 pb-16 pt-[130px] md:px-8 lg:pb-20 lg:pt-[160px]">
         <div className="mx-auto grid max-w-[1500px] gap-12 lg:grid-cols-[0.56fr_0.44fr] lg:items-center">
           <div className="relative z-[2]">
             <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.34em] text-beggin-ink/75">Sustentabilidade</p>
@@ -98,7 +98,7 @@ export default function SustainabilityPage() {
             </div>
           </div>
 
-          <div className="relative z-[2] border border-[#d8caa4]/70 bg-[#FFFCF6]/90 p-7 shadow-[0_24px_70px_rgba(54,43,25,0.08)] md:p-10">
+          <div className="relative z-[2] border border-[#d8caa4]/70 bg-white p-7 shadow-[0_24px_70px_rgba(54,43,25,0.08)] md:p-10">
             <div className="relative mb-7 h-[92px] w-[92px] opacity-90">
               <Image src={sustainabilityImages.recycleBottle} alt="Ícone de garrafa reciclável" fill sizes="92px" className="object-contain" />
             </div>
@@ -111,7 +111,7 @@ export default function SustainabilityPage() {
         </div>
       </section>
 
-      <section className="paper-texture bg-[#FCF7F1] px-5 pb-16 md:px-8 lg:pb-24">
+      <section className="bg-white px-5 pb-16 md:px-8 lg:pb-24">
         <div className="mx-auto max-w-[1380px] overflow-hidden border border-[#d8caa4]/70 bg-[#131413] text-[#FCF7F1] shadow-[0_28px_78px_rgba(19,20,19,0.2)]">
           <div className="grid gap-0 lg:grid-cols-2">
             <div className="flex flex-col justify-center p-8 md:p-12 lg:p-16">
@@ -164,9 +164,9 @@ export default function SustainabilityPage() {
         </div>
       </section>
 
-      <section className="paper-texture bg-[#FCF7F1] px-5 pb-20 md:px-8 lg:pb-24">
-        <div className="mx-auto max-w-[1380px] overflow-hidden border border-[#d8caa4]/70 bg-[#FFFCF6]/90 shadow-[0_24px_70px_rgba(54,43,25,0.065)]">
-          <div className="relative aspect-[16/8] min-h-[300px] w-full bg-[#e9e3d2] md:min-h-[440px] lg:aspect-[16/7] lg:min-h-[560px]">
+      <section className="bg-white px-5 pb-20 md:px-8 lg:pb-24">
+        <div className="mx-auto max-w-[1380px] overflow-hidden border border-[#d8caa4]/70 bg-white shadow-[0_24px_70px_rgba(54,43,25,0.065)]">
+          <div className="relative aspect-[16/8] min-h-[300px] w-full bg-white md:min-h-[440px] lg:aspect-[16/7] lg:min-h-[560px]">
             <Image
               src={sustainabilityImages.solarPanels}
               alt="Painéis solares da BEG Destilaria"
@@ -198,7 +198,7 @@ export default function SustainabilityPage() {
         </div>
       </section>
 
-      <section className="paper-texture bg-[#FCF7F1] px-5 pb-20 md:px-8 lg:pb-24">
+      <section className="bg-white px-5 pb-20 md:px-8 lg:pb-24">
         <div className="mx-auto max-w-[1380px] border-y border-[#d8caa4]/70 py-12 text-center">
           <Sprout className="mx-auto text-beggin-red" size={34} strokeWidth={1.55} />
           <h2 className="mx-auto mt-6 max-w-[900px] font-serifDisplay text-[clamp(2.4rem,4.2vw,4.9rem)] font-semibold uppercase leading-[0.9] tracking-[-0.04em]">
