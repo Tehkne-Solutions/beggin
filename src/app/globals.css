@@ -28,18 +28,16 @@ body {
     radial-gradient(circle at 15% 8%, rgba(255, 255, 255, 0.72), transparent 26%),
     linear-gradient(180deg, var(--color-ice-white) 0%, var(--color-ice-white-soft) 100%);
   color: #111315;
-  font-family: var(--font-inter), Arial, sans-serif;
+  font-family: var(--font-geared), Arial, sans-serif;
 }
 
 /*
- * BEG typography contract (Sprint 24 / client video review)
- * ---------------------------------------------------------
+ * BEG typography contract (client review)
+ * ---------------------------------------
  * INTRO Regular = primary editorial/display headings.
- * Geared Slab   = support/accent typography only.
- * Inter         = body copy and neutral UI fallback.
- *
- * Keeping the default body out of Geared Slab prevents the support face from
- * leaking into headings/components that do not explicitly choose a family.
+ * Geared Slab   = body, UI and support/accent typography.
+ * Cormorant     = serif fallback for editorial headings only.
+ * Inter         = forbidden in the BEG visual system.
  */
 h1,
 h2,
@@ -49,7 +47,7 @@ h3,
 }
 
 .font-sansUi {
-  font-family: var(--font-geared), var(--font-inter), Arial, sans-serif;
+  font-family: var(--font-geared), Arial, sans-serif;
 }
 
 body::before {
