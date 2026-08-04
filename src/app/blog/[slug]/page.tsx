@@ -40,14 +40,14 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
 
       <article className="bg-white px-5 pb-20 pt-[128px] md:px-8 lg:pb-28 lg:pt-[154px]">
         <div className="mx-auto max-w-[1220px]">
-          <Link href="/blog" className="inline-flex items-center gap-2 font-serifDisplay text-[11px] font-bold uppercase tracking-[0.18em] text-beggin-ink/65 transition hover:text-beggin-red">
+          <Link href="/blog" className="inline-flex items-center gap-2 font-sansUi text-[11px] font-bold uppercase tracking-[0.18em] text-beggin-ink/65 transition hover:text-beggin-red">
             <ArrowLeft size={15} />
             Voltar ao Blog
           </Link>
 
           <header className="mt-9 border-b border-[#c8b98e]/55 pb-12 text-center">
-            <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.32em] text-beggin-red">{post.eyebrow}</p>
-            <h1 className="mx-auto mt-6 max-w-[1080px] font-serifDisplay text-[clamp(3rem,6vw,7rem)] font-semibold uppercase leading-[0.86] tracking-[-0.052em]">
+            <p className="font-sansUi text-[11px] font-bold uppercase tracking-[0.32em] text-beggin-red">{post.eyebrow}</p>
+            <h1 className="mx-auto mt-6 max-w-[1080px] font-serifDisplay text-[clamp(3rem,6vw,7rem)] font-normal uppercase leading-[1.02] tracking-[-0.03em]">
               {post.title}
             </h1>
             <p className="mx-auto mt-7 max-w-[780px] text-[1.08rem] leading-[1.82] text-beggin-ink/72">{post.excerpt}</p>
@@ -65,7 +65,7 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
             <section className="mt-16">
               <div className="mx-auto max-w-[900px] text-center">
                 <GlassWater className="mx-auto text-beggin-red" size={34} strokeWidth={1.55} />
-                <h2 className="mt-6 font-serifDisplay text-[clamp(2.7rem,4.8vw,5.5rem)] font-semibold uppercase leading-[0.88] tracking-[-0.045em]">
+                <h2 className="mt-6 font-serifDisplay text-[clamp(2.7rem,4.8vw,5.5rem)] font-normal uppercase leading-[1.02] tracking-[-0.025em]">
                   Receitas desta seleção
                 </h2>
               </div>
@@ -74,29 +74,29 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
                 {post.recipes.map((recipe) => (
                   <article key={recipe.number} className="border border-[#c8b98e]/60 bg-white p-7 shadow-[0_18px_52px_rgba(54,43,25,0.05)] md:p-9">
                     <div className="flex items-start justify-end gap-5">
-                      <span className="border border-[#c8b98e]/60 px-3 py-2 font-serifDisplay text-[9px] font-bold uppercase tracking-[0.16em] text-beggin-ink/65">
+                      <span className="border border-[#c8b98e]/60 px-3 py-2 font-sansUi text-[9px] font-bold uppercase tracking-[0.16em] text-beggin-ink/65">
                         {recipe.occasion}
                       </span>
                     </div>
-                    <h3 className="mt-6 font-serifDisplay text-[2rem] font-bold uppercase leading-[0.96] tracking-[-0.025em]">
+                    <h3 className="mt-6 font-serifDisplay text-[2rem] font-normal uppercase leading-[1.04] tracking-[-0.015em]">
                       {recipe.title}
                     </h3>
 
                     <div className="mt-7 border-t border-[#c8b98e]/55 pt-6">
-                      <h4 className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.2em] text-beggin-red">Ingredientes</h4>
+                      <h4 className="font-sansUi text-[11px] font-bold uppercase tracking-[0.2em] text-beggin-red">Ingredientes</h4>
                       <ul className="mt-4 space-y-2 text-[0.98rem] leading-[1.65] text-beggin-ink/72">
                         {recipe.ingredients.map((ingredient) => <li key={ingredient}>— {ingredient}</li>)}
                       </ul>
                     </div>
 
                     <div className="mt-7 border-t border-[#c8b98e]/55 pt-6">
-                      <h4 className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.2em] text-beggin-red">Modo de preparo</h4>
+                      <h4 className="font-sansUi text-[11px] font-bold uppercase tracking-[0.2em] text-beggin-red">Modo de preparo</h4>
                       <p className="mt-4 text-[0.98rem] leading-[1.75] text-beggin-ink/72">{recipe.method}</p>
                     </div>
 
                     {recipe.garnish ? (
                       <div className="mt-6 border border-[#c8b98e]/45 bg-white p-4">
-                        <span className="font-serifDisplay text-[10px] font-bold uppercase tracking-[0.18em] text-beggin-ink/65">Finalização</span>
+                        <span className="font-sansUi text-[10px] font-bold uppercase tracking-[0.18em] text-beggin-ink/65">Finalização</span>
                         <p className="mt-2 text-[0.94rem] leading-[1.65] text-beggin-ink/72">{recipe.garnish}</p>
                       </div>
                     ) : null}
