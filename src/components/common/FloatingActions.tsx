@@ -49,14 +49,15 @@ export function FloatingActions() {
           </div>
         </div>
       ) : (
-        <button type="button" onClick={reset} aria-label="Preferências" className="fixed bottom-5 left-5 z-[70] inline-flex h-12 w-12 items-center justify-center rounded-full border border-[#c8a759]/60 bg-[#131413] text-[#c8a759] shadow-[0_12px_34px_rgba(0,0,0,0.22)] transition hover:-translate-y-1 hover:border-beggin-red hover:text-beggin-red">
-          <Settings size={19} strokeWidth={1.8} />
-        </button>
+        <>
+          <button type="button" onClick={reset} aria-label="Preferências" className="fixed bottom-5 left-5 z-[70] inline-flex h-12 w-12 items-center justify-center rounded-full border border-[#c8a759]/60 bg-[#131413] text-[#c8a759] shadow-[0_12px_34px_rgba(0,0,0,0.22)] transition hover:-translate-y-1 hover:border-beggin-red hover:text-beggin-red">
+            <Settings size={19} strokeWidth={1.8} />
+          </button>
+          <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" aria-label="WhatsApp BEG Destilaria" className="fixed bottom-5 right-5 z-[70] inline-flex h-14 w-14 items-center justify-center rounded-full border border-[#c8a759]/70 bg-[#131413] text-[#f4efe3] shadow-[0_14px_38px_rgba(0,0,0,0.28)] transition hover:-translate-y-1 hover:bg-beggin-red hover:text-white">
+            <MessageCircle size={24} strokeWidth={1.8} />
+          </a>
+        </>
       )}
-
-      <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" aria-label="WhatsApp BEG Destilaria" className="fixed bottom-5 right-5 z-[70] inline-flex h-14 w-14 items-center justify-center rounded-full border border-[#c8a759]/70 bg-[#131413] text-[#f4efe3] shadow-[0_14px_38px_rgba(0,0,0,0.28)] transition hover:-translate-y-1 hover:bg-beggin-red hover:text-white">
-        <MessageCircle size={24} strokeWidth={1.8} />
-      </a>
     </>
   );
 }
