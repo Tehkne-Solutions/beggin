@@ -30,7 +30,7 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { scrollY } = useScroll();
   const height = useTransform(scrollY, [0, 80], [76, 56]);
-  const background = useTransform(scrollY, [0, 80], ['rgba(252, 247, 241, 0.78)', 'rgba(252, 247, 241, 0.96)']);
+  const background = useTransform(scrollY, [0, 80], ['rgba(255, 255, 255, 0.86)', 'rgba(255, 255, 255, 0.98)']);
   const logoHeight = useTransform(scrollY, [0, 80], [62, 42]);
 
   useEffect(() => {
@@ -113,7 +113,7 @@ export function Header() {
               transition={{ duration: 0.24, ease: 'easeOut' }}
               onClick={(event) => event.stopPropagation()}
               aria-label="Navegação mobile"
-              className="max-h-[calc(100svh-76px)] overflow-y-auto border-t border-beggin-line/70 bg-[#FCF7F1] px-6 py-8 shadow-[0_24px_70px_rgba(0,0,0,0.2)]"
+              className="max-h-[calc(100svh-76px)] overflow-y-auto border-t border-beggin-line/70 bg-white px-6 py-8 shadow-[0_24px_70px_rgba(0,0,0,0.2)]"
             >
               <div className="mx-auto flex max-w-[620px] flex-col divide-y divide-[#c8b98e]/45">
                 {navItems.map((item) => (
