@@ -106,7 +106,7 @@ export function ProductsPageHero() {
             initial={shouldReduceMotion ? false : { opacity: 0, y: 18, letterSpacing: '0.18em' }}
             animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0, letterSpacing: '0.32em' }}
             transition={{ duration: 0.8, delay: 0.2, ease: easeOut }}
-            className="mb-5 font-serifDisplay text-[10px] font-bold uppercase tracking-[0.32em] text-beggin-ink md:text-[11px]"
+            className="mb-5 font-sansUi text-[10px] font-bold uppercase tracking-[0.32em] text-beggin-ink md:text-[11px]"
           >
             BEG Destilaria
           </motion.p>
@@ -120,7 +120,7 @@ export function ProductsPageHero() {
             initial={shouldReduceMotion ? false : { opacity: 0, y: 42, clipPath: 'inset(0 0 100% 0)' }}
             animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0, clipPath: 'inset(0 0 0% 0)' }}
             transition={{ duration: 1.05, delay: 0.48, ease: easeOut }}
-            className="font-serifDisplay text-[clamp(2.25rem,3.85vw,4.45rem)] font-semibold uppercase leading-[0.96] tracking-[-0.045em] text-beggin-ink md:text-[clamp(2.55rem,4vw,4.75rem)]"
+            className="font-serifDisplay text-[clamp(2.25rem,3.85vw,4.45rem)] font-normal uppercase leading-[1.04] tracking-[-0.028em] text-beggin-ink md:text-[clamp(2.55rem,4vw,4.75rem)]"
           >
             A sua melhor
             <br />
@@ -144,7 +144,7 @@ export function ProductsPageHero() {
             initial={shouldReduceMotion ? false : { opacity: 0, y: 18 }}
             animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.82, delay: 0.92, ease: easeOut }}
-            className="mt-5 max-w-[430px] font-serifDisplay text-[1.12rem] font-semibold leading-[1.22] text-beggin-ink/86 md:text-[1.3rem] max-md:mx-auto"
+            className="mt-5 max-w-[430px] font-sansUi text-[1.05rem] font-bold leading-[1.35] tracking-[0.02em] text-beggin-ink/86 md:text-[1.15rem] max-md:mx-auto"
           >
             Descubra a sua favorita.
           </motion.p>
