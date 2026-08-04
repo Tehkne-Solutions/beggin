@@ -10,7 +10,8 @@
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
     "audit:release": "node scripts/audit-release.mjs",
-    "qa": "npm run typecheck && npm run build",
+    "audit:responsive": "node scripts/audit-responsive.mjs",
+    "qa": "npm run typecheck && npm run audit:responsive && npm run build",
     "images:optimize": "node scripts/optimize-images.mjs"
   },
   "dependencies": {
