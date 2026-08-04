@@ -54,7 +54,7 @@ export function StorySection() {
     <section
       ref={ref}
       id="historia"
-      className="paper-texture relative overflow-hidden bg-[#dfdec9] px-0 py-20 lg:py-24"
+      className="relative overflow-hidden bg-white px-0 py-20 lg:py-24"
     >
       <motion.div
         className="relative mx-auto min-h-[560px] w-[calc(100%-40px)] max-w-[1560px] overflow-hidden border border-[#b9a875]/38 bg-[#131413] px-8 py-12 text-[#f4efe3] shadow-[0_22px_60px_rgba(47,42,28,0.12)] sm:w-[calc(100%-56px)] lg:min-h-[520px] lg:w-[calc(100%-72px)] lg:px-14 xl:px-20"
