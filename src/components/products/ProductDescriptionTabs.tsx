@@ -3,19 +3,18 @@
 import { useState } from 'react';
 import type { Product } from '@/data/products';
 
-const tabs = [
-  { id: 'description', label: 'Descrição' },
-  { id: 'additional', label: 'Informação adicional' },
-] as const;
+const descriptionTab = { id: 'description', label: 'Descrição' } as const;
+const additionalTab = { id: 'additional', label: 'Informação adicional' } as const;
 
-type ActiveTab = (typeof tabs)[number]['id'];
+type ActiveTab = 'description' | 'additional';
 
 export function ProductDescriptionTabs({ product }: { product: Product }) {
-  const [activeTab, setActiveTab] = useState<ActiveTab>('description');
   const additionalInfo = product.additionalInfo ?? [];
+  const tabs = additionalInfo.length > 0 ? [descriptionTab, additionalTab] : [descriptionTab];
+  const [activeTab, setActiveTab] = useState<ActiveTab>('description');
 
   return (
-    <section className="paper-texture bg-[#FDF9F1] px-5 py-14 md:px-8 lg:py-16">
+    <section className="bg-white px-5 py-14 md:px-8 lg:py-16">
       <div className="mx-auto max-w-[1100px]">
         <div className="flex flex-wrap gap-8 border-b border-beggin-line/65" role="tablist" aria-label="Informações do produto">
           {tabs.map((tab) => {
@@ -53,22 +52,16 @@ export function ProductDescriptionTabs({ product }: { product: Product }) {
         ) : (
           <div className="py-10">
             <div className="grid gap-4 md:grid-cols-2">
-              {additionalInfo.length > 0 ? (
-                additionalInfo.map((item) => (
-                  <div key={item.label} className="border border-beggin-line/60 bg-[#FFFCF6] px-6 py-5">
-                    <p className="font-serifDisplay text-[12px] font-bold uppercase tracking-[0.16em] text-beggin-ink">
-                      {item.label}
-                    </p>
-                    <p className="mt-3 text-[0.98rem] leading-[1.55] text-beggin-ink/70">
-                      {item.value}
-                    </p>
-                  </div>
-                ))
-              ) : (
-                <p className="text-[1rem] leading-[1.7] text-beggin-ink/70">
-                  As informações adicionais deste produto estão sendo organizadas pela equipe Beggin.
-                </p>
-              )}
+              {additionalInfo.map((item) => (
+                <div key={item.label} className="border border-beggin-line/60 bg-white px-6 py-5">
+                  <p className="font-serifDisplay text-[12px] font-bold uppercase tracking-[0.16em] text-beggin-ink">
+                    {item.label}
+                  </p>
+                  <p className="mt-3 text-[0.98rem] leading-[1.55] text-beggin-ink/70">
+                    {item.value}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         )}

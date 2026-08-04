@@ -8,7 +8,7 @@ export function ProductSingleHero({ product }: { product: Product }) {
   const whatsappUrl = `https://wa.me/5519996638642?text=${encodeURIComponent(`Olá! Gostaria de saber mais sobre ${product.name}.`)}`;
 
   return (
-    <section className="paper-texture bg-[#FCF7F1] px-5 pb-14 pt-[112px] md:px-8 lg:pb-20 lg:pt-[132px]">
+    <section className="bg-white px-5 pb-14 pt-[112px] md:px-8 lg:pb-20 lg:pt-[132px]">
       <div className="mx-auto max-w-[1500px]">
         <div className="mb-8 font-serifDisplay text-[13px] uppercase tracking-[0.12em] text-beggin-ink/55">
           <Link href="/" className="hover:text-beggin-red">Home</Link>

@@ -15,7 +15,7 @@ export function ProductGallery({ product }: { product: Product }) {
 
   return (
     <div className="space-y-5">
-      <div className="relative min-h-[520px] overflow-hidden bg-[#FCF7F1]">
+      <div className="relative min-h-[520px] overflow-hidden bg-white">
         <div className="pointer-events-none absolute inset-4 border border-[#b9a875]/45" />
         {product.badge ? (
           <span className="absolute left-7 top-7 z-[2] rounded-full border border-beggin-gold/60 bg-[#f5e3bd] px-4 py-2 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.12em] text-beggin-red">
@@ -46,7 +46,7 @@ export function ProductGallery({ product }: { product: Product }) {
                 aria-pressed={isActive}
                 onClick={() => setSelectedIndex(index)}
                 className={[
-                  'relative h-28 border bg-[#FFFCF6] transition duration-300 focus:outline-none focus:ring-2 focus:ring-beggin-red/35',
+                  'relative h-28 border bg-white transition duration-300 focus:outline-none focus:ring-2 focus:ring-beggin-red/35',
                   isActive
                     ? 'border-beggin-red shadow-[0_12px_24px_rgba(55,44,25,0.08)]'
                     : 'border-beggin-line/65 hover:border-beggin-gold/70',

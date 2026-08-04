@@ -4,8 +4,8 @@ import { heroAssets } from '@/data/hero-assets';
 
 export function ProductEssenceSection({ product }: { product: Product }) {
   return (
-    <section className="paper-texture relative overflow-hidden bg-[#FCF7F1] px-5 py-16 md:px-8 lg:py-20">
-      <div className="relative mx-auto grid max-w-[1400px] items-center gap-10 border border-beggin-line/65 bg-[#FFFCF6] px-7 py-10 md:px-10 lg:grid-cols-[0.48fr_0.52fr] lg:px-14">
+    <section className="relative overflow-hidden bg-white px-5 py-16 md:px-8 lg:py-20">
+      <div className="relative mx-auto grid max-w-[1400px] items-center gap-10 border border-beggin-line/65 bg-white px-7 py-10 md:px-10 lg:grid-cols-[0.48fr_0.52fr] lg:px-14">
         <div className="pointer-events-none absolute inset-4 border border-beggin-line/45" />
         <div className="relative z-[2]">
           <p className="font-serifDisplay text-[12px] font-bold uppercase tracking-[0.2em] text-beggin-ink">

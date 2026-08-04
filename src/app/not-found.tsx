@@ -6,9 +6,9 @@ import { heroAssets } from '@/data/hero-assets';
 
 export default function NotFound() {
   return (
-    <main className="min-h-screen bg-[#FCF7F1] text-beggin-ink">
+    <main className="min-h-screen bg-white text-beggin-ink">
       <Header />
-      <section className="paper-texture relative overflow-hidden bg-[#FCF7F1] px-5 pb-20 pt-[130px] md:px-8 lg:pb-28 lg:pt-[170px]">
+      <section className="relative overflow-hidden bg-white px-5 pb-20 pt-[130px] md:px-8 lg:pb-28 lg:pt-[170px]">
         <div className="pointer-events-none absolute left-[-120px] top-[120px] h-[360px] w-[460px] opacity-20">
           <Image src={heroAssets.cloudsTop} alt="" fill sizes="460px" className="object-contain" />
         </div>
@@ -16,7 +16,7 @@ export default function NotFound() {
           <Image src={heroAssets.cloudsTop} alt="" fill sizes="420px" className="object-contain" />
         </div>
 
-        <div className="relative mx-auto max-w-[980px] border border-[#c7b889]/60 bg-[#FDF9F1]/86 px-6 py-14 text-center shadow-[0_24px_70px_rgba(54,43,25,0.08)] md:px-10 lg:py-20">
+        <div className="relative mx-auto max-w-[980px] border border-[#c7b889]/60 bg-white px-6 py-14 text-center shadow-[0_24px_70px_rgba(54,43,25,0.08)] md:px-10 lg:py-20">
           <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.34em] text-beggin-red">
             Página não encontrada
           </p>
