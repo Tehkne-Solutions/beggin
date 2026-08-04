@@ -32,7 +32,7 @@ export function AwardsSection() {
       <div className="relative mx-auto grid w-[calc(100%-44px)] max-w-[1540px] items-center gap-10 border-y border-[#c8b98e]/30 py-12 lg:w-[calc(100%-64px)] lg:grid-cols-[0.28fr_0.72fr] lg:py-14 xl:gap-12">
         <Reveal className="relative z-[3] space-y-6 max-lg:text-center">
           <p className="font-sansUi text-[12px] font-bold uppercase tracking-[0.24em] text-beggin-ink xl:text-[13px]">{awardsContent.eyebrow}<span className="ml-3 text-beggin-gold">✧</span></p>
-          <h2 className="mt-5 max-w-[430px] font-serifDisplay text-[clamp(2.45rem,3.45vw,4.55rem)] font-normal uppercase leading-[1] tracking-[-0.025em] text-beggin-ink max-lg:mx-auto"><AwardsTitle title={awardsContent.title} /></h2>
+          <h2 className="mt-5 max-w-[430px] font-serifDisplay text-[clamp(2.45rem,3.45vw,4.55rem)] font-normal uppercase leading-[1.04] tracking-[-0.025em] text-beggin-ink max-lg:mx-auto"><AwardsTitle title={awardsContent.title} /></h2>
           <div className="relative mt-6 h-[22px] w-[48px] max-lg:mx-auto"><Image src={awardAssets.waves} alt="" fill className="object-contain" sizes="48px" /></div>
           <a href="/premios" className="group relative z-[6] mt-6 inline-flex w-fit items-center gap-4 font-sansUi text-[12px] font-bold uppercase tracking-[0.18em] text-beggin-ink xl:text-[13px]"><span className="border-b border-beggin-gold/80 pb-2 pr-8 transition-colors duration-300 group-hover:border-beggin-red">{awardsContent.cta}</span><span className="text-[11px] text-beggin-gold transition-transform duration-300 group-hover:translate-x-1 xl:text-[12px]">✧</span></a>
         </Reveal>
