@@ -8,11 +8,11 @@ import { Reveal } from '@/components/motion/Reveal';
 
 const featuredMedals = [
   { src: '/images/official/medals/1.webp', alt: 'Selo World Gin Awards Brazil Classic Winner' },
-  { src: '/images/premios/selo-premio-2.png', alt: 'Selo World Gin Awards Gold' },
-  { src: '/images/premios/selo-premio-3.png', alt: 'Selo World Gin Awards Brazil Colour Changing Winner' },
-  { src: '/images/premios/1-main_std-iwsc2024-gold-98-medal-lores-png.png', alt: 'Medalha IWSC Gold 98 pontos 2024' },
-  { src: '/images/premios/Medalha%20BEG%20Brazilian%20IWSC%202024.png', alt: 'Medalha BEG Brazilian IWSC 2024' },
-  { src: '/images/premios/Medalha%20BEG%20Brazilian%20Tonic%20IWSC%202024.png', alt: 'Medalha BEG Brazilian Tonic IWSC 2024' },
+  { src: '/images/official/medals/2.webp', alt: 'Selo World Gin Awards Gold' },
+  { src: '/images/official/medals/3.webp', alt: 'Selo World Gin Awards Brazil Colour Changing Winner' },
+  { src: '/images/official/medals/4.webp', alt: 'Medalha IWSC Gold 98 pontos 2024' },
+  { src: '/images/official/medals/5.webp', alt: 'Medalha IWSC Silver 93 pontos 2024' },
+  { src: '/images/official/medals/6.webp', alt: 'Medalha IWSC Bronze Gin & Tonic 2024' },
 ] as const;
 
 function AwardsTitle({ title }: { title: string }) {
