@@ -7,7 +7,7 @@ export function RelatedProducts({ products }: { products: Product[] }) {
   }
 
   return (
-    <section className="paper-texture bg-[#FCF7F1] px-5 py-16 md:px-8 lg:py-20">
+    <section className="bg-white px-5 py-16 md:px-8 lg:py-20">
       <div className="mx-auto max-w-[1500px]">
         <div className="mb-9 flex items-end justify-between gap-6">
           <div>
