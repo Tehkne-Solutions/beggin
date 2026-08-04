@@ -30,7 +30,7 @@ export function ProductCard({ product, index = 0 }: { product: Product; index?: 
               rotateY: index % 2 === 0 ? -0.6 : 0.6,
             }
       }
-      className="group relative flex min-h-[610px] transform-gpu flex-col overflow-hidden border border-[#b9a875]/55 bg-[#FFFCF6] px-7 py-7 shadow-[0_14px_34px_rgba(55,44,25,0.035)] transition-colors duration-300 hover:border-[#a99255]/75 hover:bg-white hover:shadow-[0_24px_52px_rgba(55,44,25,0.12)] [transform-style:preserve-3d]"
+      className="group relative flex min-h-[610px] transform-gpu flex-col overflow-hidden border border-[#b9a875]/55 bg-white px-7 py-7 shadow-[0_14px_34px_rgba(55,44,25,0.035)] transition-colors duration-300 hover:border-[#a99255]/75 hover:shadow-[0_24px_52px_rgba(55,44,25,0.12)] [transform-style:preserve-3d]"
     >
       <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(185,154,93,0.13),transparent_36%)]" />
