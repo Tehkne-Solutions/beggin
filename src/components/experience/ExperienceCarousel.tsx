@@ -23,19 +23,19 @@ export function ExperienceCarousel({ images }: { images: readonly ExperienceImag
   const activeImage = images[activeIndex];
 
   return (
-    <div className="relative overflow-hidden border border-[#c8b98e]/60 bg-[#FFFCF6] p-4 shadow-[0_28px_78px_rgba(54,43,25,0.1)]">
-      <div className="relative min-h-[420px] overflow-hidden bg-[#e7dfc9] md:min-h-[560px]">
+    <div className="relative overflow-hidden border border-[#c8b98e]/60 bg-white p-3 shadow-[0_28px_78px_rgba(54,43,25,0.1)] sm:p-4">
+      <div className="relative aspect-[4/3] min-h-[300px] overflow-hidden bg-white sm:min-h-[380px] md:min-h-[460px] lg:min-h-[520px]">
         <Image
           key={activeImage.src}
           src={activeImage.src}
           alt={activeImage.alt}
           fill
           priority={activeIndex === 0}
-          sizes="(max-width: 1024px) 92vw, 720px"
-          className="object-cover"
+          sizes="(max-width: 640px) 94vw, (max-width: 1024px) 90vw, 720px"
+          className="object-cover object-center"
         />
-        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#131413]/65 to-transparent" />
-        <p className="absolute bottom-5 left-6 right-24 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.16em] text-white">
+        <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#131413]/65 to-transparent sm:h-32" />
+        <p className="absolute bottom-5 left-5 right-24 font-serifDisplay text-[11px] font-bold uppercase tracking-[0.14em] text-white sm:left-6 sm:text-[12px] sm:tracking-[0.16em]">
           {activeImage.alt}
         </p>
 
