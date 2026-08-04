@@ -5,8 +5,8 @@
 :root {
   --wind-speed: 95s;
   --header-height: 76px;
-  --color-ice-white: #FCF7F1;
-  --color-ice-white-soft: #FDF9F1;
+  --color-ice-white: #FFFFFF;
+  --color-ice-white-soft: #FFFFFF;
   --color-pantone-433: #131413;
   color-scheme: light;
 }
@@ -17,29 +17,25 @@
 
 html {
   scroll-behavior: smooth;
-  background: var(--color-ice-white);
+  background: #FFFFFF;
 }
 
 body {
   margin: 0;
   min-height: 100vh;
   overflow-x: hidden;
-  background:
-    radial-gradient(circle at 15% 8%, rgba(255, 255, 255, 0.72), transparent 26%),
-    linear-gradient(180deg, var(--color-ice-white) 0%, var(--color-ice-white-soft) 100%);
+  background: #FFFFFF;
   color: #111315;
-  font-family: var(--font-inter), Arial, sans-serif;
+  font-family: var(--font-geared), Arial, sans-serif;
 }
 
 /*
- * BEG typography contract (Sprint 24 / client video review)
- * ---------------------------------------------------------
+ * BEG typography contract (client video review)
+ * ---------------------------------------------
  * INTRO Regular = primary editorial/display headings.
- * Geared Slab   = support/accent typography only.
- * Inter         = body copy and neutral UI fallback.
- *
- * Keeping the default body out of Geared Slab prevents the support face from
- * leaking into headings/components that do not explicitly choose a family.
+ * Geared Slab   = body, UI and support/accent typography.
+ * Cormorant     = serif fallback for editorial headings only.
+ * Inter         = not part of the BEG visual system.
  */
 h1,
 h2,
@@ -49,7 +45,18 @@ h3,
 }
 
 .font-sansUi {
-  font-family: var(--font-geared), var(--font-inter), Arial, sans-serif;
+  font-family: var(--font-geared), Arial, sans-serif;
+}
+
+/*
+ * Client rule: the light site background is pure #fff.
+ * Historical off-white arbitrary utilities are normalized here so existing
+ * sections do not keep cream/ivory backgrounds while they are migrated.
+ */
+[class*="bg-[#FCF7F1]"],
+[class*="bg-[#FDF9F1]"],
+[class*="bg-[#FEFAF3]"] {
+  background-color: #FFFFFF !important;
 }
 
 body::before {
@@ -58,9 +65,7 @@ body::before {
   inset: 0;
   z-index: 9999;
   pointer-events: none;
-  background:
-    radial-gradient(circle at 50% 32%, rgba(255, 255, 255, 0.95), transparent 34%),
-    linear-gradient(180deg, var(--color-ice-white) 0%, #f4ebdc 100%);
+  background: #FFFFFF;
   opacity: 0;
   transform: translateY(-100%);
 }
@@ -79,11 +84,7 @@ a {
 }
 
 .paper-texture {
-  background-image:
-    radial-gradient(circle at 20% 20%, rgba(185, 154, 93, 0.08) 0 1px, transparent 1px),
-    radial-gradient(circle at 80% 30%, rgba(17, 19, 21, 0.035) 0 1px, transparent 1px),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.42), rgba(185, 154, 93, 0.08));
-  background-size: 24px 24px, 32px 32px, 100% 100%;
+  background-image: none;
 }
 
 .motion-safe-transform {
