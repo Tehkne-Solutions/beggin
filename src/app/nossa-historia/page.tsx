@@ -103,7 +103,7 @@ export default function NossaHistoriaPage() {
             <p className="mt-7 text-[1.02rem] leading-[1.85] text-beggin-ink/74">
               A BEG Destilaria está localizada no charmoso e bucólico distrito de Joaquim Egídio, em Campinas-SP. Uma antiga sede tombada de uma fazenda de café, construída em meados do século XIX, foi cuidadosamente revitalizada pela BEG com o intuito de proporcionar uma experiência inesquecível para nossos clientes.
             </p>
-            <Link href="https://agendamento.beggin.com.br" target="_blank" rel="noreferrer" className="mt-8 inline-flex bg-beggin-red px-7 py-4 font-sansUi text-[12px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-beggin-ink">
+            <Link href="/beg-experience" className="mt-8 inline-flex bg-beggin-red px-7 py-4 font-sansUi text-[12px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-beggin-ink">
               Conheça a Beg Experience
             </Link>
           </div>
