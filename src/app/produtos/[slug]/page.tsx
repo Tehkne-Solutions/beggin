@@ -44,7 +44,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
   const relatedProducts = getRelatedProducts(product.slug, 4);
 
   return (
-    <main className="min-h-screen bg-[#FCF7F1] text-beggin-ink">
+    <main className="min-h-screen bg-white text-beggin-ink">
       <Header />
       <ProductSingleHero product={product} />
       <ProductEssenceSection product={product} />

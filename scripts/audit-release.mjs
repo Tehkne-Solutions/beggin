@@ -53,16 +53,23 @@ const forbiddenPublicPhrases = [
   'compra futura',
 ];
 
-for (const sourceFile of [
+const publicSourceFiles = [
   ...walk('src/app'),
   ...walk('src/components'),
   ...walk('src/data'),
-]) {
-  const source = read(sourceFile).toLocaleLowerCase('pt-BR');
+];
+
+for (const sourceFile of publicSourceFiles) {
+  const rawSource = read(sourceFile);
+  const source = rawSource.toLocaleLowerCase('pt-BR');
   for (const phrase of forbiddenPublicPhrases) {
     if (source.includes(phrase)) {
       failures.push(`Conteúdo provisório encontrado em ${sourceFile}: “${phrase}”`);
     }
+  }
+
+  if (/\bobject-fill\b/.test(rawSource)) {
+    failures.push(`Imagem potencialmente distorcida em ${sourceFile}: object-fill é proibido; use object-cover ou object-contain.`);
   }
 }
 
@@ -120,6 +127,8 @@ const layoutSource = read('src/app/layout.tsx');
 const globalsSource = read('src/app/globals.css');
 const tailwindSource = read('tailwind.config.ts');
 const headerSource = read('src/components/layout/Header.tsx');
+const productDetailSource = read('src/app/produtos/[slug]/page.tsx');
+const experienceCarouselSource = read('src/components/experience/ExperienceCarousel.tsx');
 
 if (/\bInter\b|--font-inter/.test(layoutSource) || /--font-inter/.test(globalsSource) || /--font-inter/.test(tailwindSource)) {
   failures.push('Inter não faz parte da identidade tipográfica BEG e não pode estar carregada ou referenciada.');
@@ -135,6 +144,18 @@ if (!globalsSource.includes('.paper-texture {\n  background-image: none;')) {
 
 if (/rgba\(252,\s*247,\s*241/.test(headerSource)) {
   failures.push('Header voltou a usar o off-white histórico em vez de branco puro.');
+}
+
+if (/bg-\[#(?:FCF7F1|FDF9F1|FEFAF3|FFFCF6)\]/i.test(productDetailSource)) {
+  failures.push('Shell da página individual de produto voltou a usar off-white; deve permanecer em #fff.');
+}
+
+if (/bg-\[#(?:FCF7F1|FDF9F1|FEFAF3|FFFCF6|e7dfc9)\]/i.test(experienceCarouselSource)) {
+  failures.push('Carrossel da BEG Experience voltou a usar fundo claro diferente de #fff.');
+}
+
+if (!experienceCarouselSource.includes('aspect-[4/3]') || !experienceCarouselSource.includes('object-cover object-center')) {
+  failures.push('Carrossel da BEG Experience perdeu o contrato de proporção/crop responsivo das imagens.');
 }
 
 const sustainabilitySource = read('src/app/sustentabilidade/page.tsx');
