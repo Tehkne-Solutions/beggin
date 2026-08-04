@@ -46,12 +46,10 @@ export function Footer() {
           </div>
 
           <div className="space-y-4">
-            <p className="font-serifDisplay text-[15px] uppercase tracking-[0.08em] text-[#f4efe3]">Menu</p>
-            <div className="space-y-3 font-serifDisplay text-[14px] uppercase tracking-[0.06em] text-[#f4efe3]/85">
+            <p className="font-sansUi text-[15px] font-bold uppercase tracking-[0.08em] text-[#f4efe3]">Menu</p>
+            <div className="space-y-3 font-sansUi text-[14px] font-bold uppercase tracking-[0.06em] text-[#f4efe3]/85">
               {menu1.map((item) => (
-                <Link key={item.label} href={item.href} className="block transition-colors duration-300 hover:text-[#c8a759]">
-                  {item.label}
-                </Link>
+                <Link key={item.label} href={item.href} className="block transition-colors duration-300 hover:text-[#c8a759]">{item.label}</Link>
               ))}
             </div>
           </div>
@@ -59,12 +57,10 @@ export function Footer() {
           <div className="hidden bg-[#9a7a3a]/45 lg:block" />
 
           <div className="space-y-4">
-            <p className="font-serifDisplay text-[15px] uppercase tracking-[0.08em] text-[#f4efe3]">Navegação</p>
-            <div className="space-y-3 font-serifDisplay text-[14px] uppercase tracking-[0.06em] text-[#f4efe3]/85">
+            <p className="font-sansUi text-[15px] font-bold uppercase tracking-[0.08em] text-[#f4efe3]">Navegação</p>
+            <div className="space-y-3 font-sansUi text-[14px] font-bold uppercase tracking-[0.06em] text-[#f4efe3]/85">
               {menu2.map((item) => (
-                <Link key={item.label} href={item.href} className="block transition-colors duration-300 hover:text-[#c8a759]">
-                  {item.label}
-                </Link>
+                <Link key={item.label} href={item.href} className="block transition-colors duration-300 hover:text-[#c8a759]">{item.label}</Link>
               ))}
             </div>
           </div>
@@ -72,24 +68,14 @@ export function Footer() {
           <div className="hidden bg-[#9a7a3a]/45 lg:block" />
 
           <div className="space-y-5">
-            <p className="font-serifDisplay text-[15px] uppercase tracking-[0.08em] text-[#f4efe3]">Contato BEG</p>
-            <div className="space-y-3 font-serifDisplay text-[14px] uppercase tracking-[0.06em] text-[#f4efe3]/85">
-              <Link href={whatsappContactUrl} target="_blank" rel="noreferrer" className="block transition-colors duration-300 hover:text-[#c8a759]">
-                WhatsApp: (19) 99663-8642
-              </Link>
+            <p className="font-sansUi text-[15px] font-bold uppercase tracking-[0.08em] text-[#f4efe3]">Contato BEG</p>
+            <div className="space-y-3 font-sansUi text-[14px] font-bold uppercase tracking-[0.06em] text-[#f4efe3]/85">
+              <Link href={whatsappContactUrl} target="_blank" rel="noreferrer" className="block transition-colors duration-300 hover:text-[#c8a759]">WhatsApp: (19) 99663-8642</Link>
               <span className="block">Joaquim Egídio — Campinas, SP</span>
             </div>
             <div className="flex flex-wrap gap-3 pt-2">
               {socials.map(({ label, href, Icon }) => (
-                <Link
-                  key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label={`Abrir ${label} da BEG Destilaria`}
-                  title={label}
-                  className="group inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#b99f60]/55 bg-[#1d1f1a]/80 text-[#b99f60] transition duration-300 hover:-translate-y-0.5 hover:border-[#c8a759] hover:bg-[#272920] hover:text-[#f4efe3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c8a759]/70"
-                >
+                <Link key={label} href={href} target="_blank" rel="noreferrer" aria-label={`Abrir ${label} da BEG Destilaria`} title={label} className="group inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#b99f60]/55 bg-[#1d1f1a]/80 text-[#b99f60] transition duration-300 hover:-translate-y-0.5 hover:border-[#c8a759] hover:bg-[#272920] hover:text-[#f4efe3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c8a759]/70">
                   <Icon size={20} strokeWidth={1.8} aria-hidden="true" className="transition-transform duration-300 group-hover:scale-110" />
                 </Link>
               ))}
@@ -98,7 +84,7 @@ export function Footer() {
         </div>
 
         <div className="mt-14 border-t border-[#9a7a3a]/35 pt-6">
-          <div className="flex flex-col gap-4 text-[13px] uppercase tracking-[0.18em] text-[#d6c7a2] sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-4 font-sansUi text-[13px] font-bold uppercase tracking-[0.18em] text-[#d6c7a2] sm:flex-row sm:items-center sm:justify-between">
             <p>© 2026 BEG DESTILARIA. TODOS OS DIREITOS RESERVADOS.</p>
             <div className="flex flex-wrap items-center justify-center gap-3 text-[#f4efe3]/80">
               <Link href={legalLinks[0].href} className="transition-colors duration-300 hover:text-[#c8a759]">{legalLinks[0].label}</Link>
