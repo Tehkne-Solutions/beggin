@@ -29,7 +29,7 @@ export function CocktailsSection() {
     <section
       ref={ref}
       id="coqueteis"
-      className="paper-texture relative overflow-hidden bg-[#fdf9f1] px-5 py-20 md:px-8 lg:py-24 xl:py-28"
+      className="relative overflow-hidden bg-white px-5 py-20 md:px-8 lg:py-24 xl:py-28"
     >
       <motion.div
         className="relative z-[2] mx-auto max-w-[1500px]"
@@ -67,9 +67,9 @@ export function CocktailsSection() {
               <Link
                 key={cocktail.id}
                 href={cocktailsContent.href}
-                className="group grid overflow-hidden border border-[#c8b98e]/60 bg-[#FFFCF6] shadow-[0_20px_54px_rgba(54,43,25,0.055)] transition duration-300 hover:border-beggin-red/60 hover:shadow-[0_28px_70px_rgba(54,43,25,0.09)] lg:grid-cols-2"
+                className="group grid overflow-hidden border border-[#c8b98e]/60 bg-white shadow-[0_20px_54px_rgba(54,43,25,0.055)] transition duration-300 hover:border-beggin-red/60 hover:shadow-[0_28px_70px_rgba(54,43,25,0.09)] lg:grid-cols-2"
               >
-                <div className={`${reversed ? 'lg:order-2' : ''} relative min-h-[300px] overflow-hidden bg-[#e7dfc9] md:min-h-[390px] lg:min-h-[430px]`}>
+                <div className={`${reversed ? 'lg:order-2' : ''} relative min-h-[300px] overflow-hidden bg-white md:min-h-[390px] lg:min-h-[430px]`}>
                   <Image
                     src={cocktail.image}
                     alt={cocktail.title}
