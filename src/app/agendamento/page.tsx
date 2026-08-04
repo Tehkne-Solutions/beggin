@@ -18,36 +18,15 @@ const tripadvisorUrl =
   'https://www.tripadvisor.com.br/Attraction_Review-g303605-d25045490-Reviews-BEG_Destilaria_Boutique-Campinas_State_of_Sao_Paulo.html';
 
 const experienceImages = [
-  {
-    src: '/images/BEGGIN_DESTILARIA-0313.jpg',
-    alt: 'Experiência na BEG Destilaria',
-  },
-  {
-    src: '/images/BEGGIN_DESTILARIA-1161.jpg',
-    alt: 'Destilaria BEG em Joaquim Egídio',
-  },
-  {
-    src: '/images/20210107_Gin Beg4179.jpg',
-    alt: 'Botânicos e produção artesanal BEG',
-  },
+  { src: '/images/BEGGIN_DESTILARIA-0313.jpg', alt: 'Experiência na BEG Destilaria' },
+  { src: '/images/BEGGIN_DESTILARIA-1161.jpg', alt: 'Destilaria BEG em Joaquim Egídio' },
+  { src: '/images/20210107_Gin Beg4179.jpg', alt: 'Botânicos e produção artesanal BEG' },
 ] as const;
 
 const pillars = [
-  {
-    icon: GlassWater,
-    title: 'Faça seu próprio gin',
-    text: 'Uma experiência guiada para conhecer botânicos, aromas e a identidade artesanal da BEG.',
-  },
-  {
-    icon: CalendarDays,
-    title: 'Visitas e degustações',
-    text: 'Consulte datas, formatos e disponibilidade diretamente com a equipe da destilaria.',
-  },
-  {
-    icon: MapPin,
-    title: 'Joaquim Egídio',
-    text: 'Um cenário histórico e bucólico de Campinas, conectado à origem e à produção da marca.',
-  },
+  { icon: GlassWater, title: 'Faça seu próprio gin', text: 'Uma experiência guiada para conhecer botânicos, aromas e a identidade artesanal da BEG.' },
+  { icon: CalendarDays, title: 'Visitas e degustações', text: 'Consulte datas, formatos e disponibilidade diretamente com a equipe da destilaria.' },
+  { icon: MapPin, title: 'Joaquim Egídio', text: 'Um cenário histórico e bucólico de Campinas, conectado à origem e à produção da marca.' },
 ] as const;
 
 const visitSteps = [
@@ -71,47 +50,34 @@ export default function BegExperiencePage() {
       <section className="relative overflow-hidden bg-white px-5 pb-16 pt-[128px] md:px-8 lg:pb-20 lg:pt-[154px]">
         <div className="relative mx-auto grid max-w-[1500px] gap-12 lg:grid-cols-[0.44fr_0.56fr] lg:items-center">
           <div className="relative z-[2]">
-            <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.34em] text-beggin-ink/75">
-              BEG Experience
-            </p>
+            <p className="font-sansUi text-[11px] font-bold uppercase tracking-[0.34em] text-beggin-ink/75">BEG Experience</p>
             <div className="mt-5 h-px w-20 bg-beggin-gold/70" />
-            <h1 className="mt-8 max-w-[760px] font-serifDisplay text-[clamp(3.45rem,6.4vw,7.4rem)] font-semibold uppercase leading-[0.84] tracking-[-0.055em]">
+            <h1 className="mt-8 max-w-[760px] font-serifDisplay text-[clamp(3.45rem,6.4vw,7.4rem)] font-normal uppercase leading-[1.02] tracking-[-0.025em]">
               Viva a BEG Destilaria por dentro.
             </h1>
             <p className="mt-8 max-w-[650px] text-[1.05rem] leading-[1.86] text-beggin-ink/72">
               Conheça a destilaria em Joaquim Egídio, descubra os botânicos, participe de experiências guiadas e transforme encontros em momentos memoráveis.
             </p>
-            <Link
-              href={eventWhatsappUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-9 inline-flex items-center gap-3 bg-beggin-red px-7 py-4 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-beggin-ink"
-            >
+            <Link href={eventWhatsappUrl} target="_blank" rel="noreferrer" className="mt-9 inline-flex items-center gap-3 bg-beggin-red px-7 py-4 font-sansUi text-[12px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-beggin-ink">
               <MessageCircle size={18} strokeWidth={1.8} />
               Faça seu evento na BEG
             </Link>
           </div>
-
-          <div className="relative z-[2]">
-            <ExperienceCarousel images={experienceImages} />
-          </div>
+          <div className="relative z-[2]"><ExperienceCarousel images={experienceImages} /></div>
         </div>
       </section>
 
       <section className="relative bg-[#131413] px-5 py-16 text-white md:px-8 lg:py-20">
         <div className="mx-auto max-w-[1320px]">
           <div className="max-w-[850px]">
-            <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.32em] text-[#d7b866]">Como funciona</p>
-            <h2 className="mt-5 font-serifDisplay text-[clamp(2.8rem,4.9vw,5.7rem)] font-semibold uppercase leading-[0.86] tracking-[-0.045em]">
-              Da escolha da experiência ao primeiro brinde.
-            </h2>
+            <p className="font-sansUi text-[11px] font-bold uppercase tracking-[0.32em] text-[#d7b866]">Como funciona</p>
+            <h2 className="mt-5 font-serifDisplay text-[clamp(2.8rem,4.9vw,5.7rem)] font-normal uppercase leading-[1.03] tracking-[-0.02em]">Da escolha da experiência ao primeiro brinde.</h2>
           </div>
-
           <div className="mt-12 grid gap-5 md:grid-cols-3">
             {visitSteps.map(([number, title, text]) => (
               <article key={number} className="border border-[#d7b866]/30 bg-[#1a1b18] p-7 md:p-8">
-                <span className="font-serifDisplay text-[3.1rem] font-semibold leading-none text-beggin-red">{number}</span>
-                <h3 className="mt-6 font-serifDisplay text-[1.5rem] font-bold uppercase leading-[1] tracking-[0.04em]">{title}</h3>
+                <span className="font-serifDisplay text-[3.1rem] font-normal leading-none text-beggin-red">{number}</span>
+                <h3 className="mt-6 font-sansUi text-[1.5rem] font-bold uppercase leading-[1.08] tracking-[0.04em]">{title}</h3>
                 <p className="mt-4 text-[0.98rem] leading-[1.75] text-white/70">{text}</p>
               </article>
             ))}
@@ -127,9 +93,7 @@ export default function BegExperiencePage() {
               return (
                 <article key={pillar.title} className="border border-[#c7b889]/60 bg-white p-7 shadow-[0_18px_52px_rgba(54,43,25,0.05)]">
                   <Icon className="text-beggin-red" size={30} strokeWidth={1.65} />
-                  <h2 className="mt-6 font-serifDisplay text-[1.55rem] font-bold uppercase leading-[1] tracking-[0.04em]">
-                    {pillar.title}
-                  </h2>
+                  <h2 className="mt-6 font-sansUi text-[1.55rem] font-bold uppercase leading-[1.08] tracking-[0.04em]">{pillar.title}</h2>
                   <p className="mt-4 text-[1rem] leading-[1.76] text-beggin-ink/70">{pillar.text}</p>
                 </article>
               );
@@ -142,46 +106,28 @@ export default function BegExperiencePage() {
         <div className="mx-auto max-w-[1320px]">
           <div className="grid gap-10 border-y border-[#b5a879]/65 py-12 lg:grid-cols-[0.36fr_0.64fr] lg:items-center">
             <div>
-              <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.32em] text-beggin-red">Avaliações</p>
-              <h2 className="mt-5 font-serifDisplay text-[clamp(2.8rem,5vw,5.8rem)] font-semibold uppercase leading-[0.84] tracking-[-0.05em]">
-                Quem visita, lembra.
-              </h2>
-              <p className="mt-6 max-w-[520px] text-[1rem] leading-[1.8] text-beggin-ink/72">
-                Confira uma avaliação publicada por visitante e acesse a página oficial da BEG Destilaria no Tripadvisor.
-              </p>
-              <Link
-                href={tripadvisorUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-8 inline-flex items-center gap-3 border border-beggin-ink/45 px-6 py-4 font-serifDisplay text-[11px] font-bold uppercase tracking-[0.17em] transition hover:border-beggin-red hover:text-beggin-red"
-              >
+              <p className="font-sansUi text-[11px] font-bold uppercase tracking-[0.32em] text-beggin-red">Avaliações</p>
+              <h2 className="mt-5 font-serifDisplay text-[clamp(2.8rem,5vw,5.8rem)] font-normal uppercase leading-[1.03] tracking-[-0.02em]">Quem visita, lembra.</h2>
+              <p className="mt-6 max-w-[520px] text-[1rem] leading-[1.8] text-beggin-ink/72">Confira uma avaliação publicada por visitante e acesse a página oficial da BEG Destilaria no Tripadvisor.</p>
+              <Link href={tripadvisorUrl} target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-3 border border-beggin-ink/45 px-6 py-4 font-sansUi text-[11px] font-bold uppercase tracking-[0.17em] transition hover:border-beggin-red hover:text-beggin-red">
                 Ver avaliações no Tripadvisor
                 <ExternalLink size={16} strokeWidth={1.7} />
               </Link>
             </div>
 
-            <Link
-              href={tripadvisorUrl}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Abrir a avaliação da BEG Destilaria no Tripadvisor"
-              className="group block border border-[#b5a879]/75 bg-white p-7 shadow-[0_20px_60px_rgba(54,43,25,0.08)] transition hover:-translate-y-1 hover:border-beggin-red md:p-10"
-            >
+            <Link href={tripadvisorUrl} target="_blank" rel="noreferrer" aria-label="Abrir a avaliação da BEG Destilaria no Tripadvisor" className="group block border border-[#b5a879]/75 bg-white p-7 shadow-[0_20px_60px_rgba(54,43,25,0.08)] transition hover:-translate-y-1 hover:border-beggin-red md:p-10">
               <div className="flex flex-wrap items-center justify-between gap-5">
                 <div>
-                  <p className="font-serifDisplay text-[1.15rem] font-bold uppercase tracking-[0.08em]">{verifiedReview.author}</p>
+                  <p className="font-sansUi text-[1.15rem] font-bold uppercase tracking-[0.08em]">{verifiedReview.author}</p>
                   <p className="mt-1 text-[0.88rem] text-beggin-ink/60">{verifiedReview.context}</p>
                 </div>
                 <div className="flex items-center gap-1 text-[#00aa6c]" aria-label="Avaliação positiva no Tripadvisor">
                   {[0, 1, 2, 3, 4].map((item) => <Star key={item} size={19} fill="currentColor" strokeWidth={1.2} />)}
                 </div>
               </div>
-              <h3 className="mt-7 font-serifDisplay text-[1.65rem] font-bold uppercase leading-[1] tracking-[0.03em]">{verifiedReview.title}</h3>
+              <h3 className="mt-7 font-sansUi text-[1.65rem] font-bold uppercase leading-[1.08] tracking-[0.03em]">{verifiedReview.title}</h3>
               <p className="mt-5 text-[1rem] leading-[1.82] text-beggin-ink/74">“{verifiedReview.text}”</p>
-              <div className="mt-7 inline-flex items-center gap-2 font-serifDisplay text-[10px] font-bold uppercase tracking-[0.2em] text-beggin-red">
-                Tripadvisor
-                <ExternalLink size={14} className="transition-transform group-hover:translate-x-1" />
-              </div>
+              <div className="mt-7 inline-flex items-center gap-2 font-sansUi text-[10px] font-bold uppercase tracking-[0.2em] text-beggin-red">Tripadvisor <ExternalLink size={14} className="transition-transform group-hover:translate-x-1" /></div>
             </Link>
           </div>
         </div>
@@ -190,18 +136,9 @@ export default function BegExperiencePage() {
       <section className="bg-white px-5 py-16 md:px-8 lg:py-22">
         <div className="mx-auto max-w-[1320px] border-y border-[#c7b889]/60 py-12 text-center">
           <Sparkles className="mx-auto text-beggin-red" size={34} strokeWidth={1.55} />
-          <h2 className="mx-auto mt-6 max-w-[900px] font-serifDisplay text-[clamp(2.6rem,4.7vw,5.5rem)] font-semibold uppercase leading-[0.88] tracking-[-0.045em]">
-            Sua próxima experiência começa aqui.
-          </h2>
-          <p className="mx-auto mt-6 max-w-[720px] text-[1.03rem] leading-[1.85] text-beggin-ink/72">
-            Fale com a equipe da BEG para consultar formatos, datas e condições para visitas, degustações e eventos.
-          </p>
-          <Link
-            href={eventWhatsappUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-9 inline-flex items-center gap-3 bg-beggin-red px-8 py-4 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-beggin-ink"
-          >
+          <h2 className="mx-auto mt-6 max-w-[900px] font-serifDisplay text-[clamp(2.6rem,4.7vw,5.5rem)] font-normal uppercase leading-[1.03] tracking-[-0.02em]">Sua próxima experiência começa aqui.</h2>
+          <p className="mx-auto mt-6 max-w-[720px] text-[1.03rem] leading-[1.85] text-beggin-ink/72">Fale com a equipe da BEG para consultar formatos, datas e condições para visitas, degustações e eventos.</p>
+          <Link href={eventWhatsappUrl} target="_blank" rel="noreferrer" className="mt-9 inline-flex items-center gap-3 bg-beggin-red px-8 py-4 font-sansUi text-[12px] font-bold uppercase tracking-[0.18em] text-white transition hover:bg-beggin-ink">
             <MessageCircle size={18} strokeWidth={1.8} />
             Consultar evento e disponibilidade
           </Link>
