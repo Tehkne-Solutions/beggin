@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { heroAssets } from '@/data/hero-assets';
 import { Reveal } from '@/components/motion/Reveal';
@@ -40,6 +41,16 @@ export function HeroTextBlock() {
           <br />
           é brasileiro!
         </p>
+
+        <Link
+          href="/blog"
+          className="group mt-7 inline-flex items-center gap-3 font-sansUi text-[11px] font-bold uppercase tracking-[0.18em] text-beggin-ink transition-colors hover:text-beggin-red md:text-[12px]"
+        >
+          <span className="border-b border-beggin-gold/80 pb-2 pr-6 transition-colors duration-300 group-hover:border-beggin-red">
+            Descubra e saiba mais
+          </span>
+          <span className="text-beggin-gold transition-transform duration-300 group-hover:translate-x-1">✦</span>
+        </Link>
       </Reveal>
     </div>
   );
