@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 import { CalendarDays, ExternalLink, GlassWater, MapPin, MessageCircle, Sparkles, Star } from 'lucide-react';
 import { Header } from '@/components/layout/Header';
@@ -106,7 +107,10 @@ export default function BegExperiencePage() {
         <div className="mx-auto max-w-[1320px]">
           <div className="grid gap-10 border-y border-[#b5a879]/65 py-12 lg:grid-cols-[0.36fr_0.64fr] lg:items-center">
             <div>
-              <p className="font-sansUi text-[11px] font-bold uppercase tracking-[0.32em] text-beggin-red">Avaliações</p>
+              <div className="relative h-16 w-16 overflow-hidden rounded-full">
+                <Image src="/images/tripadvisor/tripadvisor-logo-official.webp" alt="Tripadvisor" fill sizes="64px" className="object-contain" />
+              </div>
+              <p className="mt-5 font-sansUi text-[11px] font-bold uppercase tracking-[0.32em] text-beggin-red">Avaliações</p>
               <h2 className="mt-5 font-serifDisplay text-[clamp(2.8rem,5vw,5.8rem)] font-normal uppercase leading-[1.03] tracking-[-0.02em]">Quem visita, lembra.</h2>
               <p className="mt-6 max-w-[520px] text-[1rem] leading-[1.8] text-beggin-ink/72">Confira uma avaliação publicada por visitante e acesse a página oficial da BEG Destilaria no Tripadvisor.</p>
               <Link href={tripadvisorUrl} target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-3 border border-beggin-ink/45 px-6 py-4 font-sansUi text-[11px] font-bold uppercase tracking-[0.17em] transition hover:border-beggin-red hover:text-beggin-red">
