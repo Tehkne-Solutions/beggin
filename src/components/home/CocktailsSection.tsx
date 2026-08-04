@@ -31,7 +31,7 @@ export function CocktailsSection() {
         <div className="grid gap-10 border-b border-[#c8b98e]/45 pb-12 lg:grid-cols-[0.68fr_0.32fr] lg:items-end">
           <div className="max-w-[980px] max-lg:text-center">
             <div className="h-px w-12 bg-beggin-gold/60 max-lg:mx-auto" />
-            <h2 className="mt-8 font-serifDisplay text-[clamp(3rem,4.9vw,6.1rem)] font-normal uppercase leading-[0.98] tracking-[-0.035em] text-beggin-ink">
+            <h2 className="mt-8 font-serifDisplay text-[clamp(3rem,4.9vw,6.1rem)] font-normal uppercase leading-[1.04] tracking-[-0.035em] text-beggin-ink">
               Descubra o seu drink perfeito para cada ocasião.
             </h2>
             <div className="relative mt-7 h-[22px] w-[44px] max-lg:mx-auto" aria-hidden="true">
@@ -55,7 +55,7 @@ export function CocktailsSection() {
                   <Image src={cocktail.image} alt={cocktail.title} fill sizes="(max-width: 1024px) 92vw, 720px" className="object-cover transition duration-700 group-hover:scale-[1.045]" />
                 </div>
                 <div className={`${reversed ? 'lg:order-1' : ''} flex flex-col justify-center p-8 md:p-12 lg:p-14 xl:p-16`}>
-                  <h3 className="max-w-[620px] font-serifDisplay text-[clamp(2.3rem,4vw,4.8rem)] font-normal uppercase leading-[0.98] tracking-[-0.03em] text-beggin-ink">{cocktail.title}</h3>
+                  <h3 className="max-w-[620px] font-serifDisplay text-[clamp(2.3rem,4vw,4.8rem)] font-normal uppercase leading-[1.04] tracking-[-0.03em] text-beggin-ink">{cocktail.title}</h3>
                   <p className="mt-7 max-w-[560px] font-sansUi text-[1.15rem] font-bold uppercase leading-[1.35] tracking-[0.1em] text-beggin-ink/72">{cocktail.description}</p>
                   <span className="mt-9 inline-flex w-fit items-center gap-3 border-b border-beggin-gold pb-2 font-sansUi text-[12px] font-bold uppercase tracking-[0.18em] text-beggin-ink transition group-hover:border-beggin-red group-hover:text-beggin-red">Ver drinks<ArrowRight size={16} /></span>
                 </div>
