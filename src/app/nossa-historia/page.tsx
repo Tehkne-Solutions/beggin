@@ -28,10 +28,10 @@ const botanicals = [
 
 export default function NossaHistoriaPage() {
   return (
-    <main className="min-h-screen bg-[#FCF7F1] text-beggin-ink">
+    <main className="min-h-screen bg-white text-beggin-ink">
       <Header />
 
-      <section className="paper-texture relative overflow-hidden bg-[#FCF7F1] px-5 pb-16 pt-[120px] md:px-8 lg:pb-20 lg:pt-[150px]">
+      <section className="relative overflow-hidden bg-white px-5 pb-16 pt-[120px] md:px-8 lg:pb-20 lg:pt-[150px]">
         <div className="pointer-events-none absolute left-[-110px] top-[110px] h-[430px] w-[330px] opacity-35">
           <Image src={storyAssets.botanicalLeft} alt="" fill priority sizes="330px" className="object-contain" />
         </div>
@@ -53,13 +53,13 @@ export default function NossaHistoriaPage() {
             </div>
           </div>
 
-          <div className="relative min-h-[360px] border border-[#c7b889]/60 bg-[#FFFCF6]/60 p-4 shadow-[0_24px_70px_rgba(54,43,25,0.08)] lg:min-h-[470px]">
+          <div className="relative min-h-[360px] border border-[#c7b889]/60 bg-white p-4 shadow-[0_24px_70px_rgba(54,43,25,0.08)] lg:min-h-[470px]">
             <Image src={storyAssets.photoRight} alt="BEG Destilaria em coquetelaria" fill priority sizes="(max-width: 1024px) 92vw, 650px" className="object-cover p-4" />
           </div>
         </div>
       </section>
 
-      <section className="paper-texture bg-[#FDF9F1] px-5 py-16 md:px-8 lg:py-20">
+      <section className="bg-white px-5 py-16 md:px-8 lg:py-20">
         <div className="mx-auto max-w-[1180px]">
           <div className="grid gap-12 lg:grid-cols-[0.34fr_0.66fr]">
             <div>
@@ -90,9 +90,9 @@ export default function NossaHistoriaPage() {
         </div>
       </section>
 
-      <section className="paper-texture bg-[#FCF7F1] px-5 py-16 md:px-8 lg:py-20">
+      <section className="bg-white px-5 py-16 md:px-8 lg:py-20">
         <div className="mx-auto grid max-w-[1280px] gap-12 lg:grid-cols-2 lg:items-center">
-          <div className="relative min-h-[360px] border border-[#c7b889]/65 bg-[#FFFCF6] p-3 shadow-[0_20px_54px_rgba(54,43,25,0.08)]">
+          <div className="relative min-h-[360px] border border-[#c7b889]/65 bg-white p-3 shadow-[0_20px_54px_rgba(54,43,25,0.08)]">
             <Image src={storyAssets.photoLeft} alt="Destilaria BEG" fill sizes="(max-width: 1024px) 92vw, 560px" className="object-cover p-3" />
           </div>
           <div>
@@ -110,7 +110,7 @@ export default function NossaHistoriaPage() {
         </div>
       </section>
 
-      <section className="paper-texture bg-[#FDF9F1] px-5 py-16 md:px-8 lg:py-24">
+      <section className="bg-white px-5 py-16 md:px-8 lg:py-24">
         <div className="mx-auto max-w-[1180px]">
           <div className="max-w-[900px]">
             <h2 className="font-serifDisplay text-[clamp(2.7rem,4.6vw,5.2rem)] font-semibold uppercase leading-[0.86] tracking-[-0.045em]">
@@ -128,7 +128,7 @@ export default function NossaHistoriaPage() {
 
           <div className="mt-12 grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {botanicals.map((item) => (
-              <div key={item} className="border border-[#c7b889]/50 bg-[#FFFCF6] px-5 py-6 text-center transition duration-300 hover:-translate-y-1 hover:border-beggin-gold/80">
+              <div key={item} className="border border-[#c7b889]/50 bg-white px-5 py-6 text-center transition duration-300 hover:-translate-y-1 hover:border-beggin-gold/80">
                 <div className="mx-auto mb-4 h-14 w-14 rounded-full border border-[#c7b889]/70 bg-[#DFDEC9]" />
                 <p className="font-serifDisplay text-[1.05rem] font-bold text-beggin-ink">{item}</p>
               </div>
