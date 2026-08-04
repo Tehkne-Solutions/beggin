@@ -65,10 +65,10 @@ const verifiedReview = {
 
 export default function BegExperiencePage() {
   return (
-    <main className="min-h-screen bg-[#FCF7F1] text-beggin-ink">
+    <main className="min-h-screen bg-white text-beggin-ink">
       <Header />
 
-      <section className="paper-texture relative overflow-hidden bg-[#FCF7F1] px-5 pb-16 pt-[128px] md:px-8 lg:pb-20 lg:pt-[154px]">
+      <section className="relative overflow-hidden bg-white px-5 pb-16 pt-[128px] md:px-8 lg:pb-20 lg:pt-[154px]">
         <div className="relative mx-auto grid max-w-[1500px] gap-12 lg:grid-cols-[0.44fr_0.56fr] lg:items-center">
           <div className="relative z-[2]">
             <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.34em] text-beggin-ink/75">
@@ -98,7 +98,7 @@ export default function BegExperiencePage() {
         </div>
       </section>
 
-      <section className="paper-texture bg-[#131413] px-5 py-16 text-[#FCF7F1] md:px-8 lg:py-20">
+      <section className="relative bg-[#131413] px-5 py-16 text-white md:px-8 lg:py-20">
         <div className="mx-auto max-w-[1320px]">
           <div className="max-w-[850px]">
             <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.32em] text-[#d7b866]">Como funciona</p>
@@ -112,20 +112,20 @@ export default function BegExperiencePage() {
               <article key={number} className="border border-[#d7b866]/30 bg-[#1a1b18] p-7 md:p-8">
                 <span className="font-serifDisplay text-[3.1rem] font-semibold leading-none text-beggin-red">{number}</span>
                 <h3 className="mt-6 font-serifDisplay text-[1.5rem] font-bold uppercase leading-[1] tracking-[0.04em]">{title}</h3>
-                <p className="mt-4 text-[0.98rem] leading-[1.75] text-[#FCF7F1]/70">{text}</p>
+                <p className="mt-4 text-[0.98rem] leading-[1.75] text-white/70">{text}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="paper-texture bg-[#FDF9F1] px-5 py-16 md:px-8 lg:py-20">
+      <section className="bg-white px-5 py-16 md:px-8 lg:py-20">
         <div className="mx-auto max-w-[1320px]">
           <div className="grid gap-5 md:grid-cols-3">
             {pillars.map((pillar) => {
               const Icon = pillar.icon;
               return (
-                <article key={pillar.title} className="border border-[#c7b889]/60 bg-[#FFFCF6] p-7 shadow-[0_18px_52px_rgba(54,43,25,0.05)]">
+                <article key={pillar.title} className="border border-[#c7b889]/60 bg-white p-7 shadow-[0_18px_52px_rgba(54,43,25,0.05)]">
                   <Icon className="text-beggin-red" size={30} strokeWidth={1.65} />
                   <h2 className="mt-6 font-serifDisplay text-[1.55rem] font-bold uppercase leading-[1] tracking-[0.04em]">
                     {pillar.title}
@@ -138,7 +138,7 @@ export default function BegExperiencePage() {
         </div>
       </section>
 
-      <section className="paper-texture bg-[#DFDEC9] px-5 py-16 md:px-8 lg:py-22">
+      <section className="bg-white px-5 py-16 md:px-8 lg:py-22">
         <div className="mx-auto max-w-[1320px]">
           <div className="grid gap-10 border-y border-[#b5a879]/65 py-12 lg:grid-cols-[0.36fr_0.64fr] lg:items-center">
             <div>
@@ -165,7 +165,7 @@ export default function BegExperiencePage() {
               target="_blank"
               rel="noreferrer"
               aria-label="Abrir a avaliação da BEG Destilaria no Tripadvisor"
-              className="group block border border-[#b5a879]/75 bg-[#FFFCF6] p-7 shadow-[0_20px_60px_rgba(54,43,25,0.08)] transition hover:-translate-y-1 hover:border-beggin-red md:p-10"
+              className="group block border border-[#b5a879]/75 bg-white p-7 shadow-[0_20px_60px_rgba(54,43,25,0.08)] transition hover:-translate-y-1 hover:border-beggin-red md:p-10"
             >
               <div className="flex flex-wrap items-center justify-between gap-5">
                 <div>
@@ -179,7 +179,7 @@ export default function BegExperiencePage() {
               <h3 className="mt-7 font-serifDisplay text-[1.65rem] font-bold uppercase leading-[1] tracking-[0.03em]">{verifiedReview.title}</h3>
               <p className="mt-5 text-[1rem] leading-[1.82] text-beggin-ink/74">“{verifiedReview.text}”</p>
               <div className="mt-7 inline-flex items-center gap-2 font-serifDisplay text-[10px] font-bold uppercase tracking-[0.2em] text-beggin-red">
-                Abrir fonte original
+                Tripadvisor
                 <ExternalLink size={14} className="transition-transform group-hover:translate-x-1" />
               </div>
             </Link>
@@ -187,7 +187,7 @@ export default function BegExperiencePage() {
         </div>
       </section>
 
-      <section className="paper-texture bg-[#FDF9F1] px-5 py-16 md:px-8 lg:py-22">
+      <section className="bg-white px-5 py-16 md:px-8 lg:py-22">
         <div className="mx-auto max-w-[1320px] border-y border-[#c7b889]/60 py-12 text-center">
           <Sparkles className="mx-auto text-beggin-red" size={34} strokeWidth={1.55} />
           <h2 className="mx-auto mt-6 max-w-[900px] font-serifDisplay text-[clamp(2.6rem,4.7vw,5.5rem)] font-semibold uppercase leading-[0.88] tracking-[-0.045em]">

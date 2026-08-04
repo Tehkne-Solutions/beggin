@@ -74,10 +74,10 @@ const timeline = [
 
 export default function AwardsLandingPage() {
   return (
-    <main className="min-h-screen bg-[#FEFAF3] text-beggin-ink">
+    <main className="min-h-screen bg-white text-beggin-ink">
       <Header />
 
-      <section className="paper-texture relative overflow-hidden bg-[#FEFAF3] px-5 pb-16 pt-[130px] md:px-8 lg:pb-20 lg:pt-[160px]">
+      <section className="relative overflow-hidden bg-white px-5 pb-16 pt-[130px] md:px-8 lg:pb-20 lg:pt-[160px]">
         <div className="mx-auto grid max-w-[1500px] gap-12 lg:grid-cols-[0.54fr_0.46fr] lg:items-center">
           <div className="relative z-[2]">
             <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.34em] text-beggin-ink/75">{awardsContent.eyebrow}</p>
@@ -102,8 +102,8 @@ export default function AwardsLandingPage() {
             </Link>
           </div>
 
-          <div className="relative z-[2] overflow-hidden border border-[#c7b889]/65 bg-[#FFFCF6] p-5 shadow-[0_24px_72px_rgba(54,43,25,0.08)]">
-            <div className="relative min-h-[390px] overflow-hidden bg-[#f5ecdc] md:min-h-[480px]">
+          <div className="relative z-[2] overflow-hidden border border-[#c7b889]/65 bg-white p-5 shadow-[0_24px_72px_rgba(54,43,25,0.08)]">
+            <div className="relative min-h-[390px] overflow-hidden bg-white md:min-h-[480px]">
               <Image
                 src="/images/premios/BEGGIN_DESTILARIA-1246.jpg"
                 alt="BEG Destilaria premiada"
@@ -117,13 +117,13 @@ export default function AwardsLandingPage() {
         </div>
       </section>
 
-      <section className="paper-texture bg-[#FEFAF3] px-5 pb-16 md:px-8 lg:pb-20">
-        <div className="mx-auto max-w-[1320px] border border-[#c7b889]/65 bg-[#FFFCF6] px-6 py-8 shadow-[0_22px_70px_rgba(54,43,25,0.055)] md:px-10 md:py-10 lg:px-14 lg:py-12">
+      <section className="bg-white px-5 pb-16 md:px-8 lg:pb-20">
+        <div className="mx-auto max-w-[1320px] border border-[#c7b889]/65 bg-white px-6 py-8 shadow-[0_22px_70px_rgba(54,43,25,0.055)] md:px-10 md:py-10 lg:px-14 lg:py-12">
           <div className="grid gap-5 md:grid-cols-3">
             {proofPillars.map((pillar) => {
               const Icon = pillar.icon;
               return (
-                <article key={pillar.label} className="relative min-h-[250px] border border-[#d7c89e]/60 bg-[#FEFAF3]/84 p-7">
+                <article key={pillar.label} className="relative min-h-[250px] border border-[#d7c89e]/60 bg-white p-7">
                   <Icon size={26} strokeWidth={1.55} className="text-beggin-red" />
                   <p className="mt-6 font-serifDisplay text-[10px] font-bold uppercase tracking-[0.28em] text-beggin-red/80">{pillar.label}</p>
                   <h2 className="mt-3 font-serifDisplay text-[1.45rem] font-bold uppercase leading-[1.02] tracking-[0.02em]">{pillar.title}</h2>
@@ -135,15 +135,15 @@ export default function AwardsLandingPage() {
         </div>
       </section>
 
-      <section className="paper-texture bg-[#FEFAF3] px-5 pb-16 md:px-8 lg:pb-20">
-        <div className="mx-auto grid max-w-[1320px] overflow-hidden border border-[#c7b889]/60 bg-[#131413] text-[#FCF7F1] shadow-[0_24px_70px_rgba(19,20,19,0.16)] lg:grid-cols-[0.66fr_0.34fr]">
+      <section className="bg-white px-5 pb-16 md:px-8 lg:pb-20">
+        <div className="mx-auto grid max-w-[1320px] overflow-hidden border border-[#c7b889]/60 bg-[#131413] text-white shadow-[0_24px_70px_rgba(19,20,19,0.16)] lg:grid-cols-[0.66fr_0.34fr]">
           <div className="flex flex-col justify-center p-8 md:p-12 lg:p-14 xl:p-16">
             <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.34em] text-[#d7b866]">O maior marco histórico</p>
-            <h2 className="mt-5 font-serifDisplay text-[clamp(3.6rem,7vw,8.2rem)] font-semibold uppercase leading-[0.78] tracking-[-0.06em] text-[#FCF7F1]">
+            <h2 className="mt-5 font-serifDisplay text-[clamp(3.6rem,7vw,8.2rem)] font-semibold uppercase leading-[0.78] tracking-[-0.06em] text-white">
               98
               <span className="block text-[0.38em] leading-none tracking-[0.16em] text-[#d7b866]">pontos</span>
             </h2>
-            <p className="mt-7 max-w-[760px] text-[1.04rem] leading-[1.82] text-[#FCF7F1]/78">
+            <p className="mt-7 max-w-[760px] text-[1.04rem] leading-[1.82] text-white/78">
               Em 2024, cravamos o nosso maior marco histórico: fomos eleitos o Melhor Gin do Mundo. No gigantesco IWSC Londres, o BEG New World Navy conquistou a raríssima medalha GOLD Outstanding. Na mesma edição, o BEG Brazilian Dry brilhou com Prata (Qualidade) e Bronze (Gin &amp; Tonic).
             </p>
           </div>
@@ -161,7 +161,7 @@ export default function AwardsLandingPage() {
         </div>
       </section>
 
-      <section className="paper-texture bg-[#FEFAF3] px-5 pb-24 md:px-8 lg:pb-28">
+      <section className="bg-white px-5 pb-24 md:px-8 lg:pb-28">
         <div className="mx-auto max-w-[1320px]">
           <div className="mb-10 max-w-[900px]">
             <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.32em] text-beggin-red">Linha do tempo de premiações</p>
@@ -174,7 +174,7 @@ export default function AwardsLandingPage() {
           </div>
           <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {timeline.map((item) => (
-              <article key={item.year} className="border border-[#c7b889]/60 bg-[#FFFCF6] p-7 shadow-[0_18px_52px_rgba(54,43,25,0.045)]">
+              <article key={item.year} className="border border-[#c7b889]/60 bg-white p-7 shadow-[0_18px_52px_rgba(54,43,25,0.045)]">
                 <span className="font-serifDisplay text-[3.25rem] font-semibold leading-none text-beggin-red">{item.year}</span>
                 <h3 className="mt-5 font-serifDisplay text-[1.42rem] font-bold uppercase leading-[1.02] tracking-[0.035em]">{item.title}</h3>
                 <p className="mt-4 text-[1rem] leading-[1.75] text-beggin-ink/70">{item.text}</p>
