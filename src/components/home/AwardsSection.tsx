@@ -7,7 +7,7 @@ import { awardsContent, awardAssets } from '@/data/awards';
 import { Reveal } from '@/components/motion/Reveal';
 
 const featuredMedals = [
-  { src: '/images/premios/selo-premio-1.png', alt: 'Selo World Gin Awards Brazil Classic Winner' },
+  { src: '/images/official/medals/1.webp', alt: 'Selo World Gin Awards Brazil Classic Winner' },
   { src: '/images/premios/selo-premio-2.png', alt: 'Selo World Gin Awards Gold' },
   { src: '/images/premios/selo-premio-3.png', alt: 'Selo World Gin Awards Brazil Colour Changing Winner' },
   { src: '/images/premios/1-main_std-iwsc2024-gold-98-medal-lores-png.png', alt: 'Medalha IWSC Gold 98 pontos 2024' },
