@@ -19,8 +19,8 @@ export default function BlogPage() {
 
       <section className="bg-white px-5 pb-14 pt-[130px] md:px-8 lg:pb-18 lg:pt-[160px]">
         <div className="mx-auto max-w-[1400px] border-b border-[#c8b98e]/55 pb-12 text-center">
-          <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.34em] text-beggin-red">Blog BEG</p>
-          <h1 className="mx-auto mt-6 max-w-[1050px] font-serifDisplay text-[clamp(3.2rem,6.2vw,7.2rem)] font-semibold uppercase leading-[0.86] tracking-[-0.052em]">
+          <p className="font-sansUi text-[11px] font-bold uppercase tracking-[0.34em] text-beggin-red">Blog BEG</p>
+          <h1 className="mx-auto mt-6 max-w-[1050px] font-serifDisplay text-[clamp(3.2rem,6.2vw,7.2rem)] font-normal uppercase leading-[1.02] tracking-[-0.03em]">
             Do dia a dia ao momento de impressionar.
           </h1>
           <p className="mx-auto mt-7 max-w-[760px] text-[1.08rem] leading-[1.84] text-beggin-ink/72">
@@ -32,7 +32,7 @@ export default function BlogPage() {
       <section className="bg-white px-5 pb-8 md:px-8">
         <nav aria-label="Categorias do blog" className="mx-auto flex max-w-[1400px] flex-wrap justify-center gap-3 border-b border-[#c8b98e]/45 pb-6">
           {blogCategories.map((category) => (
-            <span key={category.id} className="border border-[#c8b98e]/60 bg-white px-4 py-3 font-serifDisplay text-[11px] font-bold uppercase tracking-[0.16em] text-beggin-ink/72">
+            <span key={category.id} className="border border-[#c8b98e]/60 bg-white px-4 py-3 font-sansUi text-[11px] font-bold uppercase tracking-[0.16em] text-beggin-ink/72">
               {category.label}
             </span>
           ))}
@@ -53,19 +53,19 @@ export default function BlogPage() {
                 />
               </div>
               <div className="flex flex-1 flex-col p-7 md:p-8">
-                <p className="font-serifDisplay text-[11px] font-bold uppercase tracking-[0.26em] text-beggin-red">{post.eyebrow}</p>
-                <h2 className="mt-5 font-serifDisplay text-[2.05rem] font-semibold uppercase leading-[0.92] tracking-[-0.035em]">
+                <p className="font-sansUi text-[11px] font-bold uppercase tracking-[0.26em] text-beggin-red">{post.eyebrow}</p>
+                <h2 className="mt-5 font-serifDisplay text-[2.05rem] font-normal uppercase leading-[1.04] tracking-[-0.02em]">
                   {post.title}
                 </h2>
                 <p className="mt-5 text-[1rem] leading-[1.78] text-beggin-ink/72">{post.excerpt}</p>
                 <div className="mt-6 flex flex-wrap gap-2">
                   {post.tags.map((tag) => (
-                    <span key={tag} className="border border-[#c8b98e]/60 px-3 py-2 font-serifDisplay text-[10px] font-bold uppercase tracking-[0.16em] text-beggin-ink/72">
+                    <span key={tag} className="border border-[#c8b98e]/60 px-3 py-2 font-sansUi text-[10px] font-bold uppercase tracking-[0.16em] text-beggin-ink/72">
                       {tag}
                     </span>
                   ))}
                 </div>
-                <Link href={`/blog/${post.slug}`} className="mt-auto inline-flex items-center gap-3 pt-8 font-serifDisplay text-[12px] font-bold uppercase tracking-[0.18em] text-beggin-ink transition hover:text-beggin-red">
+                <Link href={`/blog/${post.slug}`} className="mt-auto inline-flex items-center gap-3 pt-8 font-sansUi text-[12px] font-bold uppercase tracking-[0.18em] text-beggin-ink transition hover:text-beggin-red">
                   Ler conteúdo
                   <ArrowRight size={16} />
                 </Link>
