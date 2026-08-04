@@ -116,6 +116,27 @@ for (const iconName of ['Instagram', 'Youtube', 'Facebook', 'Linkedin']) {
   }
 }
 
+const layoutSource = read('src/app/layout.tsx');
+const globalsSource = read('src/app/globals.css');
+const tailwindSource = read('tailwind.config.ts');
+const headerSource = read('src/components/layout/Header.tsx');
+
+if (/\bInter\b|--font-inter/.test(layoutSource) || /--font-inter/.test(globalsSource) || /--font-inter/.test(tailwindSource)) {
+  failures.push('Inter não faz parte da identidade tipográfica BEG e não pode estar carregada ou referenciada.');
+}
+
+if (!globalsSource.includes('--color-ice-white: #FFFFFF') || !globalsSource.includes('background: #FFFFFF')) {
+  failures.push('Background global da BEG deve permanecer em branco puro #FFFFFF.');
+}
+
+if (!globalsSource.includes('.paper-texture {\n  background-image: none;')) {
+  failures.push('paper-texture voltou a adicionar textura/cor ao fundo branco aprovado.');
+}
+
+if (/rgba\(252,\s*247,\s*241/.test(headerSource)) {
+  failures.push('Header voltou a usar o off-white histórico em vez de branco puro.');
+}
+
 const sustainabilitySource = read('src/app/sustentabilidade/page.tsx');
 const highlightedImages = [
   ...sustainabilitySource.matchAll(/image:\s*sustainabilityImages\.([A-Za-z0-9_]+)/g),
